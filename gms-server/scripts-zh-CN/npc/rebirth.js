@@ -45,13 +45,13 @@ function action(mode, type, selection) {
         return;
     }
     if (status === 0) {
-        cm.sendNext("当你想要再次重生时，来找我吧。你目前总共有 #r" + cm.getChar().getReborns() + " #krebirths。");
+        cm.sendNext("当你想要再次重生时，来找我吧。你目前总共转生过 #r" + cm.getChar().getReborns() + " #k次。");
     } else if (status === 1) {
         cm.sendSimple("你今天想让我做什么呢：\r\n\r\n#L0##b我想转生！#l\r\n#L1##b现在什么都不想做...#k#l");
     } else if (status === 2) {
         if (selection === 0) {
             if (cm.getChar().getLevel() === cm.getChar().getMaxClassLevel()) {
-                cm.sendSimple("我明白了... 你想选择哪条路？\r\n\r\n#L0##b探险家（初心者）#l\r\n#L1##b皇家骑士团（贵族）#l\r\n#L2##b阿兰（传说）#l");
+                cm.sendSimple("我明白了... 你想选择哪条路？\r\n\r\n#L0##b冒险家（新手）#l\r\n#L1##b皇家骑士团（初心者）#l\r\n#L2##b战神（战童）#l");
             } else {
                 cm.sendOk("看起来你的冒险之旅还没有结束……当你达到等级 " + cm.getChar().getMaxClassLevel() +"时再回来吧。");
                 cm.dispose();
@@ -66,12 +66,12 @@ function action(mode, type, selection) {
         jobId = selection * 1000;
 
         var job = "";
-        if (selection === 0) job = "Beginner";
-        else if (selection === 1) job = "Noblesse";
-        else if (selection === 2) job = "Legend";
-        cm.sendYesNo("你确定要转职成为一个" + 职业 + "吗？");
+        if (selection === 0) job = "冒险家（新手）";
+        else if (selection === 1) job = "皇家骑士团（初心者）";
+        else if (selection === 2) job = "战神（战童）";
+        cm.sendYesNo("你确定要转职成为一个 #r" + job + "#k 吗？");
     }
-    else if (status === 4 && type === 1) {
+    else if (status === 4) {
         cm.getChar().executeRebornAsId(jobId);
         cm.sendOk("你现在已经重生了。总共 #r" + cm.getChar().getReborns() + "#k 次重生。");
         cm.dispose();

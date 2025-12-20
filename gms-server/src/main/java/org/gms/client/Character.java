@@ -63,6 +63,9 @@ import org.gms.net.server.guild.GuildPackets;
 import org.gms.net.server.services.task.world.CharacterSaveService;
 import org.gms.net.server.services.type.WorldServices;
 import org.gms.net.server.world.*;
+import org.gms.provider.Data;
+import org.gms.provider.DataProviderFactory;
+import org.gms.provider.wz.WZFiles;
 import org.gms.scripting.AbstractPlayerInteraction;
 import org.gms.scripting.event.EventInstanceManager;
 import org.gms.scripting.item.ItemScriptManager;
@@ -1136,7 +1139,7 @@ public class Character extends AbstractCharacterObject {
             addhp += Randomizer.rand(300, 350);
             addmp += Randomizer.rand(150, 200);
         }
-        
+
         /*
         //aran perks?
         int newJobId = newJob.getId();
@@ -1220,7 +1223,7 @@ public class Character extends AbstractCharacterObject {
         if (guild != null) {
             guild.broadcast(packet, id);
         }
-        
+
         /*
         if(partnerid > 0) {
             partner.sendPacket(packet); not yet implemented
@@ -1768,6 +1771,29 @@ public class Character extends AbstractCharacterObject {
         this.currentPage = page;
     }
 
+    public void resetSkillLevel() {
+        for (Data skill_ : DataProviderFactory.getDataProvider(WZFiles.STRING).getData("Skill.img").getChildren()) {
+            try {
+                Skill skill = SkillFactory.getSkill(Integer.parseInt(skill_.getName()));
+                this.changeSkillLevel(skill, (byte) 0, skill.getMaxLevel(), -1);
+            } catch (NumberFormatException nfe) {
+                nfe.printStackTrace();
+                break;
+            } catch (NullPointerException npe) {
+            }
+        }
+
+        if (this.getJob().isA(Job.ARAN1) || this.getJob().isA(Job.LEGEND)) {
+            Skill skill = SkillFactory.getSkill(5001005);
+            this.changeSkillLevel(skill, (byte) -1, -1, -1);
+        } else {
+            Skill skill = SkillFactory.getSkill(21001001);
+            this.changeSkillLevel(skill, (byte) -1, -1, -1);
+        }
+
+        this.yellowMessage(I18nUtil.getMessage("ResetSkillCommand.message2"));
+
+    }
     public void changeSkillLevel(Skill skill, byte newLevel, int newMasterlevel, long expiration) {
         if (newLevel > -1) {
             skills.put(skill, new SkillEntry(newLevel, newMasterlevel, expiration));
@@ -9432,6 +9458,7 @@ public class Character extends AbstractCharacterObject {
         changeJob(job);
         setLevel(0);
         levelUp(true);
+        resetSkillLevel();
     }
 
     //EVENTS
