@@ -1770,7 +1770,11 @@ public class Character extends AbstractCharacterObject {
     public void changePage(int page) {
         this.currentPage = page;
     }
-
+    public void setRebirthAp() {
+        int finalAP = this.getReborns() * 50 + 9;
+        this.updateStrDexIntLuk(4);
+        this.changeRemainingAp(finalAP, false);
+    }
     public void resetSkillLevel() {
         for (Data skill_ : DataProviderFactory.getDataProvider(WZFiles.STRING).getData("Skill.img").getChildren()) {
             try {
@@ -1791,8 +1795,9 @@ public class Character extends AbstractCharacterObject {
             this.changeSkillLevel(skill, (byte) -1, -1, -1);
         }
 
+        // 清空技能点
+        this.updateRemainingSp(0);
         this.yellowMessage(I18nUtil.getMessage("ResetSkillCommand.message2"));
-
     }
     public void changeSkillLevel(Skill skill, byte newLevel, int newMasterlevel, long expiration) {
         if (newLevel > -1) {
@@ -9459,6 +9464,7 @@ public class Character extends AbstractCharacterObject {
         setLevel(0);
         levelUp(true);
         resetSkillLevel();
+        setRebirthAp();
     }
 
     //EVENTS

@@ -51,13 +51,13 @@ function action(mode, type, selection) {
     } else if (status === 2) {
         if (selection === 0) {
             if (cm.getChar().getLevel() === cm.getChar().getMaxClassLevel()) {
-                cm.sendSimple("我明白了... 你想选择哪条路？\r\n\r\n#L0##b冒险家（新手）#l\r\n#L1##b皇家骑士团（初心者）#l\r\n#L2##b战神（战童）#l");
+                cm.sendSimple("我明白了... 你想选择哪条路？\r\n\r\n#L0##b冒险家（新手）#l\r\n#L2##b战神（战童）#l");
             } else {
                 cm.sendOk("看起来你的冒险之旅还没有结束……当你达到等级 " + cm.getChar().getMaxClassLevel() +"时再回来吧。");
                 cm.dispose();
             }
         } else if (selection === 1) {
-            cm.sendOk("See you soon!")
+            cm.sendOk("后会有期!")
             cm.dispose();
         }
     } else if (status === 3) {
@@ -67,7 +67,7 @@ function action(mode, type, selection) {
 
         var job = "";
         if (selection === 0) job = "冒险家（新手）";
-        else if (selection === 1) job = "皇家骑士团（初心者）";
+//        else if (selection === 1) job = "皇家骑士团（初心者）";
         else if (selection === 2) job = "战神（战童）";
         cm.sendYesNo("你确定要转职成为一个 #r" + job + "#k 吗？");
     }
