@@ -4,11 +4,11 @@
  */
 
 function start() {
-    var rebornNum = cm.getChar().getReborns()
-    if (rebornNum == 0) {
-        cm.sendOk("只有转生者可以使用该功能。");
-        cm.dispose();
-    }
+//    var rebornNum = cm.getChar().getReborns()
+//    if (rebornNum == 0) {
+//        cm.sendOk("只有转生者可以使用该功能。");
+//        cm.dispose();
+//    }
 
     levelStart();
 }
