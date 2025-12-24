@@ -127,9 +127,23 @@ function levelStart() {
         } else {
             cm.sendOkLevel("Dispose", "你当前不符合转职条件！");
         }
-    } else if (charCurrentJobId == 2000) {
+    } else if (Math.floor(charCurrentJobId / 1000) == 2) {
     //  战神
-       cm.sendOkLevel("Dispose", "代码还没写好。。");
+        if (charCurrentJobId % 1000 == 0 && charCurrentLevel > 9) {
+            let text = "你当前符合一转条件，你想进行四转吗？\r\n\r\n";
+            cm.sendYesNoLevel("Dispose", "SelectFirstJob2100", text);
+        } else if (charCurrentJobId % 100 == 0 && charCurrentLevel > 29) {
+            let text = "你当前符合二转条件，你想进行四转吗？\r\n\r\n";
+            cm.sendYesNoLevel("Dispose", "SelectSecondJob2110", text);
+        } else if (charCurrentJobId % 10 == 0 && charCurrentLevel > 69) {
+            let text = "你当前符合三转条件，你想进行四转吗？\r\n\r\n";
+            cm.sendYesNoLevel("Dispose", "SelectThirdJob2111", text);
+        } else if (charCurrentJobId % 10 == 1 && charCurrentLevel > 119) {
+            let text = "你当前符合四转条件，你想进行四转吗？\r\n\r\n";
+            cm.sendYesNoLevel("Dispose", "SelectForthJob2112", text);
+        } else {
+            cm.sendOkLevel("Dispose", "你当前不符合转职条件！");
+        }
 
     } else if (charCurrentJobId == 1000) {
     //  骑士团
@@ -160,6 +174,11 @@ function levelSelectFirstJob3() {
 
 function levelSelectFirstJob4() {
     cm.changeJobById(500)
+    cm.sendOkLevel("Dispose", "转职成功！");
+}
+
+function levelSelectFirstJob2100() {
+    cm.changeJobById(2100)
     cm.sendOkLevel("Dispose", "转职成功！");
 }
 
@@ -223,6 +242,11 @@ function levelSelectSecondJob11() {
     cm.sendOkLevel("Dispose", "转职成功！");
 }
 
+function levelSelectSecondJob2110() {
+    cm.changeJobById(2110)
+    cm.sendOkLevel("Dispose", "转职成功！");
+}
+
 function levelSelectThirdJob0() {
     cm.changeJobById(111)
     cm.sendOkLevel("Dispose", "转职成功！");
@@ -283,6 +307,11 @@ function levelSelectThirdJob11() {
     cm.sendOkLevel("Dispose", "转职成功！");
 }
 
+function levelSelectThirdJob2111() {
+    cm.changeJobById(2111)
+    cm.sendOkLevel("Dispose", "转职成功！");
+}
+
 function levelSelectForthJob0() {
     cm.changeJobById(112)
     cm.sendOkLevel("Dispose", "转职成功！");
@@ -340,6 +369,11 @@ function levelSelectForthJob10() {
 
 function levelSelectForthJob11() {
     cm.changeJobById(522)
+    cm.sendOkLevel("Dispose", "转职成功！");
+}
+
+function levelSelectForthJob2112() {
+    cm.changeJobById(2112)
     cm.sendOkLevel("Dispose", "转职成功！");
 }
 
