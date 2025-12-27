@@ -25,6 +25,8 @@
 */
 var status;
 var jobId = 0;
+const Flaming_Feather = 4001006;
+var Cost_Flaming_Feather = 2000;
 
 function start() {
     status = -1;
@@ -47,10 +49,14 @@ function action(mode, type, selection) {
     if (status === 0) {
         cm.sendNext("当你想要再次重生时，来找我吧。你目前总共转生过 #r" + cm.getChar().getReborns() + " #k次。");
     } else if (status === 1) {
-        cm.sendSimple("你今天想让我做什么呢：\r\n\r\n#L0##b我想转生！#l\r\n#L1##b现在什么都不想做...#k#l");
+        cm.sendSimple("你今天想让我做什么呢：\r\n\r\n#L0##b我想转生！（消耗2000根火焰羽毛）#l\r\n#L1##b现在什么都不想做...#k#l");
     } else if (status === 2) {
         if (selection === 0) {
-            if (cm.getChar().getLevel() === cm.getChar().getMaxClassLevel()) {
+            let itemQuantity = cm.getItemQuantity(Flaming_Feather);
+            if (itemQuantity < Cost_Flaming_Feather) {
+                cm.sendOk("你的火焰羽毛不够2000根，无法转生。");
+                cm.dispose();
+            } else if (cm.getChar().getLevel() === cm.getChar().getMaxClassLevel()) {
                 cm.sendSimple("我明白了... 你想选择哪条路？\r\n\r\n#L0##b冒险家（新手）#l\r\n#L2##b战神（战童）#l");
             } else {
                 cm.sendOk("看起来你的冒险之旅还没有结束……当你达到等级 " + cm.getChar().getMaxClassLevel() +"时再回来吧。");
@@ -72,6 +78,7 @@ function action(mode, type, selection) {
         cm.sendYesNo("你确定要转职成为一个 #r" + job + "#k 吗？");
     }
     else if (status === 4) {
+        cm.gainItem(Flaming_Feather, -Cost_Flaming_Feather);
         cm.getChar().executeRebornAsId(jobId);
         cm.sendOk("你现在已经重生了。总共 #r" + cm.getChar().getReborns() + "#k 次重生。");
         cm.dispose();
