@@ -116,8 +116,6 @@ function action(mode, type, selection) {
                         cm.sendOk("你已经完成了试炼，但是还需要 #b#v4000082##t4000082# * 30#k 来锻造 #b5 个 #v4001017##t4001017##k。");
                     } else {
                         cm.completeQuest(100201);
-                        cm.gainItem(4031061, -1);
-                        cm.gainItem(4031062, -1);
                         cm.gainItem(4000082, -30);
 
                         cm.gainItem(4001017, 5);
