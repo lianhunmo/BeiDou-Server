@@ -1146,6 +1146,31 @@ public class ItemInformationProvider {
         return equip; // 返回处理后的装备
     }
 
+    public Item scrollKingRing(Item equip, double prop, boolean isGM) {
+        // 检查是否是游戏管理员且配置中启用了完美GM卷轴功能
+        boolean assertGM = (isGM && GameConfig.getServerBoolean("use_perfect_gm_scroll"));
+
+        if (equip instanceof Equip nEquip) { // 检查装备是否为 Equip 类
+                // 判断是否成功应用卷轴效果（根据成功率和GM状态）
+                Map<String, Integer> stats = new HashMap<>(2);
+                if (assertGM || rollSuccessChance(prop)) {
+                    stats.put("PAD", 1);
+                    stats.put("MAD", 1);
+                    improveEquipStats(nEquip, stats); // 默认情况下提高装备属性
+                    // 处理等级
+                    nEquip.setLevel((byte) (nEquip.getLevel() + 1)); // 提升装备等级
+                } else {
+                    // 卷轴使用失败的情况
+                    stats.put("PAD", -1);
+                    stats.put("MAD", -1);
+                    improveEquipStats(nEquip, stats); // 默认情况下降低装备属性
+                    // 处理等级
+                    nEquip.setLevel((byte) (nEquip.getLevel() - 1)); // 降低装备等级
+                }
+        }
+        return equip; // 返回处理后的装备
+    }
+
     public static void improveEquipStats(Equip nEquip, Map<String, Integer> stats) {
         for (Entry<String, Integer> stat : stats.entrySet()) {
             switch (stat.getKey()) {

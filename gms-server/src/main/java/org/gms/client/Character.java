@@ -51,6 +51,7 @@ import org.gms.model.dto.InventorySearchReqDTO;
 import org.gms.model.dto.InventorySearchRtnDTO;
 import org.gms.model.pojo.NewYearCardRecord;
 import org.gms.model.pojo.SkillEntry;
+import org.gms.net.packet.InPacket;
 import org.gms.net.packet.Packet;
 import org.gms.net.server.PlayerBuffValueHolder;
 import org.gms.net.server.PlayerCoolDownValueHolder;
@@ -90,6 +91,7 @@ import org.gms.util.*;
 import org.gms.util.packets.WeddingPackets;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.BeanUtils;
 
 import java.awt.*;
 import java.lang.ref.WeakReference;
@@ -4702,6 +4704,10 @@ public class Character extends AbstractCharacterObject {
 
     public Inventory getInventory(InventoryType type) {
         return inventory[type.ordinal()];
+    }
+
+    public Inventory getInventory(byte type) {
+        return inventory[type];
     }
 
     public boolean haveItemWithId(int itemid, boolean checkEquipped) {
@@ -9695,5 +9701,93 @@ public class Character extends AbstractCharacterObject {
      */
     public void enableActions() {
         sendPacket(PacketCreator.enableActions());
+    }
+
+    /**
+     * 强化指定装备栏的装备
+     * @param equipSlot 装备栏id
+     * @param prop   强化成功率
+     */
+    public final boolean scrollEquipWithEquipSlot(short equipSlot, float prop) {
+        if (client.tryacquireClient()) {
+            try {
+
+                ItemInformationProvider ii = ItemInformationProvider.getInstance(); // 获取物品信息提供者实例
+                Character chr = client.getPlayer(); // 获取当前玩家
+                Equip toScroll = (Equip) chr.getInventory(InventoryType.EQUIP).getItem(equipSlot);
+
+                byte oldLevel = toScroll.getLevel(); // 记录装备的原始等级
+
+                Equip scrolled = (Equip) ii.scrollKingRing(toScroll, prop, chr.isGM()); // 使用卷轴升级装备
+                Equip.ScrollResult scrollSuccess = Equip.ScrollResult.FAIL; // 默认设置为失败
+                boolean scrollResult = false; // 默认设置为失败
+                if (scrolled.getLevel() > oldLevel) {
+                    scrollSuccess = Equip.ScrollResult.SUCCESS; // 卷轴成功升级装备
+                    scrollResult = true;
+                }
+
+                final List<ModifyInventory> mods = new ArrayList<>(); // 创建修改库存的操作列表
+                mods.add(new ModifyInventory(3, scrolled)); // 标记装备被移除
+                mods.add(new ModifyInventory(0, scrolled)); // 标记装备被添加回库存
+                client.sendPacket(PacketCreator.modifyInventory(true, mods)); // 发送修改库存的封包
+                chr.getMap().broadcastMessage(PacketCreator.getScrollEffect(chr.getId(), scrollSuccess, false, false)); // 广播卷轴效果
+                chr.equipChanged(); // 通知客户端装备发生变化
+                return scrollResult;
+            } finally {
+                client.releaseClient(); // 释放客户端资源
+            }
+        }
+        log.error("scroll ring error, try acquire Client failed.");
+        return false;
+    }
+
+    /**
+     * 进化指定装备栏的装备(就是把equipSlot指定的装备替换成另一个自定义装备)
+     * @param equipSlot 装备栏格子Id
+     * @param prop   进化成功率
+     * @param afterEvolvingItemId   进化成功后的装备ID
+     */
+    public final boolean evolveEquipWithEquipSlot(short equipSlot, float prop, int afterEvolvingItemId) {
+        if (client.tryacquireClient()) {
+            try {
+                Character chr = client.getPlayer(); // 获取当前玩家
+                Equip oldEquip = (Equip) chr.getInventory(InventoryType.EQUIP).getItem(equipSlot);
+
+                boolean assertGM = (isGM() && GameConfig.getServerBoolean("use_perfect_gm_scroll"));
+                boolean evolveResult = ItemInformationProvider.rollSuccessChance(assertGM ? 100 : prop); // 获取装备进化结果
+                Equip.ScrollResult scrollSuccess = Equip.ScrollResult.FAIL; // 默认设置为失败
+                if (evolveResult) {
+                    scrollSuccess = Equip.ScrollResult.SUCCESS; // 成功升阶装备
+                }
+
+                InventoryManipulator.removeFromSlot(client, InventoryType.EQUIP, equipSlot, oldEquip.getQuantity(), false);
+                // 新戒指继承旧戒指升级的属性
+                gainEquip(afterEvolvingItemId,
+                        oldEquip.getStr(),
+                        oldEquip.getDex(),
+                        oldEquip.getInt(),
+                        oldEquip.getLuk(),
+                        oldEquip.getHp(),
+                        oldEquip.getMp(),
+                        oldEquip.getWatk(),
+                        oldEquip.getMatk(),
+                        oldEquip.getWdef(),
+                        oldEquip.getMdef(),
+                        oldEquip.getAcc(),
+                        oldEquip.getAvoid(),
+                        oldEquip.getHands(),
+                        oldEquip.getSpeed(),
+                        oldEquip.getJump(),
+                        (byte) 0,
+                        -1L); // 标记装备被添加回库存
+                chr.getMap().broadcastMessage(PacketCreator.getScrollEffect(chr.getId(), scrollSuccess, false, false)); // 广播卷轴效果
+                chr.equipChanged(); // 通知客户端装备发生变化
+                return evolveResult;
+            } finally {
+                client.releaseClient(); // 释放客户端资源
+            }
+        }
+        log.error("scroll ring error, try acquire Client failed.");
+        return false;
     }
 }
