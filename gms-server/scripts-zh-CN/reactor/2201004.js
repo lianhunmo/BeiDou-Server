@@ -24,11 +24,4 @@ function act() {
     rm.changeMusic("Bgm09/TimeAttack");
     rm.spawnMonster(8500000, -410, -400);
     rm.createMapMonitor(220080001, "in00");
-    let count = abstractPlayerInteraction.getCharacterExtendValue("每日挑战帕普拉图斯次数", true);
-    if (count) {
-        count++;
-    } else {
-        count = 1;
-    }
-    abstractPlayerInteraction.saveOrUpdateCharacterExtendValue("每日挑战帕普拉图斯次数", count.toString(), true)
 }

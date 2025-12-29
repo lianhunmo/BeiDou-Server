@@ -1278,6 +1278,20 @@ public class AbstractPlayerInteraction {
     }
 
     /**
+     * 获取每日/每周角色扩展表某字段的值
+     *
+     * @param extendName 扩展字段名
+     * @param isDaily    是否是每日，否则为每周
+     * @return 扩展字段值
+     */
+    public String getCharacterExtendValue(int charId, String extendName, boolean isDaily) {
+        ExtendValueDO extendValueDO = ExtendUtil.getExtendValue(String.valueOf(charId),
+                isDaily ? ExtendType.CHARACTER_EXTEND_DAILY.getType() : ExtendType.CHARACTER_EXTEND_WEEKLY.getType(),
+                extendName);
+        return extendValueDO == null ? null : extendValueDO.getExtendValue();
+    }
+
+    /**
      * 获取账号扩展表某字段的值
      *
      * @param extendName 扩展字段名
@@ -1320,6 +1334,17 @@ public class AbstractPlayerInteraction {
      */
     public void saveOrUpdateCharacterExtendValue(String extendName, String extendValue, boolean isDaily) {
         ExtendUtil.saveOrUpdateExtendValue(String.valueOf(getPlayer().getId()), isDaily ? ExtendType.CHARACTER_EXTEND_DAILY.getType() : ExtendType.CHARACTER_EXTEND_WEEKLY.getType(),
+                extendName, extendValue);
+    }
+
+    /***
+     * 保存每日/每周账号扩展表某字段的值
+     * @param extendName
+     * @param extendValue
+     * @param isDaily 是否为每日刷新，否则为周刷新
+     */
+    public void saveOrUpdateCharacterExtendValue(int charId, String extendName, String extendValue, boolean isDaily) {
+        ExtendUtil.saveOrUpdateExtendValue(String.valueOf(charId), isDaily ? ExtendType.CHARACTER_EXTEND_DAILY.getType() : ExtendType.CHARACTER_EXTEND_WEEKLY.getType(),
                 extendName, extendValue);
     }
 

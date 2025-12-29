@@ -26,17 +26,21 @@ function enter(pi) {
     if (!((pi.isQuestStarted(6361) && pi.haveItem(4031870, 1)) || (pi.isQuestCompleted(6361) && !pi.isQuestCompleted(6363)))) {
         var em = pi.getEventManager("PapulatusBattle");
         let count = pi.getCharacterExtendValue("每日挑战帕普拉图斯次数", true)
+        let eli = em.getEligibleParty(pi.getParty());
+        for (let i = 0; i < eli.length; i++) {
+            count = Math.max(pi.getCharacterExtendValue(eli[i].getPlayer().getId(), "每日挑战帕普拉图斯次数", true), count);
+        }
+
         if (pi.getParty() == null) {
             pi.playerMessage(5, "你当前未加入队伍，请创建队伍后再挑战BOSS。");
             return false;
         } else if (count >= 2) {
-            pi.playerMessage(5, "你今日已经挑战过2次帕普拉图斯，请明天再来吧。");
+            pi.playerMessage(5, "你的队伍中有人今日已经挑战过2次帕普拉图斯，请他明天再来吧。");
             return false;
         } else if (!pi.isLeader()) {
             pi.playerMessage(5, "你的队伍队长必须进入传送门才能开始战斗。");
             return false;
         } else {
-            var eli = em.getEligibleParty(pi.getParty());
             if (eli.size() > 0) {
                 if (!em.startInstance(pi.getParty(), pi.getPlayer().getMap(), 1)) {
                     pi.playerMessage(5, "你的队伍队长必须进入传送门才能开始战斗。");
@@ -45,6 +49,15 @@ function enter(pi) {
             } else {  //this should never appear
                 pi.playerMessage(5, "你暂时无法开始这场战斗，可能是因为队伍人数不符合要求、部分队员未满足挑战条件或不在当前地图。若组队遇到困难，请尝试使用队伍搜索功能。");
                 return false;
+            }
+            if (count) {
+                count++;
+            } else {
+                count = 1;
+            }
+            pi.saveOrUpdateCharacterExtendValue("每日挑战帕普拉图斯次数", count.toString(), true);
+            for (let i = 0; i < eli.length; i++) {
+                pi.saveOrUpdateCharacterExtendValue(eli[i].getPlayer().getId(), "每日挑战帕普拉图斯次数", count.toString(), true);
             }
 
             pi.playPortalSound();

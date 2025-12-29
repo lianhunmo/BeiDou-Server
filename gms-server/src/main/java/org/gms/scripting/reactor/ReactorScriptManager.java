@@ -138,9 +138,6 @@ public class ReactorScriptManager extends AbstractScriptManager {
         Invocable iv = (Invocable) engine;
         ReactorActionManager rm = new ReactorActionManager(c, reactor, iv);
         engine.put("rm", rm);
-        AbstractPlayerInteraction abstractPlayerInteraction = new AbstractPlayerInteraction(c);
-        engine.put("abstractPlayerInteraction", abstractPlayerInteraction);
-
         return iv;
     }
 }
