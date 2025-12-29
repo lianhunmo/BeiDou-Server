@@ -25,9 +25,12 @@
 function enter(pi) {
     if (!((pi.isQuestStarted(6361) && pi.haveItem(4031870, 1)) || (pi.isQuestCompleted(6361) && !pi.isQuestCompleted(6363)))) {
         var em = pi.getEventManager("PapulatusBattle");
-
+        let count = pi.getCharacterExtendValue("每日挑战帕普拉图斯次数", true)
         if (pi.getParty() == null) {
             pi.playerMessage(5, "你当前未加入队伍，请创建队伍后再挑战BOSS。");
+            return false;
+        } else if (count >= 2) {
+            pi.playerMessage(5, "你今日已经挑战过2次帕普拉图斯，请明天再来吧。");
             return false;
         } else if (!pi.isLeader()) {
             pi.playerMessage(5, "你的队伍队长必须进入传送门才能开始战斗。");

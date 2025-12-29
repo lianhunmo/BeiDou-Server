@@ -22,6 +22,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 package org.gms.scripting.reactor;
 
 import org.gms.client.Client;
+import org.gms.scripting.AbstractPlayerInteraction;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.gms.scripting.AbstractScriptManager;
@@ -137,6 +138,8 @@ public class ReactorScriptManager extends AbstractScriptManager {
         Invocable iv = (Invocable) engine;
         ReactorActionManager rm = new ReactorActionManager(c, reactor, iv);
         engine.put("rm", rm);
+        AbstractPlayerInteraction abstractPlayerInteraction = new AbstractPlayerInteraction(c);
+        engine.put("abstractPlayerInteraction", abstractPlayerInteraction);
 
         return iv;
     }
