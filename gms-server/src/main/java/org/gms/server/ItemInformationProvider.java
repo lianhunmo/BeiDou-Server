@@ -1157,6 +1157,7 @@ public class ItemInformationProvider {
                     stats.put("PAD", 1);
                     stats.put("MAD", 1);
                     improveEquipStats(nEquip, stats); // 默认情况下提高装备属性
+                    nEquip.setExpiration(-1); // 去除有效期
                     // 处理等级
                     nEquip.setLevel((byte) (nEquip.getLevel() + 1)); // 提升装备等级
                 } else {

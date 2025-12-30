@@ -9608,6 +9608,37 @@ public class Character extends AbstractCharacterObject {
     public void gainEquip(int itemId, Short attStr, Short attDex, Short attInt, Short attLuk, Short attHp, Short attMp,
                           Short pAtk, Short mAtk, Short pDef, Short mDef, Short acc, Short avoid, Short hands, Short speed,
                           Short jump, Byte upgradeSlot, Long expireTime) {
+        gainEquip(itemId, attStr, attDex, attInt, attLuk, attHp, attMp,
+                pAtk, mAtk, pDef, mDef, acc, avoid, hands, speed,
+                jump, upgradeSlot, (byte) 0, expireTime);
+    }
+
+        /**
+         * 发装备，除id外都可以传null，传null取装备默认属性
+         *
+         * @param itemId      装备id
+         * @param attStr      力量
+         * @param attDex      敏捷
+         * @param attInt      智力
+         * @param attLuk      运气
+         * @param attHp       血量
+         * @param attMp       蓝量
+         * @param pAtk        物理攻击
+         * @param mAtk        魔法攻击
+         * @param pDef        物理防御
+         * @param mDef        魔法防御
+         * @param acc         命中
+         * @param avoid       回避
+         * @param hands       攻击速度
+         * @param speed       移动速度
+         * @param jump        跳跃
+         * @param upgradeSlot 可升级次数
+         * @param level 已升级次数
+         * @param expireTime  失效时间，-1为不失效 来自 @leevccc 的建议，传值则为分钟
+         */
+    public void gainEquip(int itemId, Short attStr, Short attDex, Short attInt, Short attLuk, Short attHp, Short attMp,
+                          Short pAtk, Short mAtk, Short pDef, Short mDef, Short acc, Short avoid, Short hands, Short speed,
+                          Short jump, Byte upgradeSlot, Byte level, Long expireTime) {
         if (!ItemConstants.getInventoryType(itemId).equals(InventoryType.EQUIP)) {
             message(I18nUtil.getMessage("AbstractPlayerInteraction.gainEquip.message1"));
             return;
@@ -9633,6 +9664,7 @@ public class Character extends AbstractCharacterObject {
         RequireUtil.requireNotEmptyAndThen(baseEquip, speed, Equip::setSpeed);
         RequireUtil.requireNotEmptyAndThen(baseEquip, jump, Equip::setJump);
         RequireUtil.requireNotEmptyAndThen(baseEquip, upgradeSlot, Equip::setUpgradeSlots);
+        RequireUtil.requireNotEmptyAndThen(baseEquip, level, Equip::setLevel);
         RequireUtil.requireNotEmptyAndThen(baseEquip, expireTime, (eq, ep) -> {
             if (ep > 0) {
                 eq.setExpiration(TimeUnit.MINUTES.toMillis(ep) + System.currentTimeMillis());
@@ -9794,6 +9826,79 @@ public class Character extends AbstractCharacterObject {
                         oldEquip.getJump(),
                         (byte) 0,
                         -1L); // 标记装备被添加回库存
+                chr.getMap().broadcastMessage(PacketCreator.getScrollEffect(chr.getId(), scrollSuccess, false, false)); // 广播卷轴效果
+                chr.equipChanged(); // 通知客户端装备发生变化
+                return evolveResult;
+            } finally {
+                client.releaseClient(); // 释放客户端资源
+            }
+        }
+        log.error("scroll ring error, try acquire Client failed.");
+        return false;
+    }
+
+    /**
+     * 转移指定装备栏ID装备的属性到指定装备
+     * @param equipSlot 转出属性的装备格子ID
+     * @param toEquipSlot  继承属性的装备格子ID
+     * @param prop   转移成功率
+     */
+    public final boolean extendAttributeWithEquipSlot(short equipSlot, short toEquipSlot, float prop) {
+        if (client.tryacquireClient()) {
+            try {
+                Character chr = client.getPlayer(); // 获取当前玩家
+                Equip oldEquip = (Equip) chr.getInventory(InventoryType.EQUIP).getItem(equipSlot);
+                Equip newEquip = (Equip) chr.getInventory(InventoryType.EQUIP).getItem(toEquipSlot);
+
+                boolean assertGM = (isGM() && GameConfig.getServerBoolean("use_perfect_gm_scroll"));
+                boolean evolveResult = ItemInformationProvider.rollSuccessChance(assertGM ? 100 : prop); // 获取装备进化结果
+                Equip.ScrollResult scrollSuccess = Equip.ScrollResult.FAIL; // 默认设置为失败
+                if (evolveResult) {
+                    scrollSuccess = Equip.ScrollResult.SUCCESS; // 成功升阶装备
+                }
+
+                InventoryManipulator.removeFromSlot(client, InventoryType.EQUIP, equipSlot, oldEquip.getQuantity(), false);
+                InventoryManipulator.removeFromSlot(client, InventoryType.EQUIP, toEquipSlot, newEquip.getQuantity(), false);
+
+                // 清洗过的旧装备被添加回库存
+                gainEquip(oldEquip.getItemId(),
+                        (short) 0,
+                        (short) 0,
+                        (short) 0,
+                        (short) 0,
+                        (short) 0,
+                        (short) 0,
+                        (short) 0,
+                        (short) 0,
+                        (short) 0,
+                        (short) 0,
+                        (short) 0,
+                        (short) 0,
+                        (short) 0,
+                        (short) 0,
+                        (short) 0,
+                        (byte) 0,
+                        -1L);
+                // 继承旧装备的属性
+                gainEquip(newEquip.getItemId(),
+                        oldEquip.getStr(),
+                        oldEquip.getDex(),
+                        oldEquip.getInt(),
+                        oldEquip.getLuk(),
+                        oldEquip.getHp(),
+                        oldEquip.getMp(),
+                        oldEquip.getWatk(),
+                        oldEquip.getMatk(),
+                        oldEquip.getWdef(),
+                        oldEquip.getMdef(),
+                        oldEquip.getAcc(),
+                        oldEquip.getAvoid(),
+                        oldEquip.getHands(),
+                        oldEquip.getSpeed(),
+                        oldEquip.getJump(),
+                        oldEquip.getUpgradeSlots(),
+                        oldEquip.getLevel(),
+                        -1L);
                 chr.getMap().broadcastMessage(PacketCreator.getScrollEffect(chr.getId(), scrollSuccess, false, false)); // 广播卷轴效果
                 chr.equipChanged(); // 通知客户端装备发生变化
                 return evolveResult;
