@@ -46,7 +46,8 @@ public class ExpeditionBossLog {
         HORNTAIL(2, 1, false),
         PINKBEAN(1, 1, false),
         SCARGA(1, 1, false),
-        PAPULATUS(2, 1, false);
+        PAPULATUS(2, 1, false),
+        BALROG_NORMAL(2, 1, false);
 
         private final int entries;
         private final int timeLength;
