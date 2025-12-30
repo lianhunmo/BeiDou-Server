@@ -89,12 +89,6 @@ function doSelect(selection) {
         case 6:
             openNpc("戒指打造");
             break;
-        case 65:
-            openNpc("一键删除道具");
-            break;
-        case 63:
-            openNpc("Salon");
-            break;
 // GM功能
         case 61:
             openNpc("万能传送");
