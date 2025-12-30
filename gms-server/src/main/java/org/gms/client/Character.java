@@ -3080,6 +3080,20 @@ public class Character extends AbstractCharacterObject {
         }
     }
 
+    public void gainCash(int gain) {
+        int cash = getCashShop().getCash(CashShop.NX_CREDIT);
+        long sum = (long) cash + (long) gain;
+        // 禁止点券小于0导致商城错误
+        if (sum < 0) {
+            gain = -cash;
+        }
+        // 禁止点券大于最大值
+        if (sum > Integer.MAX_VALUE) {
+            gain = Integer.MAX_VALUE - cash;
+        }
+        getCashShop().gainCash(CashShop.NX_CREDIT, gain);
+    }
+
     public void genericGuildMessage(int code) {
         this.sendPacket(GuildPackets.genericGuildMessage((byte) code));
     }
