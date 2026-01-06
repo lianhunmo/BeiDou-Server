@@ -66,7 +66,7 @@ function action(mode, type, selection) {
             if (status == 0) {
                 cm.sendOk("你现在将被传送出去，感谢你的帮助！");
             } else {
-                cm.warp(100000200);
+                cm.warp(910000000);
                 cm.dispose();
 
             }

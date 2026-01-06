@@ -25,8 +25,16 @@
  * @NPC Tory
  */
 
+const RICE_CAKE_ON_HEAD = 1002798;
+const ANDRAS_HAT = 1003031;
+const MARBAS_HAT = 1003032;
+const AMDUSIAS_HAT = 1003034;
+const VALEFOR_HAT = 1003033;
+const CROCELL_HAT = 1003035;
+
 var status = 0;
 var em = null;
+let HAT_CODE = RICE_CAKE_ON_HEAD;
 
 function start() {
     status = -1;
@@ -47,7 +55,7 @@ function action(mode, type, selection) {
             status--;
         }
 
-        if (cm.getMapId() == 100000200) {
+        if (cm.getMapId() == 910000000) {
             if (status == 0) {
                 em = cm.getEventManager("HenesysPQ");
                 if (em == null) {
@@ -59,7 +67,7 @@ function action(mode, type, selection) {
                     return;
                 }
 
-                cm.sendSimple("#e#b<组队任务: 迎月花山丘>\r\n#k#n" + em.getProperty("party") + "\r\n\r\n我是达尔利。这里有一座美丽的山丘，迎月花在那里盛开。山丘上住着一只老虎，名叫兴儿，它似乎在找吃的。你想前往迎月花山丘，与你的队友们联手帮助兴儿吗？#b\r\n#L0#我想参加组队任务。\r\n#L1#我想" + (cm.getPlayer().isRecvPartySearchInviteEnabled() ? "禁用" : "启用") + "队伍搜索。\r\n#L2#我想了解更多详情。\r\n#L3#我想兑换一件年糕的帽子。");
+                cm.sendSimple("#e#b<组队任务: 迎月花山丘>\r\n#k#n" + em.getProperty("party") + "\r\n\r\n我是达尔利。这里有一座美丽的山丘，迎月花在那里盛开。山丘上住着一只老虎，名叫兴儿，它似乎在找吃的。你想前往迎月花山丘，与你的队友们联手帮助兴儿吗？#b\r\n#L0#我想参加组队任务。\r\n#L1#我想" + (cm.getPlayer().isRecvPartySearchInviteEnabled() ? "禁用" : "启用") + "队伍搜索。\r\n#L2#我想了解更多详情。\r\n#L3#我想兑换一件职业帽子。");
             } else if (status == 1) {
                 if (selection == 0) {
                     if (cm.getParty() == null) {
@@ -88,14 +96,34 @@ function action(mode, type, selection) {
                     cm.sendOk("#e#b<组队任务: 迎月花山丘>#k#n\r\n从地图底部的花朵上收集迎月花种子，然后把它们扔到舞台上方的平台旁边。迎月花种子的颜色必须匹配才能让种子生长，所以要不断尝试直到找到正确的组合。当所有种子都种下后，也就是任务的第二阶段开始了，在月妙为饥饿的兴儿准备年糕时进行侦查。一旦兴儿吃饱了，你的任务就完成了。");
                     cm.dispose();
                 } else {
-                    cm.sendYesNo("所以你想用 #b20 个 #b#t4001101##k 兑换这件专属设计的帽子吗？");
+                    let job = Math.floor(cm.getJob().getId() / 100)
+                    if (job === 1) {
+                        HAT_CODE = ANDRAS_HAT;
+                        cm.sendYesNo("所以你想用 #b20 个 #b#t4001101##k \r\n兑换1件#b#t" + ANDRAS_HAT + "##k #i" + ANDRAS_HAT + "#吗？");
+                    } else if (job === 2) {
+                        HAT_CODE = MARBAS_HAT;
+                        cm.sendYesNo("所以你想用 #b20 个 #b#t4001101##k \r\n兑换1件#b#t" + MARBAS_HAT + "##k #i" + MARBAS_HAT + "#吗？");
+                    } else if (job === 3) {
+                        HAT_CODE = AMDUSIAS_HAT;
+                        cm.sendYesNo("所以你想用 #b20 个 #b#t4001101##k \r\n兑换1件#b#t" + AMDUSIAS_HAT + "##k #i" + AMDUSIAS_HAT + "#吗？");
+                    } else if (job === 4) {
+                        HAT_CODE = VALEFOR_HAT;
+                        cm.sendYesNo("所以你想用 #b20 个 #b#t4001101##k \r\n兑换1件#b#t" + VALEFOR_HAT + "##k #i" + VALEFOR_HAT + "#吗？");
+                    } else if (job === 5) {
+                        HAT_CODE = CROCELL_HAT;
+                        cm.sendYesNo("所以你想用 #b20 个 #b#t4001101##k \r\n兑换1件#b#t" + CROCELL_HAT + "##k #i" + CROCELL_HAT + "#吗？");
+                    } else {
+                        cm.sendYesNo("所以你想用 #b20 个 #b#t4001101##k \r\n兑换1件#b#t" + RICE_CAKE_ON_HEAD + "##k #i" + RICE_CAKE_ON_HEAD + "#吗？");
+                    }
                 }
             } else {
                 if (cm.hasItem(4001101, 20)) {
-                    if (cm.canHold(1002798)) {
+                    if ((cm.getItemQuantity(HAT_CODE) < 1 || HAT_CODE === RICE_CAKE_ON_HEAD) && cm.canHold(HAT_CODE, 1)) {
                         cm.gainItem(4001101, -20);
-                        cm.gainItem(1002798, 1);
+                        cm.gainItem(HAT_CODE, 1);
                         cm.sendNext("给你。尽情享用！");
+                    } else {
+                        cm.sendNext("你已领取过该帽子或者背包空间不足！");
                     }
                 } else {
                     cm.sendNext("你还没有足够的 #t4001101# 来兑换它！");
@@ -108,7 +136,7 @@ function action(mode, type, selection) {
                 cm.sendYesNo("感谢你帮助喂养兴儿。事实上，你们团队已经因走到这一步而获得了奖励。这个问题现在已经解决了，但现在又出现了另一个问题，如果你感兴趣，可以找那边的 #b达尔米#k 了解信息。那么，你现在要直接返回射手村吗？");
             } else if (status == 1) {
                 if (cm.getEventInstance().giveEventReward(cm.getPlayer())) {
-                    cm.warp(100000200);
+                    cm.warp(910000000);
                 } else {
                     cm.sendOk("看起来你的某个背包空间不足。请先检查一下，以便正确获得奖励。");
                 }
@@ -119,9 +147,9 @@ function action(mode, type, selection) {
                 cm.sendYesNo("那么，你现在要返回射手村吗？");
             } else if (status == 1) {
                 if (cm.getEventInstance() == null) {
-                    cm.warp(100000200);
+                    cm.warp(910000000);
                 } else if (cm.getEventInstance().giveEventReward(cm.getPlayer())) {
-                    cm.warp(100000200);
+                    cm.warp(910000000);
                 } else {
                     cm.sendOk("看起来你的某个背包空间不足。请先检查一下，以便正确获得奖励。");
                 }
