@@ -638,11 +638,15 @@ public class Client extends ChannelInboundHandlerAdapter {
             return true;
         }
 
+        return checkPicStrict(other);
+    }
+
+    public boolean checkPicStrict(String other) {
         picattempt++;
         if (picattempt > 5) {
             SessionCoordinator.getInstance().closeSession(this, false);
         }
-        if (pic.equals(other)) {    // thanks ryantpayton (HeavenClient) for noticing null pics being checked here
+        if (pic != null && pic.equals(other)) {    // thanks ryantpayton (HeavenClient) for noticing null pics being checked here
             picattempt = 0;
             LoginBypassCoordinator.getInstance().registerLoginBypassEntry(hwid, accId, true);
             return true;
