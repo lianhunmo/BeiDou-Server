@@ -56,7 +56,8 @@ function action(mode, type, selection) {
                 cm.sendNext("谢谢你不仅修复了雕像，还救出了我，米涅瓦，脱离困境。愿女神的祝福与你同在，直到最后……作为感激之情，请接受这份纪念品，以表彰你的勇敢。");
             } else if (status == 1) {
                 if (cm.getEventInstance().giveEventReward(cm.getPlayer())) {
-                    cm.warp(200080101, 0);
+                    cm.gainExp(760000);
+                    cm.warp(910000000, 0);
                     cm.dispose();
                 } else {
                     cm.sendOk("请先在您的背包中腾出空间。");
