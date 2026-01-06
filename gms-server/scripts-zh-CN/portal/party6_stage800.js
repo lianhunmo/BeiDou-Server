@@ -10,11 +10,11 @@ function enter(pi) {
         let api = pi.getPlayer().getAbstractPlayerInteraction();
         let count = api.getCharacterExtendValue("邮票获取次数" + 4001198, false)
         if (count >= 3) {
-            if (!pi.canHold(2000005, 50)) {
+            if (!pi.canHold(2000005, 20)) {
                 pi.playerMessage(5, "进入传送门前请给背包的 消耗栏 空出至少1个空格子。");
                 return false;
             }
-            pi.gainItem(2000005, 50);
+            pi.gainItem(2000005, 20);
         } else {
             if (!pi.canHold(4001198, 10)) {
                 pi.playerMessage(5, "进入传送门前请给背包的 其他栏 空出至少1个空格子。");
