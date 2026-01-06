@@ -61,12 +61,12 @@ function action(mode, type, selection) {
                 if (selection == 0) {
                     let count = cm.getCharacterExtendValue("邮票获取次数" + 4031435, false)
                     if (count >= 3) {
-                        if (!cm.canHold(2000005, 50)) {
+                        if (!cm.canHold(2000005, 10)) {
                             cm.sendOk("请在消耗栏中腾出空间。");
                             cm.dispose();
                             return;
                         }
-                        cm.gainItem(2000005, 50);
+                        cm.gainItem(2000005, 10);
                     } else {
                         if (!cm.canHold(4031435, 10)) {
                             cm.sendOk("请在杂项栏中腾出空间。");
