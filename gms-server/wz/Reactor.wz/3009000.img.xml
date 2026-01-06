@@ -11,7 +11,7 @@
     <imgdir name="event">
       <imgdir name="0">
         <int name="type" value="100"/>
-        <int name="state" value="1"/>
+        <int name="state" value="4"/>
         <string name="0" value="4001162"/>
         <int name="1" value="1"/>
         <int name="2" value="1"/>
@@ -39,7 +39,7 @@
     <imgdir name="event">
       <imgdir name="0">
         <int name="type" value="100"/>
-        <int name="state" value="2"/>
+        <int name="state" value="4"/>
         <string name="0" value="4001162"/>
         <int name="1" value="1"/>
         <int name="2" value="1"/>
@@ -67,7 +67,7 @@
     <imgdir name="event">
       <imgdir name="0">
         <int name="type" value="100"/>
-        <int name="state" value="3"/>
+        <int name="state" value="4"/>
         <string name="0" value="4001162"/>
         <int name="1" value="1"/>
         <int name="2" value="1"/>
