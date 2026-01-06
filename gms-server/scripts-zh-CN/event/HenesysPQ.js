@@ -28,7 +28,7 @@ var minPlayers = 3, maxPlayers = 6;
 var minLevel = 10, maxLevel = 255;
 var entryMap = 910010000;
 var exitMap = 910010300;
-var recruitMap = 100000200;
+var recruitMap = [100000200, 910000000];
 var clearMap = 910010100;
 
 var minMapId = 910010000;
@@ -41,7 +41,7 @@ const maxLobbies = 1;
 const GameConfig = Java.type('org.gms.config.GameConfig');
 minPlayers = GameConfig.getServerBoolean("use_enable_solo_expeditions") ? 1 : minPlayers;  //如果解除远征队人数限制，则最低人数改为1人
 if(GameConfig.getServerBoolean("use_enable_party_level_limit_lift")) {  //如果解除远征队等级限制，则最低1级，最高999级。
-    minLevel = 1 , maxLevel = 999;
+    minLevel = 10 , maxLevel = 999;
 }
 
 const PacketCreator = Java.type('org.gms.util.PacketCreator');
@@ -90,7 +90,7 @@ function setEventRewards(eim) {
     // itemQty = [1];
     // eim.setEventRewards(evLevel, itemSet, itemQty);
 
-    expStages = [1600];    //bonus exp given on CLEAR stage signal
+    expStages = [10000];    //bonus exp given on CLEAR stage signal
     eim.setEventClearStageExp(expStages);
 }
 
@@ -104,7 +104,7 @@ function getEligibleParty(party) {      //selects, from the given party, the tea
         for (var i = 0; i < party.size(); i++) {
             var ch = partyList[i];
 
-            if (ch.getMapId() == recruitMap && ch.getLevel() >= minLevel && ch.getLevel() <= maxLevel) {
+            if (recruitMap.includes(ch.getMapId()) && ch.getLevel() >= minLevel && ch.getLevel() <= maxLevel) {
                 if (ch.isLeader()) {
                     hasLeader = true;
                 }
