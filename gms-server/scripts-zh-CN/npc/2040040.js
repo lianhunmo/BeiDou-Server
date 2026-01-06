@@ -69,17 +69,17 @@ function action(mode, type, selection) {
                 var state = eim.getIntProperty("statusStg" + stage);
 
                 if (state == -1) {           // preamble
-                    cm.sendOk("嗨。欢迎来到#bstage#k。这是第二阶段，但每个人都必须合作。这里有6个传送门。一个被无法战胜的怪物守卫着，一个非常高。我希望你和你的队伍分别进入每一个，并打破里面的箱子。带回掉落物品——应该有24个。");
+                    cm.sendOk("嗨。欢迎来到#b关卡" + stage + "#k。这是第二阶段，但每个人都必须合作。这里有6个传送门。一个被无法战胜的怪物守卫着，一个非常高。我希望你和你的队伍分别进入每一个，并打破里面的箱子。带回掉落物品——应该有4个。");
                     eim.setProperty("statusStg" + stage, 0);
                 } else {       // check stage completion
-                    if (cm.haveItem(4001022, 24)) {
-                        cm.sendOk("干得好！你已经收集了所有24个#b#t4001022#。#k");
-                        cm.gainItem(4001022, -24);
+                    if (cm.haveItem(4001022, 4)) {
+                        cm.sendOk("干得好！你已经收集了所有4个#b#t4001022#。#k");
+                        cm.gainItem(4001022, -4);
 
                         eim.setProperty("statusStg" + stage, 1);
                         clearStage(stage, eim, curMap);
                     } else {
-                        cm.sendNext("抱歉，你没有24个#b#t4001022#。#k");
+                        cm.sendNext("抱歉，你没有4个#b#t4001022#。#k");
                     }
                 }
             } else {
