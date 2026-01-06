@@ -66,7 +66,7 @@ function action(mode, type, selection) {
             }
         } else if (status == 1) {
             if (state == 1) {
-                cm.warp(103000000);
+                cm.warp(910000000);
                 cm.dispose();
             } else {
                 if (selection == 0) {

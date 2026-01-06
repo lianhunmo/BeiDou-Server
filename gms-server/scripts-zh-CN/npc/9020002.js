@@ -48,18 +48,18 @@ function action(mode, type, selection) {
         if (status == 0) {
             cm.sendNext("返回城市的路上，请沿着这条路走。");
         } else {
-            cm.warp(103000000);
+            cm.warp(910000000);
             cm.dispose();
         }
     } else {
         if (status == 0) {
-            var outText = "Once you leave the map, you'll have to restart the whole quest if you want to try it again.  Do you still want to leave this map?";
+            var outText = "一旦离开当前地图，若想再次尝试则需重新开始整条任务线。是否确认离开？";
             if (mapId == 103000805) {
-                outText = "Are you ready to leave this map?";
+                outText = "是否准备离开当前地图？";
             }
             cm.sendYesNo(outText);
         } else if (mode == 1) {
-            cm.warp(103000890, "st00"); // Warp player
+            cm.warp(910000000, "st00"); // Warp player
             cm.dispose();
         }
     }

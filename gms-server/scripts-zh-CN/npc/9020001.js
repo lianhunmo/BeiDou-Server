@@ -132,7 +132,7 @@ function action(mode, type, selection) {
                     cm.sendNext("请赶紧前往下一个阶段，传送门已经打开了！");
                     cm.dispose();
                 } else {
-                    cm.sendNext("太棒了！你通过了所有的关卡来到了这一点。这是为了你出色的表现而给予的小奖品。在接受之前，请确保你的使用和其他物品栏有空位可用。");
+                    cm.sendNext("太棒了！你通过了所有的关卡来到了这里。这是为了你出色的表现而给予的小奖品。在接受之前，请确保你的使用和其他物品栏有空位可用。");
                 }
             } else if (curMap == 103000800) {   // stage 1
                 if (cm.isEventLeader()) {
@@ -150,7 +150,7 @@ function action(mode, type, selection) {
                     var data = eim.gridCheck(cm.getPlayer());
 
                     if (data == 0) {
-                        cm.sendNext("谢谢你带来了优惠券。请把通行证交给你的队伍队长继续。");
+                        cm.sendNext("谢谢你带来了通行证。请把通行证交给你的队伍队长继续。");
                     } else if (data == -1) {
                         data = Math.floor(Math.random() * stage1Questions.length) + 1;   //data will be counted from 1
                         eim.gridInsert(cm.getPlayer(), data);
