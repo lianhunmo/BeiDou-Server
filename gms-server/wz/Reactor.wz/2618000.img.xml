@@ -11,7 +11,7 @@
     <imgdir name="event">
       <imgdir name="0">
         <int name="type" value="100"/>
-        <int name="state" value="1"/>
+        <int name="state" value="6"/>
         <int name="0" value="4001132"/>
         <int name="1" value="1"/>
         <vector name="lt" x="-26" y="-24"/>

@@ -29,7 +29,7 @@ function enter(pi) {
         var comb = "";
 
         for (var i = 0; i < 10; i++) {
-            var r = Math.floor((Math.random() * 4));
+            var r = 4;
             comb += r.toString();
         }
 
@@ -46,18 +46,14 @@ function enter(pi) {
     var pCol = (portalId % 10);
 
     if (pCol == parseInt(comb.substring(pRow, pRow + 1), 10)) {    //climb
-        if (pRow < 9) {
-            pi.playPortalSound();
-            pi.warp(pi.getMapId(), pi.getPortal().getId() + 4);
-        } else {
-            if (eim.getIntProperty("statusStg6") == 0) {
-                eim.setIntProperty("statusStg6", 1);
-                eim.giveEventPlayersStageReward(6);
-            }
 
-            pi.playPortalSound();
-            pi.warp(pi.getMapId(), 1);
+        if (eim.getIntProperty("statusStg6") == 0) {
+            eim.setIntProperty("statusStg6", 1);
+            eim.giveEventPlayersStageReward(6);
         }
+
+        pi.playPortalSound();
+        pi.warp(pi.getMapId(), 1);
 
     } else {    //fail
         pi.playPortalSound();

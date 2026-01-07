@@ -35,10 +35,6 @@ function enter(pi) {
     var pCol = (portalId % 10);
 
     if (pCol == parseInt(comb.substring(pRow, pRow + 1), 10)) {    //climb
-        if (pRow < 9) {
-            pi.playPortalSound();
-            pi.warp(pi.getMapId(), pi.getPortal().getId() + 4);
-        } else {
             if (eim.getIntProperty("statusStg6") == 0) {
                 eim.setIntProperty("statusStg6", 1);
                 eim.giveEventPlayersStageReward(6);
@@ -46,7 +42,6 @@ function enter(pi) {
 
             pi.playPortalSound();
             pi.warp(pi.getMapId(), 1);
-        }
 
     } else {    //fail
         pi.playPortalSound();

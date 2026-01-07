@@ -55,8 +55,8 @@ function action(mode, type, selection) {
                     cm.gainItem(4001130, -1);
                     eim.setIntProperty("npcShocked", 1);
 
-                    cm.sendNext("哦？你给我信？像这样的时候，应该是什么…… 哇！伙计们，有大事发生了。集合起来，从现在开始，事情会比以往更加艰难！");
-                    eim.dropMessage(6, "Juliet seemed very much in shock after reading Romeo's Letter.");
+                    cm.sendNext("哦？你收到给我的信？这种时候……会是谁呢……天呐！伙计们，有大事要发生了。全体集合——从现在起，我们要面对前所未有的困难了！");
+                    eim.dropMessage(6, "朱丽叶读完罗密欧的信后，似乎十分震惊。");
 
                     cm.dispose();
 
@@ -85,13 +85,13 @@ function action(mode, type, selection) {
                         cm.getMap().killAllMonsters();
                         cm.getMap().getReactorByName("jnr3_out3").hitReactor(cm.getClient());
                     } else {
-                        cm.sendOk("请让你们的领导把文件传给我。");
+                        cm.sendOk("请让你们的队长把文件给我。");
                     }
 
                     cm.dispose();
 
                 } else {
-                    cm.sendYesNo("我们必须继续战斗，拯救罗密欧，请保持你的速度。如果你感觉不太好，无法继续，你的同伴和我都会理解……那么，你打算撤退吗？");
+                    cm.sendYesNo("我们必须坚持战斗去拯救罗密欧，也请你调整好步伐。若你感到不适难以继续……你的同伴与我都能理解。那么，你准备选择退出吗？");
                 }
             } else {
                 cm.warp(926110700, 0);
@@ -100,26 +100,38 @@ function action(mode, type, selection) {
         } else {
             if (status == 0) {
                 if (eim.getIntProperty("escortFail") == 0) {
-                    cm.sendNext("最终，罗密欧安全了！多亏了你的努力，我们才能将他从尤莱特的魔爪中解救出来，尤莱特现在将因为反抗马加提亚而受到审判。从现在开始，他将开始接受康复治疗，我们将密切关注他的努力，确保他将不再在未来制造麻烦。");
+                    cm.sendNext("终于，罗密欧安全了！多亏各位的努力，我们成功将他从犹太的魔掌中解救出来。犹太因背叛玛伽提亚的行径即将接受审判。从今往后，他将踏上回归正途的历程，我们会持续关注他的转变，确保他未来不再制造任何麻烦。");
                 } else {
-                    cm.sendNext("罗密欧现在安全了，尽管战斗对他造成了一定的伤害...多亏了你们的努力，我们才能将他从尤利特的魔爪中解救出来，尤利特现在将因其反抗马加提亚而受到审判。谢谢你们。");
+                    cm.sendNext("罗密欧现已平安，尽管战斗对他造成了一些伤害……多亏各位倾力相助，我们才得以将他从犹太的魔掌中解救出来。犹太即将因其背叛玛伽提亚的行径接受审判。感激不尽。");
                     status = 2;
                 }
             } else if (status == 1) {
-                cm.sendNext("现在，请将这份礼物视为我们对你的感激之情的接受表示。");
+                cm.sendNext("请收下这份奖品作为我们的谢礼。");
             } else if (status == 2) {
-                if (cm.canHold(4001160)) {
-                    cm.gainItem(4001160, 1);
-
-                    if (eim.getIntProperty("normalClear") == 1) {
-                        cm.warp(926110600, 0);
-                    } else {
-                        cm.warp(926110500, 0);
+                let count = cm.getCharacterExtendValue("邮票获取次数" + 4001160, false)
+                if (count >= 3) {
+                    if (!cm.canHold(2000005, 30)) {
+                        cm.sendOk("请在消耗栏中腾出空间。");
+                        cm.dispose();
+                        return;
                     }
+                    cm.gainItem(2000005, 30);
                 } else {
-                    cm.sendOk("确保你的杂项物品栏有空间。");
+                    if (!cm.canHold(4001160, 10)) {
+                        cm.sendOk("请在其他栏中腾出空间。");
+                        cm.dispose();
+                        return;
+                    }
+                    cm.gainItem(4001160, 10);
+                    count++;
+                    cm.saveOrUpdateCharacterExtendValue("邮票获取次数" + 4001160, count.toString(), false);
                 }
-
+                cm.gainExp(25500000);
+                if (eim.getIntProperty("normalClear") == 1) {
+                    cm.warp(926110600, 0);
+                } else {
+                    cm.warp(926110500, 0);
+                }
                 cm.dispose();
             } else {
                 cm.warp(926110600, 0);

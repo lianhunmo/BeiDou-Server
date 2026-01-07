@@ -24,11 +24,11 @@
  */
 
 var isPq = true;
-var minPlayers = 4, maxPlayers = 4;
+var minPlayers = 4, maxPlayers = 6;
 var minLevel = 71, maxLevel = 85;
 var entryMap = 926110000;
 var exitMap = 926110700;
-var recruitMap = 261000021;
+var recruitMap = [261000021, 910000000];
 var clearMap = 926110700;
 
 var minMapId = 926110000;
@@ -41,7 +41,7 @@ const maxLobbies = 1;
 const GameConfig = Java.type('org.gms.config.GameConfig');
 minPlayers = GameConfig.getServerBoolean("use_enable_solo_expeditions") ? 1 : minPlayers;  //如果解除远征队人数限制，则最低人数改为1人
 if(GameConfig.getServerBoolean("use_enable_party_level_limit_lift")) {  //如果解除远征队等级限制，则最低1级，最高999级。
-    minLevel = 1 , maxLevel = 999;
+    minLevel = 120 , maxLevel = 999;
 }
 
 function init() {
@@ -102,7 +102,7 @@ function getEligibleParty(party) {      //selects, from the given party, the tea
         for (var i = 0; i < party.size(); i++) {
             var ch = partyList[i];
 
-            if (ch.getMapId() == recruitMap && ch.getLevel() >= minLevel && ch.getLevel() <= maxLevel) {
+            if (recruitMap.includes(ch.getMapId()) && ch.getLevel() >= minLevel && ch.getLevel() <= maxLevel) {
                 if (ch.isLeader()) {
                     hasLeader = true;
                 }
@@ -156,8 +156,6 @@ function setup(level, lobbyid) {
     eim.getInstanceMap(926110600).resetPQ(level);
     eim.getInstanceMap(926110700).resetPQ(level);
 
-    eim.getInstanceMap(926110201).shuffleReactors(2518000, 2612004);
-    eim.getInstanceMap(926110202).shuffleReactors(2518000, 2612004);
 
     const Point = Java.type('java.awt.Point');
     eim.spawnNpc(2112010, new Point(252, 243), eim.getInstanceMap(926110203));
@@ -221,7 +219,7 @@ function generateStg6Combo(eim) {  // thanks Chloek3, seth1 for stating generate
 function afterSetup(eim) {
     eim.setIntProperty("escortFail", 0);    // refresh friendly status
 
-    var books = [-1, -1, -1, -1, -1, 0, 0, 0, 0, 0, 0, 0, -1, -1, -1, -1, -1, 1, 1, 1, 1, 1, 1, 1, 2, 3];
+    var books = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2];
     shuffle(books);
 
     eim.setIntProperty("stg1_b0", books[0]);
