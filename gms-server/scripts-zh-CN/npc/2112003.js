@@ -66,7 +66,7 @@ function action(mode, type, selection) {
                     return;
                 }
 
-                cm.sendSimple("#e#b<组队任务：罗密欧与朱丽叶>\r\n#k#n" + em.getProperty("party") + "\r\n\r\n我的心爱的罗密欧被绑架了！虽然他是泽尼玛斯的人，但我不能坐视不理，看着他因为这场愚蠢的冲突而受苦。我需要你和你的同事们帮助我救他！拜托，帮帮我们！！请让你的#b队伍领袖#k和我交谈。#b\r\n#L0#我想参加这个组队任务。\r\n#L1#我想" + (cm.getPlayer().isRecvPartySearchInviteEnabled() ? "关闭" : "开启") + "组队搜索。\r\n#L2#我想了解更多细节。");
+                cm.sendSimple("#e#b<组队任务：罗密欧与朱丽叶>\r\n#k#n" + em.getProperty("party") + "\r\n\r\n我的心爱的罗密欧被绑架了！虽然他是泽尼玛斯的人，但我不能坐视不理，看着他因为这场愚蠢的冲突而受苦。我需要你和你的同事们帮助我救他！拜托，帮帮我们！！请让你的#b队伍领袖#k和我交谈。#b\r\n#L0#我想参加这个组队任务。\r\n#L1#我想" + (cm.getPlayer().isRecvPartySearchInviteEnabled() ? "关闭" : "开启") + "组队搜索。\r\n#L2#我想兑换物品。\r\n#L3#我想了解更多细节。");
             } else if (status == 1) {
                 if (selection == 0) {
                     if (cm.getParty() == null) {
@@ -91,6 +91,41 @@ function action(mode, type, selection) {
                     var psState = cm.getPlayer().toggleRecvPartySearchInvite();
                     cm.sendOk("你的组队搜索状态现在是：#b" + (psState ? "enabled" : "disabled") + "#k。想要改变状态时随时找我。");
                     cm.dispose();
+                } else if (selection == 2) {
+                    if (cm.haveItem(4001159, 25) && cm.haveItem(4001160, 25) && !cm.haveItemWithId(1122010, true)) {
+                        if (cm.canHold(1122010)) {
+                            cm.gainItem(4001159, -25);
+                            cm.gainItem(4001160, -25);
+                            cm.gainItem(1122010, 1);
+
+                            cm.sendOk("感谢你找回了这些弹珠。接受这个吊坠作为我的感激之情。");
+                            cm.dispose();
+                        } else {
+                            cm.sendNext("在领取奖励之前，请在你的装备栏中腾出一个空位。");
+                            cm.dispose();
+                        }
+                    } else if (cm.haveItem(4001159, 10) && cm.haveItem(4001160, 10)) {
+                        if (cm.canHold(2041212)) {
+                            cm.gainItem(4001159, -10);
+                            cm.gainItem(4001160, -10);
+                            cm.gainItem(2041212, 1);
+
+                            cm.sendOk("感谢你找回了这些弹珠。这块石头，我给你的，可以用来提升 #b#t1122010##k 的属性。拿着它作为我的感激之情，并明智地使用它。");
+                            cm.dispose();
+                        } else {
+                            cm.sendNext("在领取奖励之前，请在你的消耗栏中腾出一个空位。");
+                            cm.dispose();
+                        }
+                    } else {
+                        let text = "";
+                        if (!cm.haveItemWithId(1122010, true)) {
+                            text += "至少需要 #b25个#t4001159##i4001159##k 和 #b#t4001160##i4001160##k 才能帮你兑换#b#t1122010##i1122010##k。\r\n祝你一路顺风。";
+                        } else {
+                            text += "至少需要 #b10个#t4001159##i4001159##k 和 #b#t4001160##i4001160##k 才能帮你兑换#b#t2041212##i2041212##k。\r\n祝你一路顺风。"
+                        }
+                        cm.sendNext(text);
+                        cm.dispose();
+                    }
                 } else {
                     cm.sendOk("不久前，一位名叫犹太的科学家因为他对阿尔卡德诺和泽诺米斯的合成炼金术的研究而被这个城镇放逐。由于这种组合所带来的巨大力量，根据法律是禁止研究的。然而，他无视了这项法律，同时进行了这两项研究。结果，他被流放了。\r\n他现在在报复，已经带走了我心爱的人，下一个目标是我，因为我们是玛加提亚的重要人物，是这两个社会的继承者。但我不害怕。我们必须不惜一切代价把他救回来！");
                     cm.dispose();
