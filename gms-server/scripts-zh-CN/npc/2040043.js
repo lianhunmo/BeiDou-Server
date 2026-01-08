@@ -94,62 +94,9 @@ function action(mode, type, selection) {
         if (eim.getProperty(stage.toString() + "stageclear") != null) {
             cm.sendNext("快点，去下一个阶段，传送门已经打开了！");
         } else {
-            if (eim.isEventLeader(cm.getPlayer())) {
-                var state = eim.getIntProperty("statusStg" + stage);
-
-                if (state == -1) {           // preamble
-                    cm.sendOk("嗨。欢迎来到 #b关卡 " + stage + "#k。在这个阶段，让你的队伍中的5名成员站在那些箱子上，以形成正确的组合来解锁下一个阶段。只有一个玩家应该留在所需的箱子上以确定组合。");
-
-                    var st = (debug) ? 2 : 0;
-                    eim.setProperty("statusStg" + stage, st);
-                } else {       // check stage completion
-                    if (state == 2) {
-                        eim.setProperty("statusStg" + stage, 1);
-                        clearStage(stage, eim, curMap);
-                        cm.dispose();
-                        return;
-                    }
-
-                    objset = [0, 0, 0, 0, 0, 0, 0, 0, 0];
-                    var playersOnCombo = 0;
-                    var map = cm.getPlayer().getMap();
-                    var party = cm.getEventInstance().getPlayers();
-                    for (var i = 0; i < party.size(); i++) {
-                        for (var y = 0; y < map.getAreas().size(); y++) {
-                            if (map.getArea(y).contains(party.get(i).getPosition())) {
-                                playersOnCombo++;
-                                objset[y] = 1;
-                                //cm.mapMessage(5, "Player found on " + (y + 1));
-                                break;
-                            }
-                        }
-                    }
-
-                    if (playersOnCombo == 5 || cm.getPlayer().gmLevel() > 1) {
-                        var comboStr = eim.getProperty("stage" + stage + "combo");
-                        if (comboStr == null) {
-                            comboStr = generateCombo();
-                            eim.setProperty("stage" + stage + "combo", comboStr);
-                        }
-
-                        var combo = comboStr.split(',');
-                        var correctCombo = true;
-                        if (correctCombo || cm.getPlayer().gmLevel() > 1) {
-                            eim.setProperty("statusStg" + stage, 1);
-                            clearStage(stage, eim, curMap);
-                            cm.dispose();
-                        } else {
-                            eim.showWrongEffect();
-                            cm.dispose();
-                        }
-                    } else {
-                        cm.sendNext("看起来你还没有找到5个箱子。请考虑不同的箱子组合。只允许站在箱子上的数量为5个，如果你移动箱子可能不算作答案，请记住这一点。继续加油！");
-                        cm.dispose();
-                    }
-                }
-            } else {
-                cm.sendNext("请让你的#b队长#k来跟我对话。");
-            }
+            eim.setProperty("statusStg" + stage, 1);
+            clearStage(stage, eim, curMap);
+            cm.dispose();
         }
 
         cm.dispose();
