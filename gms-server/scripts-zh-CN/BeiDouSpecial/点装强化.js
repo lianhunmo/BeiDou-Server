@@ -3,7 +3,7 @@
  * @author Geoffrey
  */
 
-const MAPLE_LEAF = 4001126;
+const GOLD_MAPLE_LEAF = 4000313;
 const INVENTORY_TYPE_EQUIP = 1;
 const EQUIP_SLOT_1 = 1;
 const EQUIP_SLOT_2 = 2;
@@ -37,102 +37,102 @@ function levelCashEquipOption0() {
         let equipCurrentLevel = equip.getLevel();
         switch(equipCurrentLevel) {
             case 0:
-                costMaple = 1000;
+                costMaple = 10;
                 costMeso = 1000000;
                 upgradeProb = 100;
                 text += "点装当前等级为#b" + equipCurrentLevel + "#k级。\r\n";
-                text += "强化需要#r" + costMaple + "#k个枫叶和#r" + costMeso + "#k金币。\r\n";
-                text += "你当前拥有#b" + cm.getItemQuantity(MAPLE_LEAF) + "#k个枫叶和#b" + cm.getMeso() + "#k金币。\r\n";
+                text += "强化需要#r" + costMaple + "#k个#r#t" + GOLD_MAPLE_LEAF + "##k#r#i" + GOLD_MAPLE_LEAF + "##k和#r" + costMeso + "#k金币。\r\n";
+                text += "你当前拥有#b" + cm.getItemQuantity(GOLD_MAPLE_LEAF) + "#k个#r#t" + GOLD_MAPLE_LEAF + "##k#r#i" + GOLD_MAPLE_LEAF + "##k和#b" + cm.getMeso() + "#k金币。\r\n";
                 text += "强化成功率为#r" + upgradeProb + "%#k，失败将#r退回一级#k，确认要强化吗？";
                 cm.sendYesNoLevel("Dispose", "CashEquipUpgrade", text);
                 break;
             case 1:
-                costMaple = 1500;
+                costMaple = 15;
                 costMeso = 2000000;
                 upgradeProb = 90;
                 text += "点装当前等级为#b" + equipCurrentLevel + "#k级。\r\n";
-                text += "强化需要#r" + costMaple + "#k个枫叶和#r" + costMeso + "#k金币。\r\n";
-                text += "你当前拥有#b" + cm.getItemQuantity(MAPLE_LEAF) + "#k个枫叶和#b" + cm.getMeso() + "#k金币。\r\n";
+                text += "强化需要#r" + costMaple + "#k个#r#t" + GOLD_MAPLE_LEAF + "##k#r#i" + GOLD_MAPLE_LEAF + "##k和#r" + costMeso + "#k金币。\r\n";
+                text += "你当前拥有#b" + cm.getItemQuantity(GOLD_MAPLE_LEAF) + "#k个#r#t" + GOLD_MAPLE_LEAF + "##k#r#i" + GOLD_MAPLE_LEAF + "##k和#b" + cm.getMeso() + "#k金币。\r\n";
                 text += "强化成功率为#r" + upgradeProb + "%#k，失败将#r退回一级#k，确认要强化吗？";
                 cm.sendYesNoLevel("Dispose", "CashEquipUpgrade", text);
                 break;
             case 2:
-                costMaple = 2000;
+                costMaple = 20;
                 costMeso = 3000000;
                 upgradeProb = 80;
                 text += "点装当前等级为#b" + equipCurrentLevel + "#k级。\r\n";
-                text += "强化需要#r" + costMaple + "#k个枫叶和#r" + costMeso + "#k金币。\r\n";
-                text += "你当前拥有#b" + cm.getItemQuantity(MAPLE_LEAF) + "#k个枫叶和#b" + cm.getMeso() + "#k金币。\r\n";
+                text += "强化需要#r" + costMaple + "#k个#r#t" + GOLD_MAPLE_LEAF + "##k#r#i" + GOLD_MAPLE_LEAF + "##k和#r" + costMeso + "#k金币。\r\n";
+                text += "你当前拥有#b" + cm.getItemQuantity(GOLD_MAPLE_LEAF) + "#k个#r#t" + GOLD_MAPLE_LEAF + "##k#r#i" + GOLD_MAPLE_LEAF + "##k和#b" + cm.getMeso() + "#k金币。\r\n";
                 text += "强化成功率为#r" + upgradeProb + "%#k，失败将#r退回一级#k，确认要强化吗？";
                 cm.sendYesNoLevel("Dispose", "CashEquipUpgrade", text);
                 break;
             case 3:
-                costMaple = 2500;
+                costMaple = 25;
                 costMeso = 4000000;
                 upgradeProb = 70;
                 text += "点装当前等级为#b" + equipCurrentLevel + "#k级。\r\n";
-                text += "强化需要#r" + costMaple + "#k个枫叶和#r" + costMeso + "#k金币。\r\n";
-                text += "你当前拥有#b" + cm.getItemQuantity(MAPLE_LEAF) + "#k个枫叶和#b" + cm.getMeso() + "#k金币。\r\n";
+                text += "强化需要#r" + costMaple + "#k个#r#t" + GOLD_MAPLE_LEAF + "##k#r#i" + GOLD_MAPLE_LEAF + "##k和#r" + costMeso + "#k金币。\r\n";
+                text += "你当前拥有#b" + cm.getItemQuantity(GOLD_MAPLE_LEAF) + "#k个#r#t" + GOLD_MAPLE_LEAF + "##k#r#i" + GOLD_MAPLE_LEAF + "##k和#b" + cm.getMeso() + "#k金币。\r\n";
                 text += "强化成功率为#r" + upgradeProb + "%#k，失败将#r退回一级#k，确认要强化吗？";
                 cm.sendYesNoLevel("Dispose", "CashEquipUpgrade", text);
                 break;
             case 4:
-                costMaple = 3000;
+                costMaple = 30;
                 costMeso = 5000000;
                 upgradeProb = 60;
                 text += "点装当前等级为#b" + equipCurrentLevel + "#k级。\r\n";
-                text += "强化需要#r" + costMaple + "#k个枫叶和#r" + costMeso + "#k金币。\r\n";
-                text += "你当前拥有#b" + cm.getItemQuantity(MAPLE_LEAF) + "#k个枫叶和#b" + cm.getMeso() + "#k金币。\r\n";
+                text += "强化需要#r" + costMaple + "#k个#r#t" + GOLD_MAPLE_LEAF + "##k#r#i" + GOLD_MAPLE_LEAF + "##k和#r" + costMeso + "#k金币。\r\n";
+                text += "你当前拥有#b" + cm.getItemQuantity(GOLD_MAPLE_LEAF) + "#k个#r#t" + GOLD_MAPLE_LEAF + "##k#r#i" + GOLD_MAPLE_LEAF + "##k和#b" + cm.getMeso() + "#k金币。\r\n";
                 text += "强化成功率为#r" + upgradeProb + "%#k，失败将#r退回一级#k，确认要强化吗？";
                 cm.sendYesNoLevel("Dispose", "CashEquipUpgrade", text);
                 break;
             case 5:
-                costMaple = 3500;
+                costMaple = 35;
                 costMeso = 6000000;
                 upgradeProb = 50;
                 text += "点装当前等级为#b" + equipCurrentLevel + "#k级。\r\n";
-                text += "强化需要#r" + costMaple + "#k个枫叶和#r" + costMeso + "#k金币。\r\n";
-                text += "你当前拥有#b" + cm.getItemQuantity(MAPLE_LEAF) + "#k个枫叶和#b" + cm.getMeso() + "#k金币。\r\n";
+                text += "强化需要#r" + costMaple + "#k个#r#t" + GOLD_MAPLE_LEAF + "##k#r#i" + GOLD_MAPLE_LEAF + "##k和#r" + costMeso + "#k金币。\r\n";
+                text += "你当前拥有#b" + cm.getItemQuantity(GOLD_MAPLE_LEAF) + "#k个#r#t" + GOLD_MAPLE_LEAF + "##k#r#i" + GOLD_MAPLE_LEAF + "##k和#b" + cm.getMeso() + "#k金币。\r\n";
                 text += "强化成功率为#r" + upgradeProb + "%#k，失败将#r退回一级#k，确认要强化吗？";
                 cm.sendYesNoLevel("Dispose", "CashEquipUpgrade", text);
                 break;
             case 6:
-                costMaple = 4000;
+                costMaple = 40;
                 costMeso = 7000000;
                 upgradeProb = 40;
                 text += "点装当前等级为#b" + equipCurrentLevel + "#k级。\r\n";
-                text += "强化需要#r" + costMaple + "#k个枫叶和#r" + costMeso + "#k金币。\r\n";
-                text += "你当前拥有#b" + cm.getItemQuantity(MAPLE_LEAF) + "#k个枫叶和#b" + cm.getMeso() + "#k金币。\r\n";
+                text += "强化需要#r" + costMaple + "#k个#r#t" + GOLD_MAPLE_LEAF + "##k#r#i" + GOLD_MAPLE_LEAF + "##k和#r" + costMeso + "#k金币。\r\n";
+                text += "你当前拥有#b" + cm.getItemQuantity(GOLD_MAPLE_LEAF) + "#k个#r#t" + GOLD_MAPLE_LEAF + "##k#r#i" + GOLD_MAPLE_LEAF + "##k和#b" + cm.getMeso() + "#k金币。\r\n";
                 text += "强化成功率为#r" + upgradeProb + "%#k，失败将#r退回一级#k，确认要强化吗？";
                 cm.sendYesNoLevel("Dispose", "CashEquipUpgrade", text);
                 break;
             case 7:
-                costMaple = 4500;
+                costMaple = 45;
                 costMeso = 8000000;
                 upgradeProb = 30;
                 text += "点装当前等级为#b" + equipCurrentLevel + "#k级。\r\n";
-                text += "强化需要#r" + costMaple + "#k个枫叶和#r" + costMeso + "#k金币。\r\n";
-                text += "你当前拥有#b" + cm.getItemQuantity(MAPLE_LEAF) + "#k个枫叶和#b" + cm.getMeso() + "#k金币。\r\n";
+                text += "强化需要#r" + costMaple + "#k个#r#t" + GOLD_MAPLE_LEAF + "##k#r#i" + GOLD_MAPLE_LEAF + "##k和#r" + costMeso + "#k金币。\r\n";
+                text += "你当前拥有#b" + cm.getItemQuantity(GOLD_MAPLE_LEAF) + "#k个#r#t" + GOLD_MAPLE_LEAF + "##k#r#i" + GOLD_MAPLE_LEAF + "##k和#b" + cm.getMeso() + "#k金币。\r\n";
                 text += "强化成功率为#r" + upgradeProb + "%#k，失败将#r退回一级#k，确认要强化吗？";
                 cm.sendYesNoLevel("Dispose", "CashEquipUpgrade", text);
                 break;
             case 8:
-                costMaple = 5000;
+                costMaple = 50;
                 costMeso = 9000000;
                 upgradeProb = 20;
                 text += "点装当前等级为#b" + equipCurrentLevel + "#k级。\r\n";
-                text += "强化需要#r" + costMaple + "#k个枫叶和#r" + costMeso + "#k金币。\r\n";
-                text += "你当前拥有#b" + cm.getItemQuantity(MAPLE_LEAF) + "#k个枫叶和#b" + cm.getMeso() + "#k金币。\r\n";
+                text += "强化需要#r" + costMaple + "#k个#r#t" + GOLD_MAPLE_LEAF + "##k#r#i" + GOLD_MAPLE_LEAF + "##k和#r" + costMeso + "#k金币。\r\n";
+                text += "你当前拥有#b" + cm.getItemQuantity(GOLD_MAPLE_LEAF) + "#k个#r#t" + GOLD_MAPLE_LEAF + "##k#r#i" + GOLD_MAPLE_LEAF + "##k和#b" + cm.getMeso() + "#k金币。\r\n";
                 text += "强化成功率为#r" + upgradeProb + "%#k，失败将#r退回一级#k，确认要强化吗？";
                 cm.sendYesNoLevel("Dispose", "CashEquipUpgrade", text);
                 break;
             case 9:
-                costMaple = 5000;
+                costMaple = 50;
                 costMeso = 10000000;
                 upgradeProb = 10;
                 text += "点装当前等级为#b" + equipCurrentLevel + "#k级。\r\n";
-                text += "强化需要#r" + costMaple + "#k个枫叶和#r" + costMeso + "#k金币。\r\n";
-                text += "你当前拥有#b" + cm.getItemQuantity(MAPLE_LEAF) + "#k个枫叶和#b" + cm.getMeso() + "#k金币。\r\n";
+                text += "强化需要#r" + costMaple + "#k个#r#t" + GOLD_MAPLE_LEAF + "##k#r#i" + GOLD_MAPLE_LEAF + "##k和#r" + costMeso + "#k金币。\r\n";
+                text += "你当前拥有#b" + cm.getItemQuantity(GOLD_MAPLE_LEAF) + "#k个#r#t" + GOLD_MAPLE_LEAF + "##k#r#i" + GOLD_MAPLE_LEAF + "##k和#b" + cm.getMeso() + "#k金币。\r\n";
                 text += "强化成功率为#r" + upgradeProb + "%#k，失败将#r退回一级#k，确认要强化吗？";
                 cm.sendYesNoLevel("Dispose", "CashEquipUpgrade", text);
                 break;
@@ -166,14 +166,14 @@ function levelCashEquipOption1() {
 }
 
 function levelCashEquipUpgrade() {
-    let itemQuantity = cm.getItemQuantity(MAPLE_LEAF);
+    let itemQuantity = cm.getItemQuantity(GOLD_MAPLE_LEAF);
     let meso = cm.getMeso();
     if (itemQuantity < costMaple) {
-        cm.sendOkLevel("Dispose", "枫叶不足#r" + costMaple + "#k个！");
+        cm.sendOkLevel("Dispose", "#r#t" + GOLD_MAPLE_LEAF + "##k#r#i" + GOLD_MAPLE_LEAF + "##k不足#r" + costMaple + "#k个！");
     } else if (meso < costMeso) {
         cm.sendOkLevel("Dispose", "金币不足#r" + costMeso + "#k！");
     } else {
-        cm.gainItem(MAPLE_LEAF, -costMaple);
+        cm.gainItem(GOLD_MAPLE_LEAF, -costMaple);
         cm.gainMeso(-costMeso);
         let scrollResult = cm.getChar().scrollEquipWithEquipSlot(EQUIP_SLOT_1, upgradeProb);
         if (scrollResult) {

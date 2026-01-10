@@ -51,7 +51,6 @@ import org.gms.model.dto.InventorySearchReqDTO;
 import org.gms.model.dto.InventorySearchRtnDTO;
 import org.gms.model.pojo.NewYearCardRecord;
 import org.gms.model.pojo.SkillEntry;
-import org.gms.net.packet.InPacket;
 import org.gms.net.packet.Packet;
 import org.gms.net.server.PlayerBuffValueHolder;
 import org.gms.net.server.PlayerCoolDownValueHolder;
@@ -91,7 +90,6 @@ import org.gms.util.*;
 import org.gms.util.packets.WeddingPackets;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.BeanUtils;
 
 import java.awt.*;
 import java.lang.ref.WeakReference;
@@ -9755,6 +9753,27 @@ public class Character extends AbstractCharacterObject {
      * @param prop   强化成功率
      */
     public final boolean scrollEquipWithEquipSlot(short equipSlot, float prop) {
+        return scrollEquipWithEquipSlot(equipSlot, prop, true);
+    }
+
+    /**
+     * 强化指定装备栏的装备
+     * @param equipSlot 装备栏id
+     * @param prop   强化成功率
+     * @param isExclusionAttribute   强化失败是否扣除属性和等级
+     */
+    public final boolean scrollEquipWithEquipSlot(short equipSlot, float prop, boolean isExclusionAttribute) {
+        return scrollEquipWithEquipSlot(equipSlot, prop, isExclusionAttribute, null);
+    }
+
+    /**
+     * 强化指定装备栏的装备
+     * @param equipSlot 装备栏id
+     * @param prop   强化成功率
+     * @param isExclusionAttribute   强化失败是否扣除属性和等级
+     * @param stats   自定义强化属性
+     */
+    public final boolean scrollEquipWithEquipSlot(short equipSlot, float prop, boolean isExclusionAttribute, Map<String, Integer> stats) {
         if (client.tryacquireClient()) {
             try {
 
@@ -9764,7 +9783,7 @@ public class Character extends AbstractCharacterObject {
 
                 byte oldLevel = toScroll.getLevel(); // 记录装备的原始等级
 
-                Equip scrolled = (Equip) ii.scrollKingRing(toScroll, prop, chr.isGM()); // 使用卷轴升级装备
+                Equip scrolled = (Equip) ii.scrollEquipCustom(toScroll, prop, chr.isGM(), isExclusionAttribute, stats); // 使用卷轴升级装备
                 Equip.ScrollResult scrollSuccess = Equip.ScrollResult.FAIL; // 默认设置为失败
                 boolean scrollResult = false; // 默认设置为失败
                 if (scrolled.getLevel() > oldLevel) {

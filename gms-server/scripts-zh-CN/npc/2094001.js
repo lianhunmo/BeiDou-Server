@@ -56,7 +56,7 @@ function action(mode, type, selection) {
             }
         } else {
             if (status == 0) {
-                cm.sendSimple("谢谢你救了我！我能帮你什么忙吗？\r\n#b#L0#带我离开这里。\r\n#L1#我要兑换升级##b#t1002572##k #i1002572#。");
+                cm.sendSimple("谢谢你救了我！我能帮你什么忙吗？\r\n#b#L0#带我离开这里。#k\r\n#L1##b我要兑换升级#t1002572##k #i1002572#。");
             } else if (status == 1) {
                 if (selection == 0) {
                     let count = cm.getCharacterExtendValue("邮票获取次数" + 4031435, false)

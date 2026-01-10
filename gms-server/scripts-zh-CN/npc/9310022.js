@@ -37,11 +37,11 @@ function levelExchangeMoneyResult(inputNum) {
     let cost = inputNum;
     let gain = inputNum * 10000000;
     if (goldMapleLeafCount < cost) {
-        cm.sendLastLevel("Exchange0", "你身上的黄金枫叶不够#r" + cost + "片#k。");
+        cm.sendLastLevel("Start", "你身上的黄金枫叶不够#r" + cost + "片#k。");
     } else {
         cm.gainItem(GOLD_MAPLE_LEAF, -cost);
         cm.getChar().gainMeso(gain)
-        cm.sendOk("兑换成功！你已获得了#b" + gain + "金币#k。");
+        cm.sendLastLevel("Start", "兑换成功！你已获得了#b" + gain + "金币#k。");
         cm.dispose();
     }
 }
@@ -60,11 +60,11 @@ function levelExchangeGameCardResult(inputNum) {
     let cost = inputNum;
     let gain = inputNum * 10000;
     if (goldMapleLeafCount < cost) {
-        cm.sendLastLevel("Exchange1", "你身上的黄金枫叶不够#r" + cost + "片#k。");
+        cm.sendLastLevel("Start", "你身上的黄金枫叶不够#r" + cost + "片#k。");
     } else {
         cm.gainItem(GOLD_MAPLE_LEAF, -cost);
         cm.getChar().gainCash(gain)
-        cm.sendOk("兑换成功！你已获得了#b" + gain + "点卷#k。");
+        cm.sendLastLevel("Start", "兑换成功！你已获得了#b" + gain + "点卷#k。");
         cm.dispose();
     }
 }
@@ -83,12 +83,12 @@ function levelExchangeMapleLeafResult(inputNum) {
     let cost = inputNum;
     let gain = inputNum * 88;
     if (goldMapleLeafCount < cost) {
-        cm.sendLastLevel("Exchange2", "你身上的黄金枫叶不够#r" + cost + "片#k。");
+        cm.sendLastLevel("Start", "你身上的黄金枫叶不够#r" + cost + "片#k。");
     } else {
         if (cm.canHold(MAPLE_LEAF, gain)) {
             cm.gainItem(GOLD_MAPLE_LEAF, -cost);
             cm.gainItem(MAPLE_LEAF, gain);
-            cm.sendOk("兑换成功！你已获得了#b" + gain + "片#k枫叶。");
+            cm.sendLastLevel("Start", "兑换成功！你已获得了#b" + gain + "片#k枫叶。");
             cm.dispose();
         } else {
             cm.sendOk("背包空间不足!");
@@ -111,12 +111,12 @@ function levelExchangeGoldMapleLeafResult(inputNum) {
     let cost = inputNum * 100;
     let gain = inputNum;
     if (mapleLeafCount < cost) {
-        cm.sendLastLevel("Exchange2", "你身上的枫叶不够#r" + cost + "#k片。");
+        cm.sendLastLevel("Start", "你身上的枫叶不够#r" + cost + "#k片。");
     } else {
         if (cm.canHold(GOLD_MAPLE_LEAF, gain)) {
             cm.gainItem(MAPLE_LEAF, -cost);
             cm.gainItem(GOLD_MAPLE_LEAF, gain);
-            cm.sendOk("兑换成功！你已获得了#b" + gain + "片#k黄金枫叶。");
+            cm.sendLastLevel("Start", "兑换成功！你已获得了#b" + gain + "片#k黄金枫叶。");
             cm.dispose();
         } else {
             cm.sendOk("背包空间不足!");
