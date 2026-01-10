@@ -1,0 +1,435 @@
+/**
+ * @description 打造超强戒指
+ * @author Geoffrey
+ */
+const RING_OF_MOON_STONE_1CARATS = 1112300;
+const RING_OF_SHINING_STAR_1CARATS = 1112303;
+const GOLD_HEART_RING_1CARATS = 1112306;
+const RING_OF_SILVER_WING_1CARATS = 1112309;
+const RING_OF_MOON_STONE_2CARATS = 1112301;
+const RING_OF_SHINING_STAR_2CARATS = 1112304;
+const GOLD_HEART_RING_2CARATS = 1112307;
+const RING_OF_SILVER_WING_2CARATS = 1112310;
+const RING_OF_MOON_STONE_3CARATS = 1112302;
+const RING_OF_SHINING_STAR_3CARATS = 1112305;
+const GOLD_HEART_RING_3CARATS = 1112308;
+const RING_OF_SILVER_WING_3CARATS = 1112311;
+
+const BRONZE_PLATE = 4011000;
+const STEEL_PLATE = 4011001;
+const MITHRIL_PLATE = 4011002;
+const ADAMANTIUM_PLATE = 4011003;
+const SILVER_PLATE = 4011004;
+const ORIHALCON_PLATE = 4011005;
+const GOLD_PLATE = 4011006;
+
+const POWER_CRYSTAL = 4005000;
+const WISDOM_CRYSTAL = 4005001;
+const DEX_CRYSTAL = 4005002;
+const LUK_Crystal = 4005003;
+
+const INVENTORY_TYPE_EQUIP = 1;
+const EQUIP_SLOT = 1;
+
+const RINGS_ITEM_ID_LIST = [RING_OF_SILVER_WING_1CARATS, RING_OF_SILVER_WING_2CARATS, RING_OF_SILVER_WING_3CARATS];
+const RINGS_ITEM_ID_EVOLUTION_LIST = [RING_OF_SILVER_WING_1CARATS, RING_OF_SILVER_WING_2CARATS];
+
+const RINGS_EVOLVE_MAP = new Map([
+    [RING_OF_MOON_STONE_1CARATS, RING_OF_MOON_STONE_2CARATS],
+    [RING_OF_SHINING_STAR_1CARATS, RING_OF_SHINING_STAR_2CARATS],
+    [GOLD_HEART_RING_1CARATS, GOLD_HEART_RING_2CARATS],
+    [RING_OF_SILVER_WING_1CARATS, RING_OF_SILVER_WING_2CARATS],
+    [RING_OF_MOON_STONE_2CARATS, RING_OF_MOON_STONE_3CARATS],
+    [RING_OF_SHINING_STAR_2CARATS, RING_OF_SHINING_STAR_3CARATS],
+    [GOLD_HEART_RING_2CARATS, GOLD_HEART_RING_3CARATS],
+    [RING_OF_SILVER_WING_2CARATS, RING_OF_SILVER_WING_3CARATS]
+]);
+
+let costBronzePlate = 0;
+let costSteelPlate = 0;
+let cosMithrilPlate = 0;
+let costAdamantiumPlate = 0;
+let costSilverPlate = 0;
+let costOrihalconPlate = 0;
+let costGoldPlate = 0;
+
+let STAMP_ID_COST_MAP = new Map([
+    [BRONZE_PLATE, costBronzePlate],
+    [STEEL_PLATE, costSteelPlate],
+    [MITHRIL_PLATE, cosMithrilPlate],
+    [ADAMANTIUM_PLATE, costAdamantiumPlate],
+    [SILVER_PLATE, costSilverPlate],
+    [ORIHALCON_PLATE, costOrihalconPlate],
+    [GOLD_PLATE, costGoldPlate]
+]);
+
+let costMeso = 0;
+let upgradeProb;
+let equip;
+
+function start() {
+    levelStart();
+}
+
+/**
+ * @description 如果是sendSelectLevel，那么会根据玩家的选项自动路由到对应的level+selection方法
+ */
+function levelStart() {
+    let text = "这里可以打造副本戒指，现在你希望做什么呢？\r\n #r(注：要强化和升阶的戒指需放在背包第一格)#l\r\n\r\n";
+    text += "#L0##b领取戒指#k\r\n";
+    text += "#L1##b强化戒指#k\r\n";
+    text += "#L2##b戒指升阶#k\r\n";
+
+    cm.sendSelectLevel("RingOption", text);
+}
+
+function levelRingOption0() {
+    let text = "你可以用1#b#t" + BRONZE_PLATE + "##k#i" + BRONZE_PLATE + "#兑换一种戒指：\r\n\r\n";
+    text += "#L" + RING_OF_SILVER_WING_1CARATS + "##b#t" + RING_OF_SILVER_WING_1CARATS + "##k #i" + RING_OF_SILVER_WING_1CARATS + "##l\r\n";
+    cm.sendNextSelectLevel("ExchangeRing", text);
+}
+
+function buildStampsNeedText(stampId, cost) {
+    let text = "";
+    if (cost !== 0) {
+        text += "#r" + cost + "#k个#r#t" + stampId + "##k#r#i" + stampId + "##k\r\n";
+    }
+    return text;
+}
+
+function buildStampsHaveText(stampId, cost) {
+    let text = "";
+    if (cost !== 0) {
+        text += "#b" + cm.getItemQuantity(stampId) + "#k个#b#t" + stampId + "##k#b#i" + stampId + "##k\r\n";
+    }
+    return text;
+}
+
+function buildInfoMessage(text, equipCurrentLevel) {
+    text += "戒指当前等级为#b" + equipCurrentLevel + "#k级。\r\n";
+    text += "强化需要:\r\n";
+    STAMP_ID_COST_MAP.forEach((cost, stampId) => {
+        text += buildStampsNeedText(stampId, cost);
+    })
+    text += "你当前拥有:\r\n";
+    STAMP_ID_COST_MAP.forEach((cost, stampId) => {
+        text += buildStampsHaveText(stampId, cost);
+    })
+    text += "强化成功率为#r" + upgradeProb + "%#k，确认要强化吗？";
+    return text;
+}
+
+function levelRingOption1() {
+    // 通过slot = 1获取到当前戒指等级来判断强化材料
+    equip = cm.getChar().getInventory(INVENTORY_TYPE_EQUIP).getItem(EQUIP_SLOT);
+    let equipItemId = equip.getItemId();
+    let text = "你想强化#b#t" + equipItemId + "##k #i" + equipItemId + "##k吗？\r\n\r\n";
+    if (RINGS_ITEM_ID_LIST.includes(equipItemId)) {
+        let equipCurrentLevel = equip.getLevel();
+        switch(equipCurrentLevel) {
+            case 0:
+                costBronzePlate = 15;
+                STAMP_ID_COST_MAP.set(BRONZE_PLATE, costBronzePlate);
+                upgradeProb = 100;
+                text = buildInfoMessage(text, equipCurrentLevel);
+                cm.sendYesNoLevel("Dispose", "RingUpgrade", text);
+                break;
+            case 1:
+                costBronzePlate = 15;
+                STAMP_ID_COST_MAP.set(BRONZE_PLATE, costBronzePlate);
+                costSteelPlate = 15;
+                STAMP_ID_COST_MAP.set(STEEL_PLATE, costSteelPlate);
+                upgradeProb = 90;
+                text = buildInfoMessage(text, equipCurrentLevel);
+                cm.sendYesNoLevel("Dispose", "RingUpgrade", text);
+                break;
+            case 2:
+                costBronzePlate = 15;
+                STAMP_ID_COST_MAP.set(BRONZE_PLATE, costBronzePlate);
+                costSteelPlate = 15;
+                STAMP_ID_COST_MAP.set(STEEL_PLATE, costSteelPlate);
+                cosMithrilPlate = 15;
+                STAMP_ID_COST_MAP.set(MITHRIL_PLATE, cosMithrilPlate);
+                upgradeProb = 80;
+                text = buildInfoMessage(text, equipCurrentLevel);
+                cm.sendYesNoLevel("Dispose", "RingUpgrade", text);
+                break;
+            case 3:
+                costBronzePlate = 15;
+                STAMP_ID_COST_MAP.set(BRONZE_PLATE, costBronzePlate);
+                costSteelPlate = 15;
+                STAMP_ID_COST_MAP.set(STEEL_PLATE, costSteelPlate);
+                cosMithrilPlate = 15;
+                STAMP_ID_COST_MAP.set(MITHRIL_PLATE, cosMithrilPlate);
+                costAdamantiumPlate = 15;
+                STAMP_ID_COST_MAP.set(ADAMANTIUM_PLATE, costAdamantiumPlate);
+                upgradeProb = 70;
+                text = buildInfoMessage(text, equipCurrentLevel);
+                cm.sendYesNoLevel("Dispose", "RingUpgrade", text);
+                break;
+            case 4:
+                costBronzePlate = 15;
+                STAMP_ID_COST_MAP.set(BRONZE_PLATE, costBronzePlate);
+                costSteelPlate = 15;
+                STAMP_ID_COST_MAP.set(STEEL_PLATE, costSteelPlate);
+                cosMithrilPlate = 15;
+                STAMP_ID_COST_MAP.set(MITHRIL_PLATE, cosMithrilPlate);
+                costAdamantiumPlate = 15;
+                STAMP_ID_COST_MAP.set(ADAMANTIUM_PLATE, costAdamantiumPlate);
+                costSilverPlate = 15;
+                STAMP_ID_COST_MAP.set(SILVER_PLATE, costSilverPlate);
+                upgradeProb = 60;
+                text = buildInfoMessage(text, equipCurrentLevel);
+                cm.sendYesNoLevel("Dispose", "RingUpgrade", text);
+                break;
+            case 5:
+                costBronzePlate = 15;
+                STAMP_ID_COST_MAP.set(BRONZE_PLATE, costBronzePlate);
+                costSteelPlate = 15;
+                STAMP_ID_COST_MAP.set(STEEL_PLATE, costSteelPlate);
+                cosMithrilPlate = 15;
+                STAMP_ID_COST_MAP.set(MITHRIL_PLATE, cosMithrilPlate);
+                costAdamantiumPlate = 15;
+                STAMP_ID_COST_MAP.set(ADAMANTIUM_PLATE, costAdamantiumPlate);
+                costSilverPlate = 15;
+                STAMP_ID_COST_MAP.set(SILVER_PLATE, costSilverPlate);
+                costOrihalconPlate = 15;
+                STAMP_ID_COST_MAP.set(ORIHALCON_PLATE, costOrihalconPlate);
+                upgradeProb = 50;
+                text = buildInfoMessage(text, equipCurrentLevel);
+                cm.sendYesNoLevel("Dispose", "RingUpgrade", text);
+                break;
+            case 6:
+                costBronzePlate = 15;
+                STAMP_ID_COST_MAP.set(BRONZE_PLATE, costBronzePlate);
+                costSteelPlate = 15;
+                STAMP_ID_COST_MAP.set(STEEL_PLATE, costSteelPlate);
+                cosMithrilPlate = 15;
+                STAMP_ID_COST_MAP.set(MITHRIL_PLATE, cosMithrilPlate);
+                costAdamantiumPlate = 15;
+                STAMP_ID_COST_MAP.set(ADAMANTIUM_PLATE, costAdamantiumPlate);
+                costSilverPlate = 15;
+                STAMP_ID_COST_MAP.set(SILVER_PLATE, costSilverPlate);
+                costOrihalconPlate = 15;
+                STAMP_ID_COST_MAP.set(ORIHALCON_PLATE, costOrihalconPlate);
+                costGoldPlate = 15;
+                STAMP_ID_COST_MAP.set(GOLD_PLATE, costGoldPlate);
+                upgradeProb = 40;
+                text = buildInfoMessage(text, equipCurrentLevel);
+                cm.sendYesNoLevel("Dispose", "RingUpgrade", text);
+                break;
+            case 7:
+                costBronzePlate = 20;
+                STAMP_ID_COST_MAP.set(BRONZE_PLATE, costBronzePlate);
+                costSteelPlate = 20;
+                STAMP_ID_COST_MAP.set(STEEL_PLATE, costSteelPlate);
+                cosMithrilPlate = 20;
+                STAMP_ID_COST_MAP.set(MITHRIL_PLATE, cosMithrilPlate);
+                costAdamantiumPlate = 20;
+                STAMP_ID_COST_MAP.set(ADAMANTIUM_PLATE, costAdamantiumPlate);
+                costSilverPlate = 20;
+                STAMP_ID_COST_MAP.set(SILVER_PLATE, costSilverPlate);
+                costOrihalconPlate = 20;
+                STAMP_ID_COST_MAP.set(ORIHALCON_PLATE, costOrihalconPlate);
+                costGoldPlate = 20;
+                STAMP_ID_COST_MAP.set(GOLD_PLATE, costGoldPlate);
+                upgradeProb = 30;
+                text = buildInfoMessage(text, equipCurrentLevel);
+                cm.sendYesNoLevel("Dispose", "RingUpgrade", text);
+                break;
+            case 8:
+                costBronzePlate = 25;
+                STAMP_ID_COST_MAP.set(BRONZE_PLATE, costBronzePlate);
+                costSteelPlate = 25;
+                STAMP_ID_COST_MAP.set(STEEL_PLATE, costSteelPlate);
+                cosMithrilPlate = 25;
+                STAMP_ID_COST_MAP.set(MITHRIL_PLATE, cosMithrilPlate);
+                costAdamantiumPlate = 25;
+                STAMP_ID_COST_MAP.set(ADAMANTIUM_PLATE, costAdamantiumPlate);
+                costSilverPlate = 25;
+                STAMP_ID_COST_MAP.set(SILVER_PLATE, costSilverPlate);
+                costOrihalconPlate = 25;
+                STAMP_ID_COST_MAP.set(ORIHALCON_PLATE, costOrihalconPlate);
+                costGoldPlate = 25;
+                STAMP_ID_COST_MAP.set(GOLD_PLATE, costGoldPlate);
+                upgradeProb = 20;
+                text = buildInfoMessage(text, equipCurrentLevel);
+                cm.sendYesNoLevel("Dispose", "RingUpgrade", text);
+                break;
+            case 9:
+                costBronzePlate = 30;
+                STAMP_ID_COST_MAP.set(BRONZE_PLATE, costBronzePlate);
+                costSteelPlate = 30;
+                STAMP_ID_COST_MAP.set(STEEL_PLATE, costSteelPlate);
+                cosMithrilPlate = 30;
+                STAMP_ID_COST_MAP.set(MITHRIL_PLATE, cosMithrilPlate);
+                costAdamantiumPlate = 30;
+                STAMP_ID_COST_MAP.set(ADAMANTIUM_PLATE, costAdamantiumPlate);
+                costSilverPlate = 30;
+                STAMP_ID_COST_MAP.set(SILVER_PLATE, costSilverPlate);
+                costOrihalconPlate = 30;
+                STAMP_ID_COST_MAP.set(ORIHALCON_PLATE, costOrihalconPlate);
+                costGoldPlate = 30;
+                STAMP_ID_COST_MAP.set(GOLD_PLATE, costGoldPlate);
+                upgradeProb = 10;
+                text = buildInfoMessage(text, equipCurrentLevel);
+                cm.sendYesNoLevel("Dispose", "RingUpgrade", text);
+                break;
+            default:
+                if (RINGS_ITEM_ID_EVOLUTION_LIST.includes(equipItemId)) {
+                    cm.sendLastLevel("Start", "#r恭喜你！#k#b#t" + equipItemId + "##k #i" + equipItemId + "##k已满级！可以升阶了#k");
+                } else {
+                    cm.sendLastLevel("Start", "#r恭喜你！#k#b#t" + equipItemId + "##k #i" + equipItemId + "##k已是顶级戒指！#k");
+                }
+                break;
+        }
+    } else {
+        cm.sendOkLevel("Dispose", "#b#t" + equipItemId + "##k #i" + equipItemId + "##k不能强化！");
+    }
+}
+
+function levelRingOption2() {
+    // 通过slot = 1获取到当前戒指等级来判断强化材料
+    equip = cm.getChar().getInventory(INVENTORY_TYPE_EQUIP).getItem(EQUIP_SLOT);
+    let equipItemId = equip.getItemId();
+    let equipCurrentLevel = equip.getLevel();
+    if (!RINGS_ITEM_ID_EVOLUTION_LIST.includes(equipItemId)) {
+        cm.sendOkLevel("Dispose", "#b#t" + equipItemId + "##k #i" + equipItemId + "##k不能升阶！");
+    } else {
+        if (equipCurrentLevel >= 10) {
+            costBronzePlate = 30;
+            STAMP_ID_COST_MAP.set(BRONZE_PLATE, costBronzePlate);
+            costSteelPlate = 30;
+            STAMP_ID_COST_MAP.set(STEEL_PLATE, costSteelPlate);
+            cosMithrilPlate = 30;
+            STAMP_ID_COST_MAP.set(MITHRIL_PLATE, cosMithrilPlate);
+            costAdamantiumPlate = 30;
+            STAMP_ID_COST_MAP.set(ADAMANTIUM_PLATE, costAdamantiumPlate);
+            costSilverPlate = 30;
+            STAMP_ID_COST_MAP.set(SILVER_PLATE, costSilverPlate);
+            costOrihalconPlate = 30;
+            STAMP_ID_COST_MAP.set(ORIHALCON_PLATE, costOrihalconPlate);
+            costGoldPlate = 30;
+            STAMP_ID_COST_MAP.set(GOLD_PLATE, costGoldPlate);
+            upgradeProb = 50;
+            let text = "你想将#b#t" + equipItemId + "##k #i" + equipItemId + "##k升阶吗？升阶后可继续强化。\r\n\r\n";
+            text += "你需要消耗:\r\n";
+            STAMP_ID_COST_MAP.forEach((cost, stampId) => {
+                text += buildStampsNeedText(stampId, cost);
+            })
+            text += "你当前拥有:\r\n";
+            STAMP_ID_COST_MAP.forEach((cost, stampId) => {
+                text += buildStampsHaveText(stampId, cost);
+            })
+            text += "升阶成功率为#r" + upgradeProb + "%#k，确定要升阶吗？";
+            cm.sendYesNoLevel("Dispose", "RingEvolution", text);
+        } else {
+            cm.sendOkLevel("Dispose", "你还未将#b#t" + equipItemId + "##k #i" + equipItemId + "##k升至#r10级#k，不能升阶！");
+        }
+    }
+}
+function levelExchangeRing(itemCode) {
+    costBronzePlate = 1;
+    if (itemCode == null) {
+        let text = "请选择一种戒指。"
+        cm.sendLastLevel("RingOption0", text);
+    } else {
+        let itemQuantity = cm.getItemQuantity(BRONZE_PLATE);
+        if (itemQuantity < costBronzePlate) {
+            cm.sendOkLevel("Dispose", "#r#t" + BRONZE_PLATE + "##k#r#i" + BRONZE_PLATE + "##k不足#r" + costBronzePlate + "#k个！");
+        } else if (cm.getItemQuantity(itemCode) > 0
+            || cm.getItemQuantity(RINGS_EVOLVE_MAP.get(itemCode)) > 0
+            || cm.getItemQuantity(RINGS_EVOLVE_MAP.get(RINGS_EVOLVE_MAP.get(itemCode))) > 0
+            || !cm.canHold(itemCode, 1)) {
+            cm.sendOkLevel("Dispose", "你已领取过该戒指或者背包空间不足！");
+        } else {
+            cm.gainItem(BRONZE_PLATE, -costBronzePlate);
+            successGain(itemCode);
+        }
+    }
+}
+
+function checkStamps(stampId, cost) {
+    let itemQuantity = cm.getItemQuantity(stampId);
+    if (itemQuantity < cost) {
+        cm.sendOkLevel("Dispose", "#b#t" + stampId + "##k#i" + stampId + "#不足#r" + cost + "#k个！");
+    }
+}
+
+function levelRingUpgrade() {
+    let meso = cm.getMeso();
+    if (meso < costMeso) {
+        cm.sendOkLevel("Dispose", "金币不足#r" + costMeso + "#k！");
+    } else {
+        STAMP_ID_COST_MAP.forEach((cost, stampId) => {
+            if (cost !== 0) {
+                checkStamps(stampId, cost);
+            }
+        })
+    }
+    STAMP_ID_COST_MAP.forEach((cost, stampId) => {
+        if (cost !== 0) {
+            cm.gainItem(stampId, -cost);
+        }
+    })
+    cm.gainMeso(-costMeso);
+    let equipCurrentLevel = equip.getLevel();
+    let states = new Map ([
+        ["STR", 1],
+        ["DEX", 1],
+        ["INT", 1],
+        ["LUK", 1],
+    ])
+    if (equipCurrentLevel < 9) {
+        let scrollResult = cm.getChar().scrollEquipWithEquipSlot(EQUIP_SLOT, upgradeProb, false, states);
+        if (scrollResult) {
+            cm.sendLastLevel("RingOption1", "强化成功！#r四维属性+1#k");
+        } else {
+            cm.sendLastLevel("RingOption1", "强化失败。");
+        }
+    } else {
+        states.set("PAD", 10);
+        states.set("MAD", 10);
+        let scrollResult = cm.getChar().scrollEquipWithEquipSlot(EQUIP_SLOT, upgradeProb, false, states);
+        if (scrollResult) {
+            cm.sendLastLevel("RingOption1", "强化成功！#r四维属性+1 物攻+10 魔攻+10#k");
+        } else {
+            cm.sendLastLevel("RingOption1", "强化失败。");
+        }
+    }
+}
+
+function levelRingEvolution() {
+    STAMP_ID_COST_MAP.forEach((cost, stampId) => {
+        if (cost !== 0) {
+            checkStamps(stampId, cost);
+        }
+    })
+    let meso = cm.getMeso();
+    if (meso < costMeso) {
+        cm.sendOkLevel("Dispose", "金币不足#r" + costMeso + "#k！");
+    } else {
+        STAMP_ID_COST_MAP.forEach((cost, stampId) => {
+            if (cost !== 0) {
+                cm.gainItem(stampId, -cost);
+            }
+        })
+        cm.gainMeso(-costMeso);
+        let scrollResult = cm.getChar().evolveEquipWithEquipSlot(EQUIP_SLOT, upgradeProb, RINGS_EVOLVE_MAP.get(equip.getItemId()));
+        if (scrollResult) {
+            cm.sendOkLevel("Dispose", "升阶成功！");
+        } else {
+            cm.sendLastLevel("Dispose", "升阶失败。");
+        }
+    }
+}
+
+function successGain(itemCode) {
+    cm.gainItem(itemCode, 1);
+    cm.sendOkLevel("Dispose", "兑换成功！");
+}
+
+function levelDispose() {
+    cm.dispose();
+}
+
