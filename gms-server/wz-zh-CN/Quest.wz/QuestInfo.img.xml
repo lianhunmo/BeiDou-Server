@@ -15,7 +15,7 @@
         <string name="1" value="从工作人员#b#p9310088##k那里收到了紧急信息。"/>
         <string name="2" value="#b喔喔#k突然找到了我，问我想不想成为工作人员！虽然稀里糊涂地说愿意成为工作员，不过接下去该做什么呢？而且#b冒险岛运营员#k和#b星缘#k全都看上去很奇怪，都戴上了黑色的太阳镜。到底发生了什么事？看来应该去听#r喔喔#k说说详细的情况……"/>
         <int name="area" value="50"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <int name="autoPreComplete" value="1"/>
     </imgdir>
     <imgdir name="10001">
@@ -87,7 +87,7 @@
         <string name="1" value="把每天一次的任务完成吧！"/>
         <string name="2" value="把每天一次的任务完成吧！今天的任务是什么呢？"/>
         <int name="area" value="50"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
     </imgdir>
     <imgdir name="10015">
         <string name="name" value="获得特殊工作人员徽章！"/>
@@ -149,7 +149,7 @@
         <string name="1" value="#b#p9310088##k说为2008年夏天一直陪伴着冒险岛世界的我准备了特殊的礼物……"/>
         <string name="2" value="2008年的夏天格外的热。我成为了真正的工作人员。"/>
         <int name="area" value="50"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
     </imgdir>
     <imgdir name="10023">
         <string name="name" value="遥远而艰辛的工作人员之路"/>
@@ -201,7 +201,7 @@
         <string name="1" value="#p9010000#는 추석을 맞아 월묘들이 #b달나라 여행#k을 준비했으니 달나라로 가보는 게 어떠냐고 말했다. 달나라 여행 외에도 #b명절 음식 만들기#k, #b알파벳 모으기#k 등 다양한 이벤트가 진행중이라는데..."/>
         <string name="2" value="#p9010000#는 추석을 맞아 월묘들이 달나라 여행을 준비했으니 달나라로 가보는 게 어떠냐고 말했다. 달나라 여행 외에도 명절 음식 만들기, 알파벳 모으기 등 다양한 이벤트가 진행중이라니 참가해 보자."/>
         <int name="area" value="50"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
     </imgdir>
     <imgdir name="10035">
         <string name="name" value="The Great Maple Book Drive"/>
@@ -209,7 +209,7 @@
         <string name="1" value="#p9010014#, has asked me to help her find #b#t4000515##k . She says she&apos;ll show me #bfireworks#k if I help her."/>
         <string name="2" value="#p9010014#, has asked me to help her find #b#t4000515##k . She says she&apos;ll show me fireworks if I help her."/>
         <int name="area" value="50"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <int name="autoPreComplete" value="1"/>
     </imgdir>
     <imgdir name="10036">
@@ -232,7 +232,7 @@
         <string name="1" value="Cassandra is apparently giving out 1 letter you ask for. They&apos;re only doing this for 1-day on Back To School day!"/>
         <string name="2" value="I received a Special Alphabet letter on Back To School day as part of MapleStory&apos;s Surprise Back To School event."/>
         <int name="area" value="50"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <int name="autoPreComplete" value="1"/>
     </imgdir>
     <imgdir name="1004">
@@ -256,7 +256,7 @@
         <string name="1" value="#p9000042#는 지금 #b알 돌보기#k에 한창이라고 한다. 메이플 월드에 날아들었던 새들 중 누군#p9000042# 흘리고 간 알을 #p9000042#가 돌보고 있다는 것이다. #p9000042#는 혼자서는 도저히 알을 돌볼 수 없다며 알 돌보기를 도와달라고 한다. #b#p9000042##k를 찾아가 보자."/>
         <string name="2" value="#p9000042#는 지금 #b알 돌보기#k에 한창이라고 한다. 메이플 월드에 날아들었던 새들 중 누군#p9000042# 흘리고 간 알을 #p9000042#가 돌보고 있다는 것이다. #p9000042#는 혼자서는 도저히 알을 돌볼 수 없다며 알 돌보기를 도와달라고 한다. #b#p9000042##k를 찾아가 보자."/>
         <int name="area" value="50"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
     </imgdir>
     <imgdir name="10048">
         <string name="name" value="길 잃은 도요새"/>
@@ -287,7 +287,7 @@
         <string name="1" value="#p9010010#는, #b#p9000042##k가 또 이상한 일에 휘말린 것 같다며 #p9000042#의 일을 도와주라고 말했다. 무슨 알 돌보기라는 것 같은데... 아무튼 #p9010010#가 #p9000042#를 놀려먹기만 하는 게 아니라 제대로 챙겨주기도 하는 것 같네..."/>
         <string name="2" value="#p9010010#는, #p9000042#가 또 이상한 일에 휘말린 것 같다며 #p9000042#의 일을 도와주라고 말했다. 무슨 알 돌보기라는 것 같은데... 아무튼 #p9010010#가 #p9000042#를 놀려먹기만 하는 게 아니라 제대로 챙겨주기도 하는 것 같네..."/>
         <int name="area" value="50"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <int name="autoPreComplete" value="1"/>
         <int name="autoComplete" value="1"/>
     </imgdir>
@@ -297,7 +297,7 @@
         <string name="1" value="메이플 월드에 모헙가들이 첫 발을 내딛은 지도 어느새 #r2000일#k이 되었다. 메이플 운영자는 이 날을 기념해서 그 동안의 모험담을 모아서 책을 만들어 보겠다는 계획을 세웠다. \n메이플 운영자는 책을 만들기 위해서는 여러 모험가들의 이야기가 필요한다고 하면서 #e#b2000개의 이야기#k#n가 필요하다고 했다. #b몬스터를 사냥#k하거나, #bNPC들의 이야기#k를 모아서 메이플운영자에게 가져다 주자. 2000개의 이야기를 모두 모으면 운영자의 특별 선물을 받을 수 있다고 한다.\n\n메이플 운영자의 사은품&gt;\n#i1002517:# #t1002517# 1개"/>
         <string name="2" value="메이플 월드에 모헙가들이 첫 발을 내딛은 지도 어느새 #r2000일#k이 되었다. 메이플 운영자는 이 날을 기념해서 그 동안의 모험담을 모아서 책을 만들어 보겠다는 계획을 세웠다. \n메이플 운영자는 책을 만들기 위해서는 여러 모험가들의 이야기가 필요한다고 하면서 #e#b2000개의 이야기#k#n가 필요하다고 했다.\n 2000개의 이야기를 모아서 운영자에게 가져다 주고 특별 사은품인 #b#t1002517##k을 받았다."/>
         <int name="area" value="50"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
     </imgdir>
     <imgdir name="10053">
         <string name="name" value="만지의 모험담"/>
@@ -333,7 +333,7 @@
         <string name="1" value="After giving much thought as to what I should do with the Pop Star&apos;s Hit Songs CD, which I randomly acquired somehow, I decided, in the end, to give it to Gaga as a gift. He was begging me for it afterall... Wait a minute! Could it be that Gaga never gave up on his secret dream of becoming a pop star himself?"/>
         <string name="2" value="After giving much thought as to what I should do with the Pop Star&apos;s Hit Songs CD, which I randomly acquired somehow, I decided, in the end, to give it to Gaga as a gift. He was begging me for it afterall... Wait a minute! Could it be that Gaga never gave up on his secret dream of becoming a pop star himself?"/>
         <int name="area" value="50"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
     </imgdir>
     <imgdir name="1006">
         <string name="name" value="长老的回信"/>
@@ -349,7 +349,7 @@
         <string name="1" value="#b카산드라#k가 내게 줄 것이 있다고 하는데..."/>
         <string name="2" value="#b카산드라#k가 이상한 약을 주었다. 한번 마셔볼까?"/>
         <int name="area" value="50"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <int name="autoComplete" value="1"/>
     </imgdir>
     <imgdir name="10062">
@@ -519,7 +519,7 @@
         <string name="1" value="시무룩한 얼굴을 하고 있는 가가에게 이유를 물어보았다. 가가는 그 동안 열심히 자신이 하고 싶고, 할 수 있는 일을 찾아서 노력했는데 제대로 된 일이 아무것도 없다면서 열심히 노력해도 되지 않는 일이 있는 것 같다면서 슬퍼했다. 여러 가지 이야기를 해주면서 기분을 풀어주려 했지만 어쩐지 더 시무룩해지기만 하는 것 같은데…"/>
         <string name="2" value="시무룩한 얼굴을 하고 있는 가가에게 이유를 물어보았다. 가가는 그 동안 열심히 자신이 하고 싶고, 할 수 있는 일을 찾아서 노력했는데 제대로 된 일이 아무 것도 없다면서 열심히 노력해도 되지 않는 일이 있는 것 같다면서 슬퍼했다. 여러 가지 이야기를 해주면서 기분을 풀어주려 했지만 어쩐지 더 시무룩해지기만 하는 것 같은데…"/>
         <int name="area" value="50"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <int name="autoPreComplete" value="1"/>
     </imgdir>
     <imgdir name="10081">
@@ -528,7 +528,7 @@
         <string name="1" value="카산드라는 요즘 가가가 너무 기운이 없는 것 같다면서 재미가 하나도 없다고 투덜댄다. 그 동안 많이 골려 먹었지만, 요새처럼 기운이 하나도 없는 가가는 재미가 없다나? 가가가 기운을 차릴 수 있도록 행운의 부적으로 알려진 &apos;행운의 흰 원숭이 인형&apos;을 모아다 주라고 부탁하면서 절대로 가가에게 미안해서 그러는 것이 아니라고 강조했다.\n\n#i4032087# #t4032087# #b#c4032087# / 10"/>
         <string name="2" value="카산드라는 요즘 가가가 너무 기운이 없는 것 같다면서 재미가 하나도 없다고 투덜댄다. 그 동안 많이 곯려 먹었지만, 요새처럼 기운이 하나도 없는 가가는 재미가 없다나? 카산드라의 부탁으로 가가가 기운을 차릴 수 있도록 행운의 부적으로 알려진 &apos;행운의 흰 원숭이 인형&apos;을 모아서 가져다 주었다.\n카산드라는 절~대 가가에게 미안해서 그러는게 아니라고 하지만 진심은 아닌 것 같다. 가가는 인형을 받고 행운이 찾아올지도 모른다고 기대하는 것 같다. 가가에게 정말 행운이 왔으면 좋겠다. 가가는 행운은 나누는 것이라며, 무엇이 나올지 모르는 두근두근 상자를 선물로 주었다."/>
         <int name="area" value="50"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
     </imgdir>
     <imgdir name="10082">
         <int name="order" value="1"/>
@@ -537,7 +537,7 @@
         <string name="0" value="메이플스토리 그린 캠페인이 시작되었습니다. 운영자를 만나 자세한 이야기를 들어보세요."/>
         <string name="1" value="메이플스토리 그린 캠페인이 시작되었습니다. 운영자를 만나 자세한 이야기를 들어보세요."/>
         <string name="2" value="운영자에게 메이플스토리 그린캠페인 훈장을 받았습니다. 모든 NPC는 이 훈장을 축복할 것입니다."/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
     </imgdir>
     <imgdir name="10083">
         <int name="order" value="1"/>
@@ -729,7 +729,7 @@
         <int name="order" value="1"/>
         <string name="name" value="冒险骑士团之书第1卷"/>
         <int name="area" value="50"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <string name="parent" value="冒险骑士团之书"/>
         <string name="0" value="黑魔法师是谁？希纳斯又是谁？"/>
         <string name="1" value="找到蕴藏着希纳斯精神的书，阅读其中的内容。\n\n#i02430000# #t02430000# #b#c02430000# / 20#k"/>
@@ -739,7 +739,7 @@
         <int name="order" value="2"/>
         <string name="name" value="冒险骑士团之书第2卷"/>
         <int name="area" value="50"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <string name="parent" value="冒险骑士团之书"/>
         <string name="0" value="搜集冒险骑士团之书第二卷。这次的内容又会是什么呢？"/>
         <string name="1" value="搜集冒险骑士团之书第二卷。这次的内容又会是什么呢？\n\n#i02430001# #t02430001# #b#c02430001# / 20#k"/>
@@ -749,7 +749,7 @@
         <int name="order" value="3"/>
         <string name="name" value="冒险骑士团之书第3卷"/>
         <int name="area" value="50"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <string name="parent" value="冒险骑士团之书"/>
         <string name="0" value="搜集冒险骑士团之书第三卷。这次的内容又会是什么呢？"/>
         <string name="1" value="搜集冒险骑士团之书第三卷。这次的内容又会是什么呢？\n\n#i02430002# #t02430002# #b#c02430002# / 20#k"/>
@@ -787,7 +787,7 @@
     <imgdir name="10110">
         <string name="name" value="골드리치의 초대"/>
         <int name="area" value="50"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <string name="0" value="메이플월드의 대 상인 #b골드리치#k로부터의 전언이 도착했다. 무슨 내용일까?"/>
         <string name="1" value="메이플월드의 대 상인 #b골드리치#k로부터 자신이 모험가들을 위해 만든 미로에 초대한다는 전언이 도착했다. 메이플운영자의 특별 요청에 의해 만들어진 #b골드리치의 미로#k에 도전해 보고 싶다면 메이플 운영자를 찾아가 보라고 하는데..."/>
         <string name="2" value="메이플월드의 대 상인 #b골드리치#k로부터 자신이 모험가들을 위해 만든 미로에 초대한다는 전언이 도착했다. 메이플운영자의 특별 요청에 의해 만들어진 #b골드리치의 미로#k에 도전하기 위해 메이플운영자를 찾아갔더니 직접 미로의 입구까지 안내해 주었다."/>
@@ -901,14 +901,14 @@
         <string name="1" value="Let&apos;s try to make a deal with #b#p2084001##k."/>
         <string name="2" value="I engaged in a transaction with #b#p2084001##k."/>
         <int name="area" value="50"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <int name="autoComplete" value="1"/>
         <int name="oneShot" value="1"/>
     </imgdir>
     <imgdir name="10205">
         <string name="name" value="精灵吊坠"/>
         <int name="area" value="50"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <string name="0" value="回到冒险岛世界的女皇把为冒险家们准备的吊坠交给了星缘。去星缘那里了解一下详细情况吧。"/>
         <string name="1" value="回到冒险岛世界的女皇把为冒险家们准备的吊坠交给了星缘。去星缘那里了解一下详细情况吧。"/>
         <string name="2" value="星缘给了我一个带有女皇的祝福的吊坠。装备吊坠后，一股特别的力量围绕着我，为我增加额外的经验值。"/>
@@ -916,28 +916,28 @@
     <imgdir name="10206">
         <string name="name" value="黑魔法师的痕迹"/>
         <int name="area" value="50"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <string name="0" value="冒险岛运营员正在找你。"/>
         <string name="1" value="去寻找被黑魔法师的气息#t4001237#吧。\n\n#i4001237# #t4001237# #b#c4001237# / 20#k"/>
     </imgdir>
     <imgdir name="10207">
         <string name="name" value="黑魔法师的痕迹"/>
         <int name="area" value="50"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <string name="0" value="冒险岛运营员正在找你。"/>
         <string name="1" value="去寻找被黑魔法师的气息污染的物质吧。\n\n#i4001238# #t4001238# #b#c4001238# / 20#k"/>
     </imgdir>
     <imgdir name="10208">
         <string name="name" value="黑魔法师的痕迹"/>
         <int name="area" value="50"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <string name="0" value="冒险岛运营员正在找你。"/>
         <string name="1" value="去寻找被黑魔法师的气息污染的物质吧。 \n\n#i4001239# #t4001239# #b#c4001239# / 20#k"/>
     </imgdir>
     <imgdir name="10209">
         <string name="name" value="黑魔法师的痕迹"/>
         <int name="area" value="50"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <string name="0" value="冒险岛运营员正在找你。"/>
         <string name="1" value="去寻找被黑魔法师的气息污染的物质吧。 \n\n#i4001240# #t4001240# #b#c4001240# / 20#k"/>
     </imgdir>
@@ -1002,7 +1002,7 @@
         <string name="0" value="佳佳小时候收到的圣诞礼物是什么呢？佳佳非常怀念在温暖的家里度过的圣诞时光，去见见他吧。"/>
         <string name="1" value="去搜集可以让佳佳回想起小时候的圣诞节的东西吧！搜集佳佳小时候收到的礼物交给佳佳，就可以得到报酬。是什么东西呢？嗯……这下可没办法了。想不起来的话，就只能再回去问问佳佳了……"/>
         <string name="2" value="找到了佳佳想要的东西。佳佳回想起小时候幸福的圣诞时光，心情变得好多了。他送了我一个可以贴在圣诞鹿的红鼻子上的特制OK绷。我还想要其他礼物……佳佳自言自语地说。看来重新和他说话的话，他又会让我去寻找别的礼物。等10分钟之后再来吧……"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
     </imgdir>
     <imgdir name="10219">
         <string name="name" value="카산드라의 두번째 새해선물"/>
@@ -1028,7 +1028,7 @@
     <imgdir name="10222">
         <string name="name" value="두근두근 메이플!두근두근 나의 펫!"/>
         <int name="area" value="50"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <string name="0" value="메이플 월드를 탐험하는 모험가들의 마음속엔 언제나 두근두근 호기심이 가득하다. 메이플 운영자가 이런 호기심에 관심이 많다고 하는데..."/>
         <string name="1" value="메이플 월드를 탐험하는 모험가들의 마음속엔 언제나 두근두근 호기심이 가득하다. 메이플 운영자가 이런 호기심에 관심이 많다고 하는데..."/>
         <string name="2" value="메이플 월드를 탐험하는 모험가들의 마음속엔 언제나 두근두근 호기심이 가득하다. 두근두근 넥슨! 두근두근 메이플! 그리고 두근두근한 나의 달팽이까지!"/>
@@ -1039,7 +1039,7 @@
         <string name="0" value="Exciting Maple star festival that resembles the twinkling stars in the sky! If you&apos;d like to participate in the Starlight Festival, go see #bCassandra#k from #bFebruary 5th to February 20th#k!"/>
         <string name="1" value="Exciting Maple star festival that resembles the twinkling stars in the sky! You will receive a star every hour you keep the Giant Star safe."/>
         <string name="2" value="Exciting Maple star festival that resembles the twinkling stars in the sky! You will receive a star every hour you keep the Giant Star safe."/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
     </imgdir>
     <imgdir name="1023">
         <string name="name" value="击退猪猪"/>
@@ -1053,7 +1053,7 @@
         <int name="area" value="50"/>
         <string name="0" value="Cassandra says something went wrong on Gold Richie&apos;s Treasure Island. Let&apos;s rush over to #bCassandra# and talk to her."/>
         <string name="1" value="If you need a compass to give you directions to Treasure Island, talk to Cassandra."/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <int name="autoPreComplete" value="1"/>
         <string name="2" value="If you&apos;ve collected #bN,E,W,S for the Compass#k from the monsters, double-click the #b#t2430007##k to make a #t2430008# which will take you to Gold Richie&apos;s Treasure Island."/>
     </imgdir>
@@ -1478,7 +1478,7 @@
     <imgdir name="10282">
         <string name="name" value="인기 몬스터의 초상화 : 주황버섯"/>
         <int name="area" value="50"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <string name="0" value="매일 매일 인기 몬스터의 초상화를 그려 #b#p9010010##k에게 가져다 주면 푸짐한 선물을 준다고 한다."/>
         <string name="1" value="#t04032302#를 모아 #b주황버섯#k의 초상화를 완성 시키자."/>
         <string name="2" value="#b#p9010010##k를 위해 인기 몬스터의 초상을 그려 가져다 주었다."/>
@@ -1489,7 +1489,7 @@
     <imgdir name="10283">
         <string name="name" value="인기 몬스터의 초상화 : 옥토퍼스"/>
         <int name="area" value="50"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <string name="0" value="매일 매일 인기 몬스터의 초상화를 그려 #b#p9010010##k에게 가져다 주면 푸짐한 선물을 준다고 한다."/>
         <string name="1" value="#t04032303#를 모아 #b옥토퍼스#k의 초상화를 완성 시키자."/>
         <string name="2" value="#b#p9010010##k를 위해 인기 몬스터의 초상을 그려 가져다 주었다."/>
@@ -1500,7 +1500,7 @@
     <imgdir name="10284">
         <string name="name" value="인기 몬스터의 초상화 : 예티"/>
         <int name="area" value="50"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <string name="0" value="매일 매일 인기 몬스터의 초상화를 그려 #b#p9010010##k에게 가져다 주면 푸짐한 선물을 준다고 한다."/>
         <string name="1" value="#t04032304#를 모아 #b예티#k의 초상화를 완성 시키자."/>
         <string name="2" value="#b#p9010010##k를 위해 인기 몬스터의 초상을 그려 가져다 주었다."/>
@@ -1514,13 +1514,13 @@
         <string name="0" value="Because you kept the 15-Day Dreamer Medal safe, a Maple Admin came to see you."/>
         <string name="1" value="The Maple Admin, touched at how passionate you were about Maple, exchanged your 15-Day Dreamer Medal for a Maple Lover Medal."/>
         <string name="2" value="The Maple Admin, touched at how passionate you were about Maple, exchanged your 15-Day Dreamer Medal for a Maple Lover Medal."/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <int name="autoPreComplete" value="1"/>
     </imgdir>
     <imgdir name="10286">
         <string name="name" value="Cassandra&apos;s Gift"/>
         <int name="area" value="50"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <string name="0" value="Cassandra says she&apos;ll give you a pair of gloves to celebrate MapleStory&apos;s 6th Anniversary. Go talk to Cassandra to find out more."/>
         <string name="1" value="Cassandra claims that she can make gloves out of maple leaves. Go collect some maple leaves!"/>
         <string name="2" value="You were told if you have Maple Gage currently equipped or in your Inventory, you can&apos;t receive it again. Failed equipment should be thrown away."/>
@@ -1541,7 +1541,7 @@
         <string name="1" value="山姆教会了我#b如何使用AP#k，每当我的等级提升时就可以获得。AP的投资决定了我的力量（STR）、智力（INT）、敏捷（DEX）和运气（LUK）。我对AP的投资选择将增加我的HP和MP。\n\n哇……太棒了！多亏了他，我学到了很多。山姆说还有一件事要告诉我。"/>
         <string name="2" value="山姆告诉我，如果我想通过职业晋升成为更强的冒险者，就得去维多利亚岛。我可以选择战士、法师、弓箭手、盗贼和海盗这五个职业。每个职业都有加入和训练该职业所需的属性要求：#b战士需要35点STR，法师需要20点INT，弓箭手需要25点DEX，盗贼需要25点DEX#k。我会记住这些，并在我想要的职业上投入相应的AP！"/>
         <int name="area" value="20"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
     </imgdir>
     <imgdir name="1030">
         <string name="name" value="玛利亚的地图指引"/>
@@ -1549,7 +1549,7 @@
         <string name="1" value="玛丽亚教我如何阅读世界地图。如果我按W，世界地图就会出现。我可以看到一些我还没有去过的地方..."/>
         <string name="2" value="我想世界地图会让我在冒险大陆上更容易移动。"/>
         <int name="area" value="20"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <int name="autoPreComplete" value="1"/>
     </imgdir>
     <imgdir name="10300">
@@ -1593,7 +1593,7 @@
     <imgdir name="10311">
         <string name="name" value="发现了石化的鼠标！"/>
         <int name="area" value="50"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <string name="0" value="在分析遗物的时候，发现了石化的鼠标。"/>
         <string name="1" value="听说把鼠标交给运营员的话，就会受到感谢，并获得奖励。"/>
         <string name="2" value="把过去使用的非法程序石化的鼠标交给了运营员。他向我表示感谢，说总有一天玩家们会发现直接享受游戏要比使用非法程序有趣得多。"/>
@@ -1601,7 +1601,7 @@
     <imgdir name="10312">
         <string name="name" value="发现了佳佳丢失的眼镜！"/>
         <int name="area" value="50"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <string name="0" value="在分析遗物的时候，发现了神秘的遗物。"/>
         <string name="1" value="发现了好象是佳佳的眼镜的东西。去问问佳佳是不是他的东西吧。"/>
         <string name="2" value="佳佳说那就是他被飞船劫持的时候丢失的眼镜，对我表示了感谢。"/>
@@ -1609,7 +1609,7 @@
     <imgdir name="10313">
         <string name="name" value="发现了星缘的水晶球！"/>
         <int name="area" value="50"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <string name="0" value="在分析遗物的时候，发现了神秘的遗物。"/>
         <string name="1" value="这个东西好象是星缘的水晶球。去问问星缘吧。"/>
         <string name="2" value="看到碎裂了的水晶球之后，她对我表示感谢，说自己会想办法修好它。"/>
@@ -1617,7 +1617,7 @@
     <imgdir name="10314">
         <string name="name" value="发现了闪闪发光的腕表！"/>
         <int name="area" value="50"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <string name="0" value="在分析遗物的时候，发现了神秘的遗物。"/>
         <string name="1" value="手表……这是什么东西？先去问问运营员吧！"/>
         <string name="2" value="运营员说这个漂亮的手表是克鲁巴的手表。应该直接给克鲁巴送过去？还是交给运营员呢？"/>
@@ -1625,7 +1625,7 @@
     <imgdir name="10315">
         <string name="name" value="发现了漂亮的球鞋！"/>
         <int name="area" value="50"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <string name="0" value="在分析遗物的时候，发现了神秘的遗物。"/>
         <string name="1" value="足球鞋……这是什么东西？先去问问运营员吧！"/>
         <string name="2" value="应该把足球鞋交给拉玛人、威尔斯和吉欧吗？"/>
@@ -1633,7 +1633,7 @@
     <imgdir name="10316">
         <string name="name" value="发现了任务完成之书！"/>
         <int name="area" value="50"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <string name="0" value="在分析遗物的时候，发现了神秘的遗物。"/>
         <string name="1" value="发现了任务完成之书。应该去问问运营员……不过这真的是书吗？"/>
         <string name="2" value="把书交给了运营员，他对我表示感谢，说最近做任务的人越来越多了。"/>
@@ -1641,7 +1641,7 @@
     <imgdir name="10317">
         <string name="name" value="发现了优雅的头绳！"/>
         <int name="area" value="50"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <string name="0" value="在分析遗物的时候，发现了神秘的遗物。"/>
         <string name="1" value="优雅的头绳上写着[麦吉]两个字……先把它交给麦吉吧～"/>
         <string name="2" value="麦吉好像很兴奋，把头绳拿走了。这可真奇怪……？"/>
@@ -1649,7 +1649,7 @@
     <imgdir name="10318">
         <string name="name" value="发现了陈旧的运营员鞋子！"/>
         <int name="area" value="50"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <string name="0" value="在分析遗物的时候，发现了神秘的遗物。"/>
         <string name="1" value="发现了运营员鞋子。运营员怎么会把鞋子给弄丢了呢？"/>
         <string name="2" value="据说运营员在追赶非法程序使用者的时候把鞋子弄丢了。把鞋子交给运营员之后，他非常高兴，给了我奖励。"/>
@@ -1657,7 +1657,7 @@
     <imgdir name="10319">
         <string name="name" value="遗物大会点数达到1000点！！"/>
         <int name="area" value="50"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <string name="0" value="遗物大会点数达到了1000点。"/>
         <string name="1" value="遗物大会点数达到了1000点。"/>
         <string name="2" value="遗物大会点数达到了1000点，运营员向我表示祝贺，并说在3000点之前给予我2倍点数奖励。好像挺不错嘛！到了2500点，还会有其他礼物。"/>
@@ -1674,7 +1674,7 @@
     <imgdir name="10320">
         <string name="name" value="遗物大会点数达到2500点！！"/>
         <int name="area" value="50"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <string name="0" value="遗物大会点数达到了2500点。"/>
         <string name="1" value="遗物大会点数达到了2500点。"/>
         <string name="2" value="遗物大会点数达到了2500点，运营员给我施加了提高物理攻击力和魔法攻击力的魔法。他说达到4000点之后，会给我施加其他魔法。"/>
@@ -1682,7 +1682,7 @@
     <imgdir name="10321">
         <string name="name" value="遗物大会点数达到4000点！！"/>
         <int name="area" value="50"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <string name="0" value="遗物大会点数达到了4000点。"/>
         <string name="1" value="遗物大会点数达到了4000点。"/>
         <string name="2" value="遗物大会点数达到了4000点，运营员给我施加了更好的魔法。他说超过5000点的话，就可以获得参与奖。"/>
@@ -1690,7 +1690,7 @@
     <imgdir name="10322">
         <string name="name" value="遗物大会参与奖"/>
         <int name="area" value="50"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <string name="0" value="据说遗物大会点数超过5000点之后，可以获得参与奖。"/>
         <string name="1" value="据说遗物大会点数超过5000点之后，可以获得参与奖。在佳佳那里获得了参与奖。"/>
         <string name="2" value="他说进入Top10的话，就会帮我把礼物的期限变成无限期，并升级物品的能力值。想要挑战一下吗？"/>
@@ -1728,7 +1728,7 @@
         <int name="area" value="50"/>
         <int name="medalCategory" value="3"/>
         <int name="viewMedalItem" value="1142125"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <string name="0" value="寻找8种神秘的宝物。在遗物之中，如果找到8种神秘的宝物，可以获得特殊的奖励。"/>
         <string name="1" value="修安说找到全部8种神秘的宝物之后，可以获得特殊的礼物，让我到时候去找她。"/>
         <string name="2" value="找到了8种神秘的宝物，在佳佳那里领取了神秘遗物发现者勋章。"/>
@@ -1739,7 +1739,7 @@
     <imgdir name="10329">
         <string name="name" value="遗物大会开始"/>
         <int name="area" value="50"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <string name="0" value="佳佳告诉我遗物大会开始了。"/>
         <string name="1" value="佳佳告诉我遗物大会开始了。"/>
         <string name="2" value="佳佳告诉我遗物大会开始了。他说积累一定点数之后，可以获得很不错的奖励。就相信佳佳一次吧！"/>
@@ -1906,7 +1906,7 @@
     <imgdir name="10354">
         <string name="name" value="把星缘的相册交给谁？"/>
         <int name="area" value="50"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <string name="0" value="正在努力地发掘遗物。"/>
         <string name="1" value="发现了星缘的相册。嗯……应该把它交给星缘？还是交给佳佳呢？"/>
         <string name="2" value="把相册还回去之后，得到了战神的痕迹。"/>
@@ -1936,7 +1936,7 @@
         <string name="0" value="据说为了纪念动作英雄战神的发布，星缘特别为大家准备了100%中奖活动。"/>
         <string name="1" value="据说为了纪念动作英雄战神的发布，星缘特别为大家准备了100%中奖活动。"/>
         <string name="2" value="据说为了纪念动作英雄战神的发布，星缘特别为大家准备了丰富的活动。从#b12月15日到1月15日#k，大家每天都可以享受100%中奖的乐趣。"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <string name="demandSummary" value="#i3994139:# #t3994139:# #c3994139# / 1\n解答战神的有关问题\r\n"/>
         <string name="rewardSummary" value="战神的冰封箱\n利琳的冰封箱\n狼神的冰封箱\n企鹅的冰封箱\n各种现金物品\n战神的纸箱#r中间的1个"/>
         <int name="autoComplete" value="1"/>
@@ -1953,7 +1953,7 @@
     <imgdir name="10370">
         <string name="name" value="寻找COMBO能力者"/>
         <int name="area" value="50"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <string name="0" value="达到15级后，#b#p9010010##k突然和我说话……"/>
         <string name="1" value="最高纪录：#e#r#R10335##b#n Combo#k\n\r\n#p9010010#说为了欢迎战神回到冒险岛世界，她准备了特殊的活动，并为我说明了#b寻找COMBO能力者#k活动的内容。自己累积的COMBO最高纪录达到一定值以上时，可以被认可为COMBO能力者，并获得特别的勋章……\n\n#i1142134#50COMBO以上#t1142134#\n#i1142135#200COMBO以上#t1142135#\n\r\n#i1142136#500COMBO以上#t1142136#\n\n\r\n在#b2009年12月15日到2010年1月17日#k之间，挑战自己累积的COMBO最高纪录，获取勋章吧！\r\n\r\n"/>
         <string name="2" value="可以确认我积累的COMBO最高纪录。现在对用COMBO打猎好像已经熟悉一些了。\r\n\r\n最高纪录：#e#r#R10335##b#n Combo#k"/>
@@ -1972,7 +1972,7 @@
         <string name="0" value="达到20级后，#b#p9010000##k突然找我搭话……"/>
         <string name="1" value="战神终于重回冒险岛世界了！运营者和#p1201000#为了迎接战神的回归特地准备了一系列活动……#b战神达到70级#k之后，#p1201000#就会赠送特别的礼物。\r\n\r\n#i1112405:# #t1112405#\n#t1112405#说虽然不能和别人交换，但可以放进仓库#b在同一帐号下的角色之间共享#k。也没有职业限制，好像除了战神之外的其他人也可以装备。\r\n\r\n活动期限到#b2009年12月31日#k为止，在这之前，请你努力打猎，争取能够获得礼物。"/>
         <string name="2" value="战神终于重回冒险岛世界了！运营者和#p1201000#为了迎接战神的回归特地准备了一系列活动……#b战神达到70级#k之后，#p1201000#就会赠送特别的礼物。\r\n\r\n#i1112405:# #t1112405#\n#t1112405#说虽然不能和别人交换，但可以放进仓库#b在同一帐号下的角色之间共享#k。也没有职业限制，好像除了战神之外的其他人也可以装备。\r\n\r\n活动期限到#b2009年12月31日#k为止，在这之前，请你努力打猎，争取能够获得礼物。"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
     </imgdir>
     <imgdir name="10381">
         <string name="name" value="利琳的礼物"/>
@@ -1980,7 +1980,7 @@
         <string name="0" value="达到70级，#b#p9010000##k突然找我搭话……"/>
         <string name="1" value="#p9010000#说只要达到70级就能从#p1201000#那里得到#b特别的礼物#k。\n\n#i1112405:# \n\n赶紧去#b#m140000000##k见见#b#p1201000##k吧。"/>
         <string name="2" value="从#p1201000#那里得到了#t1112405#。可以在同一帐号的不同角色身上使用的特殊戒指。除了战神以外，其他角色也能使用这个戒指。"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
     </imgdir>
     <imgdir name="1039">
         <string name="name" value="帮助尤娜"/>
@@ -2028,7 +2028,7 @@
         <string name="0" value="里恩岛开放了。在活动期间，升级后可以获得#b#t4310000##k。"/>
         <string name="2" value="用#b#t4310000##k可以在村里的#b#p9000069##k那里交换到珍贵的物品。"/>
         <string name="1" value="里恩岛开放了。在活动期间，升级后可以获得#b#t4310000##k。"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <int name="autoPreComplete" value="1"/>
     </imgdir>
     <imgdir name="10395">
@@ -2037,7 +2037,7 @@
         <string name="0" value="如果你是里恩岛的居民，可以去村里见见#b星缘#k。"/>
         <string name="1" value="升到20级后，去村里见见#b星缘#k。\r\n\r\n\r\n#n\n#k\n - 等级：#b#jlevel##k / 20"/>
         <string name="2" value="升到了20级，从#b星缘#k那里收到了礼物。"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
     </imgdir>
     <imgdir name="10396">
         <string name="name" value="里恩挑战者"/>
@@ -2073,7 +2073,7 @@
         <string name="0" value="Winter is here, and the chilly cold is already affecting everyone! If you wish to become the Winter King or Winter Queen of 2010, you&apos;d better go see Cassandra."/>
         <string name="1" value="Cassandra says she&apos;ll give you a Winter King or Winter Queen medal that can be used until midnight."/>
         <string name="2" value="If you get more than 20 of these medals from Cassandra, then Cassandra will give you a medal that won&apos;t expire for 30 days."/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
     </imgdir>
     <imgdir name="10401">
         <string name="name" value="The True Winter King / Winter Queen Event of 2010!"/>
@@ -2081,7 +2081,7 @@
         <string name="0" value="Winter is here, and the chilly cold is already affecting everyone! If you wish to become the Winter King or Winter Queen of 2010, you&apos;d better go see Cassandra."/>
         <string name="1" value="What, she&apos;s going to give you a present? All you did was train diligently throughout the winter!"/>
         <string name="2" value="On a cold winter day in 2010, you have become the ultimate Winter King or Winter Queen."/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
     </imgdir>
     <imgdir name="10405">
         <string name="name" value="2009 Pink Flower Floatie!"/>
@@ -2102,7 +2102,7 @@
     <imgdir name="10410">
         <string name="name" value="Hunter&apos;s Luck - Week 1"/>
         <int name="area" value="50"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <int name="autoPreComplete" value="1"/>
         <string name="0" value="The time between February and March is what many call the prime hunting season! Receive some hunting pointers from Scadur and become the best hunter on the block!#b\n\n&lt;Event Period&gt;\nFebruary 19, 2010 - February 21, 2010\n\n&lt;How to Join the Event&gt;\n1. Receive the 2x EXP item that Scadur hands out once a week.\n2. Use the item when in need of an extra boost of Luck.\n3. Hunt away!\n\n&lt;Notes&gt;\n1. 2x EXP item will expire at midnight on Sunday.\n2. New 2x item will become available the following Monday."/>
         <string name="1" value="The time between February and March is what many call the prime hunting season! Receive some hunting pointers from Scadur and become the best hunter on the block!#b\n\n&lt;Event Period&gt;\nFebruary 19, 2010 - February 21, 2010\n\n&lt;How to Join the Event&gt;\n1. Receive the 2x EXP item that Scadur hands out once a week.\n2. Use the item when in need of an extra boost of Luck.\n3. Hunt away!\n\n&lt;Notes&gt;\n1. 2x EXP item will expire at midnight on Sunday.\n2. New 2x item will become available the following Monday."/>
@@ -2111,7 +2111,7 @@
     <imgdir name="10411">
         <string name="name" value="Hunter&apos;s Luck - Week 2"/>
         <int name="area" value="50"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <int name="autoPreComplete" value="1"/>
         <string name="0" value="The time between February and March is what many call the prime hunting season! Receive some hunting pointers from Scadur and become the best hunter on the block!#b\n\n&lt;Event Period&gt;\nFebruary 22, 2010 - February 28, 2010\n\n&lt;How to Join the Event&gt;\n1. Receive the 2x EXP item that Scadur hands out once a week.\n2. Use the item when in need of an extra boost of Luck.\n3. Hunt away!\n\n&lt;Notes&gt;\n1. 2x EXP item will expire at midnight on Sunday.\n2. New 2x item will become available the following Monday."/>
         <string name="1" value="The time between February and March is what many call the prime hunting season! Receive some hunting pointers from Scadur and become the best hunter on the block!#b\n\n&lt;Event Period&gt;\nFebruary 22, 2010 - February 28, 2010\n\n&lt;How to Join the Event&gt;\n1. Receive the 2x EXP item that Scadur hands out once a week.\n2. Use the item when in need of an extra boost of Luck.\n3. Hunt away!\n\n&lt;Notes&gt;\n1. 2x EXP item will expire at midnight on Sunday.\n2. New 2x item will become available the following Monday."/>
@@ -2120,7 +2120,7 @@
     <imgdir name="10412">
         <string name="name" value="Hunter&apos;s Luck - Week 3"/>
         <int name="area" value="50"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <int name="autoPreComplete" value="1"/>
         <string name="0" value="The time between February and March is what many call the prime hunting season! Receive some hunting pointers from Scadur and become the best hunter on the block!#b\n\n&lt;Event Period&gt;\nMarch 1, 2010 - March 7, 2010\n\n&lt;How to Join the Event&gt;\n1. Receive the 2x EXP item that Scadur hands out once a week.\n2. Use the item when in need of an extra boost of Luck.\n3. Hunt away!\n\n&lt;Notes&gt;\n1. 2x EXP item will expire at midnight on Sunday.\n2. New 2x item will become available the following Monday."/>
         <string name="1" value="The time between February and March is what many call the prime hunting season! Receive some hunting pointers from Scadur and become the best hunter on the block!#b\n\n&lt;Event Period&gt;\nMarch 1, 2010 - March 7, 2010\n\n&lt;How to Join the Event&gt;\n1. Receive the 2x EXP item that Scadur hands out once a week.\n2. Use the item when in need of an extra boost of Luck.\n3. Hunt away!\n\n&lt;Notes&gt;\n1. 2x EXP item will expire at midnight on Sunday.\n2. New 2x item will become available the following Monday."/>
@@ -2129,7 +2129,7 @@
     <imgdir name="10413">
         <string name="name" value="Hunter&apos;s Luck - Week 4"/>
         <int name="area" value="50"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <int name="autoPreComplete" value="1"/>
         <string name="0" value="The time between February and March is what many call the prime hunting season! Receive some hunting pointers from Scadur and become the best hunter on the block!#b\n\n&lt;Event Period&gt;\nMarch 8, 2010 - March 14, 2010\n\n&lt;How to Join the Event&gt;\n1. Receive the 2x EXP item that Scadur hands out once a week.\n2. Use the item when in need of an extra boost of Luck.\n3. Hunt away!\n\n&lt;Notes&gt;\n1. 2x EXP item will expire at midnight on Sunday.\n2. New 2x item will become available the following Monday."/>
         <string name="1" value="The time between February and March is what many call the prime hunting season! Receive some hunting pointers from Scadur and become the best hunter on the block!#b\n\n&lt;Event Period&gt;\nMarch 8, 2010 - March 14, 2010\n\n&lt;How to Join the Event&gt;\n1. Receive the 2x EXP item that Scadur hands out once a week.\n2. Use the item when in need of an extra boost of Luck.\n3. Hunt away!\n\n&lt;Notes&gt;\n1. 2x EXP item will expire at midnight on Sunday.\n2. New 2x item will become available the following Monday."/>
@@ -2138,7 +2138,7 @@
     <imgdir name="10414">
         <string name="name" value="Hunter&apos;s Luck - Week 5"/>
         <int name="area" value="50"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <int name="autoPreComplete" value="1"/>
         <string name="0" value="The time between February and March is what many call the prime hunting season! Receive some hunting pointers from Scadur and become the best hunter on the block!#b\n\n&lt;Event Period&gt;\nMarch 15, 2010 - March 21, 2010\n\n&lt;How to Join the Event&gt;\n1. Receive the 2x EXP item that Scadur hands out once a week.\n2. Use the item when in need of an extra boost of Luck.\n3. Hunt away!\n\n&lt;Notes&gt;\n1. 2x EXP item will expire at midnight on Sunday.\n2. New 2x item will become available the following Monday."/>
         <string name="1" value="The time between February and March is what many call the prime hunting season! Receive some hunting pointers from Scadur and become the best hunter on the block!#b\n\n&lt;Event Period&gt;\nMarch 15, 2010 - March 21, 2010\n\n&lt;How to Join the Event&gt;\n1. Receive the 2x EXP item that Scadur hands out once a week.\n2. Use the item when in need of an extra boost of Luck.\n3. Hunt away!\n\n&lt;Notes&gt;\n1. 2x EXP item will expire at midnight on Sunday.\n2. New 2x item will become available the following Monday."/>
@@ -2147,7 +2147,7 @@
     <imgdir name="10415">
         <string name="name" value="Winter Bingo"/>
         <int name="area" value="50"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <int name="autoComplete" value="1"/>
         <string name="0" value="There&apos;s no better time for Bingo than in the middle of a dreary winter! Check the Bingo board every day and receive some awesome prizes when you&apos;ve filled up the entire Bingo board! Try making it to the game every day!\n\n&lt;Event Periods&gt;\nFebruary 22, 2010 - March 26, 2010"/>
         <string name="1" value="There&apos;s no better time for Bingo than in the middle of a dreary winter! Check the Bingo board every day and receive some awesome prizes when you&apos;ve filled up the entire Bingo board! Try making it to the game every day!\n\n&lt;Event Periods&gt;\nFebruary 22, 2010 - March 26, 2010"/>
@@ -2159,7 +2159,7 @@
     <imgdir name="10417">
         <string name="name" value="Winter Bingo"/>
         <int name="area" value="50"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <int name="autoComplete" value="1"/>
         <string name="0" value="There&apos;s no better time for Bingo than in the middle of a dreary winter! Check the Bingo board every day and receive some awesome prizes when you&apos;ve filled up the entire Bingo board! Try making it to the game every day!\n\n&lt;Event Periods&gt;\nFebruary 22, 2010 - March 26, 2010"/>
         <string name="1" value="There&apos;s no better time for Bingo than in the middle of a dreary winter! Check the Bingo board every day and receive some awesome prizes when you&apos;ve filled up the entire Bingo board! Try making it to the game every day!\n\n&lt;Event Periods&gt;\nFebruary 22, 2010 - March 26, 2010"/>
@@ -2171,7 +2171,7 @@
     <imgdir name="10418">
         <string name="name" value="Winter Bingo"/>
         <int name="area" value="50"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <int name="autoComplete" value="1"/>
         <string name="0" value="There&apos;s no better time for Bingo than in the middle of a dreary winter! Check the Bingo board every day and receive some awesome prizes when you&apos;ve filled up the entire Bingo board! Try making it to the game every day!\n\n&lt;Event Periods&gt;\nFebruary 22, 2010 - March 26, 2010"/>
         <string name="1" value="There&apos;s no better time for Bingo than in the middle of a dreary winter! Check the Bingo board every day and receive some awesome prizes when you&apos;ve filled up the entire Bingo board! Try making it to the game every day!\n\n&lt;Event Periods&gt;\nFebruary 22, 2010 - March 26, 2010"/>
@@ -2183,7 +2183,7 @@
     <imgdir name="10419">
         <string name="name" value="Winter Bingo"/>
         <int name="area" value="50"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <int name="autoComplete" value="1"/>
         <string name="0" value="There&apos;s no better time for Bingo than in the middle of a dreary winter! Check the Bingo board every day and receive some awesome prizes when you&apos;ve filled up the entire Bingo board! Try making it to the game every day!\n\n&lt;Event Periods&gt;\nFebruary 22, 2010 - March 26, 2010"/>
         <string name="1" value="There&apos;s no better time for Bingo than in the middle of a dreary winter! Check the Bingo board every day and receive some awesome prizes when you&apos;ve filled up the entire Bingo board! Try making it to the game every day!\n\n&lt;Event Periods&gt;\nFebruary 22, 2010 - March 26, 2010"/>
@@ -2203,7 +2203,7 @@
     <imgdir name="10420">
         <string name="name" value="Winter Bingo"/>
         <int name="area" value="50"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <int name="autoComplete" value="1"/>
         <string name="0" value="There&apos;s no better time for Bingo than in the middle of a dreary winter! Check the Bingo board every day and receive some awesome prizes when you&apos;ve filled up the entire Bingo board! Try making it to the game every day!\n\n&lt;Event Periods&gt;\nFebruary 22, 2010 - March 26, 2010"/>
         <string name="1" value="There&apos;s no better time for Bingo than in the middle of a dreary winter! Check the Bingo board every day and receive some awesome prizes when you&apos;ve filled up the entire Bingo board! Try making it to the game every day!\n\n&lt;Event Periods&gt;\nFebruary 22, 2010 - March 26, 2010"/>
@@ -2464,7 +2464,7 @@
         <int name="area" value="50"/>
         <string name="0" value="카산드라가 골드리치의 보물섬에 무슨 일이 생긴 것 같다고 하는데.. #b카산드라#를 찾아가 보자."/>
         <string name="1" value="보물섬의 위치를 알려줄 나침반이 필요하다면 카산드라에게 말을 걸자."/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <int name="autoPreComplete" value="1"/>
         <string name="2" value="몬스터들에게서 #b나침반용 N,E,W,S#k를 모두 모았다면 #b#t2430007##k을 더블클릭하면 골드리치의 보물섬으로 갈 수 있는 #t2430008#를 만들 수 있다고 한다. \n\n#i3994102##t3994102#  #b#c3994102#/1#k \n#i3994103##t3994103#  #b#c3994103#/1#k \n#i3994104##t3994104#  #b#c3994104#/1#k \n#i3994105##t3994105#  #b#c3994105#/1#k \n#i2430007##t2430007#  #b#c2430007#/1#k"/>
     </imgdir>
@@ -2473,7 +2473,7 @@
         <int name="area" value="50"/>
         <string name="0" value="카산드라가 골드리치의 보물섬에 무슨 일이 생긴 것 같다고 하는데.. #b카산드라#를 찾아가 보자."/>
         <string name="1" value="보물섬의 위치를 알려줄 나침반이 필요하다면 카산드라에게 말을 걸자."/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <int name="autoPreComplete" value="1"/>
         <string name="2" value="몬스터들에게서 #b나침반용 N,E,W,S#k를 모두 모았다면 #b#t2430007##k을 더블클릭하면 골드리치의 보물섬으로 갈 수 있는 #t2430008#를 만들 수 있다고 한다. \n\n#i3994102##t3994102#  #b#c3994102#/1#k \n#i3994103##t3994103#  #b#c3994103#/1#k \n#i3994104##t3994104#  #b#c3994104#/1#k \n#i3994105##t3994105#  #b#c3994105#/1#k \n#i2430007##t2430007#  #b#c2430007#/1#k"/>
     </imgdir>
@@ -2493,7 +2493,7 @@
         <int name="timeLimit" value="3600"/>
         <int name="area" value="50"/>
         <int name="selectedMob" value="1"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
     </imgdir>
     <imgdir name="10470">
         <string name="name" value="별별 페스티발"/>
@@ -2502,7 +2502,7 @@
         <string name="1" value="반짝반짝 빛나는 밤하늘의 별만큼이나 반짝반짝 빛나는 메이플만의 신나는 페스티발! 커다란 왕별을 소중히 간직하고 있으면4 5분이 지날때 마다 품 안에 별이 하나씩 생긴다는데..."/>
         <string name="2" value="반짝반짝 빛나는 밤하늘의 별만큼이나 반짝반짝 빛나는 메이플만의 신나는 페스티발! 커다란 왕별을 소중히 간직하고 있으면 45분이 지날때 마다 품 안에 별이 하나씩 생긴다는데..."/>
         <string name="summary" value="5분 동안 카산드라의 왕별을 잘 간직하자.\r\n#b(로그아웃을 하면 왕별이 사라져 버리니 주의해야한다.)"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
     </imgdir>
     <imgdir name="1048">
         <string name="name" value="职业推荐"/>
@@ -2510,7 +2510,7 @@
         <string name="1" value="虽然才刚刚认识，但运营员热心地给我推荐了职业。"/>
         <string name="2" value="虽然才刚刚认识，但运营员热心地给我推荐了职业。"/>
         <int name="area" value="20"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
     </imgdir>
     <imgdir name="1049">
         <string name="name" value="战士转职"/>
@@ -2518,7 +2518,7 @@
         <string name="1" value="他说会把我送到勇士部落，让我可以转职为战士。"/>
         <string name="2" value="真的要转职为战士吗？"/>
         <int name="area" value="20"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
     </imgdir>
     <imgdir name="1050">
         <string name="name" value="魔法师转职"/>
@@ -2526,7 +2526,7 @@
         <string name="1" value="他说会把我送到魔法密林，让我可以转职为魔法师。"/>
         <string name="2" value="真的要转职为魔法师吗？"/>
         <int name="area" value="20"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
     </imgdir>
     <imgdir name="1051">
         <string name="name" value="弓箭手转职"/>
@@ -2534,7 +2534,7 @@
         <string name="1" value="他说会把我送到射手村，让我可以转职为弓箭手。"/>
         <string name="2" value="真的要转职为弓箭手吗？"/>
         <int name="area" value="20"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
     </imgdir>
     <imgdir name="1052">
         <string name="name" value="飞侠转职"/>
@@ -2542,7 +2542,7 @@
         <string name="1" value="他说会把我送到废都，让我可以转职为飞侠。"/>
         <string name="2" value="真的要转职为飞侠吗？"/>
         <int name="area" value="20"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
     </imgdir>
     <imgdir name="1053">
         <string name="name" value="海盗转职"/>
@@ -2550,12 +2550,12 @@
         <string name="1" value="他说会把我送到诺特勒斯号，让我可以转职为海盗。"/>
         <string name="2" value="真的要转职为海盗吗？"/>
         <int name="area" value="20"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
     </imgdir>
     <imgdir name="1054">
         <string name="name" value="希纳斯骑士团"/>
         <int name="area" value="10"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <string name="0" value="Neinheart suddenly approaches you..."/>
         <string name="1" value="The Cygnus Knights… Neinheart wonders if you are interested in joining..."/>
         <string name="2" value="The Cygnus Knights… What is that?"/>
@@ -2710,7 +2710,7 @@
     <imgdir name="19000">
         <string name="name" value="Honorable Mesoranger"/>
         <int name="area" value="51"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <int name="autoAccept" value="1"/>
         <string name="2" value="Due to your impressive performance and results in the event, you have received the #b&lt;Honorable Mesoranger&gt;#k title from the Maple Admin."/>
         <int name="medalCategory" value="3"/>
@@ -2719,7 +2719,7 @@
     <imgdir name="19001">
         <string name="name" value="Maple Nut"/>
         <int name="area" value="51"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <int name="autoAccept" value="1"/>
         <string name="2" value="Actively participating in the event celebrating MapleStory&apos;s 6th anniversary gave you the title of #b&lt;Maple Nut&gt;#k."/>
         <int name="medalCategory" value="3"/>
@@ -2729,7 +2729,7 @@
         <string name="name" value="The 2nd Honorable Mesoranger"/>
         <int name="area" value="51"/>
         <int name="viewMedalItem" value="1142123"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <int name="autoAccept" value="1"/>
         <string name="1" value="Due to your impressive performance and results in the event, you have received the #b&lt;Honorable Mesoranger&gt;#k title from the Maple Admin."/>
         <string name="2" value="Due to your impressive performance and results in the event, you have received the #b&lt;Honorable Mesoranger&gt;#k title from the Maple Admin."/>
@@ -2738,7 +2738,7 @@
     <imgdir name="19005">
         <string name="name" value="Top 10 in Artifact Hunt"/>
         <int name="area" value="51"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <int name="autoAccept" value="1"/>
         <string name="1" value="You can earn a title if you make the top 10 in Artifact Hunt."/>
         <string name="2" value="You have earned a title for making the top 10 in Artifact Hunt."/>
@@ -2748,7 +2748,7 @@
     <imgdir name="19006">
         <string name="name" value="Mystical Artifact Discoverer"/>
         <int name="area" value="51"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <int name="autoAccept" value="1"/>
         <string name="0" value="You can earn a title when you discover 8 Mystical Artifacts."/>
         <string name="1" value="You can earn a title when you discover 8 Mystical Artifacts."/>
@@ -2765,7 +2765,7 @@
         <string name="0" value="If you get a combo of 50 or more, you will receive the title Combo Maniac."/>
         <string name="1" value="If you get a combo of 50 or more, you will receive the title Combo Maniac."/>
         <string name="2" value="You got a combo of at least 50 and received the title Combo Maniac."/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
     </imgdir>
     <imgdir name="19008">
         <string name="name" value="Combo Master"/>
@@ -2776,7 +2776,7 @@
         <string name="0" value="If you get a combo of 200 or more, you will receive the title Combo Master."/>
         <string name="1" value="If you get a combo of 200 or more, you will receive the title Combo Master."/>
         <string name="2" value="You got a combo of at least 200 and received the title Combo Master."/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
     </imgdir>
     <imgdir name="19009">
         <string name="name" value="Combo King"/>
@@ -2787,7 +2787,7 @@
         <string name="0" value="If you get a combo of 500 or more, you will receive the title Combo King."/>
         <string name="1" value="If you get a combo of 500 or more, you will receive the title Combo King."/>
         <string name="2" value="You got a combo of at least 500 and received the title Combo King."/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
     </imgdir>
     <imgdir name="19010">
         <string name="name" value="류호 개척자"/>
@@ -3181,7 +3181,7 @@
         <string name="1" value="#p1101002#说我的等级提高了很多，也已经熟悉了骑士的任务，现在到了脱离修炼骑士阶段，成为正式骑士的时候。他问我是否愿意参加#b骑士团等级考试#k，说如果想成为更高级的骑士，就去圣地找他。"/>
         <string name="2" value="#p1101002#说我的等级提高了很多，也已经熟悉了骑士的任务，现在到了脱离修炼骑士阶段，成为正式骑士的时候。他问我是否愿意参加骑士团等级考试，说如果想成为更高级的骑士，就去圣地找他。"/>
         <int name="area" value="15"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <string name="type" value="[转职]"/>
     </imgdir>
     <imgdir name="20201">
@@ -3317,7 +3317,7 @@
         <string name="1" value="#b圣地#k好像出了什么问题。快去看看吧。"/>
         <string name="2" value="#p1101002#说有件重要的东西被黑魔法师的手下偷走了。到底丢了什么呢？快去圣地看看吧。"/>
         <int name="area" value="15"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <string name="type" value="[转职]"/>
     </imgdir>
     <imgdir name="20301">
@@ -3533,7 +3533,7 @@
         <string name="1" value="接到了新的任务。任务是为正在追踪黑色之翼的冒险骑士团高级骑士#p1103000#提供支援。他说#p1103000#最后是在#b#m211000000##k失去联系的，去#m211000000#应该就能找到他……"/>
         <string name="2" value="接到了新的任务。任务是为正在追踪黑色之翼的冒险骑士团高级骑士#p1103000#提供支援。他说#p1103000#最后是在#m211000000#失去联系的，去#m211000000#应该就能找到他……"/>
         <int name="area" value="15"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <string name="type" value="[转职]"/>
     </imgdir>
     <imgdir name="20401">
@@ -3550,7 +3550,7 @@
         <string name="1" value="#b#p2032001##k说含有诅咒的力量的#b#t4001207##k正在大陆各地扩散，因为它很危险，让我交给他揭开诅咒。但是#p2032001#的话中好像听到了#p1103000#的名字……\n\n#i4001207# #t4001207# #b#c4001207# / 1#k"/>
         <string name="2" value="把#t4001207#交给了#p2032001#。#p2032001#说#p1103000#不久前帮他回收了#t4001207#，之后他为了了解更多#t4001207#有关的情况，去了#m240000000#。"/>
         <int name="area" value="15"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <string name="type" value="[转职]"/>
     </imgdir>
     <imgdir name="20403">
@@ -3591,7 +3591,7 @@
         <string name="1" value="#p1101001#说眼前的那个女人就是#r#o9001010##p1104002##k，她对整个圣地下了诅咒。其他人体力很强，没什么关系，但女皇可能坚持不了太久……赶快击退#o9001010#，解开诅咒！\n\n#o9001010##r #a204071##k "/>
         <string name="2" value="判定狡猾的#o9001010#很难通过#p1101001#侵入了圣地，一定是利用#p1103000#把诅咒的媒介带了进来，对整个圣地施下了诅咒！打败了#o9001010#之后，诅咒好像终于解开了。"/>
         <int name="area" value="15"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <string name="type" value="[转职]"/>
     </imgdir>
     <imgdir name="20408">
@@ -3701,7 +3701,7 @@
         <string name="1" value="#p1101002#는 레벨 50이 되었는데도 걸어 다니는 건 기사의 품위에 어울리지 않는다며 #b몬스터 라이딩#k에 관한 정보를 알려 주었다. 그의 말에 의하면 기사들만의 라이딩이 있는 것 같은데... "/>
         <string name="2" value="#p1101002#는 레벨 50이 되었는데도 걸어 다니는 건 기사의 품위에 어울리지 않는다며 몬스터 라이딩에 관한 정보를 알려 주었다. 그의 말에 의하면 기사들만의 라이딩이 있는 것 같은데... 에레브로 가서 구체적인 이야기를 들어 보자."/>
         <int name="area" value="15"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
     </imgdir>
     <imgdir name="20501">
         <string name="name" value="나인하트의 소개장"/>
@@ -3751,7 +3751,7 @@
         <string name="1" value="#p1101002#는 레벨이 90이 되었는데 아직도 일반 #t1902005#를 타고 있는 건 상급기사의 품격에 어울리지 않는다며, 몬스터 라이딩에 관한 새로운 정보를 알려주었다. #b라이딩교관 #p1102002##k에게 가면 더 강력한 라이딩에 대해 알 수 있을 거라는데..."/>
         <string name="2" value="#p1101002#는 레벨이 90이 되었는데 아직도 일반 #t1902005#를 타고 있는 건 상급기사의 품격에 어울리지 않는다며, 몬스터 라이딩에 관한 새로운 정보를 알려주었다. #p1102002#에게 가면 더 강력한 라이딩에 대해 알 수 있을 거라는데..."/>
         <int name="area" value="15"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
     </imgdir>
     <imgdir name="20508">
         <string name="name" value="티티아나의 탈피"/>
@@ -3807,7 +3807,7 @@
     <imgdir name="20520">
         <string name="name" value="骑士的品味"/>
         <int name="area" value="15"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <string name="0" value="#b#p1101002##k好像有话要和我说……"/>
         <string name="1" value="#p1101002#说我50级了还在走路，不符合骑士的品味，并告诉了我有关怪物骑宠的信息。据他说，有一种骑士团特有的骑宠……"/>
         <string name="2" value="#p1101002#说我50级了还在走路，不符合骑士的品味，并告诉了我有关怪物骑宠的信息。据他说，有一种骑士团特有的骑宠……去#m130000000#那里了解一下详细情况吧。"/>
@@ -3860,7 +3860,7 @@
         <string name="0" value="#b#p1101002##k好像有话要和我说……"/>
         <string name="1" value="#p1101002#说我100级了还在乘坐普通#t1902005#，不符合高级骑士的品格，并告诉了我新的怪物骑宠的信息。他说在#b骑宠教官#p1102002##k那里可以了解更强的骑宠的信息……"/>
         <string name="2" value="#p1101002#说我100级了还在乘坐普通#t1902005#，不符合高级骑士的品格，并告诉了我新的怪物骑宠的信息。他说在#p1102002#那里可以了解更强的骑宠的信息……"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
     </imgdir>
     <imgdir name="20528">
         <string name="name" value="驯养提提奥"/>
@@ -3880,7 +3880,7 @@
     <imgdir name="20531">
         <string name="name" value="Kiridu&apos;s Calling"/>
         <int name="area" value="15"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <string name="0" value="Suddenly, #p1101002# approaches you."/>
         <string name="1" value="#p1101002# suggested that you take your Mount and go see #b#p1102002#, the Mount Instructor,#k saying that your Mount may be in trouble."/>
         <string name="2" value="#p1101002# suggested that you take your Mount and go see #p1102002#, the Mount Instructor, saying that your Mount may be in trouble."/>
@@ -3970,7 +3970,7 @@
         <string name="1" value="#p1101002#说超过100级并不意味着修炼的结束，让我以不断进行修炼的骑士团长们为榜样，继续努力。他说如果做得好的话，就可以学会新的技能……"/>
         <string name="2" value="#p1101002#说超过100级并不意味着修炼的结束，让我以不断进行修炼的骑士团长们为榜样，继续努力。他说如果做得好的话，就可以学会新的技能……"/>
         <int name="area" value="15"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <string name="type" value="[技能]"/>
     </imgdir>
     <imgdir name="20601">
@@ -4026,7 +4026,7 @@
         <string name="1" value="#p1101002#问我之前的技能学习得怎样，并说骑士团长学会了新的技能，让我去学习。"/>
         <string name="2" value="#p1101002#问我之前的技能学习得怎样，并说骑士团长学会了新的技能，让我去学习。"/>
         <int name="area" value="15"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <string name="type" value="[技能]"/>
     </imgdir>
     <imgdir name="20611">
@@ -4178,7 +4178,7 @@
         <string name="1" value="从#p1101002#那里接到了第一个任务。任务是去#b金银岛#m100000000##k，帮助那里的#b情报员#p1103001##k。"/>
         <string name="2" value="从#p1101002#那里接到了第一个任务。任务是去金银岛的#m100000000#，帮助那里的情报员#p1103001#。骑士团向冒险岛各地派遣了情报员，搜集黑魔法师的情报。看来这样的任务以后会经常有。"/>
         <int name="area" value="15"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
     </imgdir>
     <imgdir name="20705">
         <string name="name" value="玩世不恭的花蘑菇"/>
@@ -4214,7 +4214,7 @@
         <string name="1" value="从#p1101002#那里获得了新的任务。任务是去金银岛的#b#m103000000##k，帮助那里的#b情报员#p1103002##k。"/>
         <string name="2" value="在#m103000000#见到了#p1103002#。"/>
         <int name="area" value="15"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
     </imgdir>
     <imgdir name="2071">
         <string name="name" value="陌生女人的拜托"/>
@@ -4266,7 +4266,7 @@
         <string name="1" value="从#p1101002#那里接到了新的任务。任务内容是去金银岛的#b#m101000000##k，帮助那里的#b情报员#p1103003##k。"/>
         <string name="2" value="去#m101000000#见到了#p1103003#……"/>
         <int name="area" value="15"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
     </imgdir>
     <imgdir name="20716">
         <string name="name" value="艾温很可疑！"/>
@@ -4310,7 +4310,7 @@
         <string name="1" value="从#p1101002#那里接到了新任务。但在任务开始之前，需要给我一件东西，让我到圣地去一趟……"/>
         <string name="2" value="从#p1101002#那里接到了新任务。但在任务开始之前，必须先去圣地，拿一样任务需要的东西……"/>
         <int name="area" value="15"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
     </imgdir>
     <imgdir name="20721">
         <string name="name" value="勇士部落派遣任务"/>
@@ -4346,7 +4346,7 @@
         <string name="1" value="#p1101002#说在#b#m105040300##k的某地探测到了强烈的邪恶气息，让我去那里调查#r#o9300285##k的行踪。但由于没有向#m105040300#派遣情报员，我只能独自搜集情报……"/>
         <string name="2" value="搜集到情报后，向#p1101002#进行了报告。"/>
         <int name="area" value="15"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
     </imgdir>
     <imgdir name="20726">
         <string name="name" value="记忆者的情报"/>
@@ -4849,7 +4849,7 @@
         <string name="0" value="达到30级后，#b#p1201000##k突然和我搭话……"/>
         <string name="1" value="#p1201000#说战斧突然出现了奇怪的反应，说不定是有什么话要对我说……让我赶紧去#b#m140000000##k，看看#b战斧#k的情况。"/>
         <string name="2" value="战斧前面站着一个陌生的少年……看起来不怎么友善的少年怎么看起来这么眼熟？什么？他说自己是#p1201001#？真让人难以置信？"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <string name="type" value="[转职]"/>
     </imgdir>
     <imgdir name="21201">
@@ -4931,7 +4931,7 @@
         <string name="1" value="#p1022000#会要你完成简单的怪物狩猎任务，来学习基本的修炼技能, 他要求捕捉#r#o0130100# 20只#k. #o0130100#多出现在 #m102000000# 村庄周边地区，很容易找到... \n\n#o0130100# #r#a21281##k"/>
         <string name="2" value="打倒#o0130100# 20只并向 #p1022000#报告. 嗯... 任务很简单吧?"/>
         <int name="area" value="10"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <int name="autoComplete" value="1"/>
     </imgdir>
     <imgdir name="2129">
@@ -4940,7 +4940,7 @@
         <string name="1" value="#p1022000#认为你的基础修炼还不够，所以要你继续完成简单的怪物狩猎任务. 这次是完成捕捉#r#o0130100# 50只#k的任务... \n\n#o0130100# #r#a21291##k"/>
         <string name="2" value="捕捉#o0130100# 50只后向 #p1022000#报告. 咻.打倒 50只这么多真的是很了不起吧?"/>
         <int name="area" value="10"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <int name="autoComplete" value="1"/>
     </imgdir>
     <imgdir name="2130">
@@ -4949,13 +4949,13 @@
         <string name="1" value="#p1022000#认为你要具备战士的勇气和耐心还需要更多的修炼，所以要你捕捉 #r#o0130100# 80只#k. #o0130100# 80只啊... 也不是很多吧? \n\n#o0130100# #r#a21301##k"/>
         <string name="2" value="捕捉#o0130100# 80只. 呼... 真是不容易. "/>
         <int name="area" value="10"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <int name="autoComplete" value="1"/>
     </imgdir>
     <imgdir name="21300">
         <string name="name" value="武器讨厌主人"/>
         <int name="area" value="6"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <string name="0" value="达到70级之后，#b#p1201000##k突然和我说话……"/>
         <string name="1" value="#p1201000#说战斧又出现了奇怪的反应，好像想和你说什么话。现在关系好像好多了啊？又会是什么问题呢？去#b#m140000000##k看看吧。"/>
         <string name="2" value="#p1201002#说岛上来了小偷，把镶嵌在自己本体上的宝石偷走了。小偷向#m140020300#方向逃走，快点追上去的话，应该还能追得上……"/>
@@ -4991,7 +4991,7 @@
         <string name="1" value="为了测试之前修炼的成果，#p1022000#要你去捕捉 #r#o1110101# 15只#k回来. #o1110101#虽然与 #o0130100#长相相似，但却更难对付，所以千万不可轻敌... \n\n#o1110101# #r#a21311##k"/>
         <string name="2" value="完成捕捉#o1110101# 15只的任务. 费尽力气总算是完成了. 通过这一阶段的修炼，#p1022000#认为你将来一定能成为一名出色的战士. "/>
         <int name="area" value="10"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <int name="autoComplete" value="1"/>
     </imgdir>
     <imgdir name="2132">
@@ -5000,7 +5000,7 @@
         <string name="1" value="#p1032001#认为透过简单的怪物狩猎任务可以进行基础修炼，所以要你去捕捉#r#o0210100# 8只#k回来. #o0210100#大多出现在 #m101000000# 村庄周边的树林里，并不难找到... \n\n#o0210100# #r#a21321##k"/>
         <string name="2" value="捕捉  #o0210100# 8只并向 #p1032001#报告 . 嗯... 任务很简单吧?"/>
         <int name="area" value="10"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <int name="autoComplete" value="1"/>
     </imgdir>
     <imgdir name="2133">
@@ -5009,7 +5009,7 @@
         <string name="1" value="#p1032001#认为基础修炼仍然非常重要，于是要你完成打倒#r#o0210100# 20只#k的任务. #o0210100# 20只么... 有点困难但不要因此而退缩. \n\n#o0210100# #r#a21331##k"/>
         <string name="2" value="打倒#o0210100# 20只并向 #p1032001#报告. #p1032001#满意地微笑着."/>
         <int name="area" value="10"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <int name="autoComplete" value="1"/>
     </imgdir>
     <imgdir name="2134">
@@ -5018,7 +5018,7 @@
         <string name="1" value="#p1032001#的这次修炼任务是打倒 #r#o0210100# 35只#k. 之前已经成功打倒过的怪物了，应该不会很难. 快去打倒 #o0210100#吧. \n\n#o0210100# #r#a21341##k"/>
         <string name="2" value="打倒 #o0210100# 35只. 数量虽然不少，任务难度却不高.呼，这样的话总算是个优秀的法师了吗?"/>
         <int name="area" value="10"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <int name="autoComplete" value="1"/>
     </imgdir>
     <imgdir name="2135">
@@ -5027,7 +5027,7 @@
         <string name="1" value="#p1032001#要你去捕捉 #r#o1110101#10只#k. #o1110101#比起 #o0210100#更为凶狠，请一定要小心. \n\n#o1110101# #r#a21351##k"/>
         <string name="2" value="打倒#o1110101# 10只. 虽然还有很多不足之处，但总算是具有一名法师的素质了."/>
         <int name="area" value="10"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <int name="autoComplete" value="1"/>
     </imgdir>
     <imgdir name="2136">
@@ -5036,7 +5036,7 @@
         <string name="1" value="#p1012100#认为透过简单的怪物狩猎任务可以锻炼进行基础修炼，所以要你去捕捉#r#o0210100# 16只#k回来. #o0210100#大多出现在 #m100000000# 村庄周边地区，并不难寻找... \n\n#o0210100# #r#a21361##k"/>
         <string name="2" value="捕捉#o0210100# 16只并向 #p1012100#报告. 嗯... 任务很简吧?"/>
         <int name="area" value="10"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <int name="autoComplete" value="1"/>
     </imgdir>
     <imgdir name="2137">
@@ -5045,7 +5045,7 @@
         <string name="1" value="#p1012100#认为基础修炼仍然不足，所以要你继续完成简单的怪物狩猎任务. 这次是捕捉 #r#o0210100# 40只#的任务... \n\n#o0210100# #r#a21371##k"/>
         <string name="2" value="捕捉到#o0210100# 40只并向 #p1012100#报告. 呼. 40只对你来说也并不很难吧. "/>
         <int name="area" value="10"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <int name="autoComplete" value="1"/>
     </imgdir>
     <imgdir name="2138">
@@ -5054,7 +5054,7 @@
         <string name="1" value="#p1012100#认为你要具备弓箭手的沉着和意志还需要更多的修炼， 他要你捕捉#r#o0210100# 65只#k. #o0210100# 65只…也不是很难吧? \n\n#o0210100# #r#a21381##k"/>
         <string name="2" value="捕捉到#o0210100# 65只. 呼... 真不容易啊. "/>
         <int name="area" value="10"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <int name="autoComplete" value="1"/>
     </imgdir>
     <imgdir name="2139">
@@ -5063,7 +5063,7 @@
         <string name="1" value="为了测试之前修炼的成果， #p1012100#要你去捕捉#r#o1210101# 15只#k回来. #o1210101#可是比 #o0210100#更难缠的怪物，所以不要掉以轻心... \n\n#o1210101# #r#a21391##k"/>
         <string name="2" value="完成捕捉#o1210101# 15只的任务. 费尽力气总算成功了. 通过这一阶段的修炼，你已经获得了弓箭手转职教官赫丽娜的认可，成为一名真正的弓箭手."/>
         <int name="area" value="10"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <int name="autoComplete" value="1"/>
     </imgdir>
     <imgdir name="2140">
@@ -5072,7 +5072,7 @@
         <string name="1" value="#p1052001#认为透过简单的怪物狩猎任务可以进行基础修炼，他要你捕捉#r#o210100# 16只#k. #o210100#多出现在 #m103000000# 周边地区，并不难找... \n\n#o210100# #r#a21401##k"/>
         <string name="2" value="捕捉到#o210100# 16只并向 #p1052001#报告. 嗯... 任务很简单吧?"/>
         <int name="area" value="10"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <int name="autoComplete" value="1"/>
     </imgdir>
     <imgdir name="21400">
@@ -5081,7 +5081,7 @@
         <string name="0" value="达到120级之后，#b#p1201000##k突然和我说话……"/>
         <string name="1" value="#p1201000#说#p1201002#又出现了奇怪的反应，让我快点去#b#m140000000##k。她说这次的反应和以前不太一样，好像有点不太寻常……"/>
         <string name="2" value="#p1201002#说自己很痛苦。到底是怎么回事呢？"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <string name="type" value="[转职]"/>
     </imgdir>
     <imgdir name="21401">
@@ -5098,7 +5098,7 @@
         <string name="1" value="#p1052001#认为基础修炼仍然不足，所以要你继续完成简单的怪物狩猎任务. 这次的任务是捕捉 #r#o130100# 40只#k回来... \n\n#o130100# #r#a21411##k"/>
         <string name="2" value="捕捉到#o130100# 40只并向 #p1052001#报告. 呼. 能捕捉到40只确实很不容易…就在你这么想的时候, #p1052001#告诉你这只是一次小考验，要你不要因此骄傲... 确实也是如此."/>
         <int name="area" value="10"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <int name="autoComplete" value="1"/>
     </imgdir>
     <imgdir name="2142">
@@ -5107,7 +5107,7 @@
         <string name="1" value="#p1052001#认为如果要具备飞侠的集中力和冷静心态，你还需要更多的修炼，所以他要你去捕捉 #r#o130100# 80只#k. #o130100# 80只么... 也不是很难吧？ \n\n#o130100# #r#a21421##k"/>
         <string name="2" value="捕捉到#o130100# 65只. 呼... 真是不容易啊. 但还很不够."/>
         <int name="area" value="10"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <int name="autoComplete" value="1"/>
     </imgdir>
     <imgdir name="2143">
@@ -5116,7 +5116,7 @@
         <string name="1" value="为了测试之前修炼的成果，#p1052001#要你去捕捉 #r#o1120100# 10只#k回来. #o1120100#是 #m103000000#周边区域中最凶猛的怪物，一定要小心些... \n\n#o1120100# #r#a21431##k"/>
         <string name="2" value="捕捉到#o1120100# 10只. 费尽力气总算成功了. 总算不会再从#p1052001#口中听到新手之类的话了. "/>
         <int name="area" value="10"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <int name="autoComplete" value="1"/>
     </imgdir>
     <imgdir name="2144">
@@ -5174,7 +5174,7 @@
     <imgdir name="21500">
         <string name="name" value="武器认可了主人"/>
         <int name="area" value="6"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <string name="0" value="达到200级之后，#b#p1201002##k突然和我说话……？！"/>
         <string name="1" value="#p1201002#让我去#b#m140000000##k一趟。好像是有什么话要和我说……"/>
         <string name="2" value="据#p1201002#说，我已经基本上找回了以前的力量。作为证据，#p1201002#让我获得了使用英雄的回声的能力。"/>
@@ -5263,7 +5263,7 @@
         <string name="0" value="#b#m140000000##k的企鹅#b#p1202007##k好像有话要和我说……"/>
         <string name="1" value="#p1202007#说他照看的哈士奇里混进了一只狼。虽然不知道是怎么回事，但#p1202007#说不能把小狼扔掉，让我帮着去打听饲养小狼的方法。他说生活在水下世界某处的#b#p2060000##k知道饲养狼的方法……"/>
         <string name="2" value="在水下世界#m230010201#见到了#p2060000#。"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
     </imgdir>
     <imgdir name="21601">
         <string name="name" value="幼狼的营养食品"/>
@@ -5291,7 +5291,7 @@
         <int name="area" value="6"/>
         <string name="0" value="好像有人知道骑乘狼的方法……去#b#m211000000##k和#b#p2020007##k谈谈吧。"/>
         <string name="2" value="从#p2020007#那里学会了#t1912011#和骑乘技能。现在好像可以和狼一起乘风而行，周游世界了。"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <string name="1" value="从#p2020007#那里知道了骑乘狼的方法！骑着狼快速移动，好像就可以和狼变得更亲密……要想骑狼的话，必须要有鞍子，先去搜集鞍子的材料吧。\r\n\r\n#i4000048# #t4000048# #b#c4000048# / 50#k"/>
     </imgdir>
     <imgdir name="21605">
@@ -5396,7 +5396,7 @@
     <imgdir name="21618">
         <string name="name" value="狼的进化"/>
         <int name="area" value="6"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <string name="0" value="#b#p1201002##k突然和我说话……"/>
         <string name="1" value="#p1201002#说在我旁边感觉到了不寻常的气息，他必须确认是什么东西，让我到村里去。快到#b#m140000000##k去吧。"/>
         <string name="2" value="他说银血狼#t1902017#会和主人一起成长，得到的力量达到一定量以上时，就会以新的面貌觉醒。通过#p1201002#，让#t1902018#觉醒了。和进化了的#t1902018#一起游戏吧。"/>
@@ -5637,7 +5637,7 @@
         <string name="0" value="身份不明的某人和我说话……"/>
         <string name="1" value="答应了身份不明的某人的邀请，突然来到了一个奇怪的洞穴！洞穴里有一个拿着人偶的孩子……？那个孩子就是在#m100000000#和#m101000000#让怪物们变得凶暴的罪魁祸首？和孩子谈谈吧。"/>
         <string name="2" value="答应了身份不明的某人的邀请，突然来到了一个奇怪的洞穴！洞穴里有一个拿着人偶的孩子……？那个孩子就是在#m100000000#和#m101000000#让怪物们变得凶暴的罪魁祸首？和孩子谈谈吧。"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <string name="type" value="[技能]"/>
     </imgdir>
     <imgdir name="2172">
@@ -5765,13 +5765,13 @@
         <string name="0" value="达到31级之后，突然收到了#b#p1002104##k的召唤。是新的情报搜集工作吗？但是他什么都没有说……"/>
         <string name="1" value="#p1002104#说有个重要的情报，让我赶快去#b#m104000004##k找他。说是非常紧急的事情……到底是什么事情呢？"/>
         <string name="2" value="和我说话的原来是黑色之翼变身而成的假#p1002104#。这是人偶师为了把我引出来而设置的陷阱！还好最终击败了人偶师，但是没能抓住他，让他逃走了……#p1002104#从#p1201000#那里拿到了技能之后，好像出了事情。还好#p1002104#守住了技能，他把#b斗气掌握#k技能交给了我。"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <string name="type" value="[技能]"/>
     </imgdir>
     <imgdir name="21734">
         <string name="name" value="人偶师的痕迹"/>
         <int name="area" value="6"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <string name="0" value="达到了37级之后，#b#p1002104##k和我说话。又收到新的情报了吗？"/>
         <string name="2" value="击退了#o9300346#，但是没能获得有关#t4032323#的线索。这时#p1002104#笑了，好像是让我不要担心……"/>
         <string name="type" value="[技能]"/>
@@ -5791,7 +5791,7 @@
         <string name="0" value="达到45级之后，#b#p1002104##k和我说话。"/>
         <string name="1" value="#p1002104#说收到了和黑色之翼有关的情报，让我去见见#b#m200000000##k的#b妖精#p2012012##k。在#p2012012#那里，应该可以了解到详细的情况。"/>
         <string name="2" value="去#m200000000#见到了妖精#p2012012#。"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <string name="type" value="[技能]"/>
     </imgdir>
     <imgdir name="21737">
@@ -5841,7 +5841,7 @@
         <string name="0" value="达到54级之后。#b#p1002104##k和我说话。"/>
         <string name="1" value="#p1002104#说收到了和黑色之翼有关的情报，让我马上去#b#m250000000##k。他说在#m250000000#的#b#p2090004##k那里，可以了解到详细的情况。"/>
         <string name="2" value="去#m250000000#见到了#p2090004#。"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <string name="type" value="[技能]"/>
     </imgdir>
     <imgdir name="21742">
@@ -5906,7 +5906,7 @@
         <string name="0" value="达到了63级之后，#b#p1002104##k和我说话。"/>
         <string name="1" value="据#p1002104#说，#m220000000#的时间塔中管理时间的钟出现了问题，出现了一个通往过去的空间。如果回到过去，说不定能获得什么情报……#b时间控制室所在的坏了的时间塔，可以通过赫丽奥斯塔上面的梯子#k到达。去那里看看吧。"/>
         <string name="2" value="据#p1002104#说，#m220000000#的时间塔中管理时间的钟出现了问题，出现了一个通往过去的空间。如果回到过去，说不定能获得什么情报……#b坏了的时间塔就在右边粉红色的兔子#k那一边。去那里看看吧。"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <string name="type" value="[技能]"/>
     </imgdir>
     <imgdir name="2175">
@@ -5923,7 +5923,7 @@
         <string name="0" value="按照#p1002104#所说的方法，通过#m220000000#时间塔来到了过去。突然有人和我说话……"/>
         <string name="1" value="#p2131002#吃了一惊，但马上又变得非常高兴，说原来战神还活着。是认识我的人吗？就在我不知所措的站在那里的时候，#p2131002#说#b#p2131000##k也在等待着战神。快去#b营地会场#k见见#p2131000#，告诉他你还活着吧。"/>
         <string name="2" value="在艾琳森林见到了#p2131000#。#p2131000#非常高兴，说看到战神还活着真是太好了。但是得知我什么事情都不记得了之后，他一脸悲伤。"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <string name="type" value="[技能]"/>
     </imgdir>
     <imgdir name="21751">
@@ -5972,7 +5972,7 @@
         <string name="0" value="达到68级之后，#b#p1002104##k突然和我说话。"/>
         <string name="1" value="#p1201000#好像成功地解开了信上的诅咒！但是信的内容非常让人吃惊……快去#b#m140000000##k见见#b#p1201000##k，确认信的内容吧。"/>
         <string name="2" value="信是英雄们写给当时的女皇的，内容是嘱咐要好好保管#m130000000#的封印石。"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <string name="type" value="[技能]"/>
     </imgdir>
     <imgdir name="21757">
@@ -5989,7 +5989,7 @@
         <string name="0" value="#b#p1101002##k突然和我说话……"/>
         <string name="1" value="#p1101002#对我表示感谢，说多亏有了我提供的情报，才守护住了神兽的眼泪。他说想送我一件礼物作为报答……去#b#m130000000##k看看吧。"/>
         <string name="2" value="#p1101002#对我表示感谢，并告诉了我一个技能。#p1101002#说将来说不定需要和我联手……但是他的笑容看上去很可疑。"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <string name="type" value="[技能]"/>
     </imgdir>
     <imgdir name="2176">
@@ -6128,7 +6128,7 @@
         <string name="1" value="为了完成凯琳的初步训练得先猎杀些好对付的怪兽，所以要猎#r11头猪#k回来。大量的猪栖息在射手村附近，找起来应该挺容易的吧……\n\n#o 1210100# #r#a21931##k"/>
         <string name="2" value="向凯琳报告需要用11头猪。恩……这种程度是小菜一碟吧？"/>
         <int name="area" value="10"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <int name="autoComplete" value="1"/>
     </imgdir>
     <imgdir name="2194">
@@ -6137,7 +6137,7 @@
         <string name="1" value="如果说凯琳的基础训练还有不足的话，就继续猎杀怪兽吧。这次在这附近杀26头猪吧……\n\n#o 1210100# #r#a21941##k"/>
         <string name="2" value="向凯琳报告已经射杀了26头猪。呼，26头也不是很难搞定嘛。"/>
         <int name="area" value="10"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <int name="autoComplete" value="1"/>
     </imgdir>
     <imgdir name="2195">
@@ -6146,7 +6146,7 @@
         <string name="1" value="凯琳说想要具备海盗必须的意志的话，还需要更多的修炼。她说这次要猎杀#r43头猪#k。43头猪……不好对付吧？\n\n#o 1210100# #r#a21951##k"/>
         <string name="2" value="43头猪全部杀完了。呼……真的不容易啊。"/>
         <int name="area" value="10"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <int name="autoComplete" value="1"/>
     </imgdir>
     <imgdir name="2196">
@@ -6155,7 +6155,7 @@
         <string name="1" value="凯琳说为了验收现在的修炼成果，让我去捕捉#r10个绿蘑菇#k。绿蘑菇是比猪更强大的怪物，所以不能松懈。\n\n#o 9101000# #r#a21961##k"/>
         <string name="2" value="捕获了10个绿蘑菇。虽然不容易到底还是成功了。到现在为止通过修炼得到了海盗全职教官凯琳的承认，成为了真正的海盗。"/>
         <int name="area" value="10"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <int name="autoComplete" value="1"/>
     </imgdir>
     <imgdir name="2197">
@@ -6164,7 +6164,7 @@
         <string name="1" value="#m104000000#到达后马上去找啰嗦的营业员#b#p0002006##k吧。"/>
         <string name="2" value="与营业员聊起了有关#b#p0002006##k和 #b怪物手册#k的内容。"/>
         <int name="area" value="30"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
     </imgdir>
     <imgdir name="2198">
         <string name="name" value="消灭石头人"/>
@@ -6732,14 +6732,14 @@
         <string name="0" value="在#e废都地铁检票口#k工作的地铁站服务员#e冬青#k说有事请要拜托我。去见见冬青。\r\n#bTip在废都地铁入口处，坐着一个名叫休咪的少女。"/>
         <string name="1" value="废都地铁站的冬青向我请求帮助。他说在废都北部有个#e#b未完工的地铁站#k#n。因为收到报告，说那里出现了很多怪物，所以冒险岛地铁公司把#e#b林列车长#k#n派到了那里。他让我作为调查团，去那里进行调查。\r\n到#e#b废都北方工地#k#n找到未完工的地铁站，和林列车长对话。"/>
         <string name="2" value="接受了在废都地铁站工作的冬青的委托，为了对未完工的地铁站进行调查，在废都北方工地找到了未完成的地铁站，见到了林列车长。接受了林列车长的请求，决定帮他对地铁的平台进行调查。"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <string name="demandSummary" value="和废都北方工地的#b废弃的地铁站#k的#b林列车长#k对话。"/>
         <string name="rewardSummary" value="经验值1,000"/>
     </imgdir>
     <imgdir name="2300">
         <string name="name" value="危机中的蘑菇王国"/>
         <int name="area" value="30"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <string name="0" value="蘑菇王国正面临巨大危机！他们需要帮助……"/>
         <string name="1" value="带着转职官的#b推荐书#k，去见见蘑菇王国的#b#p1300005##k吧。"/>
         <string name="2" value="带着转职官的推荐书，见到了蘑菇王国警卫队长。"/>
@@ -6749,7 +6749,7 @@
     <imgdir name="2301">
         <string name="name" value="危机中的蘑菇王国"/>
         <int name="area" value="30"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <string name="1" value="带着转职官的#b推荐书#k，去见见蘑菇王国的#b#p1300005##k吧。"/>
         <string name="2" value="带着转职官的推荐书，见到了蘑菇王国警卫队长。"/>
         <string name="rewardSummary" value="经验值6,000"/>
@@ -6759,7 +6759,7 @@
     <imgdir name="2302">
         <string name="name" value="危机中的蘑菇王国"/>
         <int name="area" value="30"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <string name="1" value="带着转职官的#b推荐书#k，去见见蘑菇王国的#b#p1300005##k吧。"/>
         <string name="2" value="带着转职官的推荐书，见到了蘑菇王国警卫队长。"/>
         <string name="rewardSummary" value="经验值6,000"/>
@@ -6769,7 +6769,7 @@
     <imgdir name="2303">
         <string name="name" value="危机中的蘑菇王国"/>
         <int name="area" value="30"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <string name="1" value="带着转职官的#b推荐书#k，去见见蘑菇王国的#b#p1300005##k吧。"/>
         <string name="2" value="带着转职官的推荐书，见到了蘑菇王国警卫队长。"/>
         <string name="rewardSummary" value="经验值6,000"/>
@@ -6779,7 +6779,7 @@
     <imgdir name="2304">
         <string name="name" value="危机中的蘑菇王国"/>
         <int name="area" value="30"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <string name="1" value="带着转职官的#b推荐书#k，去见见蘑菇王国的#b#p1300005##k吧。"/>
         <string name="2" value="带着转职官的推荐书，见到了蘑菇王国警卫队长。"/>
         <string name="rewardSummary" value="经验值6,000"/>
@@ -6789,7 +6789,7 @@
     <imgdir name="2305">
         <string name="name" value="危机中的蘑菇王国"/>
         <int name="area" value="30"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <string name="1" value="带着转职官的#b推荐书#k，去见见蘑菇王国的#b#p1300005##k吧。"/>
         <string name="2" value="带着转职官的推荐书，见到了蘑菇王国警卫队长。"/>
         <string name="rewardSummary" value="经验值6,000"/>
@@ -6799,7 +6799,7 @@
     <imgdir name="2306">
         <string name="name" value="危机中的蘑菇王国"/>
         <int name="area" value="30"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <string name="1" value="带着转职官的#b推荐书#k，去见见蘑菇王国的#b#p1300005##k吧。"/>
         <string name="2" value="带着转职官的推荐书，见到了蘑菇王国警卫队长。"/>
         <string name="rewardSummary" value="经验值6,000"/>
@@ -6809,7 +6809,7 @@
     <imgdir name="2307">
         <string name="name" value="危机中的蘑菇王国"/>
         <int name="area" value="30"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <string name="1" value="带着转职官的#b推荐书#k，去见见蘑菇王国的#b#p1300005##k吧。"/>
         <string name="2" value="带着转职官的推荐书，见到了蘑菇王国警卫队长。"/>
         <string name="rewardSummary" value="经验值6,000"/>
@@ -6819,7 +6819,7 @@
     <imgdir name="2308">
         <string name="name" value="危机中的蘑菇王国"/>
         <int name="area" value="30"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <string name="1" value="带着转职官的#b推荐书#k，去见见蘑菇王国的#b#p1300005##k吧。"/>
         <string name="2" value="带着转职官的推荐书，见到了蘑菇王国警卫队长。"/>
         <string name="rewardSummary" value="经验值6,000"/>
@@ -6829,7 +6829,7 @@
     <imgdir name="2309">
         <string name="name" value="危机中的蘑菇王国"/>
         <int name="area" value="30"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <string name="1" value="带着转职官的#b推荐书#k，去见见蘑菇王国的#b#p1300005##k吧。"/>
         <string name="2" value="带着转职官的推荐书，见到了蘑菇王国警卫队长。"/>
         <string name="rewardSummary" value="经验值6,000"/>
@@ -6839,7 +6839,7 @@
     <imgdir name="2310">
         <string name="name" value="危机中的蘑菇王国"/>
         <int name="area" value="30"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <string name="1" value="带着转职官的#b推荐书#k，去见见蘑菇王国的#b#p1300005##k吧。"/>
         <string name="2" value="带着转职官的推荐书，见到了蘑菇王国警卫队长。"/>
         <string name="0" value="蘑菇王国正面临巨大危机！他们需要帮助……"/>
@@ -6848,7 +6848,7 @@
     <imgdir name="2312">
         <string name="name" value="勇士考试"/>
         <int name="area" value="30"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <string name="0" value="去见见蘑菇王国的#b#p1300005##k。"/>
         <string name="1" value="为了证明自己可以成为拯救蘑菇王国的英雄，搜集#b50个#t4000499##k，交给#p1300005#。"/>
         <string name="2" value="证明了自己可以成为拯救蘑菇王国的英雄。"/>
@@ -7046,7 +7046,7 @@
     <imgdir name="2332">
         <string name="name" value="碧欧蕾塔在哪？"/>
         <int name="area" value="30"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <int name="autoAccept" value="1"/>
         <string name="rewardSummary" value="经验值4,400"/>
         <string name="2" value="找到了被关在结婚礼堂的#b#p1300002#公主#k。"/>
@@ -7387,7 +7387,7 @@
         <string name="1" value="好消息～幸福村要开办非常有意思的派对。详细的内容去找露妮确认噢～"/>
         <string name="2" value="从露妮处打听到有关圣诞派对的故事。是变身派对，所以需要马上去找克里夫搞定变身药水。"/>
         <int name="area" value="50"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
     </imgdir>
     <imgdir name="28001">
         <string name="name" value="派对准备"/>
@@ -7402,7 +7402,7 @@
         <string name="1" value="知道了雪精灵想要守护幸福村的意图。她为了阻止克洛斯的计划，向冰峰雪域的阿尔卡斯特请求了帮助。快去见见他吧！"/>
         <string name="2" value="把雪精灵的纸条交给了阿尔卡斯特。接下去就是要从他那里得到答案了。"/>
         <int name="area" value="50"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
     </imgdir>
     <imgdir name="28003">
         <string name="name" value="阿尔卡斯特的回信"/>
@@ -7516,7 +7516,7 @@
         <string name="1" value="#b#p9000021##k told me if I safely guard the candles for 30 minutes, I will receive a #b#t04001167##k.  Since I have to maintain connection in order to protect the candles, might as well have fun and play all day today."/>
         <string name="2" value="I received a #b#t04001167##k!\nAfter safely keeping the candles, I received a #t04001167#. I should store away the #b#t04220045##k that I received from #p9000021#.\n#p9000021# said if I collect 5 cake pieces and complete the birthday cake, I will get a large gift."/>
         <int name="area" value="50"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
     </imgdir>
     <imgdir name="28118">
         <string name="name" value="4 Year Anniversary Cake"/>
@@ -7602,7 +7602,7 @@
         <string name="1" value=" I spoke with Eurek and he&apos;s perfected his method for scrolling unequipped items. I&apos;ve agreed to gather some materials for him for a trip he&apos;s taking. I&apos;ll need to get #b#p2040050##k everything he needs: \n\n#t1302013#  #b#c1302013#/1#k\n#t2043000#  #b#c2043000#/1#k\n#t2040000#  #b#c2040000#/1#k\n#t2040400#  #b#c2040400#/1#k\n#t2040600#  #b#c2040600#/1#k\n#b1,000,000 mesos. I can&apos;t wait for him to show me how to perform this new skill!"/>
         <string name="2" value="I returned with the materials that #b#p2040050##k asked for and learned how to use scrolls on unequipped items! Eurek also mentioned that in his travels, he&apos;d heard rumors of a powerful monster residing somewhere in Leafre--even stronger than Zakum."/>
         <int name="area" value="30"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <int name="autoComplete" value="1"/>
     </imgdir>
     <imgdir name="28137">
@@ -7636,7 +7636,7 @@
     <imgdir name="28141">
         <string name="name" value="Spirit Week Event - Cassandra&apos;s Candle "/>
         <int name="area" value="50"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <string name="0" value="Cassandra said she would reward me if I hold onto her Candle and keep it burning for 1 hour."/>
         <string name="1" value="Cassandra said she would reward me if I hold onto her Candle and keep it burning for 1 hour."/>
         <string name="2" value="Cassandra said she would reward me if I hold onto her Candle and keep it burning for 1 hour."/>
@@ -7644,7 +7644,7 @@
     <imgdir name="28142">
         <string name="name" value="Spirit Week Event - Cassandra&apos;s Candle "/>
         <int name="area" value="50"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <string name="0" value="Cassandra said she would reward me if I hold onto her Candle and keep it burning for 1 hour."/>
         <string name="1" value="Cassandra said she would reward me if I hold onto her Candle and keep it burning for 1 hour."/>
         <string name="2" value="Cassandra said she would reward me if I hold onto her Candle and keep it burning for 1 hour."/>
@@ -7652,7 +7652,7 @@
     <imgdir name="28143">
         <string name="name" value="Spirit Week Event - Cassandra&apos;s Candle "/>
         <int name="area" value="50"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <string name="0" value="Cassandra said she would reward me if I hold onto her Candle and keep it burning for 1 hour."/>
         <string name="1" value="Cassandra said she would reward me if I hold onto her Candle and keep it burning for 1 hour."/>
         <string name="2" value="Cassandra said she would reward me if I hold onto her Candle and keep it burning for 1 hour."/>
@@ -7660,7 +7660,7 @@
     <imgdir name="28144">
         <string name="name" value="Spirit Week Event - Cassandra&apos;s Candle "/>
         <int name="area" value="50"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <string name="0" value="Cassandra said she would reward me if I hold onto her Candle and keep it burning for 1 hour."/>
         <string name="1" value="Cassandra said she would reward me if I hold onto her Candle and keep it burning for 1 hour."/>
         <string name="2" value="Cassandra said she would reward me if I hold onto her Candle and keep it burning for 1 hour."/>
@@ -7696,7 +7696,7 @@
     <imgdir name="28149">
         <string name="name" value="Spirit Week Event - Cassandra&apos;s Candle "/>
         <int name="area" value="50"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <string name="0" value="Cassandra said she would reward me if I hold onto her Candle and keep it burning for 1 hour."/>
         <string name="1" value="Cassandra said she would reward me if I hold onto her Candle and keep it burning for 1 hour."/>
         <string name="2" value="Cassandra said she would reward me if I hold onto her Candle and keep it burning for 1 hour."/>
@@ -7704,7 +7704,7 @@
     <imgdir name="28150">
         <string name="name" value="Spirit Week Event - Cassandra&apos;s Candle "/>
         <int name="area" value="50"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <string name="0" value="Cassandra said she would reward me if I hold onto her Candle and keep it burning for 1 hour."/>
         <string name="1" value="Cassandra said she would reward me if I hold onto her Candle and keep it burning for 1 hour."/>
         <string name="2" value="Cassandra said she would reward me if I hold onto her Candle and keep it burning for 1 hour."/>
@@ -7712,7 +7712,7 @@
     <imgdir name="28151">
         <string name="name" value="Spirit Week Event - Cassandra&apos;s Candle "/>
         <int name="area" value="50"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <string name="0" value="Cassandra said she would reward me if I hold onto her Candle and keep it burning for 1 hour."/>
         <string name="1" value="Cassandra said she would reward me if I hold onto her Candle and keep it burning for 1 hour."/>
         <string name="2" value="Cassandra said she would reward me if I hold onto her Candle and keep it burning for 1 hour."/>
@@ -7720,7 +7720,7 @@
     <imgdir name="28152">
         <string name="name" value="Spirit Week Event - Cassandra&apos;s Candle "/>
         <int name="area" value="50"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <string name="0" value="Cassandra said she would reward me if I hold onto her Candle and keep it burning for 1 hour."/>
         <string name="1" value="Cassandra said she would reward me if I hold onto her Candle and keep it burning for 1 hour."/>
         <string name="2" value="Cassandra said she would reward me if I hold onto her Candle and keep it burning for 1 hour."/>
@@ -7735,7 +7735,7 @@
     <imgdir name="28154">
         <string name="name" value="Spirit Week Event - Cassandra&apos;s Candle "/>
         <int name="area" value="50"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <string name="0" value="Cassandra said she would reward me if I hold onto her Candle and keep it burning for 1 hour."/>
         <string name="1" value="Cassandra said she would reward me if I hold onto her Candle and keep it burning for 1 hour."/>
         <string name="2" value="Cassandra said she would reward me if I hold onto her Candle and keep it burning for 1 hour."/>
@@ -7750,7 +7750,7 @@
     <imgdir name="28156">
         <string name="name" value="Spirit Week Event - Cassandra&apos;s Candle "/>
         <int name="area" value="50"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <string name="0" value="Cassandra said she would reward me if I hold onto her Candle and keep it burning for 1 hour."/>
         <string name="1" value="Cassandra said she would reward me if I hold onto her Candle and keep it burning for 1 hour."/>
         <string name="2" value="Cassandra said she would reward me if I hold onto her Candle and keep it burning for 1 hour."/>
@@ -8736,7 +8736,7 @@
         <string name="1" value="如果你在#r印第安老斑鸠#k藏身的黑暗传送口(#b#m102020300##k)附近继续捕捉怪兽，就能找到一些线索。\n\n找到线索时，向#b勇士部落#k的#b#@1022000:##k报告结果。"/>
         <string name="2" value="你已经在#r印第安老斑鸠#k藏身的黑暗传送口附近找到#r撕裂的纸张(1)#k。"/>
         <int name="area" value="30"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <string name="demandSummary" value="#i4001367:# #t4001367:# #c4001367# / 1 "/>
         <string name="rewardSummary" value="经验值 2,000\r\n进行‘揭示的身份’作为下一个任务。\r\n"/>
     </imgdir>
@@ -8746,7 +8746,7 @@
         <string name="1" value="如果你在#r沃勒福#k藏身的黑暗传送口(#b#m103030200##k)附近继续捕捉怪兽，就能找到一些线索。\n\n找到线索时，向#b废都#k的#b#@1052001:##k报告结果。"/>
         <string name="2" value="你已经在#r沃勒福#k藏身的黑暗传送口附近找到#r撕裂的纸张(2)#k。"/>
         <int name="area" value="30"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <string name="demandSummary" value="#i4001368:# #t4001368:# #c4001368# / 1 "/>
         <string name="rewardSummary" value="经验值 2,000\r\n进行‘揭示的身份’作为下一个任务。\r\n"/>
     </imgdir>
@@ -8756,7 +8756,7 @@
         <string name="1" value="如果你在#r黑暗独角兽#k藏身的黑暗传送口(#b#m104040002##k)附近继续捕捉怪兽，就能找到一些线索。\n\n找到线索时，向#b射手村#k的#b#@1012100:##k报告结果。"/>
         <string name="2" value="你已经在#r黑暗独角兽#k藏身的黑暗传送口附近找到#r撕裂的纸张(3)#k。"/>
         <int name="area" value="30"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <string name="demandSummary" value="#i4001369:# #t4001369:# #c4001369# / 1 "/>
         <string name="rewardSummary" value="经验值 2,000\r\n进行‘揭示的身份’作为下一个任务。\r\n"/>
     </imgdir>
@@ -8766,7 +8766,7 @@
         <string name="1" value="如果你在#r雪之猫女#k藏身的黑暗传送口(#b#m100030000##k)附近继续捕捉怪兽，就能找到一些线索。\n\n找到线索时，向#b诺特勒斯#k的#b#@1072008:##k报告结果。"/>
         <string name="2" value="你已经在#r雪之猫女#k藏身的黑暗传送口附近找到#r撕裂的纸张(4)#k。"/>
         <int name="area" value="30"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <string name="demandSummary" value="#i4001370:# #t4001370:# #c4001370# / 1 "/>
         <string name="rewardSummary" value="经验值 2,000\r\n进行‘揭示的身份’作为下一个任务。\r\n"/>
     </imgdir>
@@ -8776,7 +8776,7 @@
         <string name="1" value="如果你在#r牛魔王#k藏身的黑暗传送口(#b#m101010102##k)附近继续捕捉怪兽，就能找到一些线索。\n\n找到线索时，向#b魔法密林#k的#b#@1032001:##k报告结果。"/>
         <string name="2" value="你已经在#r牛魔王#k藏身的黑暗传送口附近找到#r撕裂的纸张(5)#k。"/>
         <int name="area" value="30"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <string name="demandSummary" value="#i4001371:# #t4001371:# #c4001371# / 1 "/>
         <string name="rewardSummary" value="经验值 2,000\r\n进行‘揭示的身份’作为下一个任务。\r\n"/>
     </imgdir>
@@ -8786,7 +8786,7 @@
         <string name="1" value="从勇士部落、魔法密林、废都、诺特勒斯和射手村搜集5条线索，并转交给#b林中之城#k的#b#@1061011:##k。"/>
         <string name="2" value="你已经把所有的线索都带给了#b林中之城#k的#b#p1061011##k。他说，到达#r25级#k后，如果你想继续培训就回去。"/>
         <int name="area" value="30"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <string name="rewardSummary" value="经验值 5,000\r\n进行‘记忆者培训-1’作为下一个任务。\r\n进行‘记忆者培训-2’作为下一个任务。\r\n进行‘记忆者培训-3’作为下一个任务。\r\n"/>
     </imgdir>
     <imgdir name="28263">
@@ -9004,7 +9004,7 @@
         <string name="0" value="Witch Malady has appeared in town. This is the busiest time for Witches, so why has she appeared here? Let&apos;s ask Witch Malady for an explanation."/>
         <string name="1" value="Witch Malady has appeared in town. This is the busiest time for Witches, so why has she appeared here? Let&apos;s ask Witch Malady for an explanation."/>
         <string name="2" value="Witch Malady has appeared in town. This is the busiest time for Witches, so why has she appeared here? Let&apos;s ask Witch Malady for an explanation."/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <int name="autoComplete" value="1"/>
     </imgdir>
     <imgdir name="28288">
@@ -9052,7 +9052,7 @@
     <imgdir name="28295">
         <string name="name" value="Witch&apos;s Dark Token"/>
         <int name="area" value="50"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <int name="autoPreComplete" value="1"/>
         <string name="0" value="Witch Malady is in need of #bDark Tokens#k. Collect them and bring them to her."/>
         <string name="1" value="Witch Malady is in need of #bDark Tokens#k. Collect them and bring them to her."/>
@@ -9265,7 +9265,7 @@
     <imgdir name="28329">
         <string name="name" value="The Object of Professor Foxwit&apos;s Interest"/>
         <int name="area" value="50"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <string name="0" value="Professor Foxwit in NLC has a deep interest in the Turkey Commando’s Eye. If you happen to come across any of these eyes, be sure to bring them to Professor Foxwit in NLC. "/>
         <string name="1" value="Professor Foxwit in NLC has a deep interest in the Turkey Commando’s Eye. If you happen to come across any of these eyes, be sure to bring them to Professor Foxwit in NLC. "/>
         <string name="2" value="Professor Foxwit in NLC has told me a fascinating story about Turkey Commandos. "/>
@@ -9294,7 +9294,7 @@
         <string name="0" value="You have reached Level 30 and #b#p9010000##k starts a conversation with you..."/>
         <string name="1" value="#p9010000# tells you since you have reached Level 30, you can receive a #bspecial gift#k from #p1201000#.\n\n#i1112413:# \n\nYou are told to go straight to #b#m140000000##k and meet #b#p1201000##k."/>
         <string name="2" value="Your received #t1112413# from #p1201000#. A special ring that can be worn by any character within the same account. It looks like an item that is not just for an Aran, but for any character."/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
     </imgdir>
     <imgdir name="28336">
         <string name="name" value="Lilin&apos;s Present 2"/>
@@ -9302,7 +9302,7 @@
         <string name="0" value="You have reached Level 50 and #b#p9010000##k starts a conversation with you..."/>
         <string name="1" value="#p9010000# tells you since you have reached Level 50, you can receive a #bspecial gift#k from #p1201000#.\n\n#i1112414:# \n\nYou are told to go straight to #b#m140000000##k and meet #b#p1201000##k."/>
         <string name="2" value="Your received #t1112414# from #p1201000#. A special ring that can be worn by any character within the same account. It looks like an item that is not just for an Aran, but for any character."/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
     </imgdir>
     <imgdir name="28337">
         <string name="name" value="Cupid&apos;s Lost Arrows"/>
@@ -9310,7 +9310,7 @@
         <string name="0" value="Have you heard about #bCupid&apos;s Lost Arrows#k? You can find out more from #rCassandra.#k"/>
         <string name="1" value="Please bring me #b50 Cupid&apos;s Lost Arrows.#k You can get them from any monster. I will give you an awesome Valentines present when you bring them to me!"/>
         <string name="2" value="You can repeat this quest every 2 hours until #rFebruary 17th 2010.#k However, you&apos;ll only be able to receive the Cupid Wings Cape once. After that, you&apos;ll just receive additional #bEXP.#k"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
     </imgdir>
     <imgdir name="28338">
         <string name="name" value="Mardi Gras Throws"/>
@@ -9318,7 +9318,7 @@
         <string name="0" value="Would you like to participate in #rthe Mardi Gras Festival?#k If so, please see #bGaga.#k"/>
         <string name="1" value="Monsters attacked the storage room and looted the Beads we were saving up for the festival, stealing everything! If you eliminate the monsters and bring me #b10 Bead Necklaces#k, I&apos;ll make you #ra Mardi Gras Feather: Green, Purple, Red#k--whichever one you want! "/>
         <string name="2" value="You have returned with 10 Bead Necklaces that will be used in #bthe Mardi Gras Festival.#kYou can participate in this event until #rFebruary 21th, 2010.#k "/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
     </imgdir>
     <imgdir name="28339">
         <string name="name" value="Mardi Gras Green Masks"/>
@@ -9326,7 +9326,7 @@
         <string name="0" value="Go see #bGaga#k if you want #ra Green Mask#k to wear to the festival!"/>
         <string name="1" value="I&apos;ll make you #ra Green Mask#k you can wear to the festival if you bring me #b10 Green Mardi Gras Feathers!#k"/>
         <string name="2" value="You received #ra Green Mask#k by collecting 10 Green Mardi Gras Feathers."/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
     </imgdir>
     <imgdir name="28340">
         <string name="name" value="Mardi Gras Purple Masks"/>
@@ -9334,7 +9334,7 @@
         <string name="0" value="Go see #bGaga#k if you want #ra Purple Mask#k to wear to the festival!"/>
         <string name="1" value="I&apos;ll make you #ra Purple Mask#k you can wear to the festival if you bring me #b10 Purple Mardi Gras Feathers!#k"/>
         <string name="2" value="You received #ra Green Mask#k by collecting 10 Purple Mardi Gras Feathers."/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
     </imgdir>
     <imgdir name="28341">
         <string name="name" value="Mardi Gras Red Masks"/>
@@ -9342,7 +9342,7 @@
         <string name="0" value="Go see #bGaga#k if you want #ra Red Mask#k to wear to the festival!"/>
         <string name="1" value="I&apos;ll make you #ra Red Mask#k you can wear to the festival if you bring me #b10 Red Mardi Gras Feathers!#k"/>
         <string name="2" value="You received #ra Green Mask#k by collecting 10 Red Mardi Gras Feathers."/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
     </imgdir>
     <imgdir name="28344">
         <string name="name" value="Hunter&apos;s Profission"/>
@@ -9466,7 +9466,7 @@
     <imgdir name="29012">
         <string name="name" value="神秘岛探险家勋章"/>
         <int name="area" value="51"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <int name="autoAccept" value="1"/>
         <string name="1" value="#b#eTitle - Ossyria Explorer#n#k\r\n● Requirement(s)\nCan acquire after earning a total of 6 titles: El Nath Mts. Explorer, Ludus Lake Explorer, Undersea Explorer, Mu Lung Explorer, Nihal Desert Explorer, and Minar Forest Explorer\r\n#b● Status\n#y29006# : #u29006#\n#y29007# : #u29007#\n#y29008# : #u29008#\n#y29009# : #u29009#\n#y29010# : #u29010#\n#y29011# : #u29011#"/>
         <string name="2" value="You have finally acquired the #b&lt;Ossyria Explorer&gt;#k title upon earning all of the explorer titles in Ossyria."/>
@@ -9477,7 +9477,7 @@
     <imgdir name="29013">
         <string name="name" value="冒险岛探险家勋章"/>
         <int name="area" value="51"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <int name="autoAccept" value="1"/>
         <string name="rewardSummary" value=" "/>
         <string name="1" value="#b#eTitle - Maple Explorer#n#k\r\n● Requirement(s)\nCan acquire after earning the Victoria Explorer and Ossyria Explorer titles.#b\r\n● Status\n#y29015# : #u29015#\n#y29012# : #u29012#"/>
@@ -9498,7 +9498,7 @@
     <imgdir name="29015">
         <string name="name" value="金银岛探险家勋章"/>
         <int name="area" value="51"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <int name="autoAccept" value="1"/>
         <string name="1" value="#b#eTitle - Victoria Explorer#n#k\r\n● Requirement(s)\nCan acquire after earning the Beginner Explorer and Sleepywood Explorer titles.\r\n#b● Status\n#y29005# : #u29005#\n#y29014# : #u29014#\r\n#k"/>
         <string name="2" value="You have finally acquired the #b&lt;Victoria Explorer&gt;#k title for exploring various places on Victoria Island."/>
@@ -9711,7 +9711,7 @@
     <imgdir name="29900">
         <string name="name" value="新手冒险家"/>
         <int name="area" value="51"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <string name="0" value="You can earn the #b&lt;Beginner Adventurer&gt;#k title by completing your 1st Job Advancement as an Adventurer."/>
         <string name="1" value="Adventurers who complete the 1st Job Advancement will receive the #b&lt;Beginner Adventurer&gt;#k title. Go find NPC #p9000040#, who can be found in every town."/>
         <string name="2" value="You have earned the #b&lt;Beginner Adventurer&gt;#k title by completing the 2nd Job Advancement as an Adventurer."/>
@@ -9723,7 +9723,7 @@
     <imgdir name="29901">
         <string name="name" value="中级冒险家"/>
         <int name="area" value="51"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <string name="0" value="Adventurers who complete the 2nd Job Advancement will receive the #b&lt;Junior Adventurer&gt;#k title."/>
         <string name="1" value="Adventurers who complete the 2nd Job Advancement will receive the #b&lt;Junior Adventurer&gt;#k title. Go find NPC #p9000040#, who can be found in every town."/>
         <string name="2" value="You have earned the #b&lt;Junior Adventurer&gt;#k title by completing the 2nd Job Advancement as an Adventurer."/>
@@ -9735,7 +9735,7 @@
     <imgdir name="29902">
         <string name="name" value="高级冒险家"/>
         <int name="area" value="51"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <string name="0" value="You can earn the #b&lt;Veteran Adventurer&gt;#k title by completing your 3rd Job Advancement as an Adventurer."/>
         <string name="1" value="Adventurers who complete the 3rd Job Advancement will receive the #b&lt;Veteran Adventurer&gt;#k title. Go find NPC #p9000040#, who can be found in every town."/>
         <string name="2" value="You have earned the #b&lt;Junior Adventurer&gt;#k title by completing your 3rd Job Advancement as an Adventurer."/>
@@ -9747,7 +9747,7 @@
     <imgdir name="29903">
         <string name="name" value="大师冒险家"/>
         <int name="area" value="51"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <string name="0" value="You can earn the #b&lt;Master Adventurer&gt;#k title by completing your 4th Job Advancement as an Adventurer."/>
         <string name="1" value="Adventurers who complete the 4th Job Advancement will receive the #b&lt;Master Adventurer&gt;#k title. Go find NPC #p9000040#, who can be found in every town."/>
         <string name="2" value="You have earned the #b&lt;Master Adventurer&gt;#k title by completing your 4th Job Advancement as an Adventurer."/>
@@ -9760,7 +9760,7 @@
         <string name="name" value="Noblesse"/>
         <int name="area" value="51"/>
         <string name="1" value="Prove that you&apos;re one of the Cygnus Knights and receive the #b&lt;Noblesse&gt;#k title."/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <string name="2" value="As a member of the honorable knighthood, you have received your first title, the #b&lt;Noblesse&gt;#k, upon pledging your loyalty to the Empress."/>
         <string name="demandSummary" value="20000 Greetings from the Young Empress Chain Quest"/>
         <int name="autoAccept" value="1"/>
@@ -9771,7 +9771,7 @@
         <string name="name" value="Noblesse"/>
         <int name="area" value="51"/>
         <string name="1" value="Prove that you&apos;re one of the Cygnus Knights and receive the #b&lt;Noblesse&gt;#k title."/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <string name="2" value="As a member of the honorable knighthood, you have received your first title, the #b&lt;Noblesse&gt;#k, upon pledging your loyalty to the Empress."/>
         <int name="autoAccept" value="1"/>
         <string name="0" value="Prove that you&apos;re one of the Cygnus Knights and receive the #b&lt;Noblesse&gt;#k title."/>
@@ -9780,7 +9780,7 @@
     <imgdir name="29906">
         <string name="name" value="Knight-in-Training"/>
         <int name="area" value="51"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <string name="0" value="You can acquire the #b&lt;Knight-in-Training&gt;#k title by completing the 1st Job Advancement as a Knight."/>
         <string name="2" value="You have earned the #b&lt;Knight-in-Training&gt;#k title, which is given to those who are determined to follow the honorable path of the Knight."/>
         <string name="demandSummary" value="Acquire the #b&lt;Knight-in-Training&gt;#k title by completing the 1st Job Advancement as a Knight."/>
@@ -9791,7 +9791,7 @@
     <imgdir name="29907">
         <string name="name" value="Official Knight"/>
         <int name="area" value="51"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <string name="0" value="You can acquire the #b&lt;Official Knight&gt;#k title by completing the 2nd Job Advancement as a Knight."/>
         <string name="2" value="Your prowess has been recognized! You have earned the #b&lt;Official Knight&gt;#k title."/>
         <int name="autoAccept" value="1"/>
@@ -9801,7 +9801,7 @@
     <imgdir name="29908">
         <string name="name" value="Advanced Knight"/>
         <int name="area" value="51"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <string name="0" value="You can acquire the #b&lt;Advanced Knight&gt;#k title by completing the 3rd Job Advancement as a Knight."/>
         <string name="2" value="You have been given the #b&lt;Advanced Knight&gt;#k title for guarding Shinsoo&apos;s Teardrop."/>
         <int name="autoAccept" value="1"/>
@@ -9811,7 +9811,7 @@
     <imgdir name="29909">
         <string name="name" value="Chief Knight"/>
         <int name="area" value="51"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <string name="0" value="You can acquire the #b&lt;Chief Knight&gt;#k title by blocking the curse of the Black Witch."/>
         <string name="2" value="You have saved the Empress from danger by blocking the curse of the Black Witch. For your tremendous accomplishment, you have received the#b&lt;Chief Knight&gt;#k title, the highest position in the Cygnus Knights."/>
         <int name="autoAccept" value="1"/>
@@ -9825,7 +9825,7 @@
         <string name="0" value="#b#eTitle - Gallant Warrior#n#\r\n#kChallenge yourself to the  #b&lt;Gallant Warrior&gt;#k title, given only to powerful Warriors over Lv. 200.\r\n●Requirement(s) : Complete #b&lt;#y29300#&gt;#k "/>
         <string name="1" value=".."/>
         <string name="2" value="You have accomplished something incredible. You&apos;ve reached Lv. 200! You have earned the #b&lt;Gallant Warrior&gt;#k title."/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <int name="autoAccept" value="1"/>
     </imgdir>
     <imgdir name="29911">
@@ -9835,7 +9835,7 @@
         <string name="0" value="#b#eTitle - Wiseman#n#\r\n#kChallenge yourself to the #b&lt;Wiseman&gt;#k title, given only to powerful Magicians over Lv. 200.\r\n●Requirement(s) : Complete #b&lt;#y29301#&gt;#k"/>
         <string name="1" value=".."/>
         <string name="2" value="You have accomplished something incredible. You&apos;ve reached Lv. 200! You have earned the #b&lt;Wiseman&gt;#k title."/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <int name="autoAccept" value="1"/>
         <int name="autoComplete" value="1"/>
     </imgdir>
@@ -9846,7 +9846,7 @@
         <string name="0" value="#b#eTitle - Lord Sniper#n#\r\n#kChallenge yourself to the #b&lt;Lord Sniper&gt;#k title, given only to powerful Bowmen over Lv. 200.\r\n●Requirement(s) : Complete #b&lt;#y29302#&gt;#k"/>
         <string name="1" value=".."/>
         <string name="2" value="You have accomplished something incredible. You&apos;ve reached Lv. 200! You have earned the #b&lt;Lord Sniper&gt;#k title."/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <int name="autoAccept" value="1"/>
     </imgdir>
     <imgdir name="29913">
@@ -9856,7 +9856,7 @@
         <string name="0" value="#b#eTitle - Legendary Thief#n#\r\n#kChallenge yourself to the #b&lt;Legendary Thief&gt;#k title, given only to the powerful Thieves over Lv. 200.\r\n●Requirement(s) : Complete #b&lt;#y29303#&gt;#k"/>
         <string name="1" value=".."/>
         <string name="2" value="You have accomplished something incredible. You&apos;ve reached Lv. 200! You have earned the #b&lt;Legendary Thief&gt;#k title."/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <int name="autoAccept" value="1"/>
     </imgdir>
     <imgdir name="29914">
@@ -9866,7 +9866,7 @@
         <string name="0" value="#b#eTitle - King Pirate#n#\r\n#kChallenge yourself to the #b&lt;King Pirate&gt;#k title, given only to powerful Pirates over Lv. 200. \r\n●Requirement(s) : Complete #b&lt;#y29304#&gt;#k"/>
         <string name="1" value=".."/>
         <string name="2" value="You have accomplished something incredible. You&apos;ve reached Lv. 200! You have earned the #b&lt;King Pirate&gt;#k title."/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <int name="autoAccept" value="1"/>
     </imgdir>
     <imgdir name="29915">
@@ -9874,7 +9874,7 @@
         <int name="area" value="51"/>
         <int name="medalCategory" value="1"/>
         <int name="viewMedalItem" value="1142064"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <int name="autoAccept" value="1"/>
         <string name="0" value="#b#eTitle - Mu Lung Dojo Vanquisher#n#\r\n#k#b&lt;Mu Lung Dojo Vanquisher&gt;#k, a coveted title given only to Mu Lung Dojo experts. \r\n●Requirement(s) : Acquire the #bMu Lung Dojo Vanquisher Medal#k from #bMu Lung Dojo#k."/>
         <string name="2" value="You have earned the #b&lt;Mu Lung Dojo Vanquisher&gt;#k title by defeating all of the master monsters in Mu Lung Dojo."/>
@@ -9882,7 +9882,7 @@
     <imgdir name="29916">
         <string name="name" value="Henesys Donor Medal"/>
         <int name="area" value="51"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <int name="autoAccept" value="1"/>
         <string name="2" value="Donations are a quick way to give back to the community. You have earned the #b&lt;Henesys Donor&gt;#k title."/>
         <int name="medalCategory" value="2"/>
@@ -9891,7 +9891,7 @@
     <imgdir name="29917">
         <string name="name" value="Ellinia Donor Medal"/>
         <int name="area" value="51"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <int name="autoAccept" value="1"/>
         <string name="2" value="Donations are a quick way to give back to the community. You have earned the #b&lt;Ellinia Donor&gt;#k title."/>
         <int name="medalCategory" value="2"/>
@@ -9900,7 +9900,7 @@
     <imgdir name="29918">
         <string name="name" value="Perion Donor Medal"/>
         <int name="area" value="51"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <int name="autoAccept" value="1"/>
         <string name="2" value="Donations are a quick way to give back to the community. You have earned the #b&lt;Perion Donor&gt;#k title."/>
         <int name="medalCategory" value="2"/>
@@ -9909,7 +9909,7 @@
     <imgdir name="29919">
         <string name="name" value="Kerning City Donor Medal"/>
         <int name="area" value="51"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <int name="autoAccept" value="1"/>
         <string name="2" value="Donations are a quick way to give back to the community. You have earned the #b&lt;Kerning City Donor&gt;#k title."/>
         <int name="medalCategory" value="2"/>
@@ -9918,7 +9918,7 @@
     <imgdir name="29920">
         <string name="name" value="Sleepywood Donor Medal"/>
         <int name="area" value="51"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <int name="autoAccept" value="1"/>
         <string name="2" value="Donations are a quick way to give back to the community. You have earned the #b&lt;Sleepywood Donor&gt;#k title."/>
         <int name="medalCategory" value="2"/>
@@ -9927,7 +9927,7 @@
     <imgdir name="29921">
         <string name="name" value="Nautilus Donor Medal"/>
         <int name="area" value="51"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <int name="autoAccept" value="1"/>
         <string name="2" value="Donations are a quick way to give back to the community. You have earned the #b&lt;Nautilus Donor&gt;#k title."/>
         <int name="medalCategory" value="2"/>
@@ -9939,7 +9939,7 @@
         <int name="medalCategory" value="2"/>
         <int name="viewMedalItem" value="1142004"/>
         <string name="2" value="You have earned the #b&lt;Veteran Hunter&gt;#k title by hunting 100,000 monsters that are above you in level within 30 days."/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <int name="autoAccept" value="1"/>
     </imgdir>
     <imgdir name="29923">
@@ -9948,7 +9948,7 @@
         <int name="medalCategory" value="2"/>
         <int name="viewMedalItem" value="1142005"/>
         <string name="2" value="No one can trump your hunting skills! You have earned the #b&lt;Legendary Hunter&gt;#k title."/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <int name="autoAccept" value="1"/>
     </imgdir>
     <imgdir name="29924">
@@ -9958,7 +9958,7 @@
         <string name="0" value="You still don&apos;t remember anything…"/>
         <string name="1" value="You still don&apos;t remember anything…"/>
         <string name="2" value="You still don&apos;t remember anything…"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <int name="autoAccept" value="1"/>
     </imgdir>
     <imgdir name="29925">
@@ -9969,14 +9969,14 @@
         <string name="0" value="Maha…was your weapon…? You&apos;re beginning to remember...little by little…"/>
         <string name="1" value="Maha…was your weapon…? You&apos;re beginning to remember...little by little…"/>
         <string name="2" value="Maha…was your weapon…? You&apos;re beginning to remember...little by little…"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <int name="autoAccept" value="1"/>
     </imgdir>
     <imgdir name="29926">
         <string name="name" value="Aran in Agony"/>
         <int name="area" value="51"/>
         <int name="viewMedalItem" value="1142131"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <int name="autoAccept" value="1"/>
         <string name="0" value="You made a Red Jade for Maha. This should help him relax for a bit, right?"/>
         <string name="1" value="You made a Red Jade for Maha. This should help him relax for a bit, right?"/>
@@ -9986,7 +9986,7 @@
         <string name="name" value="Aran of Hope"/>
         <int name="area" value="51"/>
         <int name="viewMedalItem" value="1142132"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <int name="autoAccept" value="1"/>
         <string name="0" value="You finally managed to put the enraged Maha to sleep."/>
         <string name="1" value="You finally managed to put the enraged Maha to sleep."/>
@@ -9996,7 +9996,7 @@
         <string name="name" value="Aran the Hero"/>
         <int name="area" value="51"/>
         <int name="viewMedalItem" value="1142133"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <int name="autoAccept" value="1"/>
         <string name="0" value="You feel like you&apos;ve restored most of your past memories as well as your abilities."/>
         <string name="1" value="You feel like you&apos;ve restored most of your past memories as well as your abilities."/>
@@ -10041,7 +10041,7 @@
     <imgdir name="29933">
         <string name="name" value="Lith Harbor Donor"/>
         <int name="area" value="51"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <int name="autoAccept" value="1"/>
         <int name="medalCategory" value="2"/>
         <int name="viewMedalItem" value="1142030"/>
@@ -11488,7 +11488,7 @@
         <string name="1" value="#p2111008#让我去搜集研究中缺少的材料——提炼好的#b5个#t4010004# #k和#b50个#t4000352##k。\n\n#i4010004##t4010004# #b#c4010004##k/5 \n#i4000352##t4000352# #b#c4000352##k/50"/>
         <string name="2" value="把#t4011004#和#t4000352#交给了#p2111008#。叫做#t4011004#的矿石中好像蕴含着神秘魔法的奇妙力量。嗯，又学到了一个新的知识。"/>
         <int name="area" value="44"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
     </imgdir>
     <imgdir name="3308">
         <string name="name" value="妨碍卡帕莱特"/>
@@ -11496,7 +11496,7 @@
         <string name="1" value="蒙特鸠是和卡帕莱特对立的……虽然知道这个情况，但是没想到会拜托我去做这种事情。不管怎样，既然接受了#p2111008#的拜托，再跟他说不干也说不过去……去杀掉卡帕莱特正在研究的#r#o5110300#200头#k吧。\n\n#o5110300#  #r#a33081#"/>
         <string name="2" value="按照#p2111008#的指示，破坏了卡帕莱特正在研究的#o5110300#。呼……这样也行啊？蒙特鸠是和卡帕莱特到底为什么要相互对立啊？"/>
         <int name="area" value="44"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
     </imgdir>
     <imgdir name="3309">
         <string name="name" value="事件，及失踪的炼金术士"/>
@@ -11504,7 +11504,7 @@
         <string name="1" value="贝丁让我去空无一人的卡帕莱特研究室，偷取#b#t4031708##k。据说就在卡帕莱特的#b#m261020700##k的桌子上放着……要去#m261020700#好像只有去#m261020600#通过传送过去。现在研究所内应该是一团漆黑，在黑暗中找到文件。\n\n#i4031708##t4031708# #b#c4031708##k/1"/>
         <string name="2" value="很久以前发生的事件。事情始于某个炼金术士的一次失败的研究。实验的失败引发了爆炸，爆炸造成了地震，对玛加提亚各处造成了严重的损坏。当时损坏的魔法阵现在还在不断地制造哈闷……进行实验的炼金术士从此好像失踪了……"/>
         <int name="area" value="44"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
     </imgdir>
     <imgdir name="3310">
         <string name="name" value="卡森的考试"/>
@@ -11514,7 +11514,7 @@
         <string name="1" value="卡森说如果想知道事件的详情，就必须证明有这样的资格。他让我去有#r哈闷#k的#b废弃的研究室#k，从他们身上获取魔力控制装置并对他们进行控制。只要把魔力控制装置扔到研究室里的炼成阵中就可以自动被控制住了。他说控制之后把证据交给#b#t4031709##k就行了……\n\n#i4031709##t4031709# #b#c4031709##k/1"/>
         <string name="2" value="告诉他控制哈闷成功的情况后，他这才以蒙特鸠协会会长的真正面目开始讲述事情的经过。"/>
         <int name="area" value="44"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
     </imgdir>
     <imgdir name="3311">
         <string name="name" value="线索"/>
@@ -11530,7 +11530,7 @@
         <string name="1" value="研究疾病的治疗的炼金术士#p2111009#需要制作药物的材料#b#t4031694##k，让我搜集了之后交给他。#t4031694#可以从#o3110302#身上得到。他说从#o3110303#身上获得要比从普通的#o3110302#身上获得更容易，帮帮他吧。\n\n#i4031694##t4031694# #b#c4031694##k/10"/>
         <string name="2" value="把#t4031694#全部交给了#p2111009#，他很高兴，好像可以开始着手研究了……他到底想制作什么药呢？"/>
         <int name="area" value="44"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
     </imgdir>
     <imgdir name="3313">
         <string name="name" value="破坏洛伊德"/>
@@ -11538,7 +11538,7 @@
         <string name="1" value="#p2111009#突然让我去破坏地下物品仓库里的#r#o5110301##k。消灭#o5110301#……虽然不是不可能的事情，但是为什么突然让我去做这种事情？是想妨碍蒙特鸠吗？\n\n#o5110301# #r#a33131##k "/>
         <string name="2" value="将#o5110301#全部消灭，并告诉了#p2111009#。不知为何，他的脸上浮现出了满足的笑容。为，为什么？为什么感觉这个笑容有些不祥呢？"/>
         <int name="area" value="44"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
     </imgdir>
     <imgdir name="3314">
         <string name="name" value="生命炼金，及失踪的炼金术士"/>
@@ -11546,7 +11546,7 @@
         <string name="1" value="#p2111009#说帮了他这么多忙非常感谢，让我去上面的研究室把桌上的药吃了。并且让我在药效消失之前回来……等等，这是在做人体实验吗？！"/>
         <string name="2" value="果然是非常危险的药物！幸亏拿到了解毒药，不过这实在太危险了！听罗赛伦说，他现在正在做的研究室很久以前和他的朋友——#b失踪的炼金术士#k一起进行的。看样子失踪的炼金术士做的是有关改变人体状态的研究……"/>
         <int name="area" value="44"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
     </imgdir>
     <imgdir name="3315">
         <string name="name" value="麦麦德的考试"/>
@@ -11556,7 +11556,7 @@
         <string name="1" value="卡帕莱特的会长#p2111001#说想知道失踪的炼金术士的事情就必须证明自己有这样的资格，他让我去消灭#r#o7110301##k。\n\n#o7110301# #r#a33151##k  "/>
         <string name="2" value="按照#p2111001#的吩咐把#o7110301#全部消灭了。好了，现在可以从他那里听到有关失踪的炼金术士的事情了吗？"/>
         <int name="area" value="44"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
     </imgdir>
     <imgdir name="3316">
         <string name="name" value="后街小贩的情报"/>
@@ -11580,7 +11580,7 @@
         <string name="1" value="顺着严肃的嗓音向研究室里面走去，突然发现有一个#b奇怪的#o6110301##k。"/>
         <string name="2" value="奇怪的#o6110301#……他是过去在这里从事研究的炼金术士，名叫#p2111006#。什么？那么他是幽、幽灵？！……但是看上去却不怎么吓人……"/>
         <int name="area" value="44"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
     </imgdir>
     <imgdir name="3319">
         <string name="name" value="疯老头的实验室"/>
@@ -11854,7 +11854,7 @@
         <string name="1" value="询问有关过去的#p2111002#的情况，疯老头一脸欢快地再次把我送到了#p2111002#面前。这一次的#p2111002#，好像是比之前看到的他又过了一段时间之后的#p2111002#……"/>
         <string name="2" value="试着和看上去有些疲劳的#p2111002#说话。#p2111002#的脸看上去很疲惫，但奇怪的是脸上却带着一丝满足的笑容，他说他的实验虽然失败了，但是却成功地为#p2111005#配制出了药物……"/>
         <int name="area" value="44"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
     </imgdir>
     <imgdir name="3354">
         <string name="name" value="德朗博士的药"/>
@@ -12593,7 +12593,7 @@
         <string name="1" value="#p2140000#说不久之前发生了入侵者打破过去之门，闯进神殿的事件。说在事件解决之前，时间神殿不接待普通的访客。如果真的想进去的话，可以进去，但进去也没什么用……那么，要#b先进去看看#k吗？"/>
         <string name="2" value="#p2140000#说在过去之路上，时间朝着过去流动，因此未经许可的人不得靠近。如果要继续往前走，必须得到女神的许可。但是……怎样才能得到女神的许可呢？"/>
         <int name="area" value="46"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
     </imgdir>
     <imgdir name="3501">
         <string name="name" value="追随追忆之路的人1"/>
@@ -14009,7 +14009,7 @@
         <string name="1" value="#m250010503#中，突然#r妖怪禅师#k过来搭话了。妖怪禅师说想解释一下一直以来对他的误会…… 是真的吗？去找找妖怪禅师所说的，#b妖怪森林2#k的#b丢失雕像的石床#k吧。"/>
         <string name="2" value="妖怪禅师说他对武陵无可愧疚，这一切都是嫉妒他的道功的计谋。不可能吧…… 再详细问问妖怪禅师吧。"/>
         <int name="area" value="44"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
     </imgdir>
     <imgdir name="3842">
         <string name="name" value="道功的危机"/>
@@ -14041,7 +14041,7 @@
         <string name="0" value="Captain Hwang from Herb Town wants to tell you a creepy rumor about the Sea of Fog, located east of Herb Town. His story could be interesting. How about it, huh?"/>
         <string name="1" value="Captain Hwang from Herb Town tells you about the eastern route that connects Herb Town and Aqua Road. As the longest waterway in Maple World, this route passes through what is known as the #b&quot;Sea of Fog&quot;#k, located east of Mu Lung Garden. He says there is a rumor that a ghost ship sails around this Sea of Fog.\r\nCaptain Hwang then suggests that you look for the ghost ship. He hints that you might be able to get some information from the Dolphin Taxi."/>
         <string name="2" value="Captain Hwang from Herb Town told you about the eastern route that connects Herb Town and Aqua Road. As the longest waterway in Maple World, this route passes through what is known as the #b&quot;Sea of Fog&quot;#k, located east of Mu Lung Garden. He says there is a rumor that a ghost ship sails around this Sea of Fog. You were instantly drawn to Captain Hwang&apos;s story and arrived in an unknown island in the Sea of Fog. You discovered the ghost ship with the help of the Dolphin Taxi, which brought you to that mysterious place."/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
     </imgdir>
     <imgdir name="3900">
         <string name="name" value="学习阿里安特的文化"/>
@@ -14501,7 +14501,7 @@
         <string name="2" value="接受了在阿里安特研究沙漠民族文化的文化学者巴一岚的委托，前往沙哈沙漠，对最近一次沙尘暴之后出现的巨大的金字塔进行调查。站在金字塔入口处的杜阿特警告了金字塔的危险性，说如果是不怕死的勇士的话，可以继续挑战……"/>
         <string name="demandSummary" value="和沙哈地带3发现的金字塔前面山丘上的杜阿特对话。"/>
         <string name="rewardSummary" value="经验值6,000"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
     </imgdir>
     <imgdir name="4000">
         <string name="name" value="아종의 취미생활 1"/>
@@ -16234,7 +16234,7 @@
         <string name="2" value="学会了#r骑宠#k和 #r匠人之魂#k了.以后会有用吧?"/>
         <int name="area" value="30"/>
         <int name="selectedMob" value="1"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <int name="autoPreComplete" value="1"/>
     </imgdir>
     <imgdir name="6013">
@@ -16250,7 +16250,7 @@
         <string name="1" value="拉玛人是威尔斯的同事，也是著名的怪物结晶制作大师。人虽然很亲切，但却有点让人郁闷。他看到我学会锻造技术之后，因为不知道该制作什么东西而彷徨，于是告诉了我制造怪物结晶的方法。让我尝试亲手制作怪物结晶……\n\n#i4260000# #t4260000# #b#c4260000# / 1#k"/>
         <string name="2" value="威尔斯的同事，怪物结晶制作的大师拉玛人向我说明了制作怪物结晶的方法。虽然他说话很慢，听起来有点吃力，但是却很热情。听完他的说明后，试着制作了1个怪物结晶中最容易制作的#t4260000#。拉玛人称赞了我，说能做成这样已经很不错了。好了～现在我也应该算是踏出了物品制作的第一步。"/>
         <int name="area" value="10"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
     </imgdir>
     <imgdir name="6015">
         <string name="name" value="吉欧的第一次委托"/>
@@ -17303,7 +17303,7 @@
         <string name="1" value="赫丽娜会赠送一件弓箭手祝福效果的礼物."/>
         <string name="2" value="赫丽娜会为弓箭手祈祷, 并送给他一副弓箭. "/>
         <int name="area" value="10"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <int name="autoPreComplete" value="1"/>
     </imgdir>
     <imgdir name="6800">
@@ -18514,7 +18514,7 @@
         <string name="1" value="从周一到周五必须每天去找冒险岛运营员，领取养鸡必须用到的成长粉末，然后涂在鸡蛋上。"/>
         <string name="2" value="获得了今天所需的成长粉末。快去涂到鸡蛋上吧。"/>
         <int name="area" value="50"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
     </imgdir>
     <imgdir name="8255">
         <string name="name" value="Lost Spirits"/>
@@ -18801,7 +18801,7 @@
         <string name="1" value="There&apos;s a legendary necklace called the &quot;Mind of Maple&quot; that everyone would like to have their hands on... Once the Gate of Time opens, Mr. Moneybags will bring the blessing to everyone. Do you have the Mind of Maple? Only Mr. Moneybags knows the secret behind the necklace. Go visit Mr. Moneybags immediately."/>
         <string name="2" value="Go ask Mr. Moneybags for more information about the Mind of Maple."/>
         <int name="area" value="50"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <int name="autoPreComplete" value="1"/>
     </imgdir>
     <imgdir name="8298">
@@ -18824,7 +18824,7 @@
         <string name="1" value="过春节就要放鞭炮，放礼花。。。为什么？因为妖魔鬼魂最怕炮竹声。。。\r\n#t4001128# #b#c4001128##k/30"/>
         <string name="2" value="拿着炮竹去除妖驱鬼。响声越大力量就越大。。。除去妖魔鬼怪，新的一年才能平平安安。。。"/>
         <int name="area" value="50"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
     </imgdir>
     <imgdir name="8570">
         <string name="name" value="炮竹声声"/>
@@ -20273,7 +20273,7 @@
         <string name="1" value="브로커 한은 오랫동안 그 광석을 구하고 있었다며 거래를 청했다. 거절하자 브로커 한은 광석과 함께 몬스터 지우개를 구해 준다면 크게 사례하겠다는데... 수상쩍은 남자지만 거래에 있어서는 확실하다는 소문도 있는데... 그럼 한 번 믿어볼까? \n\n#i4001197##t4001197# #b#c4001197#/1#k\n#i4001038##t4001038# #b#c4001038#/1#k\n#i4001039##t4001039# #b#c4001039#/1#k\n#i4001040##t4001040# #b#c4001040#/1#k\n#i4001041##t4001041# #b#c4001041#/1#k\n#i4001042##t4001042# #b#c4001042#/1#k\n#i4001043##t4001043# #b#c4001043#/1#k"/>
         <string name="2" value="모든 아이템을 받은 브로커 한은 만족스럽게 웃으며 중얼거렸다. 이제 속옷을 겉에 입고 다니는 파란색 쫄쫄이 옷의 남자를 제압할 수 있겠다고... 응?! 왠지 누군지 알 것 같은데? 설마 그럼 푸르스름한 광석은...?"/>
         <int name="area" value="44"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
     </imgdir>
     <imgdir name="9421">
         <string name="name" value="??? ??-?? ?????"/>
@@ -21356,7 +21356,7 @@
         <string name="1" value="#p1002006#说作为巧克力的报答，打算送我炸酱面。让我稍等片刻。"/>
         <string name="2" value="得到了#p1002006#亲手制作的炸酱面。这碗充满了无限深情的炸酱面……应该会很美味吧？"/>
         <int name="area" value="50"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <int name="autoPreComplete" value="1"/>
     </imgdir>
     <imgdir name="9744">
@@ -21365,7 +21365,7 @@
         <string name="1" value="#p1032105#说作为糖果的报答，打算送我炸酱面。让我稍等片刻。 "/>
         <string name="2" value="得到了#p1032105#亲手制作的炸酱面。看起来很美味的样子……这炸酱面的名字可真够特别的。"/>
         <int name="area" value="50"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <int name="autoPreComplete" value="1"/>
     </imgdir>
     <imgdir name="9745">
@@ -21395,7 +21395,7 @@
         <string name="1" value="#p9000021#는 초콜릿에 대한 보답으로 자장면을 주겠다며 잠시만 기다려 달라고 했다."/>
         <string name="2" value="#p9000021#가 직접 만든 자장면을 받았다. 뭔가 깊은 감정이 서린 자장면인데... 맛있게 먹을 수 있을까?"/>
         <int name="area" value="50"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <int name="autoPreComplete" value="1"/>
     </imgdir>
     <imgdir name="9800">
@@ -21404,7 +21404,7 @@
         <string name="1" value="提供升级时必须的4周年活动枫叶。"/>
         <string name="2" value="提供升级时必须的4周年活动枫叶。"/>
         <int name="area" value="50"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <int name="autoPreComplete" value="1"/>
     </imgdir>
     <imgdir name="9801">
@@ -21685,7 +21685,7 @@
     </imgdir>
     <imgdir name="9840">
         <int name="area" value="50"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <string name="name" value="Dr. Winston&apos;s Research"/>
         <string name="0" value="#b#p9010010##k seems to have something urgent to tell you."/>
         <string name="1" value="You must eliminate the monsters that are getting in the way of Dr. #b#p1022006##k&apos;s research and report back. \n\n#o0130100# #r#a98401##k \n#o1110101# #r#a98402##k"/>
@@ -21697,7 +21697,7 @@
         <string name="1" value="Teach those violent monkeys and Malady a lesson and report back to Estelle.\n\n#o3210800# #r#a98411##k \n#o4230101# #r#a98412##k\n#o5300100# #r#a98413##k"/>
         <string name="2" value="You eliminated the monkeys that were pestering Estelle."/>
         <int name="area" value="50"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
     </imgdir>
     <imgdir name="9842">
         <string name="name" value="Icarus&apos;s Mushroom Bites"/>
@@ -21705,7 +21705,7 @@
         <string name="1" value="Icarus is craving Mushroom Bites. Collect the ingredients and take them over to #b#p1052106##k.\n\n#o2220100# #r#a98421##k \n#o1120100# #r#a98422##k \n#t04000009# #b#c04000009#/20#k \n#t04000006# #b#c04000006#/20#k"/>
         <string name="2" value="You helped #b#p1052106##k make delicious Mushroom Bites."/>
         <int name="area" value="50"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
     </imgdir>
     <imgdir name="9843">
         <string name="name" value="三色光的庭院"/>
@@ -21713,7 +21713,7 @@
         <string name="1" value="#b#p9310060##k好像有重要的消息…… 点击头上的灯泡吧。"/>
         <string name="2" value="好像中了#b#p9310060##k的魔法了。"/>
         <int name="area" value="50"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <int name="autoPreComplete" value="1"/>
     </imgdir>
     <imgdir name="9844">
@@ -21722,7 +21722,7 @@
         <string name="1" value="Hunt the Star Pixies that are casting magic on anyone and everyone, and report to #b#p2012020##k. \n\n#o3230200# #r#a98441##k"/>
         <string name="2" value="You regulated the Star Pixies that were out of control."/>
         <int name="area" value="50"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
     </imgdir>
     <imgdir name="9845">
         <string name="name" value="呼啸的白狼"/>
@@ -21730,7 +21730,7 @@
         <string name="1" value="击退白狼，并告诉#b星缘#k。\n\n#o5140000# #r#a98451##k"/>
         <string name="2" value="教训烦人的白狼。"/>
         <int name="area" value="50"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
     </imgdir>
     <imgdir name="9846">
         <string name="name" value="The Clocktower"/>
@@ -21738,7 +21738,7 @@
         <string name="1" value="Take care of the problem at the Clocktower and report to #b#p2040029##k. \n\n#o4230113# #r#a98461##k \n#o4230114# #r#a98462##k"/>
         <string name="2" value="You took care of the problem at the Clocktower."/>
         <int name="area" value="50"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
     </imgdir>
     <imgdir name="9847">
         <string name="name" value="守卫地球防御本部"/>
@@ -21746,7 +21746,7 @@
         <string name="1" value="击退威胁地球防御本部的外星人，并把消息快速传递给#b#p2050012##k。 \n\n#o4230118# #r#a98471##k"/>
         <string name="2" value="还剩下很多外星人，不能安心。"/>
         <int name="area" value="50"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
     </imgdir>
     <imgdir name="9848">
         <string name="name" value="A Small Pond"/>
@@ -21754,7 +21754,7 @@
         <string name="1" value="#b#p9010010##k seems to have something urgent to tell you."/>
         <string name="2" value="It appeared to have been enchanted by #b#p9010010##k&apos;s magic."/>
         <int name="area" value="50"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <int name="autoPreComplete" value="1"/>
     </imgdir>
     <imgdir name="9849">
@@ -21763,7 +21763,7 @@
         <string name="1" value="#b#p2091000##k说考验内容是击退棕熊和柔道猫熊。虽然熊和猫熊都只是动物，但它们也在修炼，实力不俗。应该不好对付……\n\n#o5120500# #r#a98491##k \n#o6130203# #r#a98492##k"/>
         <string name="2" value="击退棕熊和柔道猫熊之后，回去见了诺功。诺功说你想成为仙人还需努力……　啊，又来这一套。到底我能不能成为仙人啊？"/>
         <int name="area" value="50"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
     </imgdir>
     <imgdir name="9850">
         <string name="name" value="Do Gong&apos;s Test"/>
@@ -21771,7 +21771,7 @@
         <string name="1" value="#b#p2091001##k says he wants to test your progress and has asked that you defeat the Book Ghost and Sage Cat. He says the Book Ghost and the Sage Cat have mastered magic, so defeating them won&apos;t be as easy as you think.\n\n#o6130209# #r#a98501##k \n#o5120506# #r#a98502##k"/>
         <string name="2" value="You have returned after defeating the Book Ghost and the Sage Cat, but he said you needed to continue training, as that&apos;s the only way for you to become a master."/>
         <int name="area" value="50"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
     </imgdir>
     <imgdir name="9851">
         <string name="name" value="Snake Pit in the Swamp"/>
@@ -21786,7 +21786,7 @@
         <string name="1" value="#b#p9010010##k가 급히 전할 소식이 있나본데… 머리 위의 전구를 클릭해보자."/>
         <string name="2" value="#b#p9010010##k의 마법에 걸린 것만 같다."/>
         <int name="area" value="50"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <int name="autoPreComplete" value="1"/>
     </imgdir>
     <imgdir name="9860">
@@ -21847,7 +21847,7 @@
         <string name="1" value="#p1022007#은 오랫동안 소중히 여기던 물건을 잃어버렸다고 한다. 그것은 다름아닌 #b#t4031662##k... 그것은 아무래도 #r빅토리아 아일랜드의 몬스터#k들이 가져간 것 같은데...  \n\n#i4031662# #t4031662#  #b#c4031662##k/1"/>
         <string name="2" value="#t4031662#을 찾아주자 #p1022007#은 고맙다고 말하며 #p1061013#이라는 모험가를 이야기했다. #p1061013#은 #p1022007#이 어렸을 적, #m102000000# 사람들에게 구출 된지 얼마 안 되었을 때 #m102000000#을 방문한 모험가라고 한다. 불안에 떨며 사람들을 피하던 #p1022007#을 돌봐주던 다정한 모험가 #p1061013#은 다시 모험을 떠난 후에도 종종 #m102000000#에 연락을 주는 건 잊지 않았는데 어째서인지 통 소식이 없다며, #p1022007#은 걱정하고 있었다.  그와 친하던 #p1022002#라면 그가 어디 있는지 알지도 모른다는데..."/>
         <int name="area" value="50"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
     </imgdir>
     <imgdir name="9867">
         <string name="name" value="만지와 이얀"/>
@@ -21970,7 +21970,7 @@
         <string name="1" value="9月 26日为止#b星缘#k每天会送一次礼物哦。"/>
         <string name="2" value="获得了#b星缘#k的礼物。可以每天收一次礼物，而且连续上线的冒险家还有机会获得冒险岛周边奖品哦。 \n#b参加次数越多几率越高#k所以记得每天都参加哦。"/>
         <int name="area" value="50"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <int name="autoPreComplete" value="1"/>
     </imgdir>
     <imgdir name="9889">
@@ -22018,7 +22018,7 @@
         <string name="1" value="#b카산드라#k가 준비한 선물은 무엇일까?"/>
         <string name="2" value="#b카산드라#k가 준비한 선물을 받았다. 10월 7일까지는 매일 선물을 준다고 하는데..."/>
         <int name="area" value="50"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <int name="autoPreComplete" value="1"/>
     </imgdir>
     <imgdir name="9901">
@@ -22090,7 +22090,7 @@
         <string name="1" value="#p9310060#说有东西要给我，让我过去找她。去边上的村子见见#b#p9310060##k吧。"/>
         <string name="2" value="从#p9310060#那里得到了#r#t2031000##k。内容好像是和举办万圣节舞会有关。不知道名字，也没见过面的人请我参加舞会。真是奇怪……？"/>
         <int name="area" value="50"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
     </imgdir>
     <imgdir name="9921">
         <string name="name" value="永不结束的舞会"/>
@@ -22119,7 +22119,7 @@
         <string name="1" value="不给糖的话我就跟你捣蛋！打扮得很漂亮的少女们和我说。如果身上带着#b#t2022256##k的话，给她们几个好像也没关系……怎么样？"/>
         <string name="2" value="不给糖的话我就跟你捣蛋！接下去谁又会来捣蛋呢？"/>
         <int name="area" value="50"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
     </imgdir>
     <imgdir name="9925">
         <string name="name" value="不给糖的话我就捣蛋！"/>
@@ -22127,7 +22127,7 @@
         <string name="1" value="不给糖的话我就跟你捣蛋！打扮得很漂亮的少女们和我说。如果身上带着#b#t2022256##k的话，给她们几个好像也没关系……怎么样？"/>
         <string name="2" value="不给糖的话我就跟你捣蛋！接下去谁又会来捣蛋呢？"/>
         <int name="area" value="50"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
     </imgdir>
     <imgdir name="9926">
         <string name="name" value="不给糖的话我就捣蛋！"/>
@@ -22135,7 +22135,7 @@
         <string name="1" value="不给糖的话我就跟你捣蛋！打扮得很漂亮的少女们和我说。如果身上带着#b#t2022256##k的话，给她们几个好像也没关系……怎么样？"/>
         <string name="2" value="不给糖的话我就跟你捣蛋！接下去谁又会来捣蛋呢？"/>
         <int name="area" value="50"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
     </imgdir>
     <imgdir name="9927">
         <string name="name" value="和假面绅士的对话"/>
@@ -22269,7 +22269,7 @@
         <string name="1" value="进入#m229000300#之后，传来了奇怪的声音。好像是在洞窟里面听到的一样，混杂着奇怪的回声、但是清晰的嗓音。让人吃惊的是，和我说话的居然是没有形体的#r幽灵#k！"/>
         <string name="2" value="#p2120008#苍白着脸和我打了声招呼。"/>
         <int name="area" value="50"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
     </imgdir>
     <imgdir name="9945">
         <string name="name" value="寻找娃娃"/>
@@ -22300,7 +22300,7 @@
         <string name="1" value="#b星缘#k为海盗们准备了一些礼物.."/>
         <string name="2" value="#b星缘#k为海盗们准备了一些礼物.."/>
         <int name="area" value="50"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <int name="autoPreComplete" value="1"/>
     </imgdir>
     <imgdir name="9951">
@@ -22323,7 +22323,7 @@
         <string name="1" value="击退巨大雪人后，捡起掉在地上的雪人的树枝的一瞬间，我接到了幸福村的树枝雪人让我拿着树枝去找它的传话。据说是有话要对我说……看来我得去一趟幸福村了。"/>
         <string name="2" value="幸福村的树枝雪人讲述了有关村子里出现的雪娃娃的事情。虽然雪娃娃很喜欢捉弄人，但树枝雪人希望人类不要讨厌它们，毕竟它们是喜欢人类的。树枝雪人用树枝里的雪之魔法向圣诞鹿的角内注入了新的魔法。"/>
         <int name="area" value="50"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
     </imgdir>
     <imgdir name="9954">
         <string name="name" value="星缘的健忘症"/>
@@ -22348,7 +22348,7 @@
         <string name="1" value="#b星缘#k准备的礼物到底是什么呢~"/>
         <string name="2" value="作为新年活动,在1月22日前只要登录游戏#b星缘#k也会送出礼物哦."/>
         <int name="area" value="50"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <int name="autoPreComplete" value="1"/>
     </imgdir>
     <imgdir name="9961">
@@ -22378,7 +22378,7 @@
         <string name="1" value="별별Festival이 진행중입니다."/>
         <string name="2" value="메이플운영자가 준비한 이벤트에 참가하고 별도장을 받았다! 획득한 별도장은 메이플운영자를 찾아가거나 메이플스토리 홈페이지#b(http://maplestory.nexon.com)#k에서 확인할 수 있다."/>
         <int name="area" value="50"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
     </imgdir>
     <imgdir name="9970">
         <string name="name" value="페티트의 수리부품"/>
@@ -22393,7 +22393,7 @@
         <string name="1" value="카산드라가 어린이날 선물을 나누어 준다고 한다. 카산드라에게 가보자."/>
         <string name="2" value="5월 10일까지는 접속만 해도 상품을 준다고 한다."/>
         <int name="area" value="50"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <int name="autoPreComplete" value="1"/>
     </imgdir>
     <imgdir name="9980">
@@ -22409,7 +22409,7 @@
         <string name="1" value="升级时，会掉落5周年活动所需的枫叶。"/>
         <string name="2" value="升级时，会掉落5周年活动所需的枫叶。"/>
         <int name="area" value="50"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <int name="autoPreComplete" value="1"/>
     </imgdir>
     <imgdir name="9982">
@@ -22418,7 +22418,7 @@
         <string name="1" value="#b#p9000021##k说照看蜡烛30分钟的话，就可以获得#b#t04001167##k。必须保持在线，才能照看好蜡烛，看来可以尽情地游戏了。"/>
         <string name="2" value="获得了#b#t04001167##k！\n完成照看蜡烛的任务之后，获得了#t04001167#。应该把它好好放在#p9000021#给我的#b#t04220045##k里。\n#p9000021#说只要搜集到5块蛋糕，拼成生日蛋糕的话，就会送我一件很好的礼物。"/>
         <int name="area" value="50"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
     </imgdir>
     <imgdir name="9983">
         <string name="name" value="5周年庆祝蛋糕"/>
@@ -22508,7 +22508,7 @@
         <string name="1" value="요원W가 맡겨놓은 메모리칩을 잘 지켰다."/>
         <string name="2" value="요원W는 #e#r마스터 M#k#n에 대한 중요한 정보가 들어있는 #b#t3994089##k #i3994089# 을 본부로 운반중이었다. 하지만 정체모를 괴한들에게 쫓기게 되고 그는 다급한 나머지 신참요원인 나에게 메모리칩을 맡겼다.\r\n이 메모리칩을 #r1시간#k동안 잘 지키면 #e#r우수요원 뱃지#k#n를 주겠다고 했다."/>
         <int name="area" value="50"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
     </imgdir>
     <imgdir name="9999">
         <string name="name" value="개발테스트용"/>
@@ -22517,7 +22517,7 @@
         <string name="1" value="2"/>
         <string name="2" value="3"/>
         <int name="timeLimit" value="600"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
     </imgdir>
     <imgdir name="8052">
         <string name="name" value="Umi&apos;s Spiced Veggies"/>
@@ -22531,7 +22531,7 @@
         <string name="1" value="有着梦幻般的眼睛的妖精...和甜美的紫色头发聊了几句，但完全无法理解。妖精消失后，我在物品栏中发现了一颗#b神秘的小蛋#k。她不是说是我的朋友吗...不管怎样，还是去#b魔法密林#k拜访妖精吧。\r\n#b&lt;来自妖精的消息&gt;\n在高耸入云的森林之间沐浴在阳光下...沿着通往未知的道路前进，通往风铃草。我会在这里等你。"/>
         <string name="2" value="有着梦幻般的眼睛的妖精...和甜美的紫色头发聊了几句，但完全无法理解。妖精消失后，我在物品栏中发现了一颗神秘的小蛋。重温了妖精留给我的信息，我去了该地区，发现妖精玛丽躲在一朵巨大的风铃草后面。妖精玛丽提到了一些关于照顾生命的责任，然后给了我一只宠物作为礼物。神秘的小蛋竟然是蜗牛的卵。\r\n还有一条消息，这只小蜗牛只能陪我5个小时。"/>
         <int name="area" value="30"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <string name="name" value="一颗神秘的小蛋"/>
     </imgdir>
     <imgdir name="29016">
@@ -22566,7 +22566,7 @@
         <string name="1" value="冒险岛的开发者昨日小睡联系到了我，她让给我去找昨日酣睡？她是谁呢？"/>
         <string name="2" value="找到了昨日酣睡，并且她带我进入了冒险岛的世界。"/>
         <int name="area" value="20"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <string name="type" value="[北斗冒险岛]"/>
     </imgdir>
     <imgdir name="2270">
@@ -22770,7 +22770,7 @@
         <string name="0" value="在废都中央的地铁站工作的冬青。好像有什么苦恼……\r\n去见见#b冬青#k吧。\r\n"/>
         <string name="1" value="冬青说一定要帮同事阿赫实现愿望。阿赫到底是谁啊？\r\n进入检票口，去废都广场站看看吧。\r\n"/>
         <string name="2" value="阿赫正在工作，让我等一会儿。"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <string name="rewardSummary" value="2,400 EXP"/>
     </imgdir>
     <imgdir name="2293">
@@ -22815,7 +22815,7 @@
         <string name="1" value="需要消灭#b暗黑#o4230101##k200只。"/>
         <string name="2" value="消灭了#b暗黑#o4230101##k200只，冒险岛世界得以净化。"/>
         <int name="area" value="30"/>
-        <int name="autoStart" value="1"/>
+        <int name="autoStart" value="0"/>
         <int name="autoPreComplete" value="1"/>
         <string name="type" value="[北斗冒险岛]"/>
     </imgdir>
