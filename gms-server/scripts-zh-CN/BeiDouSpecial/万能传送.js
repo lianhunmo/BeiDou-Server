@@ -119,9 +119,9 @@ function start()
  */
 function levelStart() {
     let text = "亲爱的玩家：#e#b#h ##k#n，您想去哪里呢？\r\n";
-    text += "#L0#BOSS地图#l\r\n";
+	text += "#L2#城镇地图#l\r\n";
     text += "#L1#练级地图#l\r\n";
-    text += "#L2#城镇地图#l\r\n";
+	text += "#L0#BOSS地图#l\r\n";
     text += "#L3#活动跳跳坐牢地图#l\r\n";
     cm.sendSelectLevel(text);
 }
