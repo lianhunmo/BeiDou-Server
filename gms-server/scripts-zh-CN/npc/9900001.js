@@ -47,8 +47,9 @@ function action(mode, type, selection) {
         text += "当前信用券：" + cm.getPlayer().getCashShop().getCash(4) + "\r\n";
         text += " \r\n\r\n";
         text += "#L0##b新人福利#l\t #L2#在线奖励#l\t #L4#爆率一览#l\t #L5#一键转职#l\r\n";
-        text += "#L3#传送自由#l\t #L61#超级传送#l\t #L65#删除道具#l\t #L63#整容集合#l\r\n";
+        text += "#L3#传送自由#l\t #L61#超级传送#l\t #L65#删除道具#l\t #L63#整容合集#l\r\n";
         text += "#L8#副本戒指#l\t #L9#矿石戒指#l\t #L6#枫叶戒指#l\t #L7#点装强化#l\r\n";
+        text += "#L10#一键出售#l\t #L11#每日任务#l\t #L12#羽毛累充#l\t #L13#购买双倍#l\r\n";
         if (cm.getPlayer().isGM()) {
             text += "\r\n\r\n";
             text += "\t\t\t\t#r=====以下内容仅GM可见=====\r\n";
@@ -97,6 +98,18 @@ function doSelect(selection) {
             break;
         case 9:
             openNpc("矿石戒指");
+            break;
+        case 10:
+            openNpc("一键出售");
+            break;
+        case 11:
+            openNpc("每日任务");
+            break;
+        case 12:
+            openNpc("羽毛累充");
+            break;
+        case 13:
+            openNpc("购买双倍");
             break;
 // GM功能
         case 61:

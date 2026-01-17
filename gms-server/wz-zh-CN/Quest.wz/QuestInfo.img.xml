@@ -22810,14 +22810,414 @@
         <int name="area" value="20"/>
     </imgdir>
     <imgdir name="30005">
-        <string name="name" value="[突发任务]狩猎暗黑悟空"/>
-        <string name="0" value="听说冒险岛世界的猴子被邪恶的气息所感染了，必须消灭它们！"/>
-        <string name="1" value="需要消灭#b暗黑#o4230101##k200只。"/>
-        <string name="2" value="消灭了#b暗黑#o4230101##k200只，冒险岛世界得以净化。"/>
+        <string name="name" value="每日狩猎"/>
+        <string name="0" value="听说冒险岛世界的#b#o4230101##k泛滥成灾了，必须消灭它们！"/>
+        <string name="1" value="需要消灭#b#o4230101##k20只。"/>
+        <string name="2" value="消灭了#b#o4230101##k20只，冒险岛世界得以净化。"/>
         <int name="area" value="30"/>
         <int name="autoStart" value="0"/>
         <int name="autoPreComplete" value="1"/>
-        <string name="type" value="[北斗冒险岛]"/>
+        <string name="type" value="[每日任务]"/>
+    </imgdir>
+    <imgdir name="30006">
+        <string name="name" value="每日狩猎"/>
+        <string name="0" value="听说冒险岛世界的#b#o3110100##k泛滥成灾了，必须消灭它们！"/>
+        <string name="1" value="需要消灭#b#o3110100##k20只。"/>
+        <string name="2" value="消灭了#b#o3110100##k20只，冒险岛世界得以净化。"/>
+        <int name="area" value="30"/>
+        <int name="autoStart" value="0"/>
+        <int name="autoPreComplete" value="1"/>
+        <string name="type" value="[每日任务]"/>
+    </imgdir>
+    <imgdir name="30007">
+        <string name="name" value="每日收集"/>
+        <string name="0" value="听说冒险岛世界的#b#t4000032##k有特殊用处，请收集给我！"/>
+        <string name="1" value="需要收集#b#t4000032##k20个。"/>
+        <string name="2" value="收集了#b#t4000032##k20个，感谢你的付出。"/>
+        <int name="area" value="30"/>
+        <int name="autoStart" value="0"/>
+        <int name="autoPreComplete" value="1"/>
+        <string name="type" value="[每日任务]"/>
+    </imgdir>
+    <imgdir name="30008">
+        <string name="name" value="每日狩猎"/>
+        <string name="0" value="听说冒险岛世界的#b#o3110101##k泛滥成灾了，必须消灭它们！"/>
+        <string name="1" value="需要消灭#b#o3110101##k20只。"/>
+        <string name="2" value="消灭了#b#o3110101##k20只，冒险岛世界得以净化。"/>
+        <int name="area" value="30"/>
+        <int name="autoStart" value="0"/>
+        <int name="autoPreComplete" value="1"/>
+        <string name="type" value="[每日任务]"/>
+    </imgdir>
+    <imgdir name="30009">
+        <string name="name" value="每日收集"/>
+        <string name="0" value="听说冒险岛世界的#b#t4000107##k有特殊用处，请收集给我！"/>
+        <string name="1" value="需要收集#b#t4000107##k20个。"/>
+        <string name="2" value="收集了#b#t4000107##k20个，感谢你的付出。"/>
+        <int name="area" value="30"/>
+        <int name="autoStart" value="0"/>
+        <int name="autoPreComplete" value="1"/>
+        <string name="type" value="[每日任务]"/>
+    </imgdir>
+    <imgdir name="30010">
+        <string name="name" value="每日狩猎"/>
+        <string name="0" value="听说冒险岛世界的#b#o3210200##k泛滥成灾了，必须消灭它们！"/>
+        <string name="1" value="需要消灭#b#o3210200##k20只。"/>
+        <string name="2" value="消灭了#b#o3210200##k20只，冒险岛世界得以净化。"/>
+        <int name="area" value="30"/>
+        <int name="autoStart" value="0"/>
+        <int name="autoPreComplete" value="1"/>
+        <string name="type" value="[每日任务]"/>
+    </imgdir>
+    <imgdir name="30011">
+        <string name="name" value="每日收集"/>
+        <string name="0" value="听说冒险岛世界的#b#t4000073##k有特殊用处，请收集给我！"/>
+        <string name="1" value="需要收集#b#t4000073##k20个。"/>
+        <string name="2" value="收集了#b#t4000073##k20个，感谢你的付出。"/>
+        <int name="area" value="30"/>
+        <int name="autoStart" value="0"/>
+        <int name="autoPreComplete" value="1"/>
+        <string name="type" value="[每日任务]"/>
+    </imgdir>
+    <imgdir name="30012">
+        <string name="name" value="每日狩猎"/>
+        <string name="0" value="听说冒险岛世界的#b#o3210206##k泛滥成灾了，必须消灭它们！"/>
+        <string name="1" value="需要消灭#b#o3210206##k20只。"/>
+        <string name="2" value="消灭了#b#o3210206##k20只，冒险岛世界得以净化。"/>
+        <int name="area" value="30"/>
+        <int name="autoStart" value="0"/>
+        <int name="autoPreComplete" value="1"/>
+        <string name="type" value="[每日任务]"/>
+    </imgdir>
+    <imgdir name="30013">
+        <string name="name" value="每日收集"/>
+        <string name="0" value="听说冒险岛世界的#b#t4000103##k有特殊用处，请收集给我！"/>
+        <string name="1" value="需要收集#b#t4000103##k20个。"/>
+        <string name="2" value="收集了#b#t4000103##k20个，感谢你的付出。"/>
+        <int name="area" value="30"/>
+        <int name="autoStart" value="0"/>
+        <int name="autoPreComplete" value="1"/>
+        <string name="type" value="[每日任务]"/>
+    </imgdir>
+    <imgdir name="30014">
+        <string name="name" value="每日狩猎"/>
+        <string name="0" value="听说冒险岛世界的#b#o4230121##k泛滥成灾了，必须消灭它们！"/>
+        <string name="1" value="需要消灭#b#o4230121##k20只。"/>
+        <string name="2" value="消灭了#b#o4230121##k20只，冒险岛世界得以净化。"/>
+        <int name="area" value="30"/>
+        <int name="autoStart" value="0"/>
+        <int name="autoPreComplete" value="1"/>
+        <string name="type" value="[每日任务]"/>
+    </imgdir>
+    <imgdir name="30015">
+        <string name="name" value="每日收集"/>
+        <string name="0" value="听说冒险岛世界的#b#t4000122##k有特殊用处，请收集给我！"/>
+        <string name="1" value="需要收集#b#t4000122##k20个。"/>
+        <string name="2" value="收集了#b#t4000122##k20个，感谢你的付出。"/>
+        <int name="area" value="30"/>
+        <int name="autoStart" value="0"/>
+        <int name="autoPreComplete" value="1"/>
+        <string name="type" value="[每日任务]"/>
+    </imgdir>
+    <imgdir name="30016">
+        <string name="name" value="每日狩猎"/>
+        <string name="0" value="听说冒险岛世界的#b#o6130208##k泛滥成灾了，必须消灭它们！"/>
+        <string name="1" value="需要消灭#b#o6130208##k20只。"/>
+        <string name="2" value="消灭了#b#o6130208##k20只，冒险岛世界得以净化。"/>
+        <int name="area" value="30"/>
+        <int name="autoStart" value="0"/>
+        <int name="autoPreComplete" value="1"/>
+        <string name="type" value="[每日任务]"/>
+    </imgdir>
+    <imgdir name="30017">
+        <string name="name" value="每日收集"/>
+        <string name="0" value="听说冒险岛世界的#b#t4000296##k有特殊用处，请收集给我！"/>
+        <string name="1" value="需要收集#b#t4000296##k20个。"/>
+        <string name="2" value="收集了#b#t4000296##k20个，感谢你的付出。"/>
+        <int name="area" value="30"/>
+        <int name="autoStart" value="0"/>
+        <int name="autoPreComplete" value="1"/>
+        <string name="type" value="[每日任务]"/>
+    </imgdir>
+    <imgdir name="30018">
+        <string name="name" value="每日狩猎"/>
+        <string name="0" value="听说冒险岛世界的#b#o6230400##k泛滥成灾了，必须消灭它们！"/>
+        <string name="1" value="需要消灭#b#o6230400##k20只。"/>
+        <string name="2" value="消灭了#b#o6230400##k20只，冒险岛世界得以净化。"/>
+        <int name="area" value="30"/>
+        <int name="autoStart" value="0"/>
+        <int name="autoPreComplete" value="1"/>
+        <string name="type" value="[每日任务]"/>
+    </imgdir>
+    <imgdir name="30019">
+        <string name="name" value="每日收集"/>
+        <string name="0" value="听说冒险岛世界的#b#t4000143##k有特殊用处，请收集给我！"/>
+        <string name="1" value="需要收集#b#t4000143##k20个。"/>
+        <string name="2" value="收集了#b#t4000143##k20个，感谢你的付出。"/>
+        <int name="area" value="30"/>
+        <int name="autoStart" value="0"/>
+        <int name="autoPreComplete" value="1"/>
+        <string name="type" value="[每日任务]"/>
+    </imgdir>
+    <imgdir name="30020">
+        <string name="name" value="每日狩猎"/>
+        <string name="0" value="听说冒险岛世界的#b#o7130100##k泛滥成灾了，必须消灭它们！"/>
+        <string name="1" value="需要消灭#b#o7130100##k20只。"/>
+        <string name="2" value="消灭了#b#o7130100##k20只，冒险岛世界得以净化。"/>
+        <int name="area" value="30"/>
+        <int name="autoStart" value="0"/>
+        <int name="autoPreComplete" value="1"/>
+        <string name="type" value="[每日任务]"/>
+    </imgdir>
+    <imgdir name="30021">
+        <string name="name" value="每日收集"/>
+        <string name="0" value="听说冒险岛世界的#b#t4000028##k有特殊用处，请收集给我！"/>
+        <string name="1" value="需要收集#b#t4000028##k20个。"/>
+        <string name="2" value="收集了#b#t4000028##k20个，感谢你的付出。"/>
+        <int name="area" value="30"/>
+        <int name="autoStart" value="0"/>
+        <int name="autoPreComplete" value="1"/>
+        <string name="type" value="[每日任务]"/>
+    </imgdir>
+    <imgdir name="30022">
+        <string name="name" value="每日狩猎"/>
+        <string name="0" value="听说冒险岛世界的#b#o6300100##k泛滥成灾了，必须消灭它们！"/>
+        <string name="1" value="需要消灭#b#o6300100##k20只。"/>
+        <string name="2" value="消灭了#b#o6300100##k20只，冒险岛世界得以净化。"/>
+        <int name="area" value="30"/>
+        <int name="autoStart" value="0"/>
+        <int name="autoPreComplete" value="1"/>
+        <string name="type" value="[每日任务]"/>
+    </imgdir>
+    <imgdir name="30023">
+        <string name="name" value="每日收集"/>
+        <string name="0" value="听说冒险岛世界的#b#t4000130##k有特殊用处，请收集给我！"/>
+        <string name="1" value="需要收集#b#t4000130##k20个。"/>
+        <string name="2" value="收集了#b#t4000130##k20个，感谢你的付出。"/>
+        <int name="area" value="30"/>
+        <int name="autoStart" value="0"/>
+        <int name="autoPreComplete" value="1"/>
+        <string name="type" value="[每日任务]"/>
+    </imgdir>
+    <imgdir name="30024">
+        <string name="name" value="每日狩猎"/>
+        <string name="0" value="听说冒险岛世界的#b#o8141000##k泛滥成灾了，必须消灭它们！"/>
+        <string name="1" value="需要消灭#b#o8141000##k20只。"/>
+        <string name="2" value="消灭了#b#o8141000##k20只，冒险岛世界得以净化。"/>
+        <int name="area" value="30"/>
+        <int name="autoStart" value="0"/>
+        <int name="autoPreComplete" value="1"/>
+        <string name="type" value="[每日任务]"/>
+    </imgdir>
+    <imgdir name="30025">
+        <string name="name" value="每日收集"/>
+        <string name="0" value="听说冒险岛世界的#b#t4000134##k有特殊用处，请收集给我！"/>
+        <string name="1" value="需要收集#b#t4000134##k20个。"/>
+        <string name="2" value="收集了#b#t4000134##k20个，感谢你的付出。"/>
+        <int name="area" value="30"/>
+        <int name="autoStart" value="0"/>
+        <int name="autoPreComplete" value="1"/>
+        <string name="type" value="[每日任务]"/>
+    </imgdir>
+    <imgdir name="30026">
+        <string name="name" value="每日狩猎"/>
+        <string name="0" value="听说冒险岛世界的#b#o8150101##k泛滥成灾了，必须消灭它们！"/>
+        <string name="1" value="需要消灭#b#o8150101##k20只。"/>
+        <string name="2" value="消灭了#b#o8150101##k20只，冒险岛世界得以净化。"/>
+        <int name="area" value="30"/>
+        <int name="autoStart" value="0"/>
+        <int name="autoPreComplete" value="1"/>
+        <string name="type" value="[每日任务]"/>
+    </imgdir>
+    <imgdir name="30027">
+        <string name="name" value="每日收集"/>
+        <string name="0" value="听说冒险岛世界的#b#t4000181##k有特殊用处，请收集给我！"/>
+        <string name="1" value="需要收集#b#t4000181##k20个。"/>
+        <string name="2" value="收集了#b#t4000181##k20个，感谢你的付出。"/>
+        <int name="area" value="30"/>
+        <int name="autoStart" value="0"/>
+        <int name="autoPreComplete" value="1"/>
+        <string name="type" value="[每日任务]"/>
+    </imgdir>
+    <imgdir name="30028">
+        <string name="name" value="每日狩猎"/>
+        <string name="0" value="听说冒险岛世界的#b#o8150301##k泛滥成灾了，必须消灭它们！"/>
+        <string name="1" value="需要消灭#b#o8150301##k20只。"/>
+        <string name="2" value="消灭了#b#o8150301##k20只，冒险岛世界得以净化。"/>
+        <int name="area" value="30"/>
+        <int name="autoStart" value="0"/>
+        <int name="autoPreComplete" value="1"/>
+        <string name="type" value="[每日任务]"/>
+    </imgdir>
+    <imgdir name="30029">
+        <string name="name" value="每日收集"/>
+        <string name="0" value="听说冒险岛世界的#b#t4000269##k有特殊用处，请收集给我！"/>
+        <string name="1" value="需要收集#b#t4000269##k20个。"/>
+        <string name="2" value="收集了#b#t4000269##k20个，感谢你的付出。"/>
+        <int name="area" value="30"/>
+        <int name="autoStart" value="0"/>
+        <int name="autoPreComplete" value="1"/>
+        <string name="type" value="[每日任务]"/>
+    </imgdir>
+    <imgdir name="30030">
+        <string name="name" value="每日狩猎"/>
+        <string name="0" value="听说冒险岛世界的#b#o7130300##k泛滥成灾了，必须消灭它们！"/>
+        <string name="1" value="需要消灭#b#o7130300##k20只。"/>
+        <string name="2" value="消灭了#b#o7130300##k20只，冒险岛世界得以净化。"/>
+        <int name="area" value="30"/>
+        <int name="autoStart" value="0"/>
+        <int name="autoPreComplete" value="1"/>
+        <string name="type" value="[每日任务]"/>
+    </imgdir>
+    <imgdir name="30031">
+        <string name="name" value="每日收集"/>
+        <string name="0" value="听说冒险岛世界的#b#t4000148##k有特殊用处，请收集给我！"/>
+        <string name="1" value="需要收集#b#t4000032##k20个。"/>
+        <string name="2" value="收集了#b#t4000032##k20个，感谢你的付出。"/>
+        <int name="area" value="30"/>
+        <int name="autoStart" value="0"/>
+        <int name="autoPreComplete" value="1"/>
+        <string name="type" value="[每日任务]"/>
+    </imgdir>
+    <imgdir name="30032">
+        <string name="name" value="每日狩猎"/>
+        <string name="0" value="听说冒险岛世界的#b#o7140000##k泛滥成灾了，必须消灭它们！"/>
+        <string name="1" value="需要消灭#b#o7140000##k20只。"/>
+        <string name="2" value="消灭了#b#o7140000##k20只，冒险岛世界得以净化。"/>
+        <int name="area" value="30"/>
+        <int name="autoStart" value="0"/>
+        <int name="autoPreComplete" value="1"/>
+        <string name="type" value="[每日任务]"/>
+    </imgdir>
+    <imgdir name="30033">
+        <string name="name" value="每日收集"/>
+        <string name="0" value="听说冒险岛世界的#b#t4000132##k有特殊用处，请收集给我！"/>
+        <string name="1" value="需要收集#b#t4000132##k20个。"/>
+        <string name="2" value="收集了#b#t4000132##k20个，感谢你的付出。"/>
+        <int name="area" value="30"/>
+        <int name="autoStart" value="0"/>
+        <int name="autoPreComplete" value="1"/>
+        <string name="type" value="[每日任务]"/>
+    </imgdir>
+    <imgdir name="30034">
+        <string name="name" value="每日狩猎"/>
+        <string name="0" value="听说冒险岛世界的#b#o8140703##k泛滥成灾了，必须消灭它们！"/>
+        <string name="1" value="需要消灭#b#o8140703##k20只。"/>
+        <string name="2" value="消灭了#b#o8140703##k20只，冒险岛世界得以净化。"/>
+        <int name="area" value="30"/>
+        <int name="autoStart" value="0"/>
+        <int name="autoPreComplete" value="1"/>
+        <string name="type" value="[每日任务]"/>
+    </imgdir>
+    <imgdir name="30035">
+        <string name="name" value="每日收集"/>
+        <string name="0" value="听说冒险岛世界的#b#t4000265##k有特殊用处，请收集给我！"/>
+        <string name="1" value="需要收集#b#t4000265##k20个。"/>
+        <string name="2" value="收集了#b#t4000265##k20个，感谢你的付出。"/>
+        <int name="area" value="30"/>
+        <int name="autoStart" value="0"/>
+        <int name="autoPreComplete" value="1"/>
+        <string name="type" value="[每日任务]"/>
+    </imgdir>
+    <imgdir name="30036">
+        <string name="name" value="每日狩猎"/>
+        <string name="0" value="听说冒险岛世界的#b#o8143000##k泛滥成灾了，必须消灭它们！"/>
+        <string name="1" value="需要消灭#b#o8143000##k30只。"/>
+        <string name="2" value="消灭了#b#o8143000##k30只，冒险岛世界得以净化。"/>
+        <int name="area" value="30"/>
+        <int name="autoStart" value="0"/>
+        <int name="autoPreComplete" value="1"/>
+        <string name="type" value="[每日任务]"/>
+    </imgdir>
+    <imgdir name="30037">
+        <string name="name" value="每日收集"/>
+        <string name="0" value="听说冒险岛世界的#b#t4000150##k有特殊用处，请收集给我！"/>
+        <string name="1" value="需要收集#b#t4000150##k30个。"/>
+        <string name="2" value="收集了#b#t4000150##k30个，感谢你的付出。"/>
+        <int name="area" value="30"/>
+        <int name="autoStart" value="0"/>
+        <int name="autoPreComplete" value="1"/>
+        <string name="type" value="[每日任务]"/>
+    </imgdir>
+    <imgdir name="30038">
+        <string name="name" value="每日狩猎"/>
+        <string name="0" value="听说冒险岛世界的#b#o8141000##k泛滥成灾了，必须消灭它们！"/>
+        <string name="1" value="需要消灭#b#o8141000##k30只。"/>
+        <string name="2" value="消灭了#b#o8141000##k30只，冒险岛世界得以净化。"/>
+        <int name="area" value="30"/>
+        <int name="autoStart" value="0"/>
+        <int name="autoPreComplete" value="1"/>
+        <string name="type" value="[每日任务]"/>
+    </imgdir>
+    <imgdir name="30039">
+        <string name="name" value="每日收集"/>
+        <string name="0" value="听说冒险岛世界的#b#t4000134##k有特殊用处，请收集给我！"/>
+        <string name="1" value="需要收集#b#t4000134##k30个。"/>
+        <string name="2" value="收集了#b#t4000134##k30个，感谢你的付出。"/>
+        <int name="area" value="30"/>
+        <int name="autoStart" value="0"/>
+        <int name="autoPreComplete" value="1"/>
+        <string name="type" value="[每日任务]"/>
+    </imgdir>
+    <imgdir name="30040">
+        <string name="name" value="每日狩猎"/>
+        <string name="0" value="听说冒险岛世界的#b#o7130010##k泛滥成灾了，必须消灭它们！"/>
+        <string name="1" value="需要消灭#b#o7130010##k30只。"/>
+        <string name="2" value="消灭了#b#o7130010##k30只，冒险岛世界得以净化。"/>
+        <int name="area" value="30"/>
+        <int name="autoStart" value="0"/>
+        <int name="autoPreComplete" value="1"/>
+        <string name="type" value="[每日任务]"/>
+    </imgdir>
+    <imgdir name="30041">
+        <string name="name" value="每日收集"/>
+        <string name="0" value="听说冒险岛世界的#b#t4000147##k有特殊用处，请收集给我！"/>
+        <string name="1" value="需要收集#b#t4000147##k30个。"/>
+        <string name="2" value="收集了#b#t4000147##k30个，感谢你的付出。"/>
+        <int name="area" value="30"/>
+        <int name="autoStart" value="0"/>
+        <int name="autoPreComplete" value="1"/>
+        <string name="type" value="[每日任务]"/>
+    </imgdir>
+    <imgdir name="30042">
+        <string name="name" value="每日狩猎"/>
+        <string name="0" value="听说冒险岛世界的#b#o6400100##k泛滥成灾了，必须消灭它们！"/>
+        <string name="1" value="需要消灭#b#o6400100##k30只。"/>
+        <string name="2" value="消灭了#b#o6400100##k30只，冒险岛世界得以净化。"/>
+        <int name="area" value="30"/>
+        <int name="autoStart" value="0"/>
+        <int name="autoPreComplete" value="1"/>
+        <string name="type" value="[每日任务]"/>
+    </imgdir>
+    <imgdir name="30043">
+        <string name="name" value="每日收集"/>
+        <string name="0" value="听说冒险岛世界的#b#t4000131##k有特殊用处，请收集给我！"/>
+        <string name="1" value="需要收集#b#t4000131##k30个。"/>
+        <string name="2" value="收集了#b#t4000131##k30个，感谢你的付出。"/>
+        <int name="area" value="30"/>
+        <int name="autoStart" value="0"/>
+        <int name="autoPreComplete" value="1"/>
+        <string name="type" value="[每日任务]"/>
+    </imgdir>
+    <imgdir name="30044">
+        <string name="name" value="每日狩猎"/>
+        <string name="0" value="听说冒险岛世界的#b#o8142000##k泛滥成灾了，必须消灭它们！"/>
+        <string name="1" value="需要消灭#b#o8142000##k30只。"/>
+        <string name="2" value="消灭了#b#o8142000##k30只，冒险岛世界得以净化。"/>
+        <int name="area" value="30"/>
+        <int name="autoStart" value="0"/>
+        <int name="autoPreComplete" value="1"/>
+        <string name="type" value="[每日任务]"/>
+    </imgdir>
+    <imgdir name="30045">
+        <string name="name" value="每日收集"/>
+        <string name="0" value="听说冒险岛世界的#b#t4000149##k有特殊用处，请收集给我！"/>
+        <string name="1" value="需要收集#b#t4000149##k30个。"/>
+        <string name="2" value="收集了#b#t4000149##k30个，感谢你的付出。"/>
+        <int name="area" value="30"/>
+        <int name="autoStart" value="0"/>
+        <int name="autoPreComplete" value="1"/>
+        <string name="type" value="[每日任务]"/>
     </imgdir>
     <imgdir name="4100">
         <string name="0" value="最近#b#p9310010##k家家畜变得很暴躁，农活也变得很困难。去找找他吧。"/>

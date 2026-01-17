@@ -146,4 +146,47 @@ public final class QuestActionHandler extends AbstractPacketHandler {
             }
         }
     }
+
+    public static void handleDailyQuest(int action, short questid, Client c) {
+        int npc = 9900001;
+        Character player = c.getPlayer();
+        Quest quest = Quest.getInstance(questid);
+        if (player.getMapId() == MapId.JAIL) {   //监狱地图不可使用任务脚本
+            player.dropMessage(1,I18nUtil.getMessage("ActionHandler.map.message1"));
+            return;
+        }
+        switch (action) {
+            case 1: { // Start Quest
+                if (quest.canStart(player, npc)) {
+                    boolean success = QuestScriptManager.getInstance().checkFunctionExists(c, questid, npc, "start");
+                    boolean hasScriptRequirement = quest.hasScriptRequirement(false);
+                    if (hasScriptRequirement && success) {
+                        QuestScriptManager.getInstance().start(c, questid, npc);
+                    } else {
+                        quest.start(player, npc);
+                    }
+                }
+                break;
+            }
+            case 2: { // Complete Quest
+                quest.forfeit(player);
+                break;
+            }
+            case 3: // forfeit quest
+                quest.forfeit(player);
+                break;
+            case 4: { // scripted start quest
+                if (quest.canStart(player, npc)) {
+                    QuestScriptManager.getInstance().start(c, questid, npc);
+                }
+                break;
+            }
+            case 5: { // scripted end quests
+                if (quest.canComplete(player, npc)) {
+                    QuestScriptManager.getInstance().end(c, questid, npc);
+                }
+                break;
+            }
+        }
+    }
 }
