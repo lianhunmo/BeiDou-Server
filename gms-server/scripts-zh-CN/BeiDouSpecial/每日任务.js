@@ -82,7 +82,7 @@ function levelStart() {
 
     let text = "这里是每日任务中心，每天可以接取 #b5次#k 日常任务。\r\n你今日已接取#b" + questCount + "#k次任务。\r\n";
     questId = cm.getCharacterExtendValue("每日任务编号", true);
-    if (questCount >= 5) {
+    if (questCount >= 5 && questId === "0") {
         cm.sendOkLevel("Dispose", "你今天已完成 #b5次#k 每日任务，请明天再来吧。");
     } else if (QUEST_MAP.has(questId)) {
         let quest = QUEST_MAP.get(questId);
