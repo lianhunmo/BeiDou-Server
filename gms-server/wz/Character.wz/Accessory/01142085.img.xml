@@ -18,10 +18,10 @@
     <int name="incMHP" value="0"/>
     <int name="incMMP" value="0"/>
     <int name="incSTR" value="1"/>
-    <int name="incDEX" value="0"/>
-    <int name="incINT" value="0"/>
-    <int name="incLUK" value="0"/>
-    <int name="incEVA" value="1"/>
+    <int name="incDEX" value="1"/>
+    <int name="incINT" value="1"/>
+    <int name="incLUK" value="1"/>
+    <int name="incEVA" value="0"/>
     <int name="speed" value="0"/>
     <int name="tuc" value="0"/>
     <int name="price" value="0"/>

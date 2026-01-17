@@ -49,11 +49,11 @@ function action(mode, type, selection) {
         text += "#L0##b新人福利#l\t #L2#在线奖励#l\t #L4#爆率一览#l\t #L5#一键转职#l\r\n";
         text += "#L3#传送自由#l\t #L61#超级传送#l\t #L65#删除道具#l\t #L63#整容合集#l\r\n";
         text += "#L8#副本戒指#l\t #L9#矿石戒指#l\t #L6#枫叶戒指#l\t #L7#点装强化#l\r\n";
-        text += "#L10#一键出售#l\t #L11#每日任务#l\t #L12#羽毛累充#l\t #L13#购买双倍#l\r\n";
+        text += "#L11#每日任务#l\t #L12#羽毛累充#l\t #L13#点卷商品#l\r\n";
         if (cm.getPlayer().isGM()) {
             text += "\r\n\r\n";
             text += "\t\t\t\t#r=====以下内容仅GM可见=====\r\n";
-            text += "#L61#超级传送#l \t #L62#超级商店#l \t #L63#整容集合#l \t";
+            text += "#L10#一键出售#l\t #L61#超级传送#l \t #L62#超级商店#l \t #L63#整容集合#l \t";
 			text += "#L64#UI查询#l \t #L65#删除道具#l \t #L66#生成道具#l\r\n\r\n";
 			text += "#L67#有状态脚本示例#l \t #L68#NextLevel脚本示例#l";
         }
@@ -106,10 +106,10 @@ function doSelect(selection) {
             openNpc("每日任务");
             break;
         case 12:
-            openNpc("羽毛累充");
+            openNpc("赞助中心");
             break;
         case 13:
-            openNpc("购买双倍");
+            openNpc("点券商品");
             break;
 // GM功能
         case 61:
