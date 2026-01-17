@@ -42,7 +42,6 @@ function levelExchangeMoneyResult(inputNum) {
         cm.gainItem(GOLD_MAPLE_LEAF, -cost);
         cm.getChar().gainMeso(gain)
         cm.sendLastLevel("Start", "兑换成功！你已获得了#b" + gain + "金币#k。");
-        cm.dispose();
     }
 }
 
@@ -65,7 +64,6 @@ function levelExchangeGameCardResult(inputNum) {
         cm.gainItem(GOLD_MAPLE_LEAF, -cost);
         cm.getChar().gainCash(gain)
         cm.sendLastLevel("Start", "兑换成功！你已获得了#b" + gain + "点卷#k。");
-        cm.dispose();
     }
 }
 
@@ -89,7 +87,6 @@ function levelExchangeMapleLeafResult(inputNum) {
             cm.gainItem(GOLD_MAPLE_LEAF, -cost);
             cm.gainItem(MAPLE_LEAF, gain);
             cm.sendLastLevel("Start", "兑换成功！你已获得了#b" + gain + "片#k枫叶。");
-            cm.dispose();
         } else {
             cm.sendOk("背包空间不足!");
             cm.dispose();
@@ -117,7 +114,6 @@ function levelExchangeGoldMapleLeafResult(inputNum) {
             cm.gainItem(MAPLE_LEAF, -cost);
             cm.gainItem(GOLD_MAPLE_LEAF, gain);
             cm.sendLastLevel("Start", "兑换成功！你已获得了#b" + gain + "片#k黄金枫叶。");
-            cm.dispose();
         } else {
             cm.sendOk("背包空间不足!");
             cm.dispose();
