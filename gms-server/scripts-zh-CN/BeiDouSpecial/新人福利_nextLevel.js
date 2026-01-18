@@ -27,7 +27,7 @@ function levelStart() {
     let text = "这里可以领取新手奖励。\r\n";
     text += "#r(注：每个账号只能领取一次，请谨慎领取。)#k\r\n";
     rewardAlreadyGainStr = cm.getAccountExtendValue("账号新人奖励领取");
-    if (rewardAlreadyGain) {
+    if (rewardAlreadyGainStr) {
         rewardAlreadyGain = rewardAlreadyGainStr.split(",").map(Number);
     } else {
         vrewardAlreadyGain = [0,0,0,0];

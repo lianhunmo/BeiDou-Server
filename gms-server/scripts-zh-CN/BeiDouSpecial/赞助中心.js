@@ -38,7 +38,7 @@ function levelStart() {
     let text = "这里可以充值火焰羽毛来获取特殊奖励。\r\n";
     count = Number(cm.getAccountExtendValue("角色累充数额"));
     let currentLevelStr = cm.getAccountExtendValue("角色累充已领取数额");
-    if (currentLevel) {
+    if (currentLevelStr) {
         currentLevel = currentLevelStr.split(",").map(Number);
     } else {
         currentLevel = [0,0,0,0,0,0,0,0,0,0];
