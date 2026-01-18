@@ -21,6 +21,9 @@ function enter(pi) {
                 return false;
             }
             count++;
+            let quitTotal = api.getCharacterExtendValue("毒雾组队副本累计通关次数");
+            quitTotal += Number(quitTotal);
+            api.saveOrUpdateCharacterExtendValue("毒雾组队副本累计通关次数", quitTotal.toString());
             api.saveOrUpdateCharacterExtendValue("邮票获取次数" + 4001198, count.toString(), false);
             pi.gainItem(4001198, 10);
         }
