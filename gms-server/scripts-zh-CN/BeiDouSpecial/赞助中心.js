@@ -92,7 +92,8 @@ function levelExchangeItem1() {
             cm.gainItem(CHAOS_SCROLL, chaosCount);
             cm.gainItem(MEDAL_CODE_1, 1);
             cm.gainMeso(5000000);
-            cm.getPlayer().getCashShop().gainCash(1, 1000);
+            let gainCashNum = neededCount * 100;
+            cm.getPlayer().getCashShop().gainCash(1, gainCashNum);
 
             currentLevel[0] = 1;
             cm.saveOrUpdateAccountExtendValue("角色累充已领取数额", currentLevel.toString());
@@ -127,7 +128,8 @@ function levelExchangeItem2() {
             cm.gainMeso(10000000);
             currentLevel[1] = 1;
             cm.saveOrUpdateAccountExtendValue("角色累充已领取数额", currentLevel.toString());
-            cm.getPlayer().getCashShop().gainCash(1, 5000);
+            let gainCashNum = neededCount * 100;
+            cm.getPlayer().getCashShop().gainCash(1, gainCashNum);
 
             let text = "恭喜你已领取：\r\n";
             text += chaosCount+"张 #b#t" + CHAOS_SCROLL + "##k #b#i" + CHAOS_SCROLL + "##k\r\n";
@@ -157,7 +159,8 @@ function levelExchangeItem3() {
             cm.gainItem(CHAOS_SCROLL, chaosCount);
             cm.gainItem(MEDAL_CODE_3, 1);
             cm.gainMeso(20000000);
-            cm.getPlayer().getCashShop().gainCash(1, 10000);
+            let gainCashNum = neededCount * 100;
+            cm.getPlayer().getCashShop().gainCash(1, gainCashNum);
             currentLevel[2] = 1;
             cm.saveOrUpdateAccountExtendValue("角色累充已领取数额", currentLevel.toString());
             let text = "恭喜你已领取：\r\n";
@@ -190,7 +193,8 @@ function levelExchangeItem4() {
             cm.gainMeso(40000000);
             currentLevel[3] = 1;
             cm.saveOrUpdateAccountExtendValue("角色累充已领取数额", currentLevel.toString());
-            cm.getPlayer().getCashShop().gainCash(1, 20000);
+            let gainCashNum = neededCount * 100;
+            cm.getPlayer().getCashShop().gainCash(1, gainCashNum);
             let text = "恭喜你已领取：\r\n";
             text += chaosCount+"张 #b#t" + CHAOS_SCROLL + "##k #b#i" + CHAOS_SCROLL + "##k\r\n";
             text += "#b#t" + MEDAL_CODE_4 + "##k #b#i" + MEDAL_CODE_4 + "##k\r\n";
@@ -219,7 +223,8 @@ function levelExchangeItem5() {
             cm.gainItem(CHAOS_SCROLL, chaosCount);
             cm.gainItem(MEDAL_CODE_5, 1);
             cm.gainMeso(100000000);
-            cm.getPlayer().getCashShop().gainCash(1, 50000);
+            let gainCashNum = neededCount * 100;
+            cm.getPlayer().getCashShop().gainCash(1, gainCashNum);
             currentLevel[4] = 1;
             cm.saveOrUpdateAccountExtendValue("角色累充已领取数额", currentLevel.toString());
             let text = "恭喜你已领取：\r\n";
@@ -252,7 +257,8 @@ function levelExchangeItem6() {
             cm.gainMeso(200000000);
             currentLevel[5] = 1;
             cm.saveOrUpdateAccountExtendValue("角色累充已领取数额", currentLevel.toString());
-            cm.getPlayer().getCashShop().gainCash(1, 100000);
+            let gainCashNum = neededCount * 100;
+            cm.getPlayer().getCashShop().gainCash(1, gainCashNum);
             let text = "恭喜你已领取：\r\n";
             text += whiteScrollCount+"张 #b#t" + WHITE_SCROLL + "##k #b#i" + WHITE_SCROLL + "##k\r\n";
             text += "#b#t" + MEDAL_CODE_6 + "##k #b#i" + MEDAL_CODE_6 + "##k\r\n";
@@ -283,7 +289,8 @@ function levelExchangeItem7() {
             cm.gainMeso(300000000);
             currentLevel[6] = 1;
             cm.saveOrUpdateAccountExtendValue("角色累充已领取数额", currentLevel.toString());
-            cm.getPlayer().getCashShop().gainCash(1, 150000);
+            let gainCashNum = neededCount * 100;
+            cm.getPlayer().getCashShop().gainCash(1, gainCashNum);
             let text = "恭喜你已领取：\r\n";
             text += whiteScrollCount+"张 #b#t" + WHITE_SCROLL + "##k #b#i" + WHITE_SCROLL + "##k\r\n";
             text += "#b#t" + MEDAL_CODE_7 + "##k #b#i" + MEDAL_CODE_7 + "##k\r\n";
@@ -314,7 +321,8 @@ function levelExchangeItem8() {
             cm.gainMeso(400000000);
             currentLevel[7] = 1;
             cm.saveOrUpdateAccountExtendValue("角色累充已领取数额", currentLevel.toString());
-            cm.getPlayer().getCashShop().gainCash(1, 200000);
+            let gainCashNum = neededCount * 100;
+            cm.getPlayer().getCashShop().gainCash(1, gainCashNum);
             let text = "恭喜你已领取：\r\n";
             text += whiteScrollCount+"张 #b#t" + WHITE_SCROLL + "##k #b#i" + WHITE_SCROLL + "##k\r\n";
             text += "#b#t" + MEDAL_CODE_8 + "##k #b#i" + MEDAL_CODE_8 + "##k\r\n";
@@ -345,7 +353,8 @@ function levelExchangeItem9() {
             cm.gainMeso(500000000);
             currentLevel[8] = 1;
             cm.saveOrUpdateAccountExtendValue("角色累充已领取数额", currentLevel.toString());
-            cm.getPlayer().getCashShop().gainCash(1, 250000);
+            let gainCashNum = neededCount * 100;
+            cm.getPlayer().getCashShop().gainCash(1, gainCashNum);
             let text = "恭喜你已领取：\r\n";
             text += whiteScrollCount+"张 #b#t" + WHITE_SCROLL + "##k #b#i" + WHITE_SCROLL + "##k\r\n";
             text += "#b#t" + MEDAL_CODE_9 + "##k #b#i" + MEDAL_CODE_9 + "##k\r\n";
@@ -376,7 +385,8 @@ function levelExchangeItem10() {
             cm.gainMeso(800000000);
             currentLevel[9] = 1;
             cm.saveOrUpdateAccountExtendValue("角色累充已领取数额", currentLevel.toString());
-            cm.getPlayer().getCashShop().gainCash(1, 300000);
+            let gainCashNum = neededCount * 100;
+            cm.getPlayer().getCashShop().gainCash(1, gainCashNum);
             let text = "恭喜你已领取：\r\n";
             text += whiteScrollCount+"张 #b#t" + WHITE_SCROLL + "##k #b#i" + WHITE_SCROLL + "##k\r\n";
             text += "#b#t" + MEDAL_CODE_10 + "##k #b#i" + MEDAL_CODE_10 + "##k\r\n";
