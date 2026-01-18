@@ -38,7 +38,7 @@ function levelStart() {
         currentLevel = currentLevelStr.split(",").map(Number);
     }
     text += "你当前已累计充值了 #b" + count + "#k #t" + FLAMING_FEATHER + "##i" + FLAMING_FEATHER + "#。\r\n";
-    text += "你当前拥有 #b" + flamingFeatherCount + "#k #t" + FLAMING_FEATHER + "##i" + FLAMING_FEATHER + "#。";
+    text += "你当前拥有 #b" + flamingFeatherCount + "#k #t" + FLAMING_FEATHER + "##i" + FLAMING_FEATHER + "#。\r\n";
     text += "现在你希望做什么呢？\r\n\r\n";
 
     text += "#L0##b充值火焰羽毛#k\r\n";
