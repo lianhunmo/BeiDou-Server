@@ -17,7 +17,7 @@ function start() {
 function levelStart() {
     let text = "欢迎来到金猪兑换中心！请问您想换点什么？\r\n\r\n";
     text += "#L0#用#r1片#k#t" + GOLD_MAPLE_LEAF + "# #i" + GOLD_MAPLE_LEAF + "#兑换#r1000万#k金币#i5200002##l\r\n";
-    text += "#L1#用#r1片#k#t" + GOLD_MAPLE_LEAF + "# #i" + GOLD_MAPLE_LEAF + "#兑换#r1万#k点券#i4031866##l\r\n";
+    text += "#L1#用#r1片#k#t" + GOLD_MAPLE_LEAF + "# #i" + GOLD_MAPLE_LEAF + "#兑换#r1万#k抵用卷#i4031866##l\r\n";
     text += "#L2#用#r1片#k#t" + GOLD_MAPLE_LEAF + "# #i" + GOLD_MAPLE_LEAF + "#兑换#r88片#k#t" + MAPLE_LEAF + "# #i" + MAPLE_LEAF + "##l\r\n";
     text += "#L3#用#r100片#k#t" + MAPLE_LEAF + "# #i" + MAPLE_LEAF + "#兑换#r1片#k#t" + GOLD_MAPLE_LEAF + "# #i" + GOLD_MAPLE_LEAF + "##l\r\n";
     cm.sendSelectLevel("Exchange", text);
@@ -62,8 +62,8 @@ function levelExchangeGameCardResult(inputNum) {
         cm.sendLastLevel("Start", "你身上的黄金枫叶不够#r" + cost + "片#k。");
     } else {
         cm.gainItem(GOLD_MAPLE_LEAF, -cost);
-        cm.getChar().gainCash(gain)
-        cm.sendLastLevel("Start", "兑换成功！你已获得了#b" + gain + "点卷#k。");
+        cm.getChar().getCashShop().gainCash(2, gain)
+        cm.sendLastLevel("Start", "兑换成功！你已获得了#b" + gain + "抵用卷#k。");
     }
 }
 
@@ -119,4 +119,12 @@ function levelExchangeGoldMapleLeafResult(inputNum) {
             cm.dispose();
         }
     }
+}
+
+function levelDispose() {
+    cm.dispose();
+}
+
+function levelnull() {
+    cm.dispose();
 }
