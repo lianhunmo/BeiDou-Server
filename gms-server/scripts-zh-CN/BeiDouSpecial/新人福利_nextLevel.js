@@ -26,11 +26,11 @@ function levelStart() {
     currentLevel = cm.getLevel();
     let text = "这里可以领取新手奖励。\r\n";
     text += "#r(注：每个账号只能领取一次，请谨慎领取。)#k\r\n";
-    rewardAlreadyGain = Number(cm.getAccountExtendValue("账号新人奖励领取"));
+    rewardAlreadyGainStr = cm.getAccountExtendValue("账号新人奖励领取");
     if (rewardAlreadyGain) {
-        rewardAlreadyGain = currentLevelStr.split(",").map(Number);
+        rewardAlreadyGain = rewardAlreadyGainStr.split(",").map(Number);
     } else {
-        rewardAlreadyGain = [0,0,0,0];
+        vrewardAlreadyGain = [0,0,0,0];
     }
     text += getRewardListText();
     cm.sendSelectLevel("ConfirmReward", text);
@@ -46,7 +46,6 @@ function getRewardListText() {
         const isReceived = rewardAlreadyGain[i] === 1;  // 精确检查每一位
         const isClaimable = LEVEL_NEED[i] <= currentLevel;
         let levelIndex = i;
-
         if (!isReceived) {
             listtext.push(1);
             if (isClaimable) {
@@ -63,7 +62,7 @@ function getRewardListText() {
     return text;
 }
 
-function getConfirmReward0() {
+function levelConfirmReward0() {
     neededLevel = LEVEL_NEED[0];
     let text = "本阶段可领取：";
     text += "#b#t" + BEGINNER_ADVENTURER_MEDAL + "##k #b#i" + BEGINNER_ADVENTURER_MEDAL + "##k\r\n";
@@ -82,7 +81,7 @@ function getConfirmReward0() {
 
 }
 
-function getGainLevelReward0() {
+function levelGainLevelReward0() {
     if (rewardAlreadyGain[0] === 1) {
         cm.sendOkLevel("Dispose", "你已领取过该档位奖励。")
     } else if (neededLevel <= currentLevel) {
@@ -114,7 +113,7 @@ function getGainLevelReward0() {
     }
 }
 
-function getConfirmReward1() {
+function levelConfirmReward1() {
     neededLevel = LEVEL_NEED[1];
     let text = "本阶段可领取：";
     text += "#b#t" + JUNIOR_ADVENTURER_MEDAL + "##k #b#i" + JUNIOR_ADVENTURER_MEDAL + "##k\r\n";
@@ -131,7 +130,7 @@ function getConfirmReward1() {
 
 }
 
-function getGainLevelReward1() {
+function levelGainLevelReward1() {
     if (rewardAlreadyGain[1] === 1) {
         cm.sendOkLevel("Dispose", "你已领取过该档位奖励。")
     } else if (neededLevel <= currentLevel) {
@@ -159,7 +158,7 @@ function getGainLevelReward1() {
     }
 }
 
-function getConfirmReward2() {
+function levelConfirmReward2() {
     neededLevel = LEVEL_NEED[2];
     let text = "本阶段可领取：";
     text += "#b#t" + VETERAN_ADVENTURER_MEDAL + "##k #b#i" + VETERAN_ADVENTURER_MEDAL + "##k\r\n";
@@ -177,7 +176,7 @@ function getConfirmReward2() {
 
 }
 
-function getGainLevelReward2() {
+function levelGainLevelReward2() {
     if (rewardAlreadyGain[2] === 1) {
         cm.sendOkLevel("Dispose", "你已领取过该档位奖励。")
     } else if (neededLevel <= currentLevel) {
@@ -209,7 +208,7 @@ function getGainLevelReward2() {
     }
 }
 
-function getConfirmReward3() {
+function levelConfirmReward3() {
     neededLevel = LEVEL_NEED[3];
     let text = "本阶段可领取：";
     text += "#b#t" + MASTER_ADVENTURER_MEDAL + "##k #b#i" + MASTER_ADVENTURER_MEDAL + "##k\r\n";
@@ -227,7 +226,7 @@ function getConfirmReward3() {
 
 }
 
-function getGainLevelReward3() {
+function levelGainLevelReward3() {
     if (rewardAlreadyGain[3] === 1) {
         cm.sendOkLevel("Dispose", "你已领取过该档位奖励。")
     } else if (neededLevel <= currentLevel) {
@@ -260,6 +259,10 @@ function getGainLevelReward3() {
 }
 
 function levelDispose() {
+    cm.dispose();
+}
+
+function levelnull() {
     cm.dispose();
 }
 
