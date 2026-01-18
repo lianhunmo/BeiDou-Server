@@ -23,7 +23,7 @@
 /**
  * @description 拍卖行中心脚本
  */
-var OldTitle ="\t\t\t\t\t#e欢迎来到#r滕王阁序#k帮助中心#n\t\t\t\t\r\n";
+var OldTitle ="\t\t\t\t\t#e欢迎来到#r滕王阁#k帮助中心#n\t\t\t\t\r\n";
 var status = -1;
 var i = 0;
 function start() {
@@ -69,7 +69,7 @@ function doSelect(selection) {
     switch (selection) {
         // 非GM功能
         case 0:
-            openNpc("新人福利");
+            openNpc("新人福利_nextLevel");
             break;
         case 1:
             openNpc("每日签到");
@@ -109,7 +109,7 @@ function doSelect(selection) {
             openNpc("赞助中心");
             break;
         case 13:
-            openNpc("点券商品");
+            openNpc("点卷商品");
             break;
 // GM功能
         case 61:
