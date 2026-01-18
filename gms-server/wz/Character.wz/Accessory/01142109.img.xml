@@ -17,10 +17,10 @@
     <int name="reqLUK" value="0"/>
     <int name="incMHP" value="150"/>
     <int name="incMMP" value="150"/>
-    <int name="incSTR" value="1"/>
-    <int name="incDEX" value="1"/>
-    <int name="incINT" value="1"/>
-    <int name="incLUK" value="1"/>
+    <int name="incSTR" value="6"/>
+    <int name="incDEX" value="6"/>
+    <int name="incINT" value="6"/>
+    <int name="incLUK" value="6"/>
     <int name="tuc" value="0"/>
     <int name="price" value="0"/>
     <int name="tradeBlock" value="1"/>
