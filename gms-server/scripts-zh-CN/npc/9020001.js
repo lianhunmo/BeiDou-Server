@@ -272,7 +272,7 @@ function action(mode, type, selection) {
                 cm.sendNext("请先在你的背包里腾出空间！");
             } else {
                 let quitTotal = cm.getCharacterExtendValue("废弃组队副本累计通关次数");
-                quitTotal += Number(quitTotal);
+                quitTotal ++;
                 cm.saveOrUpdateCharacterExtendValue("废弃组队副本累计通关次数", quitTotal.toString());
                 cm.warp(103000805, "st00");
             }

@@ -50,7 +50,7 @@ function action(mode, type, selection) {
           } else if (chosen == 1) {
               if (cm.haveItem(4001101, 5)) {
                   let quitTotal = cm.getCharacterExtendValue("月秒组队副本累计通关次数");
-                  quitTotal += Number(quitTotal);
+                  quitTotal++;
                   cm.saveOrUpdateCharacterExtendValue("月秒组队副本累计通关次数", quitTotal.toString());
                   cm.sendNext("哦……这不是月兔做的年糕吗？请把年糕给我。嗯……这些看起来很美味。下次再带更多的 #b#t4001101##k 来找我哦。一路平安！");
               } else {

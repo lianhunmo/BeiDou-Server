@@ -50,7 +50,7 @@ function action(mode, type, selection) {
                 cm.sendNext("看起来你的#r装备#k、#r消耗#k或#r其他#k背包中都没有空位。请腾出一些空间，然后再试一次。");
             } else {
                 let quitTotal = cm.getCharacterExtendValue("玩具组队副本累计通关次数");
-                quitTotal += Number(quitTotal);
+                quitTotal ++;
                 cm.saveOrUpdateCharacterExtendValue("玩具组队副本累计通关次数", quitTotal.toString());
                 cm.warp(910000000);
             }

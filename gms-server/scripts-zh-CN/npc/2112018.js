@@ -58,7 +58,7 @@ function action(mode, type, selection) {
         } else {
             if (eim.giveEventReward(cm.getPlayer())) {
                 let quitTotal = cm.getCharacterExtendValue("罗密欧与朱丽叶组队副本累计通关次数");
-                quitTotal += Number(quitTotal);
+                quitTotal ++;
                 cm.saveOrUpdateCharacterExtendValue("罗密欧与朱丽叶组队副本累计通关次数", quitTotal.toString());
 
                 cm.warp((eim.getIntProperty("isAlcadno") == 0) ? 910000000 : 910000000);
