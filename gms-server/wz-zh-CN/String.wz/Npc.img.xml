@@ -5879,7 +5879,8 @@
         <string name="name" value="마녀의 무덤"/>
     </imgdir>
     <imgdir name="9010021">
-        <string name="name" value="Wolf Spirit Ryko"/>
+        <string name="name" value="传说之狼"/>
+        <string name="n0" value="你准备好重生了吗？"/>
     </imgdir>
     <imgdir name="9010022">
         <string name="name" value="次元之镜"/>
@@ -8027,7 +8028,8 @@
         <string name="name" value="法海师傅"/>
     </imgdir>
     <imgdir name="9300005">
-        <string name="name" value="红线女"/>
+        <string name="name" value="红娘"/>
+        <string name="n0" value="想做组队任务可以与我对话。"/>
     </imgdir>
     <imgdir name="9300006">
         <string name="name" value="蒋老板"/>
@@ -8195,6 +8197,7 @@
     </imgdir>
     <imgdir name="9310022">
         <string name="name" value="金猪"/>
+        <string name="n0" value="你好！来看看我的宝贝吧！"/>
     </imgdir>
     <imgdir name="9310023">
         <string name="name" value="飞天猪"/>
