@@ -13,6 +13,8 @@ const SCISSORS_OF_KARMA = 5520000;
 const SCISSORS_OF_KARMA_COST = 2000;
 const VICIOUS_HAMMER = 5570000;
 const VICIOUS_HAMMER_COST = 1000;
+const WHEEL_OF_DESTINY = 5510000;
+const WHEEL_OF_DESTINY_COST = 500;
 
 let flamingFeatherCount = 0;
 let currentCashPoint = 0;
@@ -38,6 +40,7 @@ function levelStart() {
     text += "#L3##b购买高级快乐百宝券#k\r\n";
     text += "#L4##b购买宿命剪刀#k\r\n";
     text += "#L5##b购买金锤子#k\r\n";
+    text += "#L6##b购买原地复活术#k\r\n";
 
     cm.sendSelectLevel("ExchangeItem", text);
 }
@@ -149,6 +152,24 @@ function levelBuyCashItem5(inputNum) {
         cm.getPlayer().getCashShop().gainCash(1, -totalCost);
         cm.gainItem(VICIOUS_HAMMER, inputNum);
         cm.sendOkLevel("Dispose", "成功购买 " + inputNum + " 个 #b#t" + VICIOUS_HAMMER + "##k#i" + VICIOUS_HAMMER + "#")
+    }
+}
+
+function levelExchangeItem6() {
+    let text = "每个 #b#t" + WHEEL_OF_DESTINY + "##k#i" + WHEEL_OF_DESTINY + "#需要 " + WHEEL_OF_DESTINY_COST + "点卷。\r\n你要购买多少个？\r\n"
+    cm.getInputNumberLevel("BuyCashItem5", text, 1, 1, 1000);
+}
+
+function levelBuyCashItem6(inputNum) {
+    let totalCost = WHEEL_OF_DESTINY_COST * inputNum;
+    if (currentCashPoint < totalCost) {
+        cm.sendOkLevel("Dispose", "你的点卷不够。")
+    } else if (!cm.canHold(WHEEL_OF_DESTINY, inputNum)) {
+        cm.sendOkLevel("Dispose", "请保证现金栏有空位。")
+    } else {
+        cm.getPlayer().getCashShop().gainCash(1, -totalCost);
+        cm.gainItem(WHEEL_OF_DESTINY, inputNum);
+        cm.sendOkLevel("Dispose", "成功购买 " + inputNum + " 个 #b#t" + WHEEL_OF_DESTINY + "##k#i" + WHEEL_OF_DESTINY + "#")
     }
 }
 
