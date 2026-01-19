@@ -1,5 +1,5 @@
 /**
- * @description 点卷商品专卖
+ * @description 新人福利
  * @author Geoffrey
  */
 const BEGINNER_ADVENTURER_MEDAL = 1142107;

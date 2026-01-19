@@ -154,6 +154,7 @@ function levelAcceptQuest() {
         QuestActionHandler.handleDailyQuest(1, Number(questId), cm.getClient());
     } else {
         cm.sendOkLevel("Dispose", "角色需要#r30级#k才能领取每日任务。");
+        return;
     }
     cm.sendNextLevel('Start','任务接取成功。');
 }
