@@ -1150,25 +1150,25 @@
                 <string name="name" value="海盗王勋章" />
             </imgdir>
             <imgdir name="1142014">
-                <string name="name" value="射手村爱心使者勋章" />
+                <string name="name" value="初入肝路勋章" />
             </imgdir>
             <imgdir name="1142015">
-                <string name="name" value="魔法密林爱心使者勋章" />
+                <string name="name" value="铁肝试炼者勋章" />
             </imgdir>
             <imgdir name="1142016">
-                <string name="name" value="勇士部落爱心使者勋章" />
+                <string name="name" value="睡眠参数篡改者勋章" />
             </imgdir>
             <imgdir name="1142017">
-                <string name="name" value="废弃都市爱心使者勋章" />
+                <string name="name" value="肾上腺素常驻民勋章" />
             </imgdir>
             <imgdir name="1142018">
-                <string name="name" value="林中之城爱心使者勋章" />
+                <string name="name" value="时间管理大师勋章" />
             </imgdir>
             <imgdir name="1142019">
-                <string name="name" value="诺特勒斯爱心使者勋章" />
+                <string name="name" value="生物节律征服者勋章" />
             </imgdir>
             <imgdir name="1142020">
-                <string name="name" value="冰封雪域爱心使者勋章" />
+                <string name="name" value="不朽传说·赛博磐石勋章" />
             </imgdir>
             <imgdir name="1142021">
                 <string name="name" value="水下世界爱心使者勋章" />
@@ -1390,7 +1390,7 @@
                 <string name="name" value="9天梦之勋章" />
             </imgdir>
             <imgdir name="1142094">
-                <string name="name" value="10天梦之勋章" />
+                <string name="name" value="独步天下勋章" />
             </imgdir>
             <imgdir name="1142095">
                 <string name="name" value="11天梦之勋章" />
