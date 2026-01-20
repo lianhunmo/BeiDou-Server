@@ -10,9 +10,9 @@ const MEDAL4 = 1142018;
 const MEDAL5 = 1142019;
 const MEDAL6 = 1142020;
 
-const LEVEL_NEED = [1000,300,300,300,300,300,300];
+const LEVEL_NEED = [1000,200,300,300,300,300,300];
 const REWARD_NAME_LIST = ["初入肝路勋章","铁肝试炼者勋章","睡眠参数篡改者勋章","肾上腺素常驻民勋章","时间管理大师勋章","生物节律征服者勋章","不朽传说·赛博磐石勋章"];
-const QUEST_NAME_LIST = ["月秒组队副本","废弃组队副本","玩具组队副本","天空组队副本","海盗组队副本勋章","毒雾组队副本勋章","罗密欧与朱丽叶勋章"];
+const QUEST_NAME_LIST = ["月秒组队副本","废弃组队副本","玩具组队副本","天空组队副本","海盗组队副本","毒雾组队副本","罗密欧与朱丽叶"];
 let currentCompletedQuestCount = [0,0,0,0,0,0,0];
 let rewardAlreadyGain = [0,0,0,0,0,0,0]
 
