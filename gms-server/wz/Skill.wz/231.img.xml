@@ -1320,8 +1320,8 @@
                     <int name="mpCon" value="50"/>
                     <int name="mad" value="120"/>
                     <int name="mastery" value="10"/>
-                    <vector name="lt" x="-300" y="-250"/>
-                    <vector name="rb" x="300" y="250"/>
+                    <vector name="lt" x="-250" y="-200"/>
+                    <vector name="rb" x="250" y="200"/>
                     <int name="mobCount" value="6"/>
                 </imgdir>
             </imgdir>

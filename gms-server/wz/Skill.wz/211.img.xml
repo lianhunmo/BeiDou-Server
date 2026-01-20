@@ -552,8 +552,8 @@
                     <int name="mpCon" value="50"/>
                     <int name="mad" value="120"/>
                     <int name="mastery" value="10"/>
-                    <vector name="lt" x="-250" y="-200"/>
-                    <vector name="rb" x="250" y="200"/>
+                    <vector name="lt" x="-200" y="-150"/>
+                    <vector name="rb" x="200" y="150"/>
                     <int name="mobCount" value="6"/>
                 </imgdir>
             </imgdir>
@@ -1716,7 +1716,7 @@
                     <int name="hpCon" value="30"/>
                     <int name="mpCon" value="25"/>
                     <int name="time" value="200"/>
-                    <int name="x" value="-2"/>
+                    <int name="x" value="-3"/>
                 </imgdir>
             </imgdir>
             <imgdir name="action">
