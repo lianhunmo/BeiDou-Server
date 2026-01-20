@@ -77,8 +77,8 @@ function levelBuyCashItem1() {
     } else if (!cm.canHold(EXP_COUPON_2X_4H, 1)) {
         cm.sendOkLevel("Dispose", "请保证现金栏有空位。");
     } else {
-        cm.getPlayer().getCashShop().gainCash(1, -EXP_COUPON_2X_4H);
-        cm.gainItem(EXP_COUPON_2X_4H, 1);
+        cm.getPlayer().getCashShop().gainCash(1, -EXP_COUPON_2X_4H_COST);
+        cm.gainItem(EXP_COUPON_2X_4H, 1, false, true, 14400000);
         cm.sendOkLevel("Dispose", "成功购买#b#t" + EXP_COUPON_2X_4H + "##k#i" + EXP_COUPON_2X_4H + "#");
     }
 }
@@ -95,8 +95,8 @@ function levelBuyCashItem2() {
     } else if (!cm.canHold(DROP_COUPON_2X_4H, 1)) {
         cm.sendOkLevel("Dispose", "请保证现金栏有空位。")
     } else {
-        cm.getPlayer().getCashShop().gainCash(1, -DROP_COUPON_2X_4H);
-        cm.gainItem(DROP_COUPON_2X_4H, 1);
+        cm.getPlayer().getCashShop().gainCash(1, -DROP_COUPON_2X_4H_COST);
+        cm.gainItem(DROP_COUPON_2X_4H, 1, false, true, 14400000);
         cm.sendOkLevel("Dispose", "成功购买#b#t" + DROP_COUPON_2X_4H + "##k#i" + DROP_COUPON_2X_4H + "#")
     }
 }
