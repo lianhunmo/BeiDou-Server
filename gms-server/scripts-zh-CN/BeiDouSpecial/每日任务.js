@@ -131,13 +131,13 @@ function levelAcceptQuest() {
     if (charCurrentLevel >= 30 && charCurrentLevel < 70) {
         questStage = "FirstStage";
         let questId = getRandomElement(STAGE_QUEST_ID_MAP.get("FirstStage"));
-        Quest.getInstance(Number(questId)).forfeit(c.getPlayer());
+        Quest.getInstance(Number(questId)).forfeit(cm.getPlayer());
         cm.saveOrUpdateCharacterExtendValue("每日任务编号", questId, true);
         QuestActionHandler.handleDailyQuest(1, Number(questId), cm.getClient());
     } else if (charCurrentLevel >= 70 && charCurrentLevel < 100) {
         questStage = "SecondStage";
         let questId = getRandomElement(STAGE_QUEST_ID_MAP.get("SecondStage"));
-        Quest.getInstance(Number(questId)).forfeit(c.getPlayer());
+        Quest.getInstance(Number(questId)).forfeit(cm.getPlayer());
         cm.saveOrUpdateCharacterExtendValue("每日任务编号", questId, true);
         QuestActionHandler.handleDailyQuest(1, Number(questId), cm.getClient());
     } else if (charCurrentLevel >= 100 && charCurrentLevel < 120) {
