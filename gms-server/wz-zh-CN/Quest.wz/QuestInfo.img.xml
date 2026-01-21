@@ -1800,13 +1800,6 @@
         <string name="2" value="搜集到了战神的痕迹。星缘还跟我讲述了在里恩等待战神复活的少女的故事。名字叫什么来着……利……利琳？"/>
         <string name="demandSummary" value="#i4032366:# #t4032366:# #c4032366# / 20 "/>
     </imgdir>
-    <imgdir name="10343">
-        <string name="name" value="星缘的相册"/>
-        <int name="area" value="50"/>
-        <string name="0" value="星缘好像遇到了麻烦。"/>
-        <string name="1" value="星缘说把相册弄丢了，并说那是和冒险岛运营员的遗物有关的东西。我……还得搜集战神的痕迹啊……不过算了，先去帮帮星缘吧。去打猎怪物搜集遗物，应该自然而然就能找到相册了。"/>
-        <string name="2" value="作为找到星缘的日记本的代价，获得了战神的痕迹。"/>
-    </imgdir>
     <imgdir name="10344">
         <string name="name" value="战神的模糊的痕迹"/>
         <int name="area" value="50"/>
@@ -1889,14 +1882,6 @@
         <string name="0" value="搜集齐了12个战神的痕迹。看着这些好像没什么用处的奇怪的碎片……到底有什么用呢？星缘应该知道些什么。"/>
         <string name="1" value="什么？碎片都有固定的位置？试着换一下战神的痕迹的顺序吧。"/>
         <string name="2" value="2009年12月中旬……战神真的会复活吗？"/>
-    </imgdir>
-    <imgdir name="10354">
-        <string name="name" value="把星缘的相册交给谁？"/>
-        <int name="area" value="50"/>
-        <int name="autoStart" value="0"/>
-        <string name="0" value="正在努力地发掘遗物。"/>
-        <string name="1" value="发现了星缘的相册。嗯……应该把它交给星缘？还是交给佳佳呢？"/>
-        <string name="2" value="把相册还回去之后，得到了战神的痕迹。"/>
     </imgdir>
     <imgdir name="10355">
         <string name="name" value="转交星缘的相册"/>
