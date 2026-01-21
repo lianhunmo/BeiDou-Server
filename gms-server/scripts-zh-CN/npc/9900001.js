@@ -31,6 +31,7 @@ function start() {
 }
 
 function action(mode, type, selection) {
+    let flamingFeatherAlreadyCount = Number(cm.getAccountExtendValue("角色累充数额"));
     if (mode === 1) {
         status++;
     } else if (mode === -1) {
@@ -45,6 +46,7 @@ function action(mode, type, selection) {
         text += "当前点券：" + cm.getPlayer().getCashShop().getCash(1) + "\r\n";
         text += "当前抵用券：" + cm.getPlayer().getCashShop().getCash(2) + "\r\n";
         text += "当前信用券：" + cm.getPlayer().getCashShop().getCash(4) + "\r\n";
+        text += "当前羽毛累充：" + flamingFeatherAlreadyCount + "\r\n";
         text += " \r\n\r\n";
         text += "#L0##b新人福利#l\t #L2#在线奖励#l\t #L4#爆率一览#l\t #L5#一键转职#l\r\n";
         text += "#L3#传送自由#l\t #L65#删除道具#l\t #L63#整容合集#l\t #L13#点券商品#l\r\n";
