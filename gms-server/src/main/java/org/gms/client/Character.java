@@ -487,6 +487,14 @@ public class Character extends AbstractCharacterObject {
     private static final HpMpAlertService hpMpAlertService = ServerManager.getApplicationContext().getBean(HpMpAlertService.class);
     private static final InventoryService inventoryService = ServerManager.getApplicationContext().getBean(InventoryService.class);
 
+    /**
+     * 最后攻击时间
+     * 用来校验攻击速度是否过快
+     */
+    @Setter
+    @Getter
+    private long lastAttackTime = 0;
+
     private Character() {
         super.setListener(new CharacterListener(this));
         useCS = false;
@@ -6639,7 +6647,7 @@ public class Character extends AbstractCharacterObject {
             }
         }
         if (possesed > 0 && !MapId.isDojo(getMapId())) {
-            message(I18nUtil.getLogMessage("Character.useItem.message1"));  //使用安全护符，不扣经验
+            message(I18nUtil.getMessage("Character.useItem.message1"));  //使用安全护符，不扣经验
             InventoryManipulator.removeById(client, ItemConstants.getInventoryType(charmID[i]), charmID[i], 1, true, false);
             usedSafetyCharm = true;
         } else if (getJob() != Job.BEGINNER) { //Hmm...
