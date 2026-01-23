@@ -47,7 +47,7 @@ function start() {
     } else {
         if (cm.getJobId() == 0) {
             actionx["1stJob"] = true;
-            cm.sendNext("所以你决定成为一个#rbowman#k？你知道吗，有一些标准要达到……#b你的等级至少应该是10级，至少有" + cm.getFirstJobStatRequirement(jobType) + "#k。让我看看。");   // thanks Vcoc for noticing a need to state and check requirements on first job adv starting message
+            cm.sendNext("所以你决定成为一个#r弓箭手#k？你知道吗，有一些标准要达到……#b你的等级至少应该是10级，至少有" + cm.getFirstJobStatRequirement(jobType) + "#k。让我看看。");   // thanks Vcoc for noticing a need to state and check requirements on first job adv starting message
         } else if (cm.getLevel() >= 30 && cm.getJobId() == 300) {
             actionx["2ndJob"] = true;
             if (cm.haveItem(4031012)) {
@@ -180,7 +180,7 @@ function action(mode, type, selection) {
 
                     status -= 2;
                 } else {
-                    cm.sendSimple("现在... 你决定好了吗？请选择你想要在二转时选择的职业。#b\r\n#L0#猎人\r\n#L1#弩手");
+                    cm.sendSimple("现在... 你决定好了吗？请选择你想要在二转时选择的职业。#b\r\n#L0#猎人\r\n#L1#弩弓手");
                 }
             }
         } else if (status == 2) {
@@ -190,8 +190,7 @@ function action(mode, type, selection) {
             if (cm.haveItem(4031012)) {
                 cm.gainItem(4031012, -1);
             }
-
-            cm.sendNext("好了，从现在开始你就是#b猎人#k了。#b猎人#k是聪明的一群，拥有惊人的视力，能够轻松地将箭射穿怪物的心脏……请每天都训练自己。我会帮助你变得比你现在更强大。");
+            cm.sendNext("好了，从现在开始你就是 #b" + (job == 310 ? "猎人" : "弩弓手") + " #k了。" + (job == 310 ? "猎人" : "弩弓手") + " 是一群聪明的人，拥有惊人的视力，能够轻松地将箭射穿怪物的心脏……请每天都训练自己。我会帮助你变得比你现在更强大。");
             if (cm.getJobId() != job) {
                 cm.changeJobById(job);
             }
