@@ -68,6 +68,7 @@ function levelRingOption1() {
     equip = cm.getChar().getInventory(INVENTORY_TYPE_EQUIP).getItem(EQUIP_SLOT);
     if (!equip) {
         cm.sendOkLevel("Dispose", "装备栏第一格是空的。");
+        return;
     }
     let equipItemId = equip.getItemId();
     let text = "你想强化#b#t" + equipItemId + "##k #i" + equipItemId + "##k吗？\r\n\r\n";
@@ -192,6 +193,7 @@ function levelRingOption2() {
     equip = cm.getChar().getInventory(INVENTORY_TYPE_EQUIP).getItem(EQUIP_SLOT);
     if (!equip) {
         cm.sendOkLevel("Dispose", "装备栏第一格是空的。");
+        return;
     }
     let equipItemId = equip.getItemId();
     let equipCurrentLevel = equip.getLevel();

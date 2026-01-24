@@ -21,7 +21,8 @@ function start() {
 }
 
 function levelStart() {
-    let text = "这里可以强化点装和转移点装属性，你希望做什么呢？\r\n #r(注：要强化的点装需放在背包第一格)#l\r\n\r\n";
+    let text = "这里可以强化点装和转移点装属性，你希望做什么呢？\r\n " +
+        "#r(注：要强化和转出属性的点装需放在背包第一格, 要转入属性的点装放在第二格。)#l\r\n\r\n";
     text += "#L0##b强化点装#k\r\n";
     text += "#L1##b属性转移#k\r\n";
 
@@ -33,6 +34,7 @@ function levelCashEquipOption0() {
     equip = cm.getChar().getInventory(INVENTORY_TYPE_EQUIP).getItem(EQUIP_SLOT_1);
     if (!equip) {
         cm.sendOkLevel("Dispose", "装备栏第一格是空的。");
+        return;
     }
     let equipItemId = equip.getItemId();
     let text = "你想强化#b#t" + equipItemId + "##k #i" + equipItemId + "##k吗？\r\n\r\n";
@@ -153,11 +155,13 @@ function levelCashEquipOption1() {
     equip = cm.getChar().getInventory(INVENTORY_TYPE_EQUIP).getItem(EQUIP_SLOT_1);
     if (!equip) {
         cm.sendOkLevel("Dispose", "装备栏第一格是空的。");
+        return;
     }
 // 通过slot = 2获取到继承属性的点装
     toEquip = cm.getChar().getInventory(INVENTORY_TYPE_EQUIP).getItem(EQUIP_SLOT_2);
     if (!toEquip) {
         cm.sendOkLevel("Dispose", "装备栏第二格是空的。");
+        return;
     }
     let equipItemId = equip.getItemId();
     let toEquipItemId = toEquip.getItemId();
