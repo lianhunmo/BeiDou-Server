@@ -50,10 +50,10 @@ function action(mode, type, selection) {
                 cm.sendOk("你真是一个真正的英雄！");
                 cm.dispose();
             } else if (cm.isQuestCompleted(100000)) {
-                cm.sendNext("好的，我会让你进去！打败里面的怪物，收集30个黑暗弹珠，然后和我里面的一位同事交谈。他会给你#b英雄的证明#k，证明你已经通过了测试。祝你好运。");
+                cm.sendNext("好的，我会让你进去！打败里面的怪物，收集30个黑珠，然后和我里面的一位同事交谈。他会给你#b英雄的证明#k，证明你已经通过了测试。祝你好运。");
                 status = 3;
             } else if (cm.isQuestStarted(100000)) {
-                cm.sendNext("哦，这不是来自#b雅典娜#k的一封信吗？");
+                cm.sendNext("哦，这不是来自#b赫丽娜#k的一封信吗？");
             } else {
                 cm.sendOk("一旦你准备好了，我可以告诉你路线。");
                 cm.dispose();

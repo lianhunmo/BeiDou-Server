@@ -1719,7 +1719,7 @@
         <string name="h2" value="消耗MP 30，解除诱惑异常状态，冷却时间9分钟"/>
         <string name="h3" value="消耗MP 30，解除诱惑异常状态，冷却时间8分钟"/>
         <string name="h4" value="消耗MP 30，解除诱惑异常状态，冷却时间7分钟"/>
-        <string name="h5" value="消耗MP 30，解除诱惑异常状态，冷却时间6分钟"/>
+        <string name="h5" value="消耗MP 30，解除诱惑异常状态，冷却时间5秒"/>
         <string name="desc" value="从异常状态中恢复。\n随着等级的上升，冷却时间缩短。\n#c冷却时间 : 10分#"/>
     </imgdir>
     <imgdir name="120">
@@ -3061,7 +3061,7 @@
         <string name="h2" value="消耗MP 30，解除诱惑异常状态，冷却时间9分钟"/>
         <string name="h3" value="消耗MP 30，解除诱惑异常状态，冷却时间8分钟"/>
         <string name="h4" value="消耗MP 30，解除诱惑异常状态，冷却时间7分钟"/>
-        <string name="h5" value="消耗MP 30，解除诱惑异常状态，冷却时间6分钟"/>
+        <string name="h5" value="消耗MP 30，解除诱惑异常状态，冷却时间5秒"/>
         <string name="desc" value="从异常状态中恢复. \n随着等级的上升,冷却时间逐渐缩短"/>
     </imgdir>
     <imgdir name="130">
@@ -4323,7 +4323,7 @@
         <string name="h2" value="消耗MP 30，解除诱惑异常状态，冷却时间9分钟"/>
         <string name="h3" value="消耗MP 30，解除诱惑异常状态，冷却时间8分钟"/>
         <string name="h4" value="消耗MP 30，解除诱惑异常状态，冷却时间7分钟"/>
-        <string name="h5" value="消耗MP 30，解除诱惑异常状态，冷却时间6分钟"/>
+        <string name="h5" value="消耗MP 30，解除诱惑异常状态，冷却时间5秒"/>
         <string name="desc" value="从异常状态中恢复. \n随着等级的上升,冷却时间逐渐缩短"/>
     </imgdir>
     <imgdir name="1400">
@@ -6913,37 +6913,37 @@
     </imgdir>
     <imgdir name="2121007">
         <string name="name" value="天降落星"/>
-        <string name="h1" value="消耗MP 1450，基本 攻击力 175，攻击2次"/>
-        <string name="h10" value="消耗MP 1900，基本 攻击力 220，攻击2次"/>
-        <string name="h11" value="消耗MP 1950，基本 攻击力 225，攻击2次"/>
-        <string name="h12" value="消耗MP 2000，基本 攻击力 230，攻击2次"/>
-        <string name="h13" value="消耗MP 2050，基本 攻击力 235，攻击2次"/>
-        <string name="h14" value="消耗MP 2100，基本 攻击力 240，攻击2次"/>
-        <string name="h15" value="消耗MP 2150，基本 攻击力 245，攻击2次"/>
-        <string name="h16" value="消耗MP 2200，基本 攻击力 250，攻击2次"/>
-        <string name="h17" value="消耗MP 2250，基本 攻击力 255，攻击2次"/>
-        <string name="h18" value="消耗MP 2300，基本 攻击力 260，攻击2次"/>
-        <string name="h19" value="消耗MP 2350，基本 攻击力 265，攻击2次"/>
-        <string name="h2" value="消耗MP 1500，基本 攻击力 180，攻击2次"/>
-        <string name="h20" value="消耗MP 2400，基本 攻击力 270，攻击2次"/>
-        <string name="h21" value="消耗MP 2450，基本 攻击力 275，攻击2次"/>
-        <string name="h22" value="消耗MP 2500，基本 攻击力 280，攻击2次"/>
-        <string name="h23" value="消耗MP 2550，基本 攻击力 285，攻击2次"/>
-        <string name="h24" value="消耗MP 2600，基本 攻击力 290，攻击2次"/>
-        <string name="h25" value="消耗MP 2650，基本 攻击力 295，攻击2次"/>
-        <string name="h26" value="消耗MP 2600，基本 攻击力 300，攻击2次"/>
-        <string name="h27" value="消耗MP 2550，基本 攻击力 305，攻击2次"/>
-        <string name="h28" value="消耗MP 2500，基本 攻击力 310，攻击2次"/>
-        <string name="h29" value="消耗MP 2450，基本 攻击力 315，攻击2次"/>
-        <string name="h3" value="消耗MP 1550，基本 攻击力 185，攻击2次"/>
-        <string name="h30" value="消耗MP 2400，基本 攻击力 320，攻击2次"/>
-        <string name="h4" value="消耗MP 1600，基本 攻击力 190，攻击2次"/>
-        <string name="h5" value="消耗MP 1650，基本 攻击力 195，攻击2次"/>
-        <string name="h6" value="消耗MP 1700，基本 攻击力 200，攻击2次"/>
-        <string name="h7" value="消耗MP 1750，基本 攻击力 205，攻击2次"/>
-        <string name="h8" value="消耗MP 1800，基本 攻击力 210，攻击2次"/>
-        <string name="h9" value="消耗MP 1850，基本 攻击力 215，攻击2次"/>
-        <string name="desc" value="从天空召唤陨石,\n向15只以下的怪物给予强烈的火焰伤害.\n#c冷却时间: 10秒#"/>
+        <string name="h1" value="消耗MP 6000，基本 攻击力 175"/>
+        <string name="h10" value="消耗MP 6000，基本 攻击力 220"/>
+        <string name="h11" value="消耗MP 6000，基本 攻击力 225"/>
+        <string name="h12" value="消耗MP 6000，基本 攻击力 230"/>
+        <string name="h13" value="消耗MP 6000，基本 攻击力 235"/>
+        <string name="h14" value="消耗MP 6000，基本 攻击力 240"/>
+        <string name="h15" value="消耗MP 6000，基本 攻击力 245"/>
+        <string name="h16" value="消耗MP 6000，基本 攻击力 250"/>
+        <string name="h17" value="消耗MP 6000，基本 攻击力 255"/>
+        <string name="h18" value="消耗MP 6000，基本 攻击力 260"/>
+        <string name="h19" value="消耗MP 6000，基本 攻击力 265"/>
+        <string name="h2" value="消耗MP 6000，基本 攻击力 180"/>
+        <string name="h20" value="消耗MP 6000，基本 攻击力 270"/>
+        <string name="h21" value="消耗MP 6000，基本 攻击力 275"/>
+        <string name="h22" value="消耗MP 6000，基本 攻击力 280"/>
+        <string name="h23" value="消耗MP 6000，基本 攻击力 285"/>
+        <string name="h24" value="消耗MP 6000，基本 攻击力 290"/>
+        <string name="h25" value="消耗MP 6000，基本 攻击力 295"/>
+        <string name="h26" value="消耗MP 6000，基本 攻击力 300"/>
+        <string name="h27" value="消耗MP 6000，基本 攻击力 305"/>
+        <string name="h28" value="消耗MP 6000，基本 攻击力 310"/>
+        <string name="h29" value="消耗MP 6000，基本 攻击力 315"/>
+        <string name="h3" value="消耗MP 6000，基本 攻击力 185"/>
+        <string name="h30" value="消耗MP 6000，基本 攻击力 800"/>
+        <string name="h4" value="消耗MP 6000，基本 攻击力 190"/>
+        <string name="h5" value="消耗MP 6000，基本 攻击力 195"/>
+        <string name="h6" value="消耗MP 6000，基本 攻击力 200"/>
+        <string name="h7" value="消耗MP 6000，基本 攻击力 205"/>
+        <string name="h8" value="消耗MP 6000，基本 攻击力 210"/>
+        <string name="h9" value="消耗MP 6000，基本 攻击力 215"/>
+        <string name="desc" value="从天空召唤陨石,\n向15只以下的怪物给予强烈的火焰伤害.\n"/>
     </imgdir>
     <imgdir name="2121008">
         <string name="name" value="勇士的意志"/>
@@ -6951,7 +6951,7 @@
         <string name="h2" value="消耗MP 30，解除诱惑异常状态，冷却时间9分钟"/>
         <string name="h3" value="消耗MP 30，解除诱惑异常状态，冷却时间8分钟"/>
         <string name="h4" value="消耗MP 30，解除诱惑异常状态，冷却时间7分钟"/>
-        <string name="h5" value="消耗MP 30，解除诱惑异常状态，冷却时间6分钟"/>
+        <string name="h5" value="消耗MP 30，解除诱惑异常状态，冷却时间5秒"/>
         <string name="desc" value="从异常状态中恢复.\n 随着等级的上升,冷却时间逐渐缩短"/>
     </imgdir>
     <imgdir name="220">
@@ -7613,7 +7613,7 @@
         <string name="h2" value="消耗MP 30，解除诱惑异常状态，冷却时间9分钟"/>
         <string name="h3" value="消耗MP 30，解除诱惑异常状态，冷却时间8分钟"/>
         <string name="h4" value="消耗MP 30，解除诱惑异常状态，冷却时间7分钟"/>
-        <string name="h5" value="消耗MP 30，解除诱惑异常状态，冷却时间6分钟"/>
+        <string name="h5" value="消耗MP 30，解除诱惑异常状态，冷却时间5秒"/>
         <string name="desc" value="从异常状态中恢复.\n 随着等级的上升,冷却时间逐渐缩短"/>
     </imgdir>
     <imgdir name="230">
@@ -8289,7 +8289,7 @@
         <string name="h2" value="消耗MP 30，解除诱惑异常状态，冷却时间9分钟"/>
         <string name="h3" value="消耗MP 30，解除诱惑异常状态，冷却时间8分钟"/>
         <string name="h4" value="消耗MP 30，解除诱惑异常状态，冷却时间7分钟"/>
-        <string name="h5" value="消耗MP 30，解除诱惑异常状态，冷却时间6分钟"/>
+        <string name="h5" value="消耗MP 30，解除诱惑异常状态，冷却时间5秒"/>
         <string name="desc" value="从异常状态中恢复. \n随着等级的上升,冷却时间逐渐缩短"/>
     </imgdir>
     <imgdir name="300">
@@ -9082,7 +9082,7 @@
         <string name="h2" value="消耗MP 30，解除诱惑异常状态，冷却时间9分钟"/>
         <string name="h3" value="消耗MP 30，解除诱惑异常状态，冷却时间8分钟"/>
         <string name="h4" value="消耗MP 30，解除诱惑异常状态，冷却时间7分钟"/>
-        <string name="h5" value="消耗MP 30，解除诱惑异常状态，冷却时间6分钟"/>
+        <string name="h5" value="消耗MP 30，解除诱惑异常状态，冷却时间5秒"/>
         <string name="desc" value="从异常状态中恢复. \n随着等级的上升,冷却时间逐渐缩短"/>
     </imgdir>
     <imgdir name="320">
@@ -9744,7 +9744,7 @@
         <string name="h2" value="消耗MP 30，解除诱惑异常状态，冷却时间9分钟"/>
         <string name="h3" value="消耗MP 30，解除诱惑异常状态，冷却时间8分钟"/>
         <string name="h4" value="消耗MP 30，解除诱惑异常状态，冷却时间7分钟"/>
-        <string name="h5" value="消耗MP 30，解除诱惑异常状态，冷却时间6分钟"/>
+        <string name="h5" value="消耗MP 30，解除诱惑异常状态，冷却时间5秒"/>
         <string name="desc" value="从异常状态中恢复. \n随着等级的上升,冷却时间逐渐缩短"/>
     </imgdir>
     <imgdir name="400">
@@ -10531,7 +10531,7 @@
         <string name="h2" value="消耗MP 30，解除诱惑异常状态，冷却时间9分钟"/>
         <string name="h3" value="消耗MP 30，解除诱惑异常状态，冷却时间8分钟"/>
         <string name="h4" value="消耗MP 30，解除诱惑异常状态，冷却时间7分钟"/>
-        <string name="h5" value="消耗MP 30，解除诱惑异常状态，冷却时间6分钟"/>
+        <string name="h5" value="消耗MP 30，解除诱惑异常状态，冷却时间5秒"/>
         <string name="desc" value="从异常状态中恢复. \n随着等级的上升,冷却时间逐渐缩短"/>
     </imgdir>
     <imgdir name="420">
@@ -11193,7 +11193,7 @@
         <string name="h2" value="消耗MP 30，解除诱惑异常状态，冷却时间9分钟"/>
         <string name="h3" value="消耗MP 30，解除诱惑异常状态，冷却时间8分钟"/>
         <string name="h4" value="消耗MP 30，解除诱惑异常状态，冷却时间7分钟"/>
-        <string name="h5" value="消耗MP 30，解除诱惑异常状态，冷却时间6分钟"/>
+        <string name="h5" value="消耗MP 30，解除诱惑异常状态，冷却时间5秒"/>
         <string name="desc" value="从异常状态中恢复. \n随着等级的上升,冷却时间逐渐缩短"/>
     </imgdir>
     <imgdir name="500">

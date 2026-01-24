@@ -43,7 +43,7 @@ var equip;
 
 function start() {
     cm.getPlayer().setCS(true);
-    var selStr = "你好. 我是比休斯，退休的射手，但我曾经是雅典娜皮尔斯顶尖的学生，我不再打猎了，但我可以帮你制作一些对你有帮助的物品...#b"
+    var selStr = "你好. 我是比休斯，退休的射手，但我曾经是赫丽娜皮尔斯顶尖的学生，我不再打猎了，但我可以帮你制作一些对你有帮助的物品...#b"
     var options = ["制作一把弓", "制作一把弩", "制作一双手套", "升级一双手套", "材料制作", "制作箭矢"];
     for (var i = 0; i < options.length; i++) {
         selStr += "\r\n#L" + i + "# " + options[i] + "#l";
