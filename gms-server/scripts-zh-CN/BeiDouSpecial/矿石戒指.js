@@ -165,7 +165,7 @@ function levelRingOption1() {
     if (RINGS_ITEM_ID_LIST.includes(equipItemId)) {
         let equipCurrentLevel = equip.getLevel();
         STAMP_ID_COST_MAP.forEach((cost, itemId) => {
-            STAMP_ID_COST_MAP.set(itemId, (equipCurrentLevel + 1) * 10)
+            STAMP_ID_COST_MAP.set(itemId, (equipCurrentLevel + 1) * 5)
         })
         switch(equipCurrentLevel) {
             case 0:
@@ -283,9 +283,12 @@ function levelExchangeRing(itemCode) {
 
 function checkStamps(stampId, cost) {
     let itemQuantity = cm.getItemQuantity(stampId);
+    let text = "";
     if (itemQuantity < cost) {
-        cm.sendOkLevel("Dispose", "#b#t" + stampId + "##k#i" + stampId + "#不足#r" + cost + "#k个！");
+        text = "#b#t" + stampId + "##k#i" + stampId + "#不足#r" + cost + "#k个\r\n";
+        return text;
     }
+    return null;
 }
 
 function levelRingUpgrade() {
@@ -293,11 +296,21 @@ function levelRingUpgrade() {
     if (meso < costMeso) {
         cm.sendOkLevel("Dispose", "金币不足#r" + costMeso + "#k！");
     } else {
+        let checkResult = true;
+        let text = "";
         STAMP_ID_COST_MAP.forEach((cost, stampId) => {
             if (cost !== 0) {
-                checkStamps(stampId, cost);
+                let textTemp = checkStamps(stampId, cost);
+                if (textTemp) {
+                    checkResult = false;
+                    text += textTemp;
+                }
             }
-        })
+        });
+        if (!checkResult) {
+            cm.sendOkLevel("Dispose", text);
+            return;
+        }
     }
     STAMP_ID_COST_MAP.forEach((cost, stampId) => {
         if (cost !== 0) {
@@ -332,11 +345,21 @@ function levelRingUpgrade() {
 }
 
 function levelRingEvolution() {
+    let checkResult = true;
+    let text = "";
     STAMP_ID_COST_MAP.forEach((cost, stampId) => {
         if (cost !== 0) {
-            checkStamps(stampId, cost);
+            let textTemp = checkStamps(stampId, cost);
+            if (textTemp) {
+                checkResult = false;
+                text += textTemp;
+            }
         }
-    })
+    });
+    if (!checkResult) {
+        cm.sendOkLevel("Dispose", text);
+        return;
+    }
     let meso = cm.getMeso();
     if (meso < costMeso) {
         cm.sendOkLevel("Dispose", "金币不足#r" + costMeso + "#k！");
