@@ -23,10 +23,20 @@ const SILVER_PLATE = 4011004;
 const ORIHALCON_PLATE = 4011005;
 const GOLD_PLATE = 4011006;
 
+const GARNET = 4021000;
+const AMETHYST = 4021001;
+const AQUAMARINE = 4021002;
+const EMERALD = 4021003;
+const OPAL = 4021004;
+const SAPPHIRE = 4021005;
+const TOPAZ = 4021006;
+const DIAMOND = 4021007;
+const BLACK_CRYSTAL = 4021008;
+
 const POWER_CRYSTAL = 4005000;
 const WISDOM_CRYSTAL = 4005001;
 const DEX_CRYSTAL = 4005002;
-const LUK_Crystal = 4005003;
+const LUK_CRYSTAL = 4005003;
 
 const INVENTORY_TYPE_EQUIP = 1;
 const EQUIP_SLOT = 1;
@@ -53,6 +63,21 @@ let costSilverPlate = 0;
 let costOrihalconPlate = 0;
 let costGoldPlate = 0;
 
+let costGarnet = 0;
+let costAmethyst = 0;
+let cosAquaMarine = 0;
+let costEmerald = 0;
+let costOpal = 0;
+let costSapphire = 0;
+let costTopaz = 0;
+let costDiamond = 0;
+let costBlackCrystal = 0;
+
+let costPowerCrystal = 0;
+let costWisdomCrystal = 0;
+let costDexCrystal = 0;
+let costLukCrystal = 0;
+
 let STAMP_ID_COST_MAP = new Map([
     [BRONZE_PLATE, costBronzePlate],
     [STEEL_PLATE, costSteelPlate],
@@ -60,7 +85,20 @@ let STAMP_ID_COST_MAP = new Map([
     [ADAMANTIUM_PLATE, costAdamantiumPlate],
     [SILVER_PLATE, costSilverPlate],
     [ORIHALCON_PLATE, costOrihalconPlate],
-    [GOLD_PLATE, costGoldPlate]
+    [GOLD_PLATE, costGoldPlate],
+    [GARNET, costGarnet],
+    [AMETHYST, costAmethyst],
+    [AQUAMARINE, cosAquaMarine],
+    [EMERALD, costEmerald],
+    [OPAL, costOpal],
+    [SAPPHIRE, costSapphire],
+    [TOPAZ, costTopaz],
+    [DIAMOND, costDiamond],
+    [BLACK_CRYSTAL, costBlackCrystal],
+    [POWER_CRYSTAL, costPowerCrystal],
+    [WISDOM_CRYSTAL, costWisdomCrystal],
+    [DEX_CRYSTAL, costDexCrystal],
+    [LUK_CRYSTAL, costLukCrystal]
 ]);
 
 let costMeso = 0;
@@ -126,151 +164,56 @@ function levelRingOption1() {
     let text = "你想强化#b#t" + equipItemId + "##k #i" + equipItemId + "##k吗？\r\n\r\n";
     if (RINGS_ITEM_ID_LIST.includes(equipItemId)) {
         let equipCurrentLevel = equip.getLevel();
+        STAMP_ID_COST_MAP.forEach((cost, itemId) => {
+            STAMP_ID_COST_MAP.set(itemId, (equipCurrentLevel + 1) * 10)
+        })
         switch(equipCurrentLevel) {
             case 0:
-                costBronzePlate = 15;
-                STAMP_ID_COST_MAP.set(BRONZE_PLATE, costBronzePlate);
                 upgradeProb = 100;
                 text = buildInfoMessage(text, equipCurrentLevel);
                 cm.sendYesNoLevel("Dispose", "RingUpgrade", text);
                 break;
             case 1:
-                costBronzePlate = 15;
-                STAMP_ID_COST_MAP.set(BRONZE_PLATE, costBronzePlate);
-                costSteelPlate = 15;
-                STAMP_ID_COST_MAP.set(STEEL_PLATE, costSteelPlate);
                 upgradeProb = 90;
                 text = buildInfoMessage(text, equipCurrentLevel);
                 cm.sendYesNoLevel("Dispose", "RingUpgrade", text);
                 break;
             case 2:
-                costBronzePlate = 15;
-                STAMP_ID_COST_MAP.set(BRONZE_PLATE, costBronzePlate);
-                costSteelPlate = 15;
-                STAMP_ID_COST_MAP.set(STEEL_PLATE, costSteelPlate);
-                cosMithrilPlate = 15;
-                STAMP_ID_COST_MAP.set(MITHRIL_PLATE, cosMithrilPlate);
                 upgradeProb = 80;
                 text = buildInfoMessage(text, equipCurrentLevel);
                 cm.sendYesNoLevel("Dispose", "RingUpgrade", text);
                 break;
             case 3:
-                costBronzePlate = 15;
-                STAMP_ID_COST_MAP.set(BRONZE_PLATE, costBronzePlate);
-                costSteelPlate = 15;
-                STAMP_ID_COST_MAP.set(STEEL_PLATE, costSteelPlate);
-                cosMithrilPlate = 15;
-                STAMP_ID_COST_MAP.set(MITHRIL_PLATE, cosMithrilPlate);
-                costAdamantiumPlate = 15;
-                STAMP_ID_COST_MAP.set(ADAMANTIUM_PLATE, costAdamantiumPlate);
                 upgradeProb = 70;
                 text = buildInfoMessage(text, equipCurrentLevel);
                 cm.sendYesNoLevel("Dispose", "RingUpgrade", text);
                 break;
             case 4:
-                costBronzePlate = 15;
-                STAMP_ID_COST_MAP.set(BRONZE_PLATE, costBronzePlate);
-                costSteelPlate = 15;
-                STAMP_ID_COST_MAP.set(STEEL_PLATE, costSteelPlate);
-                cosMithrilPlate = 15;
-                STAMP_ID_COST_MAP.set(MITHRIL_PLATE, cosMithrilPlate);
-                costAdamantiumPlate = 15;
-                STAMP_ID_COST_MAP.set(ADAMANTIUM_PLATE, costAdamantiumPlate);
-                costSilverPlate = 15;
-                STAMP_ID_COST_MAP.set(SILVER_PLATE, costSilverPlate);
                 upgradeProb = 60;
                 text = buildInfoMessage(text, equipCurrentLevel);
                 cm.sendYesNoLevel("Dispose", "RingUpgrade", text);
                 break;
             case 5:
-                costBronzePlate = 15;
-                STAMP_ID_COST_MAP.set(BRONZE_PLATE, costBronzePlate);
-                costSteelPlate = 15;
-                STAMP_ID_COST_MAP.set(STEEL_PLATE, costSteelPlate);
-                cosMithrilPlate = 15;
-                STAMP_ID_COST_MAP.set(MITHRIL_PLATE, cosMithrilPlate);
-                costAdamantiumPlate = 15;
-                STAMP_ID_COST_MAP.set(ADAMANTIUM_PLATE, costAdamantiumPlate);
-                costSilverPlate = 15;
-                STAMP_ID_COST_MAP.set(SILVER_PLATE, costSilverPlate);
-                costOrihalconPlate = 15;
-                STAMP_ID_COST_MAP.set(ORIHALCON_PLATE, costOrihalconPlate);
                 upgradeProb = 50;
                 text = buildInfoMessage(text, equipCurrentLevel);
                 cm.sendYesNoLevel("Dispose", "RingUpgrade", text);
                 break;
             case 6:
-                costBronzePlate = 15;
-                STAMP_ID_COST_MAP.set(BRONZE_PLATE, costBronzePlate);
-                costSteelPlate = 15;
-                STAMP_ID_COST_MAP.set(STEEL_PLATE, costSteelPlate);
-                cosMithrilPlate = 15;
-                STAMP_ID_COST_MAP.set(MITHRIL_PLATE, cosMithrilPlate);
-                costAdamantiumPlate = 15;
-                STAMP_ID_COST_MAP.set(ADAMANTIUM_PLATE, costAdamantiumPlate);
-                costSilverPlate = 15;
-                STAMP_ID_COST_MAP.set(SILVER_PLATE, costSilverPlate);
-                costOrihalconPlate = 15;
-                STAMP_ID_COST_MAP.set(ORIHALCON_PLATE, costOrihalconPlate);
-                costGoldPlate = 15;
-                STAMP_ID_COST_MAP.set(GOLD_PLATE, costGoldPlate);
                 upgradeProb = 40;
                 text = buildInfoMessage(text, equipCurrentLevel);
                 cm.sendYesNoLevel("Dispose", "RingUpgrade", text);
                 break;
             case 7:
-                costBronzePlate = 20;
-                STAMP_ID_COST_MAP.set(BRONZE_PLATE, costBronzePlate);
-                costSteelPlate = 20;
-                STAMP_ID_COST_MAP.set(STEEL_PLATE, costSteelPlate);
-                cosMithrilPlate = 20;
-                STAMP_ID_COST_MAP.set(MITHRIL_PLATE, cosMithrilPlate);
-                costAdamantiumPlate = 20;
-                STAMP_ID_COST_MAP.set(ADAMANTIUM_PLATE, costAdamantiumPlate);
-                costSilverPlate = 20;
-                STAMP_ID_COST_MAP.set(SILVER_PLATE, costSilverPlate);
-                costOrihalconPlate = 20;
-                STAMP_ID_COST_MAP.set(ORIHALCON_PLATE, costOrihalconPlate);
-                costGoldPlate = 20;
-                STAMP_ID_COST_MAP.set(GOLD_PLATE, costGoldPlate);
                 upgradeProb = 30;
                 text = buildInfoMessage(text, equipCurrentLevel);
                 cm.sendYesNoLevel("Dispose", "RingUpgrade", text);
                 break;
             case 8:
-                costBronzePlate = 25;
-                STAMP_ID_COST_MAP.set(BRONZE_PLATE, costBronzePlate);
-                costSteelPlate = 25;
-                STAMP_ID_COST_MAP.set(STEEL_PLATE, costSteelPlate);
-                cosMithrilPlate = 25;
-                STAMP_ID_COST_MAP.set(MITHRIL_PLATE, cosMithrilPlate);
-                costAdamantiumPlate = 25;
-                STAMP_ID_COST_MAP.set(ADAMANTIUM_PLATE, costAdamantiumPlate);
-                costSilverPlate = 25;
-                STAMP_ID_COST_MAP.set(SILVER_PLATE, costSilverPlate);
-                costOrihalconPlate = 25;
-                STAMP_ID_COST_MAP.set(ORIHALCON_PLATE, costOrihalconPlate);
-                costGoldPlate = 25;
-                STAMP_ID_COST_MAP.set(GOLD_PLATE, costGoldPlate);
                 upgradeProb = 20;
                 text = buildInfoMessage(text, equipCurrentLevel);
                 cm.sendYesNoLevel("Dispose", "RingUpgrade", text);
                 break;
             case 9:
-                costBronzePlate = 30;
-                STAMP_ID_COST_MAP.set(BRONZE_PLATE, costBronzePlate);
-                costSteelPlate = 30;
-                STAMP_ID_COST_MAP.set(STEEL_PLATE, costSteelPlate);
-                cosMithrilPlate = 30;
-                STAMP_ID_COST_MAP.set(MITHRIL_PLATE, cosMithrilPlate);
-                costAdamantiumPlate = 30;
-                STAMP_ID_COST_MAP.set(ADAMANTIUM_PLATE, costAdamantiumPlate);
-                costSilverPlate = 30;
-                STAMP_ID_COST_MAP.set(SILVER_PLATE, costSilverPlate);
-                costOrihalconPlate = 30;
-                STAMP_ID_COST_MAP.set(ORIHALCON_PLATE, costOrihalconPlate);
-                costGoldPlate = 30;
-                STAMP_ID_COST_MAP.set(GOLD_PLATE, costGoldPlate);
                 upgradeProb = 10;
                 text = buildInfoMessage(text, equipCurrentLevel);
                 cm.sendYesNoLevel("Dispose", "RingUpgrade", text);
@@ -297,20 +240,9 @@ function levelRingOption2() {
         cm.sendOkLevel("Dispose", "#b#t" + equipItemId + "##k #i" + equipItemId + "##k不能升阶！");
     } else {
         if (equipCurrentLevel >= 10) {
-            costBronzePlate = 30;
-            STAMP_ID_COST_MAP.set(BRONZE_PLATE, costBronzePlate);
-            costSteelPlate = 30;
-            STAMP_ID_COST_MAP.set(STEEL_PLATE, costSteelPlate);
-            cosMithrilPlate = 30;
-            STAMP_ID_COST_MAP.set(MITHRIL_PLATE, cosMithrilPlate);
-            costAdamantiumPlate = 30;
-            STAMP_ID_COST_MAP.set(ADAMANTIUM_PLATE, costAdamantiumPlate);
-            costSilverPlate = 30;
-            STAMP_ID_COST_MAP.set(SILVER_PLATE, costSilverPlate);
-            costOrihalconPlate = 30;
-            STAMP_ID_COST_MAP.set(ORIHALCON_PLATE, costOrihalconPlate);
-            costGoldPlate = 30;
-            STAMP_ID_COST_MAP.set(GOLD_PLATE, costGoldPlate);
+            STAMP_ID_COST_MAP.forEach((cost, itemId) => {
+                STAMP_ID_COST_MAP.set(itemId, 100)
+            })
             upgradeProb = 50;
             let text = "你想将#b#t" + equipItemId + "##k #i" + equipItemId + "##k升阶吗？升阶后可继续强化。\r\n\r\n";
             text += "你需要消耗:\r\n";
