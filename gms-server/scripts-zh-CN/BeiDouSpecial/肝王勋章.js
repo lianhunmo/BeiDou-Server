@@ -104,7 +104,7 @@ function levelGainLevelReward0() {
             cm.gainItem(MEDAL0, 1);
 
             rewardAlreadyGain[0] = 1;
-            cm.saveOrUpdateAccountExtendValue("肝王勋章领取记录", rewardAlreadyGain.toString());
+            cm.saveOrUpdateCharacterExtendValue("肝王勋章领取记录", rewardAlreadyGain.toString());
 
             let text = "恭喜你已领取：\r\n";
             text += "#b#t" + MEDAL0 + "##k #b#i" + MEDAL0 + "##k\r\n";
@@ -141,7 +141,7 @@ function levelGainLevelReward1() {
             cm.gainItem(MEDAL1, 1);
 
             rewardAlreadyGain[1] = 1;
-            cm.saveOrUpdateAccountExtendValue("肝王勋章领取记录", rewardAlreadyGain.toString());
+            cm.saveOrUpdateCharacterExtendValue("肝王勋章领取记录", rewardAlreadyGain.toString());
 
             let text = "恭喜你已领取：\r\n";
             text += "#b#t" + MEDAL1 + "##k #b#i" + MEDAL1 + "##k\r\n";
@@ -178,7 +178,7 @@ function levelGainLevelReward2() {
             cm.gainItem(MEDAL2, 1);
 
             rewardAlreadyGain[2] = 1;
-            cm.saveOrUpdateAccountExtendValue("肝王勋章领取记录", rewardAlreadyGain.toString());
+            cm.saveOrUpdateCharacterExtendValue("肝王勋章领取记录", rewardAlreadyGain.toString());
 
             let text = "恭喜你已领取：\r\n";
             text += "#b#t" + MEDAL2 + "##k #b#i" + MEDAL2 + "##k\r\n";
@@ -216,7 +216,7 @@ function levelGainLevelReward3() {
             cm.gainItem(MEDAL3, 1);
 
             rewardAlreadyGain[3] = 1;
-            cm.saveOrUpdateAccountExtendValue("肝王勋章领取记录", rewardAlreadyGain.toString());
+            cm.saveOrUpdateCharacterExtendValue("肝王勋章领取记录", rewardAlreadyGain.toString());
 
             let text = "恭喜你已领取：\r\n";
             text += "#b#t" + MEDAL3 + "##k #b#i" + MEDAL3 + "##k\r\n";
@@ -254,7 +254,7 @@ function levelGainLevelReward4() {
             cm.gainItem(MEDAL4, 1);
 
             rewardAlreadyGain[4] = 1;
-            cm.saveOrUpdateAccountExtendValue("肝王勋章领取记录", rewardAlreadyGain.toString());
+            cm.saveOrUpdateCharacterExtendValue("肝王勋章领取记录", rewardAlreadyGain.toString());
 
             let text = "恭喜你已领取：\r\n";
             text += "#b#t" + MEDAL4 + "##k #b#i" + MEDAL4 + "##k\r\n";
@@ -292,7 +292,7 @@ function levelGainLevelReward5() {
             cm.gainItem(MEDAL5, 1);
 
             rewardAlreadyGain[5] = 1;
-            cm.saveOrUpdateAccountExtendValue("肝王勋章领取记录", rewardAlreadyGain.toString());
+            cm.saveOrUpdateCharacterExtendValue("肝王勋章领取记录", rewardAlreadyGain.toString());
 
             let text = "恭喜你已领取：\r\n";
             text += "#b#t" + MEDAL5 + "##k #b#i" + MEDAL5 + "##k\r\n";
@@ -330,7 +330,7 @@ function levelGainLevelReward6() {
             cm.gainItem(MEDAL6, 1);
 
             rewardAlreadyGain[6] = 1;
-            cm.saveOrUpdateAccountExtendValue("肝王勋章领取记录", rewardAlreadyGain.toString());
+            cm.saveOrUpdateCharacterExtendValue("肝王勋章领取记录", rewardAlreadyGain.toString());
 
             let text = "恭喜你已领取：\r\n";
             text += "#b#t" + MEDAL6 + "##k #b#i" + MEDAL6 + "##k\r\n";
