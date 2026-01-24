@@ -157,7 +157,7 @@ function levelBuyCashItem5(inputNum) {
 
 function levelExchangeItem6() {
     let text = "每个 #b#t" + WHEEL_OF_DESTINY + "##k#i" + WHEEL_OF_DESTINY + "#需要 " + WHEEL_OF_DESTINY_COST + "点卷。\r\n你要购买多少个？\r\n"
-    cm.getInputNumberLevel("BuyCashItem5", text, 1, 1, 1000);
+    cm.getInputNumberLevel("BuyCashItem6", text, 1, 1, 1000);
 }
 
 function levelBuyCashItem6(inputNum) {
