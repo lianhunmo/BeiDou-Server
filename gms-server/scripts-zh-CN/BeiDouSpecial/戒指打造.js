@@ -66,6 +66,9 @@ function levelRingOption0() {
 function levelRingOption1() {
     // 通过slot = 1获取到当前戒指等级来判断强化材料
     equip = cm.getChar().getInventory(INVENTORY_TYPE_EQUIP).getItem(EQUIP_SLOT);
+    if (!equip) {
+        cm.sendOkLevel("Dispose", "装备栏第一格是空的。");
+    }
     let equipItemId = equip.getItemId();
     let text = "你想强化#b#t" + equipItemId + "##k #i" + equipItemId + "##k吗？\r\n\r\n";
     if (RINGS_ITEM_ID_LIST.includes(equipItemId)) {
@@ -187,6 +190,9 @@ function levelRingOption1() {
 function levelRingOption2() {
     // 通过slot = 1获取到当前戒指等级来判断强化材料
     equip = cm.getChar().getInventory(INVENTORY_TYPE_EQUIP).getItem(EQUIP_SLOT);
+    if (!equip) {
+        cm.sendOkLevel("Dispose", "装备栏第一格是空的。");
+    }
     let equipItemId = equip.getItemId();
     let equipCurrentLevel = equip.getLevel();
     if (!RINGS_ITEM_ID_EVOLUTION_LIST.includes(equipItemId)) {

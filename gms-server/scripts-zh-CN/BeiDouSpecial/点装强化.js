@@ -31,6 +31,9 @@ function levelStart() {
 function levelCashEquipOption0() {
     // 通过slot = 1获取到当前点装等级来判断强化材料
     equip = cm.getChar().getInventory(INVENTORY_TYPE_EQUIP).getItem(EQUIP_SLOT_1);
+    if (!equip) {
+        cm.sendOkLevel("Dispose", "装备栏第一格是空的。");
+    }
     let equipItemId = equip.getItemId();
     let text = "你想强化#b#t" + equipItemId + "##k #i" + equipItemId + "##k吗？\r\n\r\n";
     if (ii.isCash(equipItemId)) {
@@ -148,8 +151,14 @@ function levelCashEquipOption0() {
 function levelCashEquipOption1() {
     // 通过slot = 1获取到要转移属性的点装
     equip = cm.getChar().getInventory(INVENTORY_TYPE_EQUIP).getItem(EQUIP_SLOT_1);
-    // 通过slot = 2获取到继承属性的点装
+    if (!equip) {
+        cm.sendOkLevel("Dispose", "装备栏第一格是空的。");
+    }
+// 通过slot = 2获取到继承属性的点装
     toEquip = cm.getChar().getInventory(INVENTORY_TYPE_EQUIP).getItem(EQUIP_SLOT_2);
+    if (!toEquip) {
+        cm.sendOkLevel("Dispose", "装备栏第二格是空的。");
+    }
     let equipItemId = equip.getItemId();
     let toEquipItemId = toEquip.getItemId();
     if (!ii.isCash(equipItemId)) {
