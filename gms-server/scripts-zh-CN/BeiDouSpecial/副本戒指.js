@@ -15,6 +15,7 @@ const RING_OF_SHINING_STAR_3CARATS = 1112305;
 const GOLD_HEART_RING_3CARATS = 1112308;
 const RING_OF_SILVER_WING_3CARATS = 1112311;
 const MAPLE_LEAF = 4001126;
+const STAMP0 = 4001101;
 const STAMP1 = 4002000;
 const STAMP2 = 4002001;
 const STAMP3 = 4001158;
@@ -39,6 +40,7 @@ const RINGS_EVOLVE_MAP = new Map([
     [RING_OF_SILVER_WING_2CARATS, RING_OF_SILVER_WING_3CARATS]
 ]);
 
+let costStamp0 = 0;
 let costStamp1 = 0;
 let costStamp2 = 0;
 let costStamp3 = 0;
@@ -48,6 +50,7 @@ let costStamp6 = 0;
 let costStamp7 = 0;
 
 let STAMP_ID_COST_MAP = new Map([
+    [STAMP0, costStamp0],
     [STAMP1, costStamp1],
     [STAMP2, costStamp2],
     [STAMP3, costStamp3],
@@ -78,7 +81,7 @@ function levelStart() {
 }
 
 function levelRingOption0() {
-    let text = "你可以用10张#b#t" + STAMP1 + "##k#i" + STAMP1 + "#兑换一种戒指：\r\n\r\n";
+    let text = "你可以用10个#b#t" + STAMP0 + "##k#i" + STAMP0 + "#兑换副本戒指：\r\n\r\n";
     text += "#L" + GOLD_HEART_RING_1CARATS + "##b#t" + GOLD_HEART_RING_1CARATS + "##k #i" + GOLD_HEART_RING_1CARATS + "##l\r\n";
     cm.sendNextSelectLevel("ExchangeRing", text);
 }
@@ -344,21 +347,21 @@ function levelRingOption2() {
     }
 }
 function levelExchangeRing(itemCode) {
-    costStamp1 = 10;
+    costStamp0 = 10;
     if (itemCode == null) {
         let text = "请选择一种戒指。"
         cm.sendLastLevel("RingOption0", text);
     } else {
-        let itemQuantity = cm.getItemQuantity(STAMP1);
-        if (itemQuantity < costStamp1) {
-            cm.sendOkLevel("Dispose", "#r#t" + STAMP1 + "##k#r#i" + STAMP1 + "##k不足#r" + costStamp1 + "#k个！");
+        let itemQuantity = cm.getItemQuantity(STAMP0);
+        if (itemQuantity < costStamp0) {
+            cm.sendOkLevel("Dispose", "#r#t" + STAMP0 + "##k#r#i" + STAMP0 + "##k不足#r" + costStamp0 + "#k个！");
         } else if (cm.getItemQuantity(itemCode) > 0
             || cm.getItemQuantity(RINGS_EVOLVE_MAP.get(itemCode)) > 0
             || cm.getItemQuantity(RINGS_EVOLVE_MAP.get(RINGS_EVOLVE_MAP.get(itemCode))) > 0
             || !cm.canHold(itemCode, 1)) {
             cm.sendOkLevel("Dispose", "你已领取过该戒指或者背包空间不足！");
         } else {
-            cm.gainItem(STAMP1, -costStamp1);
+            cm.gainItem(STAMP0, -costStamp0);
             successGain(itemCode);
         }
     }
