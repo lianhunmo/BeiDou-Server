@@ -148,7 +148,7 @@ function levelclaimrewards(Select) {
 	cm.sendOkLevel("",text);
 }
 function levelgiveRewardItems() {
-	cm.sendOkLevel("",giveRewardItems(g_Select,g_itemCount));
+	cm.sendOkLevel("main",giveRewardItems(g_Select,g_itemCount));
 }
 /**
  * 生成奖励物品的显示列表

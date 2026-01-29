@@ -63,7 +63,13 @@ const REWARD_MAP = new Map([
     ["ForthStage", [2001001, 200, 2001002, 200, 2, 1000, 5, 500000]],
 ]);
 
+//每日任务全部完成最终奖励
+const FINAL_REWARD_MAP = new Map([
+    [4001006, 1]
+]);
+
 let questCount = 0;
+let questFinishCount = 0;
 let questId = 0;
 let QuestActionHandler;
 let Quest;
@@ -76,14 +82,26 @@ function start() {
 }
 
 function levelStart() {
-    if (cm.getCharacterExtendValue("每日任务完成次数", true)) {
-        questCount = cm.getCharacterExtendValue("每日任务完成次数", true);
-    }
+    let questCountStr = cm.getCharacterExtendValue("每日任务完成次数", true)
+    if (questCountStr) {
+        questCount = questCountStr.charAt(1);
+        questFinishCount = questCountStr.charAt(0);
 
-    let text = "这里是每日任务中心，每天可以接取 #b5次#k 日常任务。\r\n你今日已接取#b" + questCount + "#k次任务。\r\n";
+    }
+    let finalReward = cm.getCharacterExtendValue("每日任务最终奖励领取", true);
+
+    let text = "这里是每日任务中心，每天可以接取 #b5次#k 日常任务。\r\n你今日已接取#b" + questCount + "#k次任务，完成了#b" + questFinishCount + "#k次任务。\r\n";
     questId = cm.getCharacterExtendValue("每日任务编号", true);
-    if (questCount >= 5 && questId === "0") {
-        cm.sendOkLevel("Dispose", "你今天已完成 #b5次#k 每日任务，请明天再来吧。");
+    if (finalReward === "1") {
+        cm.sendOkLevel("Dispose", "你今天已领取每日任务最终奖励，请明天再来吧。");
+    } else if (questCount >= 5 && questFinishCount >= 5 && questId === "0") {
+        text += "是否要领取最终奖励？\r\n\r\n";
+        FINAL_REWARD_MAP.forEach((num, itemId) => {
+            text += "#b#t" + itemId + "##i" + itemId + "##k " + num + "个\r\n";
+        })
+        cm.sendYesNoLevel("Dispose", "GetFinalReward", text);
+    } else if (questCount >= 5 && questId === "0") {
+        cm.sendOkLevel("Dispose", "你今天未完成 #b5次#k 每日任务且机会已用完，请明天再来吧。");
     } else if (QUEST_MAP.has(questId)) {
         let quest = QUEST_MAP.get(questId);
         text += "当前任务：\r\n";
@@ -126,7 +144,7 @@ function levelWarpMap0() {
 
 function levelAcceptQuest() {
     questCount++;
-    cm.saveOrUpdateCharacterExtendValue("每日任务完成次数", questCount.toString(), true);
+    cm.saveOrUpdateCharacterExtendValue("每日任务完成次数", questFinishCount+""+questCount, true);
     let charCurrentLevel = cm.getChar().getLevel();
     if (charCurrentLevel >= 30 && charCurrentLevel < 70) {
         questStage = "FirstStage";
@@ -171,6 +189,8 @@ function levelGetReward() {
     cm.gainItem(rewardList[2], rewardList[3]);
     cm.getChar().getCashShop().gainCash(rewardList[4], rewardList[5]);
     cm.gainExp(rewardList[7]);
+    questFinishCount++;
+    cm.saveOrUpdateCharacterExtendValue("每日任务完成次数", questFinishCount+""+questCount, true);
     let text = "恭喜你完成了每日任务，获得了：\r\n";
     text += "#b#t" + rewardList[0] + "##k #i" + rewardList[0] + "# " + rewardList[1] + "个。\r\n";
     text += "#b#t" + rewardList[2] + "##k #i" + rewardList[2] + "# " + rewardList[3] + "个。\r\n";
@@ -178,6 +198,19 @@ function levelGetReward() {
     text += "经验 " + rewardList[7] +"。\r\n";
     cm.sendNextLevel('Start', text);
 }
+
+function levelGetFinalReward() {
+    cm.saveOrUpdateCharacterExtendValue("每日任务最终奖励领取", "1", true);
+    questFinishCount++;
+    cm.saveOrUpdateCharacterExtendValue("每日任务完成次数", questFinishCount.toString(), true);
+    let text = "恭喜你完成了每日任务，获得了：\r\n";
+    FINAL_REWARD_MAP.forEach((num, itemId) => {
+        cm.gainItem(Number(itemId), num);
+        text += "#b#t" + itemId + "##k #i" + itemId + "# " + num + "个。\r\n";
+    })
+    cm.sendOkLevel('Dispose', text);
+}
+
 function levelDispose() {
     cm.dispose();
 }
