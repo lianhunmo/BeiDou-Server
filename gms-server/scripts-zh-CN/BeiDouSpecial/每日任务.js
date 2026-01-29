@@ -201,9 +201,7 @@ function levelGetReward() {
 
 function levelGetFinalReward() {
     cm.saveOrUpdateCharacterExtendValue("每日任务最终奖励领取", "1", true);
-    questFinishCount++;
-    cm.saveOrUpdateCharacterExtendValue("每日任务完成次数", questFinishCount.toString(), true);
-    let text = "恭喜你完成了每日任务，获得了：\r\n";
+    let text = "恭喜你完成了全部每日任务，获得了：\r\n";
     FINAL_REWARD_MAP.forEach((num, itemId) => {
         cm.gainItem(Number(itemId), num);
         text += "#b#t" + itemId + "##k #i" + itemId + "# " + num + "个。\r\n";

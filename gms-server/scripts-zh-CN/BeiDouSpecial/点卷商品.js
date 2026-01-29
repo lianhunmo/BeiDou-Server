@@ -47,7 +47,7 @@ function levelStart() {
 
 function levelExchangeItem0() {
     if (flamingFeatherCount >= 1) {
-        cm.getInputNumberLevel("ExchangeCashPoint", "请输入使用火焰羽毛的数量：", 1, 1, 1000);
+        cm.getInputNumberLevel("ExchangeCashPoint", "每#r#t" + FLAMING_FEATHER + "##i" + FLAMING_FEATHER + "##k可以兑换100点卷\r\n请输入使用火焰羽毛的数量：", 1, 1, 1000);
     } else {
         cm.sendOkLevel("Dispose", "你身上没有#r#t" + FLAMING_FEATHER + "##k#i" + FLAMING_FEATHER + "#k~")
     }
