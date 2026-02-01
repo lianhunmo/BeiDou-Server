@@ -6,6 +6,7 @@
 
 const MAPLE_LEAF = 4001126;
 const GOLD_MAPLE_LEAF = 4000313;
+const MESO_EXCHANGE_GOLD_MAPLE_LEAF_COST = 50000000;
 
 let mapleLeafCount = 0;
 let goldMapleLeafCount = 0;
@@ -20,6 +21,7 @@ function levelStart() {
     text += "#L1#用#r1片#k#t" + GOLD_MAPLE_LEAF + "# #i" + GOLD_MAPLE_LEAF + "#兑换#r1万#k抵用卷#i4031866##l\r\n";
     text += "#L2#用#r1片#k#t" + GOLD_MAPLE_LEAF + "# #i" + GOLD_MAPLE_LEAF + "#兑换#r88片#k#t" + MAPLE_LEAF + "# #i" + MAPLE_LEAF + "##l\r\n";
     text += "#L3#用#r100片#k#t" + MAPLE_LEAF + "# #i" + MAPLE_LEAF + "#兑换#r1片#k#t" + GOLD_MAPLE_LEAF + "# #i" + GOLD_MAPLE_LEAF + "##l\r\n";
+    text += "#L4#用#r5000万#k金币#i5200002#兑换#r1片#k#t" + GOLD_MAPLE_LEAF + "# #i" + GOLD_MAPLE_LEAF + "##l\r\n";
     cm.sendSelectLevel("Exchange", text);
 }
 
@@ -112,6 +114,32 @@ function levelExchangeGoldMapleLeafResult(inputNum) {
     } else {
         if (cm.canHold(GOLD_MAPLE_LEAF, gain)) {
             cm.gainItem(MAPLE_LEAF, -cost);
+            cm.gainItem(GOLD_MAPLE_LEAF, gain);
+            cm.sendLastLevel("Start", "兑换成功！你已获得了#b" + gain + "片#k黄金枫叶。");
+        } else {
+            cm.sendOk("背包空间不足!");
+            cm.dispose();
+        }
+    }
+}
+
+function levelExchange4() {
+    if (cm.getMeso() > MESO_EXCHANGE_GOLD_MAPLE_LEAF_COST) {
+        cm.getInputNumberLevel("MesoExchangeGoldMapleLeafResult", "请输入希望获得的黄金枫叶的数量：", 1, 1, 100);
+    } else {
+        cm.sendOk("你身上没有#r" + MESO_EXCHANGE_GOLD_MAPLE_LEAF_COST / 10000 + "万#k 金币~");
+        cm.dispose();
+    }
+}
+
+function levelMesoExchangeGoldMapleLeafResult(inputNum) {
+    let cost = inputNum * MESO_EXCHANGE_GOLD_MAPLE_LEAF_COST;
+    let gain = inputNum;
+    if (cm.getMeso() < cost) {
+        cm.sendLastLevel("Start", "你身上的金币不够 #r" + cost / 10000 + "万#k。");
+    } else {
+        if (cm.canHold(GOLD_MAPLE_LEAF, gain)) {
+            cm.gainMeso(-cost);
             cm.gainItem(GOLD_MAPLE_LEAF, gain);
             cm.sendLastLevel("Start", "兑换成功！你已获得了#b" + gain + "片#k黄金枫叶。");
         } else {
