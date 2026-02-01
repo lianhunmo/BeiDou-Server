@@ -33,6 +33,7 @@ function levelStart() {
         vrewardAlreadyGain = [0,0,0,0];
     }
     text += getRewardListText();
+    text += "\r\n#L4##b离开#k#l"
     cm.sendSelectLevel("ConfirmReward", text);
 }
 
@@ -79,6 +80,10 @@ function levelConfirmReward0() {
         cm.sendYesNoLevel("Dispose", "GainLevelReward0", text);
     }
 
+}
+
+function levelGainLevelReward4() {
+    cm.dispose();
 }
 
 function levelGainLevelReward0() {
