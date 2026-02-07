@@ -5415,7 +5415,7 @@ public class Character extends AbstractCharacterObject {
         ceffect = energycharge.getEffect(getSkillLevel(energycharge));
         TimerManager tMan = TimerManager.getInstance();
         if (energyBar < 10000) {
-            energyBar += 102;
+            energyBar += 5000;
             if (energyBar > 10000) {
                 energyBar = 10000;
             }
