@@ -107,7 +107,7 @@ function levelExchangeItem1() {
     text += chaosCount+"张 #b#t" + CHAOS_SCROLL + "##k #b#i" + CHAOS_SCROLL + "##k\r\n";
     text += "#b#t" + MEDAL_CODE_1 + "##k #b#i" + MEDAL_CODE_1 + "##k\r\n";
     text += "金币 #b5000000#k\r\n";
-    text += "点卷 #b1000#k\r\n";
+    text += "点卷 #b"+neededCount * 100+"#k\r\n";
 
     if (neededCount > count) {
         cm.sendOkLevel("Dispose", text);
@@ -124,7 +124,7 @@ function levelExchangeItem2() {
     text += chaosCount+"张 #b#t" + CHAOS_SCROLL + "##k #b#i" + CHAOS_SCROLL + "##k\r\n";
     text += "#b#t" + MEDAL_CODE_2 + "##k #b#i" + MEDAL_CODE_2 + "##k\r\n";
     text += "金币 #b10000000#k\r\n";
-    text += "点卷 #b5000#k\r\n";
+    text += "点卷 #b"+neededCount * 100+"#k\r\n";
 
     if (neededCount > count) {
         cm.sendOkLevel("Dispose", text);
@@ -141,7 +141,7 @@ function levelExchangeItem3() {
     text += chaosCount+"张 #b#t" + CHAOS_SCROLL + "##k #b#i" + CHAOS_SCROLL + "##k\r\n";
     text += "#b#t" + MEDAL_CODE_3 + "##k #b#i" + MEDAL_CODE_3 + "##k\r\n";
     text += "金币 #b20000000#k\r\n";
-    text += "点卷 #b10000#k\r\n";
+    text += "点卷 #b"+neededCount * 100+"#k\r\n";
 
     if (neededCount > count) {
         cm.sendOkLevel("Dispose", text);
@@ -158,7 +158,7 @@ function levelExchangeItem4() {
     text += chaosCount+"张 #b#t" + CHAOS_SCROLL + "##k #b#i" + CHAOS_SCROLL + "##k\r\n";
     text += "#b#t" + MEDAL_CODE_4 + "##k #b#i" + MEDAL_CODE_4 + "##k\r\n";
     text += "金币 #b40000000#k\r\n";
-    text += "点卷 #b20000#k\r\n";
+    text += "点卷 #b"+neededCount * 100+"k\r\n";
 
     if (neededCount > count) {
         cm.sendOkLevel("Dispose", text);
@@ -175,7 +175,7 @@ function levelExchangeItem5() {
     text += chaosCount+"张 #b#t" + CHAOS_SCROLL + "##k #b#i" + CHAOS_SCROLL + "##k\r\n";
     text += "#b#t" + MEDAL_CODE_5 + "##k #b#i" + MEDAL_CODE_5 + "##k\r\n";
     text += "金币 #b100000000#k\r\n";
-    text += "点卷 #b50000#k\r\n";
+    text += "点卷 #b"+neededCount * 100+"#k\r\n";
 
     if (neededCount > count) {
         cm.sendOkLevel("Dispose", text);
@@ -192,7 +192,7 @@ function levelExchangeItem6() {
     text += whiteScrollCount+"张 #b#t" + WHITE_SCROLL + "##k #b#i" + WHITE_SCROLL + "##k\r\n";
     text += "#b#t" + MEDAL_CODE_6 + "##k #b#i" + MEDAL_CODE_6 + "##k\r\n";
     text += "金币 #b200000000#k\r\n";
-    text += "点卷 #b100000#k\r\n";
+    text += "点卷 #b"+neededCount * 100+"#k\r\n";
 
     if (neededCount > count) {
         cm.sendOkLevel("Dispose", text);
@@ -209,7 +209,7 @@ function levelExchangeItem7() {
     text += whiteScrollCount+"张 #b#t" + WHITE_SCROLL + "##k #b#i" + WHITE_SCROLL + "##k\r\n";
     text += "#b#t" + MEDAL_CODE_7 + "##k #b#i" + MEDAL_CODE_7 + "##k\r\n";
     text += "金币 #b300000000#k\r\n";
-    text += "点卷 #b150000#k\r\n";
+    text += "点卷 #b"+neededCount * 100+"#k\r\n";
 
     if (neededCount > count) {
         cm.sendOkLevel("Dispose", text);
@@ -226,7 +226,7 @@ function levelExchangeItem8() {
     text += whiteScrollCount+"张 #b#t" + WHITE_SCROLL + "##k #b#i" + WHITE_SCROLL + "##k\r\n";
     text += "#b#t" + MEDAL_CODE_8 + "##k #b#i" + MEDAL_CODE_8 + "##k\r\n";
     text += "金币 #b400000000#k\r\n";
-    text += "点卷 #b200000#k\r\n";
+    text += "点卷 #b"+neededCount * 100+"#k\r\n";
 
     if (neededCount > count) {
         cm.sendOkLevel("Dispose", text);
@@ -243,7 +243,7 @@ function levelExchangeItem9() {
     text += whiteScrollCount+"张 #b#t" + WHITE_SCROLL + "##k #b#i" + WHITE_SCROLL + "##k\r\n";
     text += "#b#t" + MEDAL_CODE_9 + "##k #b#i" + MEDAL_CODE_9 + "##k\r\n";
     text += "金币 #b500000000#k\r\n";
-    text += "点卷 #b250000#k\r\n";
+    text += "点卷 #b"+neededCount * 100+"#k\r\n";
 
     if (neededCount > count) {
         cm.sendOkLevel("Dispose", text);
@@ -260,7 +260,7 @@ function levelExchangeItem10() {
     text += whiteScrollCount+"张 #b#t" + WHITE_SCROLL + "##k #b#i" + WHITE_SCROLL + "##k\r\n";
     text += "#b#t" + MEDAL_CODE_10 + "##k #b#i" + MEDAL_CODE_10 + "##k\r\n";
     text += "金币 #b800000000#k\r\n";
-    text += "点卷 #b300000#k\r\n";
+    text += "点卷 #b"+neededCount * 100+"#k\r\n";
 
     if (neededCount > count) {
         cm.sendOkLevel("Dispose", text);
@@ -294,7 +294,7 @@ function levelGainReward1() {
             text += chaosCount+"张 #b#t" + CHAOS_SCROLL + "##k #b#i" + CHAOS_SCROLL + "##k\r\n";
             text += "#b#t" + MEDAL_CODE_1 + "##k #b#i" + MEDAL_CODE_1 + "##k\r\n";
             text += "金币 #b5000000#k\r\n";
-            text += "点卷 #b1000#k\r\n";
+            text += "点卷 #b"+neededCount * 100+"#k\r\n";
             cm.dropMessage(0,`你已成功领取了100累充奖励！`);
             cm.sendOkLevel("Dispose", text)
         }
@@ -326,7 +326,7 @@ function levelGainReward2() {
             text += chaosCount+"张 #b#t" + CHAOS_SCROLL + "##k #b#i" + CHAOS_SCROLL + "##k\r\n";
             text += "#b#t" + MEDAL_CODE_2 + "##k #b#i" + MEDAL_CODE_2 + "##k\r\n";
             text += "金币 #b10000000#k\r\n";
-            text += "点卷 #b5000#k\r\n";
+            text += "点卷 #b"+neededCount * 100+"#k\r\n";
             cm.dropMessage(0,`你已成功领取了500累充奖励！`);
             cm.sendOkLevel("Dispose", text)
         }
@@ -357,7 +357,7 @@ function levelGainReward3() {
             text += chaosCount+"张 #b#t" + CHAOS_SCROLL + "##k #b#i" + CHAOS_SCROLL + "##k\r\n";
             text += "#b#t" + MEDAL_CODE_3 + "##k #b#i" + MEDAL_CODE_3 + "##k\r\n";
             text += "金币 #b20000000#k\r\n";
-            text += "点卷 #b10000#k\r\n";
+            text += "点卷 #b"+neededCount * 100+"#k\r\n";
             cm.dropMessage(0,`你已成功领取了1000累充奖励！`);
             cm.sendOkLevel("Dispose", text)
         }
@@ -388,7 +388,7 @@ function levelGainReward4() {
             text += chaosCount+"张 #b#t" + CHAOS_SCROLL + "##k #b#i" + CHAOS_SCROLL + "##k\r\n";
             text += "#b#t" + MEDAL_CODE_4 + "##k #b#i" + MEDAL_CODE_4 + "##k\r\n";
             text += "金币 #b40000000#k\r\n";
-            text += "点卷 #b20000#k\r\n";
+            text += "点卷 #b"+neededCount * 100+"#k\r\n";
             cm.dropMessage(0,`你已成功领取了2000累充奖励！`);
             cm.sendOkLevel("Dispose", text)
         }
@@ -419,7 +419,7 @@ function levelGainReward5() {
             text += chaosCount+"张 #b#t" + CHAOS_SCROLL + "##k #b#i" + CHAOS_SCROLL + "##k\r\n";
             text += "#b#t" + MEDAL_CODE_5 + "##k #b#i" + MEDAL_CODE_5 + "##k\r\n";
             text += "金币 #b100000000#k\r\n";
-            text += "点卷 #b50000#k\r\n";
+            text += "点卷 #b"+neededCount * 100+"#k\r\n";
             cm.dropMessage(0,`你已成功领取了5000累充奖励！`);
             cm.sendOkLevel("Dispose", text)
         }
@@ -450,7 +450,7 @@ function levelGainReward6() {
             text += whiteScrollCount+"张 #b#t" + WHITE_SCROLL + "##k #b#i" + WHITE_SCROLL + "##k\r\n";
             text += "#b#t" + MEDAL_CODE_6 + "##k #b#i" + MEDAL_CODE_6 + "##k\r\n";
             text += "金币 #b200000000#k\r\n";
-            text += "点卷 #b100000#k\r\n";
+            text += "点卷 #b"+neededCount * 100+"#k\r\n";
             cm.dropMessage(0,`你已成功领取了10000累充奖励！`);
             cm.sendOkLevel("Dispose", text)
         }
@@ -481,7 +481,7 @@ function levelGainReward7() {
             text += whiteScrollCount+"张 #b#t" + WHITE_SCROLL + "##k #b#i" + WHITE_SCROLL + "##k\r\n";
             text += "#b#t" + MEDAL_CODE_7 + "##k #b#i" + MEDAL_CODE_7 + "##k\r\n";
             text += "金币 #b300000000#k\r\n";
-            text += "点卷 #b150000#k\r\n";
+            text += "点卷 #b"+neededCount * 100+"#k\r\n";
             cm.dropMessage(0,`你已成功领取了15000累充奖励！`);
             cm.sendOkLevel("Dispose", text)
         }
@@ -512,7 +512,7 @@ function levelGainReward8() {
             text += whiteScrollCount+"张 #b#t" + WHITE_SCROLL + "##k #b#i" + WHITE_SCROLL + "##k\r\n";
             text += "#b#t" + MEDAL_CODE_8 + "##k #b#i" + MEDAL_CODE_8 + "##k\r\n";
             text += "金币 #b400000000#k\r\n";
-            text += "点卷 #b200000#k\r\n";
+            text += "点卷 #b"+neededCount * 100+"#k\r\n";
             cm.dropMessage(0,`你已成功领取了20000累充奖励！`);
             cm.sendOkLevel("Dispose", text)
         }
@@ -543,7 +543,7 @@ function levelGainReward9() {
             text += whiteScrollCount+"张 #b#t" + WHITE_SCROLL + "##k #b#i" + WHITE_SCROLL + "##k\r\n";
             text += "#b#t" + MEDAL_CODE_9 + "##k #b#i" + MEDAL_CODE_9 + "##k\r\n";
             text += "金币 #b500000000#k\r\n";
-            text += "点卷 #b250000#k\r\n";
+            text += "点卷 #b"+neededCount * 100+"#k\r\n";
             cm.dropMessage(0,`你已成功领取了25000累充奖励！`);
             cm.sendOkLevel("Dispose", text)
         }
@@ -574,7 +574,7 @@ function levelGainReward10() {
             text += whiteScrollCount+"张 #b#t" + WHITE_SCROLL + "##k #b#i" + WHITE_SCROLL + "##k\r\n";
             text += "#b#t" + MEDAL_CODE_10 + "##k #b#i" + MEDAL_CODE_10 + "##k\r\n";
             text += "金币 #b800000000#k\r\n";
-            text += "点卷 #b300000#k\r\n";
+            text += "点卷 #b"+neededCount * 100+"#k\r\n";
             cm.dropMessage(0,`你已成功领取了30000累充奖励！`);
             cm.sendOkLevel("Dispose", text)
         }
