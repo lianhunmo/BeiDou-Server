@@ -41,7 +41,7 @@ function enter(pi) {
             }
 
             pi.playPortalSound();
-            pi.warp(pi.getMapId(), 1);
+            eim.warpEventTeam(926100400);
 
     } else {    //fail
         pi.playPortalSound();
