@@ -28,6 +28,75 @@
  * Custom Quest 100200 = Whether you can start Zakum PQ
  * Custom Quest 100201 = Whether you have done the trials
 */
+const ZAKUM_CERTIFICATE = 4001083;
+const SKILL_BOOK_LIST = [2290001,
+    2290003,
+    2290005,
+    2290007,
+    2290009,
+    2290011,
+    2290013,
+    2290015,
+    2290017,
+    2290021,
+    2290023,
+    2290025,
+    2290027,
+    2290029,
+    2290031,
+    2290033,
+    2290035,
+    2290037,
+    2290039,
+    2290041,
+    2290043,
+    2290045,
+    2290047,
+    2290049,
+    2290051,
+    2290053,
+    2290055,
+    2290057,
+    2290059,
+    2290061,
+    2290063,
+    2290065,
+    2290067,
+    2290069,
+    2290071,
+    2290073,
+    2290075,
+    2290077,
+    2290079,
+    2290081,
+    2290083,
+    2290085,
+    2290087,
+    2290089,
+    2290091,
+    2290093,
+    2290095,
+    2290098,
+    2290100,
+    2290103,
+    2290105,
+    2290107,
+    2290109,
+    2290111,
+    2290113,
+    2290116,
+    2290118,
+    2290120,
+    2290122,
+    2290125,
+    2290127,
+    2290129,
+    2290131,
+    2290133,
+    2290135,
+    2290137,
+    2290139
+]
 
 var status;
 var em;
@@ -78,7 +147,7 @@ function action(mode, type, selection) {
         }
 
         if (status == 0) {
-            cm.sendSimple("#e#b<组队任务：扎昆战役>\r\n#k#n" + em.getProperty("party") + "\r\n\r\n小心，古老的力量并未被遗忘... #b\r\n#L0#进入未知的死亡矿井（第1阶段）#l\r\n#L1#面对熔岩之息（第2阶段）#l\r\n#L2#锻造火眼（第3阶段）#l");
+            cm.sendSimple("#e#b<组队任务：扎昆战役>\r\n#k#n" + em.getProperty("party") + "\r\n\r\n小心，古老的力量并未被遗忘...\r\n\r\n可以使用 3个 #b#t" + ZAKUM_CERTIFICATE + "##k#i" + ZAKUM_CERTIFICATE + "#随机抽取一本30级技能上限的能手册。\r\n\r\n #b\r\n#L0#进入未知的死亡矿井（第1阶段）#l\r\n#L1#面对熔岩之息（第2阶段）#l\r\n#L2#锻造火眼（第3阶段）#l\r\n#L4#抽取能手册#l");
         } else if (status == 1) {
             if (selection == 0) {
                 if (cm.getParty() == null) {
@@ -110,7 +179,7 @@ function action(mode, type, selection) {
                     }
                     cm.dispose();
                 }
-            } else {
+            } else if (selection == 2) {
                 if (cm.haveItem(4031061) && cm.haveItem(4031062)) {
                     if (!cm.haveItem(4000082, 30)) {
                         cm.sendOk("你已经完成了试炼，但是还需要 #b#v4000082##t4000082# * 30#k 来锻造 #b5 个 #v4001017##t4001017##k。");
@@ -127,10 +196,38 @@ function action(mode, type, selection) {
                     cm.sendOk("你缺少一些必要的物品\r\n#b#v4031061##t4031061# * 1#k\r\n#b#v4031062##t4031062# * 1#k\r\n来锻造#b#v4001017##t4001017##k。");
                     cm.dispose();
                 }
+            } else {
+                let itemQuantity = cm.getItemQuantity(ZAKUM_CERTIFICATE);
+                if (itemQuantity < 3) {
+                    cm.sendOk("你身上没有 #r3个 #t" + ZAKUM_CERTIFICATE + "##k#i" + ZAKUM_CERTIFICATE + "#");
+                    cm.dispose();
+                } else if (!cm.canHold(2290000, 1)) {
+                    cm.sendOk("背包消耗栏空间不足");
+                    cm.dispose();
+                } else {
+                    cm.gainItem(ZAKUM_CERTIFICATE, -3);
+                    successGain();
+                }
             }
         } else if (status == 2) {
             cm.warp(280020000, 0);
             cm.dispose();
         }
     }
+}
+
+function successGain() {
+    let bookId = getRandomElement(SKILL_BOOK_LIST);
+    let text = "恭喜你获得了#b#t" + bookId + "##k#i" + bookId + "#";
+    cm.gainItem(bookId, 1);
+    cm.sendOkLevel("Dispose", text);
+}
+
+// 获取随机元素
+function getRandomElement(arr) {
+    if (arr.length === 0) {
+        return 2280019;
+    }
+    const randomIndex = Math.floor(Math.random() * arr.length);
+    return arr[randomIndex];
 }
