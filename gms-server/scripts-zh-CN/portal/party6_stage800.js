@@ -6,8 +6,8 @@ function enter(pi) {
     pi.removeAll(2270004);
 
     var spring = pi.getMap().getReactorById(3008000);  // thanks Chloek3, seth1 for noticing fragments not being awarded properly
+    let api = pi.getPlayer().getAbstractPlayerInteraction();
     if (spring != null && spring.getState() > 0) {
-        let api = pi.getPlayer().getAbstractPlayerInteraction();
         let count = api.getCharacterExtendValue("邮票获取次数" + 4001198, false)
         if (count >= 3) {
             if (!pi.canHold(2000005, 20)) {
@@ -21,14 +21,13 @@ function enter(pi) {
                 return false;
             }
             count++;
-            let quitTotal = api.getCharacterExtendValue("毒雾组队副本累计通关次数");
-            quitTotal ++;
-            api.saveOrUpdateCharacterExtendValue("毒雾组队副本累计通关次数", quitTotal.toString());
             api.saveOrUpdateCharacterExtendValue("邮票获取次数" + 4001198, count.toString(), false);
             pi.gainItem(4001198, 10);
         }
     }
-
+    let quitTotal = api.getCharacterExtendValue("毒雾组队副本累计通关次数");
+    quitTotal ++;
+    api.saveOrUpdateCharacterExtendValue("毒雾组队副本累计通关次数", quitTotal.toString());
     pi.playPortalSound();
     pi.warp(910000000, 0);
     return true;
