@@ -80,15 +80,14 @@ let costLukCrystal = 0;
 
 let STAMP_ID_COST_MAP = new Map([
     [BRONZE_PLATE, costBronzePlate],
+    [STEEL_PLATE, costSteelPlate],
     [MITHRIL_PLATE, cosMithrilPlate],
     [ADAMANTIUM_PLATE, costAdamantiumPlate],
     [SILVER_PLATE, costSilverPlate],
-    [ORIHALCON_PLATE, costOrihalconPlate],
     [GOLD_PLATE, costGoldPlate],
     [AMETHYST, costAmethyst],
     [AQUAMARINE, cosAquaMarine],
     [EMERALD, costEmerald],
-    [OPAL, costOpal],
     [SAPPHIRE, costSapphire],
     [TOPAZ, costTopaz],
     [BLACK_CRYSTAL, costBlackCrystal]
