@@ -52,6 +52,7 @@ function action(mode, type, selection) {
         text += "#L3#传送自由#l\t #L65#删除道具#l\t #L12#羽毛累充#l\t #L13#点券商品#l\r\n";
         text += "#L8#副本戒指#l\t #L9#矿石戒指#l\t #L6#枫叶戒指#l\t #L7#点装强化#l\r\n";
         text += "#L11#每日任务#l\t #L14#肝王勋章#l\r\n";
+        text += "\r\n\r\n#L15#===================#r拍卖行#b===================#k#l\r\n";
         if (cm.getPlayer().isGM()) {
             text += "\r\n\r\n";
             text += "\t\t\t\t#r=====以下内容仅GM可见=====\r\n";
@@ -116,6 +117,11 @@ function doSelect(selection) {
         case 14:
             openNpc("肝王勋章");
             break;
+        case 15:
+            cm.dispose();
+            cm.getPlayer().enterMTS();
+            cm.dispose();
+            break;
 // GM功能
         case 61:
             openNpc("万能传送");
@@ -152,4 +158,14 @@ function doSelect(selection) {
 function openNpc(scriptName) {
     cm.dispose();
     cm.openNpc(9900001, scriptName);
+}
+
+function level() {
+    leveldispose();
+}
+function levelnull() {
+    leveldispose();
+}
+function leveldispose() {
+    cm.dispose();
 }
