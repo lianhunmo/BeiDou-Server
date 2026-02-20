@@ -63,13 +63,13 @@ public final class EnterMTSHandler extends AbstractPacketHandler {
         }
 
         if (MiniDungeonInfo.isDungeonMap(chr.getMapId())) {
-            c.sendPacket(PacketCreator.serverNotice(5, "Changing channels or entering Cash Shop or MTS are disabled when inside a Mini-Dungeon."));
+            c.sendPacket(PacketCreator.serverNotice(5, "你不能在迷你地图进入拍卖行。"));
             c.sendPacket(PacketCreator.enableActions());
             return;
         }
 
         if (FieldLimit.CANNOTMIGRATE.check(chr.getMap().getFieldLimit())) {
-            chr.dropMessage(1, "You can't do it here in this map.");
+            chr.dropMessage(1, "你不能在这张地图这么做.");
             c.sendPacket(PacketCreator.enableActions());
             return;
         }
@@ -155,7 +155,7 @@ public final class EnterMTSHandler extends AbstractPacketHandler {
                         equip.setExpiration(rs.getLong("expiration"));
                         equip.setGiftFrom(rs.getString("giftFrom"));
 
-                        items.add(new MTSItemInfo(equip, rs.getInt("price") + 100 + (int) (rs.getInt("price") * 0.1), rs.getInt("id"), rs.getInt("seller"), rs.getString("sellername"), rs.getString("sell_ends")));
+                        items.add(new MTSItemInfo(equip, rs.getInt("price") + (int) (rs.getInt("price") * 0.1), rs.getInt("id"), rs.getInt("seller"), rs.getString("sellername"), rs.getString("sell_ends")));
                     }
                 }
             }

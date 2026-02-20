@@ -21,26 +21,23 @@
  */
 package org.gms.net.server.channel.handlers;
 
-import org.gms.client.Character;
 import org.gms.client.Client;
 import org.gms.client.inventory.Equip;
 import org.gms.client.inventory.InventoryType;
 import org.gms.client.inventory.Item;
 import org.gms.client.inventory.manipulator.InventoryManipulator;
+import org.gms.client.processor.npc.DueyProcessor;
 import org.gms.constants.inventory.ItemConstants;
 import org.gms.net.AbstractPacketHandler;
 import org.gms.net.packet.InPacket;
 import org.gms.net.packet.Packet;
-import org.gms.net.server.Server;
-import org.gms.net.server.channel.Channel;
-import org.gms.server.CashShop;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.gms.server.ItemInformationProvider;
 import org.gms.server.MTSItemInfo;
 import org.gms.util.DatabaseConnection;
 import org.gms.util.PacketCreator;
 import org.gms.util.Pair;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -116,8 +113,8 @@ public final class MTSHandler extends AbstractPacketHandler {
                         ps.setInt(1, c.getPlayer().getId());
                         ResultSet rs = ps.executeQuery();
                         if (rs.next()) {
-                            if (rs.getInt(1) > 10) { // They have more than 10 items up for sale already!
-                                c.getPlayer().dropMessage(1, "You already have 10 items up for auction!");
+                            if (rs.getInt(1) >= 12) { // They have more than 12 items up for sale already!
+                                c.getPlayer().dropMessage(1, "当前正在售卖中的物品已有12个。");
                                 c.sendPacket(getMTS(1, 0, 0));
                                 c.sendPacket(PacketCreator.transferInventory(getTransfer(c.getPlayer().getId())));
                                 c.sendPacket(PacketCreator.notYetSoldInv(getNotYetSold(c.getPlayer().getId())));
@@ -193,6 +190,7 @@ public final class MTSHandler extends AbstractPacketHandler {
                     }
                     c.getPlayer().gainMeso(-5000, false);
                     c.sendPacket(PacketCreator.MTSConfirmSell());
+                    c.sendPacket(PacketCreator.showMTSCash(c.getPlayer()));
                     c.sendPacket(getMTS(1, 0, 0));
                     c.enableCSActions();
                     c.sendPacket(PacketCreator.transferInventory(getTransfer(c.getPlayer().getId())));
@@ -330,7 +328,7 @@ public final class MTSHandler extends AbstractPacketHandler {
                             c.sendPacket(getCart(c.getPlayer().getId()));
                             c.sendPacket(getMTS(c.getPlayer().getCurrentTab(), c.getPlayer().getCurrentType(),
                                     c.getPlayer().getCurrentPage()));
-                            c.sendPacket(PacketCreator.MTSConfirmTransfer(i.getQuantity(), i.getPosition()));
+//                            c.sendPacket(PacketCreator.MTSConfirmTransfer(i.getQuantity(), i.getPosition()));
                             c.sendPacket(PacketCreator.transferInventory(getTransfer(c.getPlayer().getId())));
                         }
                     }
@@ -389,7 +387,11 @@ public final class MTSHandler extends AbstractPacketHandler {
                 c.sendPacket(PacketCreator.notYetSoldInv(getNotYetSold(c.getPlayer().getId())));
                 break;
             }
-            case 12: //put item up for auction
+            case 18: //put item up for auction
+                c.enableCSActions();
+                c.sendPacket(PacketCreator.MTSFailBuy());
+                c.sendPacket(PacketCreator.transferInventory(getTransfer(c.getPlayer().getId())));
+                c.sendPacket(PacketCreator.notYetSoldInv(getNotYetSold(c.getPlayer().getId())));
                 break;
             case 13: //cancel wanted cart thing
                 break;
@@ -402,29 +404,13 @@ public final class MTSHandler extends AbstractPacketHandler {
                     ps.setInt(1, id);
                     ResultSet rs = ps.executeQuery();
                     if (rs.next()) {
-                        int price = rs.getInt("price") + 100 + (int) (rs.getInt("price") * 0.1); // taxes
-                        if (c.getPlayer().getCashShop().getCash(CashShop.NX_PREPAID) >= price) { // FIX
-                            boolean alwaysnull = true;
-                            for (Channel cserv : Server.getInstance().getAllChannels()) {
-                                Character victim = cserv.getPlayerStorage().getCharacterById(rs.getInt("seller"));
-                                if (victim != null) {
-                                    victim.getCashShop().gainCash(4, rs.getInt("price"));
-                                    alwaysnull = false;
-                                }
-                            }
-                            if (alwaysnull) {
-                                try (PreparedStatement pse = con.prepareStatement("SELECT accountid FROM characters WHERE id = ?")) {
-                                    pse.setInt(1, rs.getInt("seller"));
-                                    ResultSet rse = pse.executeQuery();
-                                    if (rse.next()) {
-                                        try (PreparedStatement psee = con.prepareStatement("UPDATE accounts SET nxPrepaid = nxPrepaid + ? WHERE id = ?")) {
-                                            psee.setInt(1, rs.getInt("price"));
-                                            psee.setInt(2, rse.getInt("accountid"));
-                                            psee.executeUpdate();
-                                        }
-                                    }
-                                }
-                            }
+                        int price = rs.getInt("price") + (int) (rs.getInt("price") * 0.1);
+                        if (c.getPlayer().getId() == rs.getInt("seller")) {
+                            c.sendPacket(PacketCreator.MTSFailBuy());
+                            return;
+                        }
+                        if (c.getPlayer().getMeso() >= price) {
+                            sendDueyPackage(c, rs);
                             try (PreparedStatement pse = con.prepareStatement("UPDATE mts_items SET seller = ?, transfer = 1 WHERE id = ?")) {
                                 pse.setInt(1, c.getPlayer().getId());
                                 pse.setInt(2, id);
@@ -434,7 +420,7 @@ public final class MTSHandler extends AbstractPacketHandler {
                                 pse.setInt(1, id);
                                 pse.executeUpdate();
                             }
-                            c.getPlayer().getCashShop().gainCash(4, -price);
+                            c.getPlayer().gainMeso(-price, false);
                             c.enableCSActions();
                             c.sendPacket(getMTS(c.getPlayer().getCurrentTab(), c.getPlayer().getCurrentType(),c.getPlayer().getCurrentPage()));
                             c.sendPacket(PacketCreator.MTSConfirmBuy());
@@ -459,26 +445,9 @@ public final class MTSHandler extends AbstractPacketHandler {
                     ps.setInt(1, id);
                     ResultSet rs = ps.executeQuery();
                     if (rs.next()) {
-                        int price = rs.getInt("price") + 100 + (int) (rs.getInt("price") * 0.1);
-                        if (c.getPlayer().getCashShop().getCash(CashShop.NX_PREPAID) >= price) {
-                            for (Channel cserv : Server.getInstance().getAllChannels()) {
-                                Character victim = cserv.getPlayerStorage().getCharacterById(rs.getInt("seller"));
-                                if (victim != null) {
-                                    victim.getCashShop().gainCash(CashShop.NX_PREPAID, rs.getInt("price"));
-                                } else {
-                                    try (PreparedStatement pse = con.prepareStatement("SELECT accountid FROM characters WHERE id = ?")) {
-                                        pse.setInt(1, rs.getInt("seller"));
-                                        ResultSet rse = pse.executeQuery();
-                                        if (rse.next()) {
-                                            try (PreparedStatement psee = con.prepareStatement("UPDATE accounts SET nxPrepaid = nxPrepaid + ? WHERE id = ?")) {
-                                                psee.setInt(1, rs.getInt("price"));
-                                                psee.setInt(2, rse.getInt("accountid"));
-                                                psee.executeUpdate();
-                                            }
-                                        }
-                                    }
-                                }
-                            }
+                        int price = rs.getInt("price") + (int) (rs.getInt("price") * 0.1);
+                        if (c.getPlayer().getMeso() >= price) {
+                            sendDueyPackage(c, rs);
                             try (PreparedStatement pse = con.prepareStatement("UPDATE mts_items SET seller = ?, transfer = 1 WHERE id = ?")) {
                                 pse.setInt(1, c.getPlayer().getId());
                                 pse.setInt(2, id);
@@ -488,7 +457,7 @@ public final class MTSHandler extends AbstractPacketHandler {
                                 pse.setInt(1, id);
                                 pse.executeUpdate();
                             }
-                            c.getPlayer().getCashShop().gainCash(4, -price);
+                            c.getPlayer().gainMeso(-price, false);
                             c.sendPacket(getCart(c.getPlayer().getId()));
                             c.enableCSActions();
                             c.sendPacket(PacketCreator.MTSConfirmBuy());
@@ -512,6 +481,14 @@ public final class MTSHandler extends AbstractPacketHandler {
         } else {
             c.sendPacket(PacketCreator.showMTSCash(c.getPlayer()));
         }
+    }
+
+    private void sendDueyPackage(Client c, ResultSet rs) throws SQLException {
+        ItemInformationProvider ii = ItemInformationProvider.getInstance();
+        String itemName = ii.getName(rs.getInt("itemid"));
+        String text = "您在拍卖行挂售的 " + rs.getInt("quantity") + " 个 " + itemName
+                + " 已售出，获利" + rs.getInt("price") + " 金币，请查收。";
+        DueyProcessor.dueyCreatePackage(rs.getInt("price"), text, c, rs.getInt("seller"));
     }
 
     public List<MTSItemInfo> getNotYetSold(int cid) {
