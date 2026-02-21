@@ -21,6 +21,7 @@
  */
 package org.gms.net.server.channel.handlers;
 
+import org.gms.client.Character;
 import org.gms.client.Client;
 import org.gms.client.inventory.Equip;
 import org.gms.client.inventory.InventoryType;
@@ -31,13 +32,16 @@ import org.gms.constants.inventory.ItemConstants;
 import org.gms.net.AbstractPacketHandler;
 import org.gms.net.packet.InPacket;
 import org.gms.net.packet.Packet;
+import org.gms.net.server.Server;
+import org.gms.net.server.channel.Channel;
+import org.gms.server.CashShop;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.gms.server.ItemInformationProvider;
 import org.gms.server.MTSItemInfo;
 import org.gms.util.DatabaseConnection;
 import org.gms.util.PacketCreator;
 import org.gms.util.Pair;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -404,12 +408,33 @@ public final class MTSHandler extends AbstractPacketHandler {
                     ps.setInt(1, id);
                     ResultSet rs = ps.executeQuery();
                     if (rs.next()) {
-                        int price = rs.getInt("price") + (int) (rs.getInt("price") * 0.1);
+                        int price = rs.getInt("price") + (int) (rs.getInt("price") * 0.1); // taxes
                         if (c.getPlayer().getId() == rs.getInt("seller")) {
                             c.sendPacket(PacketCreator.MTSFailBuy());
                             return;
                         }
-                        if (c.getPlayer().getMeso() >= price) {
+                        if (c.getPlayer().getCashShop().getCash(CashShop.NX_PREPAID) >= price) { // FIX
+                            boolean alwaysnull = true;
+                            for (Channel cserv : Server.getInstance().getAllChannels()) {
+                                Character victim = cserv.getPlayerStorage().getCharacterById(rs.getInt("seller"));
+                                if (victim != null) {
+                                    victim.getCashShop().gainCash(4, rs.getInt("price"));
+                                    alwaysnull = false;
+                                }
+                            }
+                            if (alwaysnull) {
+                                try (PreparedStatement pse = con.prepareStatement("SELECT accountid FROM characters WHERE id = ?")) {
+                                    pse.setInt(1, rs.getInt("seller"));
+                                    ResultSet rse = pse.executeQuery();
+                                    if (rse.next()) {
+                                        try (PreparedStatement psee = con.prepareStatement("UPDATE accounts SET nxPrepaid = nxPrepaid + ? WHERE id = ?")) {
+                                            psee.setInt(1, rs.getInt("price"));
+                                            psee.setInt(2, rse.getInt("accountid"));
+                                            psee.executeUpdate();
+                                        }
+                                    }
+                                }
+                            }
                             sendDueyPackage(c, rs);
                             try (PreparedStatement pse = con.prepareStatement("UPDATE mts_items SET seller = ?, transfer = 1 WHERE id = ?")) {
                                 pse.setInt(1, c.getPlayer().getId());
@@ -420,7 +445,7 @@ public final class MTSHandler extends AbstractPacketHandler {
                                 pse.setInt(1, id);
                                 pse.executeUpdate();
                             }
-                            c.getPlayer().gainMeso(-price, false);
+                            c.getPlayer().getCashShop().gainCash(4, -price);
                             c.enableCSActions();
                             c.sendPacket(getMTS(c.getPlayer().getCurrentTab(), c.getPlayer().getCurrentType(),c.getPlayer().getCurrentPage()));
                             c.sendPacket(PacketCreator.MTSConfirmBuy());
@@ -446,7 +471,25 @@ public final class MTSHandler extends AbstractPacketHandler {
                     ResultSet rs = ps.executeQuery();
                     if (rs.next()) {
                         int price = rs.getInt("price") + (int) (rs.getInt("price") * 0.1);
-                        if (c.getPlayer().getMeso() >= price) {
+                        if (c.getPlayer().getCashShop().getCash(CashShop.NX_PREPAID) >= price) {
+                            for (Channel cserv : Server.getInstance().getAllChannels()) {
+                                Character victim = cserv.getPlayerStorage().getCharacterById(rs.getInt("seller"));
+                                if (victim != null) {
+                                    victim.getCashShop().gainCash(CashShop.NX_PREPAID, rs.getInt("price"));
+                                } else {
+                                    try (PreparedStatement pse = con.prepareStatement("SELECT accountid FROM characters WHERE id = ?")) {
+                                        pse.setInt(1, rs.getInt("seller"));
+                                        ResultSet rse = pse.executeQuery();
+                                        if (rse.next()) {
+                                            try (PreparedStatement psee = con.prepareStatement("UPDATE accounts SET nxPrepaid = nxPrepaid + ? WHERE id = ?")) {
+                                                psee.setInt(1, rs.getInt("price"));
+                                                psee.setInt(2, rse.getInt("accountid"));
+                                                psee.executeUpdate();
+                                            }
+                                        }
+                                    }
+                                }
+                            }
                             sendDueyPackage(c, rs);
                             try (PreparedStatement pse = con.prepareStatement("UPDATE mts_items SET seller = ?, transfer = 1 WHERE id = ?")) {
                                 pse.setInt(1, c.getPlayer().getId());
@@ -457,7 +500,7 @@ public final class MTSHandler extends AbstractPacketHandler {
                                 pse.setInt(1, id);
                                 pse.executeUpdate();
                             }
-                            c.getPlayer().gainMeso(-price, false);
+                            c.getPlayer().getCashShop().gainCash(4, -price);
                             c.sendPacket(getCart(c.getPlayer().getId()));
                             c.enableCSActions();
                             c.sendPacket(PacketCreator.MTSConfirmBuy());
@@ -487,8 +530,8 @@ public final class MTSHandler extends AbstractPacketHandler {
         ItemInformationProvider ii = ItemInformationProvider.getInstance();
         String itemName = ii.getName(rs.getInt("itemid"));
         String text = "您在拍卖行挂售的 " + rs.getInt("quantity") + " 个 " + itemName
-                + " 已售出，获利" + rs.getInt("price") + " 金币，请查收。";
-        DueyProcessor.dueyCreatePackage(rs.getInt("price"), text, c, rs.getInt("seller"));
+                + " 已售出，获利" + rs.getInt("price") + " 信用点，请确认。";
+        DueyProcessor.dueyCreatePackage(0, text, c, rs.getInt("seller"));
     }
 
     public List<MTSItemInfo> getNotYetSold(int cid) {

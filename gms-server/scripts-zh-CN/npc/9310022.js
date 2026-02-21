@@ -10,6 +10,8 @@ const MESO_EXCHANGE_GOLD_MAPLE_LEAF_COST = 50000000;
 
 let mapleLeafCount = 0;
 let goldMapleLeafCount = 0;
+let prePaidPointCount = 0;
+let mesoCount = 0;
 
 function start() {
     levelStart();
@@ -22,6 +24,8 @@ function levelStart() {
     text += "#L2#用#r1片#k#t" + GOLD_MAPLE_LEAF + "# #i" + GOLD_MAPLE_LEAF + "#兑换#r88片#k#t" + MAPLE_LEAF + "# #i" + MAPLE_LEAF + "##l\r\n";
     text += "#L3#用#r100片#k#t" + MAPLE_LEAF + "# #i" + MAPLE_LEAF + "#兑换#r1片#k#t" + GOLD_MAPLE_LEAF + "# #i" + GOLD_MAPLE_LEAF + "##l\r\n";
     text += "#L4#用#r5000万#k金币#i5200002#兑换#r1片#k#t" + GOLD_MAPLE_LEAF + "# #i" + GOLD_MAPLE_LEAF + "##l\r\n";
+    text += "#L5##r 1 ：1000 #k信用点 兑换 #r金币#i5200002##l\r\n";
+    text += "#L6##r 1000 ：1 #k金币#i5200002# 兑换 #r信用点#l\r\n";
     cm.sendSelectLevel("Exchange", text);
 }
 
@@ -146,6 +150,50 @@ function levelMesoExchangeGoldMapleLeafResult(inputNum) {
             cm.sendOk("背包空间不足!");
             cm.dispose();
         }
+    }
+}
+
+function levelExchange5() {
+    prePaidPointCount = cm.getChar().getCashShop().getCash(4);
+    if (prePaidPointCount >= 1) {
+        cm.getInputNumberLevel("PrePaidExchangeMoneyResult", "请输入兑换使用的信用点数量：", 1, 1, 1000000);
+    } else {
+        cm.sendOk("你没有信用点~");
+        cm.dispose();
+    }
+}
+
+function levelPrePaidExchangeMoneyResult(inputNum) {
+    let cost = inputNum;
+    let gain = inputNum * 1000;
+    if (prePaidPointCount < cost) {
+        cm.sendLastLevel("Start", "你的信用点不够#r " + cost + " #k。");
+    } else {
+        cm.getChar().getCashShop().gainCash(4, -cost);
+        cm.getChar().gainMeso(gain)
+        cm.sendLastLevel("Start", "兑换成功！你已获得了#b" + gain + "金币#k。");
+    }
+}
+
+function levelExchange6() {
+    mesoCount = cm.getMeso();
+    if (mesoCount >= 1000) {
+        cm.getInputNumberLevel("MoneyExchangePrePaidResult", "请输入希望获得的信用点数量：", 1, 1, 1000000);
+    } else {
+        cm.sendOk("你身上没有1000金币~");
+        cm.dispose();
+    }
+}
+
+function levelMoneyExchangePrePaidResult(inputNum) {
+    let cost = inputNum * 1000;
+    let gain = inputNum;
+    if (mesoCount < cost) {
+        cm.sendLastLevel("Start", "你身上的金币不够#r" + cost + "#k。");
+    } else {
+        cm.getChar().gainMeso(-cost)
+        cm.getChar().getCashShop().gainCash(4, gain);
+        cm.sendLastLevel("Start", "兑换成功！你已获得了#b" + gain + "信用点#k。");
     }
 }
 

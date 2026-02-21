@@ -118,9 +118,9 @@ function doSelect(selection) {
             openNpc("肝王勋章");
             break;
         case 15:
-            cm.dispose();
-            cm.getPlayer().enterMTS();
-            cm.dispose();
+            const EnterMTSHandler = Java.type("org.gms.net.server.channel.handlers.EnterMTSHandler");
+            const client = cm.getPlayer().getClient();
+            EnterMTSHandler.enterMTS(client);
             break;
 // GM功能
         case 61:

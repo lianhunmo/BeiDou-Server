@@ -49,12 +49,15 @@ public final class EnterMTSHandler extends AbstractPacketHandler {
 
     @Override
     public void handlePacket(InPacket p, Client c) {
-        Character chr = c.getPlayer();
-
         if (!GameConfig.getServerBoolean("use_mts")) {
             openCenterScript(c);
             return;
         }
+        enterMTS(c);
+    }
+
+    public static void enterMTS(Client c) {
+        Character chr = c.getPlayer();
 
         if (chr.getEventInstance() != null) {
             c.sendPacket(PacketCreator.serverNotice(5, "Entering Cash Shop or MTS are disabled when registered on an event."));
@@ -119,13 +122,13 @@ public final class EnterMTSHandler extends AbstractPacketHandler {
         List<MTSItemInfo> items = new ArrayList<>();
         int pages = 0;
         try (Connection con = DatabaseConnection.getConnection()) {
-            try (PreparedStatement ps = con.prepareStatement("SELECT * FROM mts_items WHERE tab = 1 AND transfer = 0 ORDER BY id DESC LIMIT 16, 16");
+            try (PreparedStatement ps = con.prepareStatement("SELECT * FROM mts_items WHERE tab = 1 AND transfer = 0 ORDER BY id DESC LIMIT 0, 16");
                  ResultSet rs = ps.executeQuery()) {
                 while (rs.next()) {
                     if (rs.getInt("type") != 1) {
                         Item i = new Item(rs.getInt("itemid"), (short) 0, (short) rs.getInt("quantity"));
                         i.setOwner(rs.getString("owner"));
-                        items.add(new MTSItemInfo(i, rs.getInt("price") + 100 + (int) (rs.getInt("price") * 0.1), rs.getInt("id"), rs.getInt("seller"), rs.getString("sellername"), rs.getString("sell_ends")));
+                        items.add(new MTSItemInfo(i, rs.getInt("price") + (int) (rs.getInt("price") * 0.1), rs.getInt("id"), rs.getInt("seller"), rs.getString("sellername"), rs.getString("sell_ends")));
                     } else {
                         Equip equip = new Equip(rs.getInt("itemid"), (byte) rs.getInt("position"), -1);
                         equip.setOwner(rs.getString("owner"));
@@ -164,6 +167,9 @@ public final class EnterMTSHandler extends AbstractPacketHandler {
                  ResultSet rs = ps.executeQuery()) {
                 if (rs.next()) {
                     pages = (int) Math.ceil(rs.getInt(1) / 16);
+                    if (rs.getInt(1) % 16 > 0) {
+                        pages++;
+                    }
                 }
             }
         } catch (SQLException e) {
@@ -174,7 +180,7 @@ public final class EnterMTSHandler extends AbstractPacketHandler {
         c.sendPacket(PacketCreator.notYetSoldInv(getNotYetSold(chr.getId())));
     }
 
-    private List<MTSItemInfo> getNotYetSold(int cid) {
+    private static List<MTSItemInfo> getNotYetSold(int cid) {
         List<MTSItemInfo> items = new ArrayList<>();
         try (Connection con = DatabaseConnection.getConnection();
              PreparedStatement ps = con.prepareStatement("SELECT * FROM mts_items WHERE seller = ? AND transfer = 0 ORDER BY id DESC")) {
@@ -224,7 +230,7 @@ public final class EnterMTSHandler extends AbstractPacketHandler {
         return items;
     }
 
-    private List<MTSItemInfo> getTransfer(int cid) {
+    private static List<MTSItemInfo> getTransfer(int cid) {
         List<MTSItemInfo> items = new ArrayList<>();
         try (Connection con = DatabaseConnection.getConnection();
              PreparedStatement ps = con.prepareStatement("SELECT * FROM mts_items WHERE transfer = 1 AND seller = ? ORDER BY id DESC")) {
