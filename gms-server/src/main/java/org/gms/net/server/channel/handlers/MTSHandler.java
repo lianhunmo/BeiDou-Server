@@ -50,7 +50,9 @@ import java.sql.SQLException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public final class MTSHandler extends AbstractPacketHandler {
     private static final Logger log = LoggerFactory.getLogger(MTSHandler.class);
@@ -409,20 +411,39 @@ public final class MTSHandler extends AbstractPacketHandler {
                     ResultSet rs = ps.executeQuery();
                     if (rs.next()) {
                         int price = rs.getInt("price") + (int) (rs.getInt("price") * 0.1); // taxes
-                        if (c.getPlayer().getId() == rs.getInt("seller")) {
+                        Integer sellerAccountId = -1;
+                        try (PreparedStatement pse = con.prepareStatement("SELECT accountid FROM characters WHERE id = ?")) {
+                            pse.setInt(1, rs.getInt("seller"));
+                            ResultSet rse = pse.executeQuery();
+                            if (rse.next()) {
+                                sellerAccountId = rse.getInt("accountid");
+                            }
+                        }
+                        Set<Integer> sellerAccountCharIdSet = new HashSet<>();
+                        try (PreparedStatement pse = con.prepareStatement("SELECT id FROM characters WHERE accountid = ?")) {
+                            pse.setInt(1, sellerAccountId);
+                            ResultSet rse = pse.executeQuery();
+                            while (rse.next()) {
+                                sellerAccountCharIdSet.add(rse.getInt("id"));
+                            }
+                        }
+
+                        if (sellerAccountCharIdSet.contains(c.getPlayer().getId())) {
                             c.sendPacket(PacketCreator.MTSFailBuy());
                             return;
                         }
                         if (c.getPlayer().getCashShop().getCash(CashShop.NX_PREPAID) >= price) { // FIX
-                            boolean alwaysnull = true;
+                            boolean acountNotOnline = true;
                             for (Channel cserv : Server.getInstance().getAllChannels()) {
-                                Character victim = cserv.getPlayerStorage().getCharacterById(rs.getInt("seller"));
-                                if (victim != null) {
-                                    victim.getCashShop().gainCash(4, rs.getInt("price"));
-                                    alwaysnull = false;
+                                for (Integer charId : sellerAccountCharIdSet) {
+                                    Character victim = cserv.getPlayerStorage().getCharacterById(charId);
+                                    if (victim != null) {
+                                        victim.getCashShop().gainCash(4, rs.getInt("price"));
+                                        acountNotOnline = false;
+                                    }
                                 }
                             }
-                            if (alwaysnull) {
+                            if (acountNotOnline) {
                                 try (PreparedStatement pse = con.prepareStatement("SELECT accountid FROM characters WHERE id = ?")) {
                                     pse.setInt(1, rs.getInt("seller"));
                                     ResultSet rse = pse.executeQuery();
@@ -472,20 +493,46 @@ public final class MTSHandler extends AbstractPacketHandler {
                     if (rs.next()) {
                         int price = rs.getInt("price") + (int) (rs.getInt("price") * 0.1);
                         if (c.getPlayer().getCashShop().getCash(CashShop.NX_PREPAID) >= price) {
+                            Integer sellerAccountId = -1;
+                            try (PreparedStatement pse = con.prepareStatement("SELECT accountid FROM characters WHERE id = ?")) {
+                                pse.setInt(1, rs.getInt("seller"));
+                                ResultSet rse = pse.executeQuery();
+                                if (rse.next()) {
+                                    sellerAccountId = rse.getInt("accountid");
+                                }
+                            }
+                            Set<Integer> sellerAccountCharIdSet = new HashSet<>();
+                            try (PreparedStatement pse = con.prepareStatement("SELECT id FROM characters WHERE accountid = ?")) {
+                                pse.setInt(1, sellerAccountId);
+                                ResultSet rse = pse.executeQuery();
+                                while (rse.next()) {
+                                    sellerAccountCharIdSet.add(rse.getInt("id"));
+                                }
+                            }
+
+                            if (sellerAccountCharIdSet.contains(c.getPlayer().getId())) {
+                                c.sendPacket(PacketCreator.MTSFailBuy());
+                                return;
+                            }
+                            boolean acountNotOnline = true;
                             for (Channel cserv : Server.getInstance().getAllChannels()) {
-                                Character victim = cserv.getPlayerStorage().getCharacterById(rs.getInt("seller"));
-                                if (victim != null) {
-                                    victim.getCashShop().gainCash(CashShop.NX_PREPAID, rs.getInt("price"));
-                                } else {
-                                    try (PreparedStatement pse = con.prepareStatement("SELECT accountid FROM characters WHERE id = ?")) {
-                                        pse.setInt(1, rs.getInt("seller"));
-                                        ResultSet rse = pse.executeQuery();
-                                        if (rse.next()) {
-                                            try (PreparedStatement psee = con.prepareStatement("UPDATE accounts SET nxPrepaid = nxPrepaid + ? WHERE id = ?")) {
-                                                psee.setInt(1, rs.getInt("price"));
-                                                psee.setInt(2, rse.getInt("accountid"));
-                                                psee.executeUpdate();
-                                            }
+                                for (Integer charId : sellerAccountCharIdSet) {
+                                    Character victim = cserv.getPlayerStorage().getCharacterById(charId);
+                                    if (victim != null) {
+                                        victim.getCashShop().gainCash(4, rs.getInt("price"));
+                                        acountNotOnline = false;
+                                    }
+                                }
+                            }
+                            if (acountNotOnline) {
+                                try (PreparedStatement pse = con.prepareStatement("SELECT accountid FROM characters WHERE id = ?")) {
+                                    pse.setInt(1, rs.getInt("seller"));
+                                    ResultSet rse = pse.executeQuery();
+                                    if (rse.next()) {
+                                        try (PreparedStatement psee = con.prepareStatement("UPDATE accounts SET nxPrepaid = nxPrepaid + ? WHERE id = ?")) {
+                                            psee.setInt(1, rs.getInt("price"));
+                                            psee.setInt(2, rse.getInt("accountid"));
+                                            psee.executeUpdate();
                                         }
                                     }
                                 }
