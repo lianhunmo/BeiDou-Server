@@ -381,6 +381,7 @@ function levelRingUpgrade() {
     let meso = cm.getMeso();
     if (meso < costMeso) {
         cm.sendOkLevel("Dispose", "金币不足#r" + costMeso + "#k！");
+        return;
     } else {
         let checkResult = true;
         let text = "";
