@@ -89,6 +89,7 @@ public class CharacterService {
     private final ServerQueueMapper serverQueueMapper;
     private final NameChangeService nameChangeService;
     private final WorldTransferService worldTransferService;
+    private final CharacterStorageMapper characterStorageMapper;
 
     public CharactersDO findById(int id) {
         return charactersMapper.selectOneById(id);
@@ -473,4 +474,14 @@ public class CharacterService {
         }
         throw BizException.illegalArgument(I18nUtil.getExceptionMessage("CharacterService.getCharacter.exception1"));
     }
+
+    public void setStorage(Integer id, String key, String value) {
+        this.characterStorageMapper.set(id, key, value);
+    }
+
+    public String getStorage(Integer id, String key) {
+        CharacterStorageDO storage = this.characterStorageMapper.get(id, key);
+        return storage != null ? storage.getValue() : null;
+    }
+
 }

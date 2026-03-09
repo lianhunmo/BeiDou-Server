@@ -51,7 +51,8 @@ function action(mode, type, selection) {
         text += "#L0##b新人福利#l\t #L2#在线奖励#l\t #L4#爆率一览#l\t #L5#一键转职#l\r\n";
         text += "#L3#传送自由#l\t #L65#删除道具#l\t #L12#羽毛累充#l\t #L13#点券商品#l\r\n";
         text += "#L8#副本戒指#l\t #L9#矿石戒指#l\t #L6#枫叶戒指#l\t #L7#点装强化#l\r\n";
-        text += "#L11#每日任务#l\t #L14#肝王勋章#l\r\n";
+        text += "#L11#每日任务#l\t #L14#肝王勋章#l\t #L16#便利商店#l\t #L10#一键出售#l\r\n";
+        text += "#L17#矿石仓库#l\r\n";
         text += "\r\n\r\n#L15#===================#r拍卖行#b===================#k#l\r\n";
         if (cm.getPlayer().isGM()) {
             text += "\r\n\r\n";
@@ -121,6 +122,13 @@ function doSelect(selection) {
             const EnterMTSHandler = Java.type("org.gms.net.server.channel.handlers.EnterMTSHandler");
             const client = cm.getPlayer().getClient();
             EnterMTSHandler.enterMTS(client);
+            break;
+        case 16:
+            cm.openShopNPC(2030009); // 便利商店
+            cm.dispose();
+            break;
+        case 17:
+            openNpc("矿石仓库");
             break;
 // GM功能
         case 61:

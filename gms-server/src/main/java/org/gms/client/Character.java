@@ -9936,4 +9936,37 @@ public class Character extends AbstractCharacterObject {
         log.error("scroll ring error, try acquire Client failed.");
         return false;
     }
+    public void setAccountStorage(String key, String value) {
+        characterService.setStorage(this.accountId, key, value);
+    }
+
+    public String getAccountStorage(String key) {
+        return characterService.getStorage(this.accountId, key);
+    }
+
+    public void setCharacterStorage(String key, String value) {
+        characterService.setStorage(this.id, key, value);
+    }
+
+    public String getCharacterStorage(String key) {
+        return characterService.getStorage(this.id, key);
+    }
+
+    public void setCharacterStorageInteger(String key, Integer value) {
+        characterService.setStorage(this.id, key, value.toString());
+    }
+
+    public Integer getCharacterStorageInteger(String key, Integer defaultValue) {
+        String value = characterService.getStorage(this.id, key);
+        return value != null ? Integer.parseInt(value) : defaultValue;
+    }
+
+    public void setCharacterStorageInteger(Integer key, Integer value) {
+        characterService.setStorage(this.id, key.toString(), value.toString());
+    }
+
+    public Integer getCharacterStorageInteger(Integer key, Integer defaultValue) {
+        String value = characterService.getStorage(this.id, key.toString());
+        return value != null ? Integer.parseInt(value) : defaultValue;
+    }
 }
