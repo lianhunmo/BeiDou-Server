@@ -34,33 +34,9 @@ function levelChooseInventory(choose) {
     for (let i = 0; i <= 72; i++) {
         let item = cm.getInventory(sel).getItem(i);
         if (item) {
-            // var id = item.getItemId();
-            // if (sel == 4) {
-            //     if (id >= 4130000 && id <= 4130022) {
-            //         ShopFactory.getInstance().getShop(11000).sell(cm.getClient(), type, i, item.getQuantity());
-            //     }
-            // } else {
-            //     ShopFactory.getInstance().getShop(11000).sell(cm.getClient(), type, i, item.getQuantity());
-            // }
             ShopFactory.getInstance().getShop(11000).sell(cm.getClient(), type, i, item.getQuantity());
         }
     }
     cm.sendOk("出售" + column[sel - 1] + "成功！");
-    cm.dispose();
-}
-
-// 是否清除选择了是
-function levelDoClear() {
-    cm.removeAllByInventory(sel);
-    // 回到levelStart
-    cm.sendOkLevel("Start", "清除完毕！");
-    cm.dispose();
-}
-
-// 执行删除操作
-function levelDoRemove(choose) {
-    cm.removeAllByInventorySlot(sel, choose);
-    // 回到选择单个道具
-    cm.sendOkLevel("ChooseType2", "清除完毕！");
     cm.dispose();
 }
