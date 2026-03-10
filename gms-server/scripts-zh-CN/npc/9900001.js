@@ -23,7 +23,7 @@
 /**
  * @description 拍卖行中心脚本
  */
-var OldTitle ="\t\t\t\t\t#e欢迎来到#r滕王阁#k帮助中心#n\t\t\t\t\r\n";
+var OldTitle ="\t\t\t\t\t#e欢迎来到#r小时候#k帮助中心#n\t\t\t\t\r\n";
 var status = -1;
 var i = 0;
 function start() {
