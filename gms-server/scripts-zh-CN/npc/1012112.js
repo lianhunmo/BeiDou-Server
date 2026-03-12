@@ -136,10 +136,10 @@ function action(mode, type, selection) {
                 cm.sendYesNo("感谢你帮助喂养兴儿。事实上，你们团队已经因走到这一步而获得了奖励。这个问题现在已经解决了，但现在又出现了另一个问题，如果你感兴趣，可以找那边的 #b达尔米#k 了解信息。那么，你现在要直接返回射手村吗？");
             } else if (status == 1) {
                 if (cm.getEventInstance().giveEventReward(cm.getPlayer())) {
+                    cm.warp(910000000);
                     let quitTotal = cm.getCharacterExtendValue("月秒组队副本累计通关次数");
                     quitTotal++;
                     cm.saveOrUpdateCharacterExtendValue("月秒组队副本累计通关次数", quitTotal.toString());
-                    cm.warp(910000000);
                 } else {
                     cm.sendOk("看起来你的某个背包空间不足。请先检查一下，以便正确获得奖励。");
                 }
