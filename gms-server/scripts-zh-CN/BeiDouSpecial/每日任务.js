@@ -143,8 +143,6 @@ function levelWarpMap0() {
 }
 
 function levelAcceptQuest() {
-    questCount++;
-    cm.saveOrUpdateCharacterExtendValue("每日任务完成次数", questFinishCount+""+questCount, true);
     let charCurrentLevel = cm.getChar().getLevel();
     if (charCurrentLevel >= 30 && charCurrentLevel < 70) {
         questStage = "FirstStage";
@@ -174,6 +172,8 @@ function levelAcceptQuest() {
         cm.sendOkLevel("Dispose", "角色需要#r30级#k才能领取每日任务。");
         return;
     }
+    questCount++;
+    cm.saveOrUpdateCharacterExtendValue("每日任务完成次数", questFinishCount+""+questCount, true);
     cm.sendNextLevel('Start','任务接取成功。');
 }
 
