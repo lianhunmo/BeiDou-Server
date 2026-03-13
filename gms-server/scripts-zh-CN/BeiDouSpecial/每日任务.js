@@ -121,7 +121,7 @@ function levelStart() {
         } else {
             text += "收集#r#t" + quest[2] + "##k#i" + quest[2] + "#k #b" + quest[3] + " #k个。\r\n"
             let itemQuantity = cm.getItemQuantity(quest[2]);
-            text += "当前已收集#b#t" + quest[2] + "##k#i" + quest[2] + "#k #b" + itemQuantity + " #k个。\r\n\r\n"
+            text += "当前已收集#b#t" + quest[2] + "##k#i" + quest[2] + "# #b" + itemQuantity + " #k个。\r\n\r\n"
             if (itemQuantity < quest[3]) {
                 text += "#L0##b传送到任务地点。#l\r\n"
                 cm.sendSelectLevel("WarpMap", text);
