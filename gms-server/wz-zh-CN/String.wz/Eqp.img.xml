@@ -16582,6 +16582,36 @@
             <imgdir name="1112812">
                 <string name="name" value="我的麻吉好友" />
             </imgdir>
+            <imgdir name="1112880">
+                <string name="name" value="怪物卡片戒指（1阶）"/>
+            </imgdir>
+            <imgdir name="1112881">
+                <string name="name" value="怪物卡片戒指（2阶）"/>
+            </imgdir>
+            <imgdir name="1112882">
+                <string name="name" value="怪物卡片戒指（3阶）"/>
+            </imgdir>
+            <imgdir name="1112883">
+                <string name="name" value="怪物卡片戒指（4阶）"/>
+            </imgdir>
+            <imgdir name="1112884">
+                <string name="name" value="怪物卡片戒指（5阶）"/>
+            </imgdir>
+            <imgdir name="1112885">
+                <string name="name" value="怪物卡片戒指（6阶）"/>
+            </imgdir>
+            <imgdir name="1112886">
+                <string name="name" value="怪物卡片戒指（7阶）"/>
+            </imgdir>
+            <imgdir name="1112887">
+                <string name="name" value="怪物卡片戒指（8阶）"/>
+            </imgdir>
+            <imgdir name="1112888">
+                <string name="name" value="怪物卡片戒指（9阶）"/>
+            </imgdir>
+            <imgdir name="1112889">
+                <string name="name" value="怪物卡片戒指（10阶）"/>
+            </imgdir>
             <imgdir name="1112900">
                 <string name="name" value="音符环绕戒指" />
                 <string name="desc" value="五颜六色的音符围绕着角色旋转。" />
