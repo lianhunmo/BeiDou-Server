@@ -48,11 +48,11 @@ function action(mode, type, selection) {
         text += "当前信用券：" + cm.getPlayer().getCashShop().getCash(4) + "\r\n";
         text += "当前羽毛累充：" + flamingFeatherAlreadyCount + "\r\n";
         text += " \r\n\r\n";
-        text += "#L0##b新人福利#l\t #L2#在线奖励#l\t #L4#爆率一览#l\t #L5#一键转职#l\r\n";
+        text += "#L0##b新人福利#l\t #L2#在线奖励#l\t #L4#爆率一览#l\t #L10#一键出售#l\r\n";
         text += "#L3#传送自由#l\t #L65#删除道具#l\t #L12#羽毛累充#l\t #L13#点券商品#l\r\n";
         text += "#L8#副本戒指#l\t #L9#矿石戒指#l\t #L6#枫叶戒指#l\t #L7#点装强化#l\r\n";
-        text += "#L11#每日任务#l\t #L14#肝王勋章#l\t #L16#便利商店#l\t #L10#一键出售#l\r\n";
-        text += "#L17#矿石仓库#l\t #L18#卷轴仓库#l\r\n";
+        text += "#L11#每日任务#l\t #L14#肝王勋章#l\t #L16#便利商店#l\t #L18#卷轴仓库#l\r\n";
+        text += "#L17#矿石仓库#l\t\r\n";
         text += "\r\n\r\n#L15#===================#r拍卖行#b===================#k#l\r\n";
         if (cm.getPlayer().isGM()) {
             text += "\r\n\r\n";
