@@ -37,7 +37,7 @@ function enter(pi) {
         return false;
     } else {
         pi.playPortalSound();
-        pi.getPlayer().changeMap(target, targetPortal);
+        eim.warpEventTeam(920010800);
         return true;
     }
 }
