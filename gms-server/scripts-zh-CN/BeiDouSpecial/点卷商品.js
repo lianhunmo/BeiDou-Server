@@ -9,6 +9,7 @@ const EXP_COUPON_2X_1H30M = 5211049;
 const EXP_COUPON_2X_1H30M_COST = 200;
 const DROP_COUPON_2X_4H = 5360042;
 const DROP_COUPON_2X_4H_COST = 800;
+const DROP_COUPON_2X_2H_COST = 500;
 const REMOTE_GACHAPON_TICKET = 5451000;
 const REMOTE_GACHAPON_TICKET_COST = 200;
 const SCISSORS_OF_KARMA = 5520000;
@@ -39,6 +40,7 @@ function levelStart() {
     text += "#L0##b火焰羽毛兑换点卷#k\r\n";
     text += "#L7##b购买双倍经验卡(1.5小时)#k\r\n";
     text += "#L1##b购买双倍经验卡(4小时)#k\r\n";
+    text += "#L8##b购买双倍爆率卡(2小时)#k\r\n";
     text += "#L2##b购买双倍爆率卡(4小时)#k\r\n";
     text += "#L3##b购买高级快乐百宝券#k\r\n";
     text += "#L4##b购买宿命剪刀#k\r\n";
@@ -101,6 +103,24 @@ function levelBuyCashItem1() {
         cm.getPlayer().getCashShop().gainCash(1, -EXP_COUPON_2X_4H_COST);
         cm.gainItem(EXP_COUPON_2X_4H, 1, false, true, 14400000);
         cm.sendOkLevel("Dispose", "成功购买#b#t" + EXP_COUPON_2X_4H + "##k#i" + EXP_COUPON_2X_4H + "#");
+    }
+}
+
+function levelExchangeItem8() {
+    cm.sendYesNoLevel("Dispose", "BuyCashItem8", "要花费" + DROP_COUPON_2X_2H_COST + "点卷购买 #b#t" + DROP_COUPON_2X_4H + "##k#i" + DROP_COUPON_2X_4H + "#吗？");
+}
+
+function levelBuyCashItem8() {
+    if (cm.getItemQuantity(DROP_COUPON_2X_4H) > 0) {
+        cm.sendOkLevel("Dispose", "你身上已经有 #r#t" + DROP_COUPON_2X_4H + "##k#i" + DROP_COUPON_2X_4H + "# 了，不能重复购买。")
+    } else if (currentCashPoint < DROP_COUPON_2X_2H_COST) {
+        cm.sendOkLevel("Dispose", "你的点卷不够。")
+    } else if (!cm.canHold(DROP_COUPON_2X_4H, 1)) {
+        cm.sendOkLevel("Dispose", "请保证现金栏有空位。")
+    } else {
+        cm.getPlayer().getCashShop().gainCash(1, -DROP_COUPON_2X_2H_COST);
+        cm.gainItem(DROP_COUPON_2X_4H, 1, false, true, 7200000);
+        cm.sendOkLevel("Dispose", "成功购买#b#t" + DROP_COUPON_2X_4H + "##k#i" + DROP_COUPON_2X_4H + "#")
     }
 }
 
