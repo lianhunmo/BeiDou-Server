@@ -105,7 +105,7 @@ function levelExchangeItem1() {
     chaosCount = 4;
     let text = "本阶段可领取：";
     text += chaosCount+"张 #b#t" + CHAOS_SCROLL + "##k #b#i" + CHAOS_SCROLL + "##k\r\n";
-    text += "#b#t" + MEDAL_CODE_1 + "##k #b#i" + MEDAL_CODE_1 + "##k\r\n";
+    text += "#b#z" + MEDAL_CODE_1 + "##k #b#i" + MEDAL_CODE_1 + "##k\r\n";
     text += "金币 #b5000000#k\r\n";
     text += "点卷 #b"+neededCount * 100+"#k\r\n";
 
@@ -122,7 +122,7 @@ function levelExchangeItem2() {
     chaosCount = 8;
     let text = "本阶段可领取：";
     text += chaosCount+"张 #b#t" + CHAOS_SCROLL + "##k #b#i" + CHAOS_SCROLL + "##k\r\n";
-    text += "#b#t" + MEDAL_CODE_2 + "##k #b#i" + MEDAL_CODE_2 + "##k\r\n";
+    text += "#b#z" + MEDAL_CODE_2 + "##k #b#i" + MEDAL_CODE_2 + "##k\r\n";
     text += "金币 #b10000000#k\r\n";
     text += "点卷 #b"+neededCount * 100+"#k\r\n";
 
@@ -139,7 +139,7 @@ function levelExchangeItem3() {
     chaosCount = 12;
     let text = "本阶段可领取：";
     text += chaosCount+"张 #b#t" + CHAOS_SCROLL + "##k #b#i" + CHAOS_SCROLL + "##k\r\n";
-    text += "#b#t" + MEDAL_CODE_3 + "##k #b#i" + MEDAL_CODE_3 + "##k\r\n";
+    text += "#b#z" + MEDAL_CODE_3 + "##k #b#i" + MEDAL_CODE_3 + "##k\r\n";
     text += "金币 #b20000000#k\r\n";
     text += "点卷 #b"+neededCount * 100+"#k\r\n";
 
@@ -156,7 +156,7 @@ function levelExchangeItem4() {
     chaosCount = 16;
     let text = "本阶段可领取：";
     text += chaosCount+"张 #b#t" + CHAOS_SCROLL + "##k #b#i" + CHAOS_SCROLL + "##k\r\n";
-    text += "#b#t" + MEDAL_CODE_4 + "##k #b#i" + MEDAL_CODE_4 + "##k\r\n";
+    text += "#b#z" + MEDAL_CODE_4 + "##k #b#i" + MEDAL_CODE_4 + "##k\r\n";
     text += "金币 #b40000000#k\r\n";
     text += "点卷 #b"+neededCount * 100+"k\r\n";
 
@@ -173,7 +173,7 @@ function levelExchangeItem5() {
     chaosCount = 20;
     let text = "本阶段可领取：";
     text += chaosCount+"张 #b#t" + CHAOS_SCROLL + "##k #b#i" + CHAOS_SCROLL + "##k\r\n";
-    text += "#b#t" + MEDAL_CODE_5 + "##k #b#i" + MEDAL_CODE_5 + "##k\r\n";
+    text += "#b#z" + MEDAL_CODE_5 + "##k #b#i" + MEDAL_CODE_5 + "##k\r\n";
     text += "金币 #b100000000#k\r\n";
     text += "点卷 #b"+neededCount * 100+"#k\r\n";
 
@@ -190,7 +190,7 @@ function levelExchangeItem6() {
     whiteScrollCount = 2;
     let text = "本阶段可领取：";
     text += whiteScrollCount+"张 #b#t" + WHITE_SCROLL + "##k #b#i" + WHITE_SCROLL + "##k\r\n";
-    text += "#b#t" + MEDAL_CODE_6 + "##k #b#i" + MEDAL_CODE_6 + "##k\r\n";
+    text += "#b#z" + MEDAL_CODE_6 + "##k #b#i" + MEDAL_CODE_6 + "##k\r\n";
     text += "金币 #b200000000#k\r\n";
     text += "点卷 #b"+neededCount * 100+"#k\r\n";
 
@@ -207,7 +207,7 @@ function levelExchangeItem7() {
     whiteScrollCount = 2;
     let text = "本阶段可领取：";
     text += whiteScrollCount+"张 #b#t" + WHITE_SCROLL + "##k #b#i" + WHITE_SCROLL + "##k\r\n";
-    text += "#b#t" + MEDAL_CODE_7 + "##k #b#i" + MEDAL_CODE_7 + "##k\r\n";
+    text += "#b#z" + MEDAL_CODE_7 + "##k #b#i" + MEDAL_CODE_7 + "##k\r\n";
     text += "金币 #b300000000#k\r\n";
     text += "点卷 #b"+neededCount * 100+"#k\r\n";
 
@@ -224,7 +224,7 @@ function levelExchangeItem8() {
     whiteScrollCount = 4;
     let text = "本阶段可领取：";
     text += whiteScrollCount+"张 #b#t" + WHITE_SCROLL + "##k #b#i" + WHITE_SCROLL + "##k\r\n";
-    text += "#b#t" + MEDAL_CODE_8 + "##k #b#i" + MEDAL_CODE_8 + "##k\r\n";
+    text += "#b#z" + MEDAL_CODE_8 + "##k #b#i" + MEDAL_CODE_8 + "##k\r\n";
     text += "金币 #b400000000#k\r\n";
     text += "点卷 #b"+neededCount * 100+"#k\r\n";
 
@@ -241,7 +241,7 @@ function levelExchangeItem9() {
     whiteScrollCount = 6;
     let text = "本阶段可领取：";
     text += whiteScrollCount+"张 #b#t" + WHITE_SCROLL + "##k #b#i" + WHITE_SCROLL + "##k\r\n";
-    text += "#b#t" + MEDAL_CODE_9 + "##k #b#i" + MEDAL_CODE_9 + "##k\r\n";
+    text += "#b#z" + MEDAL_CODE_9 + "##k #b#i" + MEDAL_CODE_9 + "##k\r\n";
     text += "金币 #b500000000#k\r\n";
     text += "点卷 #b"+neededCount * 100+"#k\r\n";
 
@@ -258,7 +258,7 @@ function levelExchangeItem10() {
     whiteScrollCount = 10;
     let text = "本阶段可领取：";
     text += whiteScrollCount+"张 #b#t" + WHITE_SCROLL + "##k #b#i" + WHITE_SCROLL + "##k\r\n";
-    text += "#b#t" + MEDAL_CODE_10 + "##k #b#i" + MEDAL_CODE_10 + "##k\r\n";
+    text += "#b#z" + MEDAL_CODE_10 + "##k #b#i" + MEDAL_CODE_10 + "##k\r\n";
     text += "金币 #b800000000#k\r\n";
     text += "点卷 #b"+neededCount * 100+"#k\r\n";
 
@@ -292,7 +292,7 @@ function levelGainReward1() {
 
             let text = "恭喜你已领取：\r\n";
             text += chaosCount+"张 #b#t" + CHAOS_SCROLL + "##k #b#i" + CHAOS_SCROLL + "##k\r\n";
-            text += "#b#t" + MEDAL_CODE_1 + "##k #b#i" + MEDAL_CODE_1 + "##k\r\n";
+            text += "#b#z" + MEDAL_CODE_1 + "##k #b#i" + MEDAL_CODE_1 + "##k\r\n";
             text += "金币 #b5000000#k\r\n";
             text += "点卷 #b"+neededCount * 100+"#k\r\n";
             cm.dropMessage(0,`你已成功领取了100累充奖励！`);
@@ -324,7 +324,7 @@ function levelGainReward2() {
 
             let text = "恭喜你已领取：\r\n";
             text += chaosCount+"张 #b#t" + CHAOS_SCROLL + "##k #b#i" + CHAOS_SCROLL + "##k\r\n";
-            text += "#b#t" + MEDAL_CODE_2 + "##k #b#i" + MEDAL_CODE_2 + "##k\r\n";
+            text += "#b#z" + MEDAL_CODE_2 + "##k #b#i" + MEDAL_CODE_2 + "##k\r\n";
             text += "金币 #b10000000#k\r\n";
             text += "点卷 #b"+neededCount * 100+"#k\r\n";
             cm.dropMessage(0,`你已成功领取了500累充奖励！`);
@@ -355,7 +355,7 @@ function levelGainReward3() {
             cm.saveOrUpdateAccountExtendValue("角色累充已领取数额", currentLevel.toString());
             let text = "恭喜你已领取：\r\n";
             text += chaosCount+"张 #b#t" + CHAOS_SCROLL + "##k #b#i" + CHAOS_SCROLL + "##k\r\n";
-            text += "#b#t" + MEDAL_CODE_3 + "##k #b#i" + MEDAL_CODE_3 + "##k\r\n";
+            text += "#b#z" + MEDAL_CODE_3 + "##k #b#i" + MEDAL_CODE_3 + "##k\r\n";
             text += "金币 #b20000000#k\r\n";
             text += "点卷 #b"+neededCount * 100+"#k\r\n";
             cm.dropMessage(0,`你已成功领取了1000累充奖励！`);
@@ -386,7 +386,7 @@ function levelGainReward4() {
             cm.getPlayer().getCashShop().gainCash(1, gainCashNum);
             let text = "恭喜你已领取：\r\n";
             text += chaosCount+"张 #b#t" + CHAOS_SCROLL + "##k #b#i" + CHAOS_SCROLL + "##k\r\n";
-            text += "#b#t" + MEDAL_CODE_4 + "##k #b#i" + MEDAL_CODE_4 + "##k\r\n";
+            text += "#b#z" + MEDAL_CODE_4 + "##k #b#i" + MEDAL_CODE_4 + "##k\r\n";
             text += "金币 #b40000000#k\r\n";
             text += "点卷 #b"+neededCount * 100+"#k\r\n";
             cm.dropMessage(0,`你已成功领取了2000累充奖励！`);
@@ -417,7 +417,7 @@ function levelGainReward5() {
             cm.saveOrUpdateAccountExtendValue("角色累充已领取数额", currentLevel.toString());
             let text = "恭喜你已领取：\r\n";
             text += chaosCount+"张 #b#t" + CHAOS_SCROLL + "##k #b#i" + CHAOS_SCROLL + "##k\r\n";
-            text += "#b#t" + MEDAL_CODE_5 + "##k #b#i" + MEDAL_CODE_5 + "##k\r\n";
+            text += "#b#z" + MEDAL_CODE_5 + "##k #b#i" + MEDAL_CODE_5 + "##k\r\n";
             text += "金币 #b100000000#k\r\n";
             text += "点卷 #b"+neededCount * 100+"#k\r\n";
             cm.dropMessage(0,`你已成功领取了5000累充奖励！`);
@@ -448,7 +448,7 @@ function levelGainReward6() {
             cm.getPlayer().getCashShop().gainCash(1, gainCashNum);
             let text = "恭喜你已领取：\r\n";
             text += whiteScrollCount+"张 #b#t" + WHITE_SCROLL + "##k #b#i" + WHITE_SCROLL + "##k\r\n";
-            text += "#b#t" + MEDAL_CODE_6 + "##k #b#i" + MEDAL_CODE_6 + "##k\r\n";
+            text += "#b#z" + MEDAL_CODE_6 + "##k #b#i" + MEDAL_CODE_6 + "##k\r\n";
             text += "金币 #b200000000#k\r\n";
             text += "点卷 #b"+neededCount * 100+"#k\r\n";
             cm.dropMessage(0,`你已成功领取了10000累充奖励！`);
@@ -479,7 +479,7 @@ function levelGainReward7() {
             cm.getPlayer().getCashShop().gainCash(1, gainCashNum);
             let text = "恭喜你已领取：\r\n";
             text += whiteScrollCount+"张 #b#t" + WHITE_SCROLL + "##k #b#i" + WHITE_SCROLL + "##k\r\n";
-            text += "#b#t" + MEDAL_CODE_7 + "##k #b#i" + MEDAL_CODE_7 + "##k\r\n";
+            text += "#b#z" + MEDAL_CODE_7 + "##k #b#i" + MEDAL_CODE_7 + "##k\r\n";
             text += "金币 #b300000000#k\r\n";
             text += "点卷 #b"+neededCount * 100+"#k\r\n";
             cm.dropMessage(0,`你已成功领取了15000累充奖励！`);
@@ -510,7 +510,7 @@ function levelGainReward8() {
             cm.getPlayer().getCashShop().gainCash(1, gainCashNum);
             let text = "恭喜你已领取：\r\n";
             text += whiteScrollCount+"张 #b#t" + WHITE_SCROLL + "##k #b#i" + WHITE_SCROLL + "##k\r\n";
-            text += "#b#t" + MEDAL_CODE_8 + "##k #b#i" + MEDAL_CODE_8 + "##k\r\n";
+            text += "#b#z" + MEDAL_CODE_8 + "##k #b#i" + MEDAL_CODE_8 + "##k\r\n";
             text += "金币 #b400000000#k\r\n";
             text += "点卷 #b"+neededCount * 100+"#k\r\n";
             cm.dropMessage(0,`你已成功领取了20000累充奖励！`);
@@ -541,7 +541,7 @@ function levelGainReward9() {
             cm.getPlayer().getCashShop().gainCash(1, gainCashNum);
             let text = "恭喜你已领取：\r\n";
             text += whiteScrollCount+"张 #b#t" + WHITE_SCROLL + "##k #b#i" + WHITE_SCROLL + "##k\r\n";
-            text += "#b#t" + MEDAL_CODE_9 + "##k #b#i" + MEDAL_CODE_9 + "##k\r\n";
+            text += "#b#z" + MEDAL_CODE_9 + "##k #b#i" + MEDAL_CODE_9 + "##k\r\n";
             text += "金币 #b500000000#k\r\n";
             text += "点卷 #b"+neededCount * 100+"#k\r\n";
             cm.dropMessage(0,`你已成功领取了25000累充奖励！`);
@@ -572,7 +572,7 @@ function levelGainReward10() {
             cm.getPlayer().getCashShop().gainCash(1, gainCashNum);
             let text = "恭喜你已领取：\r\n";
             text += whiteScrollCount+"张 #b#t" + WHITE_SCROLL + "##k #b#i" + WHITE_SCROLL + "##k\r\n";
-            text += "#b#t" + MEDAL_CODE_10 + "##k #b#i" + MEDAL_CODE_10 + "##k\r\n";
+            text += "#b#z" + MEDAL_CODE_10 + "##k #b#i" + MEDAL_CODE_10 + "##k\r\n";
             text += "金币 #b800000000#k\r\n";
             text += "点卷 #b"+neededCount * 100+"#k\r\n";
             cm.dropMessage(0,`你已成功领取了30000累充奖励！`);
