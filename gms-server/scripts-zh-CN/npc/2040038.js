@@ -69,17 +69,17 @@ function action(mode, type, selection) {
                 var state = eim.getIntProperty("statusStg" + stage);
 
                 if (state == -1) {           // preamble
-                    cm.sendOk("嗨。欢迎来到 #b关卡" + stage + "#k。收集地图上散落的20个 #t4001022#，然后和我交谈。");
+                    cm.sendOk("嗨。欢迎来到 #b关卡" + stage + "#k。收集地图上散落的10个 #t4001022#，然后和我交谈。");
                     eim.setProperty("statusStg" + stage, 0);
                 } else {       // check stage completion
-                    if (cm.haveItem(4001022, 20)) {
-                        cm.sendOk("干得好！你已经收集了所有20个#b#t4001022#。#k");
-                        cm.gainItem(4001022, -20);
+                    if (cm.haveItem(4001022, 10)) {
+                        cm.sendOk("干得好！你已经收集了所有10个#b#t4001022#。#k");
+                        cm.gainItem(4001022, -10);
 
                         eim.setProperty("statusStg" + stage, 1);
                         clearStage(stage, eim, curMap);
                     } else {
-                        cm.sendNext("抱歉，你没有20个#b#t4001022#。#k");
+                        cm.sendNext("抱歉，你没有10个#b#t4001022#。#k");
                     }
                 }
             } else {
