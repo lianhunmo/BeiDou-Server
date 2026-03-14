@@ -81,7 +81,7 @@ function getRewardListText() {
 
 function levelConfirmReward0() {
     let text = "本阶段可领取：";
-    text += "#b#t" + MEDAL0 + "##k #b#i" + MEDAL0 + "##k\r\n";
+    text += "#b#z" + MEDAL0 + "##k #b#i" + MEDAL0 + "##k\r\n";
 
     if (LEVEL_NEED[0] > currentCompletedQuestCount[0]) {
         text += "请完成 "+QUEST_NAME_LIST[0]+" #r" + LEVEL_NEED[0] + "#k 次再来领取吧！"
@@ -107,7 +107,7 @@ function levelGainLevelReward0() {
             cm.saveOrUpdateCharacterExtendValue("肝王勋章领取记录", rewardAlreadyGain.toString());
 
             let text = "恭喜你已领取：\r\n";
-            text += "#b#t" + MEDAL0 + "##k #b#i" + MEDAL0 + "##k\r\n";
+            text += "#b#z" + MEDAL0 + "##k #b#i" + MEDAL0 + "##k\r\n";
             cm.dropMessage(0,"你成功领取了"+REWARD_NAME_LIST[0]+"！");
             cm.sendOkLevel("Dispose", text)
         }
@@ -118,7 +118,7 @@ function levelGainLevelReward0() {
 
 function levelConfirmReward1() {
     let text = "本阶段可领取：";
-    text += "#b#t" + MEDAL1 + "##k #b#i" + MEDAL1 + "##k\r\n";
+    text += "#b#z" + MEDAL1 + "##k #b#i" + MEDAL1 + "##k\r\n";
 
     if (LEVEL_NEED[1] > currentCompletedQuestCount[1]) {
         text += "请完成 "+QUEST_NAME_LIST[1]+" #r" + LEVEL_NEED[1] + "#k 次再来领取吧！"
@@ -144,7 +144,7 @@ function levelGainLevelReward1() {
             cm.saveOrUpdateCharacterExtendValue("肝王勋章领取记录", rewardAlreadyGain.toString());
 
             let text = "恭喜你已领取：\r\n";
-            text += "#b#t" + MEDAL1 + "##k #b#i" + MEDAL1 + "##k\r\n";
+            text += "#b#z" + MEDAL1 + "##k #b#i" + MEDAL1 + "##k\r\n";
             cm.dropMessage(0,"你成功领取了"+REWARD_NAME_LIST[1]+"！");
             cm.sendOkLevel("Dispose", text)
         }
@@ -155,7 +155,7 @@ function levelGainLevelReward1() {
 
 function levelConfirmReward2() {
     let text = "本阶段可领取：";
-    text += "#b#t" + MEDAL2 + "##k #b#i" + MEDAL2 + "##k\r\n";
+    text += "#b#z" + MEDAL2 + "##k #b#i" + MEDAL2 + "##k\r\n";
 
     if (LEVEL_NEED[2] > currentCompletedQuestCount[2]) {
         text += "请完成 "+QUEST_NAME_LIST[2]+" #r" + LEVEL_NEED[2] + "#k 次再来领取吧！"
@@ -181,7 +181,7 @@ function levelGainLevelReward2() {
             cm.saveOrUpdateCharacterExtendValue("肝王勋章领取记录", rewardAlreadyGain.toString());
 
             let text = "恭喜你已领取：\r\n";
-            text += "#b#t" + MEDAL2 + "##k #b#i" + MEDAL2 + "##k\r\n";
+            text += "#b#z" + MEDAL2 + "##k #b#i" + MEDAL2 + "##k\r\n";
             cm.dropMessage(0,"你成功领取了"+REWARD_NAME_LIST[2]+"！");
             cm.sendOkLevel("Dispose", text)
         }
@@ -193,7 +193,7 @@ function levelGainLevelReward2() {
 
 function levelConfirmReward3() {
     let text = "本阶段可领取：";
-    text += "#b#t" + MEDAL3 + "##k #b#i" + MEDAL3 + "##k\r\n";
+    text += "#b#z" + MEDAL3 + "##k #b#i" + MEDAL3 + "##k\r\n";
 
     if (LEVEL_NEED[3] > currentCompletedQuestCount[3]) {
         text += "请完成 "+QUEST_NAME_LIST[3]+" #r" + LEVEL_NEED[3] + "#k 次再来领取吧！"
@@ -219,7 +219,7 @@ function levelGainLevelReward3() {
             cm.saveOrUpdateCharacterExtendValue("肝王勋章领取记录", rewardAlreadyGain.toString());
 
             let text = "恭喜你已领取：\r\n";
-            text += "#b#t" + MEDAL3 + "##k #b#i" + MEDAL3 + "##k\r\n";
+            text += "#b#z" + MEDAL3 + "##k #b#i" + MEDAL3 + "##k\r\n";
             cm.dropMessage(0,"你成功领取了"+REWARD_NAME_LIST[3]+"！");
             cm.sendOkLevel("Dispose", text)
         }
@@ -231,7 +231,7 @@ function levelGainLevelReward3() {
 
 function levelConfirmReward4() {
     let text = "本阶段可领取：";
-    text += "#b#t" + MEDAL4 + "##k #b#i" + MEDAL4 + "##k\r\n";
+    text += "#b#z" + MEDAL4 + "##k #b#i" + MEDAL4 + "##k\r\n";
 
     if (LEVEL_NEED[4] > currentCompletedQuestCount[4]) {
         text += "请完成 "+QUEST_NAME_LIST[4]+" #r" + LEVEL_NEED[4] + "#k 次再来领取吧！"
@@ -257,7 +257,7 @@ function levelGainLevelReward4() {
             cm.saveOrUpdateCharacterExtendValue("肝王勋章领取记录", rewardAlreadyGain.toString());
 
             let text = "恭喜你已领取：\r\n";
-            text += "#b#t" + MEDAL4 + "##k #b#i" + MEDAL4 + "##k\r\n";
+            text += "#b#z" + MEDAL4 + "##k #b#i" + MEDAL4 + "##k\r\n";
             cm.dropMessage(0,"你成功领取了"+REWARD_NAME_LIST[4]+"！");
             cm.sendOkLevel("Dispose", text);
         }
@@ -269,7 +269,7 @@ function levelGainLevelReward4() {
 
 function levelConfirmReward5() {
     let text = "本阶段可领取：";
-    text += "#b#t" + MEDAL5 + "##k #b#i" + MEDAL5 + "##k\r\n";
+    text += "#b#z" + MEDAL5 + "##k #b#i" + MEDAL5 + "##k\r\n";
 
     if (LEVEL_NEED[5] > currentCompletedQuestCount[5]) {
         text += "请完成 "+QUEST_NAME_LIST[5]+" #r" + LEVEL_NEED[5] + "#k 次再来领取吧！"
@@ -295,7 +295,7 @@ function levelGainLevelReward5() {
             cm.saveOrUpdateCharacterExtendValue("肝王勋章领取记录", rewardAlreadyGain.toString());
 
             let text = "恭喜你已领取：\r\n";
-            text += "#b#t" + MEDAL5 + "##k #b#i" + MEDAL5 + "##k\r\n";
+            text += "#b#z" + MEDAL5 + "##k #b#i" + MEDAL5 + "##k\r\n";
             cm.dropMessage(0,"你成功领取了"+REWARD_NAME_LIST[5]+"！");
             cm.sendOkLevel("Dispose", text)
         }
@@ -307,7 +307,7 @@ function levelGainLevelReward5() {
 
 function levelConfirmReward6() {
     let text = "本阶段可领取：";
-    text += "#b#t" + MEDAL6 + "##k #b#i" + MEDAL6 + "##k\r\n";
+    text += "#b#z" + MEDAL6 + "##k #b#i" + MEDAL6 + "##k\r\n";
 
     if (LEVEL_NEED[6] > currentCompletedQuestCount[6]) {
         text += "请完成 "+QUEST_NAME_LIST[6]+" #r" + LEVEL_NEED[6] + "#k 次再来领取吧！"
@@ -333,7 +333,7 @@ function levelGainLevelReward6() {
             cm.saveOrUpdateCharacterExtendValue("肝王勋章领取记录", rewardAlreadyGain.toString());
 
             let text = "恭喜你已领取：\r\n";
-            text += "#b#t" + MEDAL6 + "##k #b#i" + MEDAL6 + "##k\r\n";
+            text += "#b#z" + MEDAL6 + "##k #b#i" + MEDAL6 + "##k\r\n";
             cm.dropMessage(0,"你成功领取了"+REWARD_NAME_LIST[6]+"！");
             cm.sendOkLevel("Dispose", text)
         }
