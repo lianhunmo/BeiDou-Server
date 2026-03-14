@@ -35,7 +35,7 @@
     <int name="only" value="1"/>
     <int name="timeLimited" value="1"/>
     <int name="medalTag" value="27"/>
-    <int name="cash" value="0"/>
+    <int name="cash" value="1"/>
     <imgdir name="level">
       <imgdir name="info">
         <imgdir name="1">
