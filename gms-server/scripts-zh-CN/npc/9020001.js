@@ -136,7 +136,7 @@ function action(mode, type, selection) {
                 }
             } else if (curMap == 103000800) {   // stage 1
                 if (cm.isEventLeader()) {
-                    var numpasses = eim.getPlayerCount() - 1;     // minus leader
+                    var numpasses = 1;     // minus leader
 
                     if (cm.hasItem(4001008, numpasses)) {
                         cm.sendNext("你收集了" + numpasses + "张通行证！恭喜你通过了这个关卡！我会制作一个传送你到下一个关卡的传送门。到那里有时间限制，所以请赶快。祝你们好运！");
@@ -183,7 +183,7 @@ function action(mode, type, selection) {
                     cm.sendOk("跟随你的队长给出的指示来完成这个阶段。");
                 } else if (eim.getProperty(stgProperty) == null) {
                     cm.sendNext("嗨。欢迎来到第二阶段。在我旁边，你会看到一些绳子，在这些绳子中，有#b3个与传送你到下一阶段的传送门相连#k。你只需要让#b3名队伍成员找到正确的绳子然后挂在上面#k\r\n但是，如果你挂得太低，这不算作答案；请确保靠近绳子中间位置才算作正确答案。此外，你的队伍只允许有3名成员挂在绳子上，队伍的队长必须#b双击我来检查答案是否正确#k。现在，寻找正确的绳子挂上去吧！");
-                    var c = Math.floor(Math.random() * stgCombos.length);
+                    var c = 0;
                     eim.setProperty(stgProperty, c.toString());
                 } else {
                     var accept = rectangleStages(eim, stgProperty, stgCombos, stgAreas);
@@ -209,7 +209,7 @@ function action(mode, type, selection) {
                     cm.sendOk("跟随你的队长给出的指示来完成这个阶段。");
                 } else if (eim.getProperty(stgProperty) == null) {
                     cm.sendNext("嗨。欢迎来到第三阶段。在我旁边，你会看到一些平台。在这些平台中，#b3个与传送你到下一阶段的传送门相连#k。你只需要让#b3个队员找到正确的平台站上去#k\r\n但是，如果你站得太靠边，是不行的；请确保靠近平台的中间位置才算作正确答案。此外，你的队伍只允许有3名成员站在平台上。一旦他们在上面，队伍的队长必须#b双击我来检查答案是否正确#k。现在，寻找正确的平台吧！");
-                    var c = Math.floor(Math.random() * stgCombos.length);
+                    var c = 9;
                     eim.setProperty(stgProperty, c.toString());
                 } else {
                     var accept = rectangleStages(eim, stgProperty, stgCombos, stgAreas);
@@ -235,7 +235,7 @@ function action(mode, type, selection) {
                     cm.sendOk("跟随你的队长给出的指示来完成这个阶段。");
                 } else if (eim.getProperty(stgProperty) == null) {
                     cm.sendNext("嗨。欢迎来到第四阶段。在我旁边，你会看到一些木桶。在这些木桶中，#b3个与传送你到下一阶段的传送门相连#k。你只需要让#b3个队员找到正确的木桶站上去#k\r\n但是，如果你站得太靠边，这不算作答案；请站在木桶的中间才算作正确答案。此外，你的队伍只允许有3名成员站在木桶上。队伍的队长必须#b双击我来检查答案是否正确#k。现在，寻找正确的木桶站上去吧！");
-                    var c = Math.floor(Math.random() * stgCombos.length);
+                    var c = 0;
                     eim.setProperty(stgProperty, c.toString());
                 } else {
                     var accept = rectangleStages(eim, stgProperty, stgCombos, stgAreas);
