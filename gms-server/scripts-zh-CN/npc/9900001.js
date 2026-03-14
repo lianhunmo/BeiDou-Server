@@ -52,7 +52,7 @@ function action(mode, type, selection) {
         text += "#L3#传送自由#l\t #L65#删除道具#l\t #L12#羽毛累充#l\t #L13#点券商品#l\r\n";
         text += "#L8#副本戒指#l\t #L9#矿石戒指#l\t #L6#枫叶戒指#l\t #L7#点装强化#l\r\n";
         text += "#L11#每日任务#l\t #L14#肝王勋章#l\t #L16#便利商店#l\t #L18#卷轴仓库#l\r\n";
-        text += "#L17#矿石仓库#l\t #L19#怪物卡戒#l\t #L20#血衣合成#l\r\n";
+        text += "#L17#矿石仓库#l\t #L19#怪物卡戒#l\t #L20#血衣合成#l\t #L21#皇家发型#l\r\n";
         text += "\r\n\r\n#L15#===================#r拍卖行#b===================#k#l\r\n";
         if (cm.getPlayer().isGM()) {
             text += "\r\n\r\n";
@@ -139,7 +139,13 @@ function doSelect(selection) {
         case 20:
             openNpc("血衣合成");
             break;
+        case 21:
+            openNpc("皇家发型");
+            break;
 // GM功能
+        case 22:
+            openNpc("时尚点装");
+            break;
         case 61:
             openNpc("万能传送");
             break;
