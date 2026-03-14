@@ -93,7 +93,10 @@ public final class UseItemHandler extends AbstractPacketHandler {
                     chr.dropMessage(5, I18nUtil.getMessage("UseItemHandler.message1"));
                 }
                 return;
+            } else if (itemId / 10000 == 238) {// 特殊处理怪物卡片收集（ID格式238xxxx）
+                chr.getMonsterBook().addCard(c, itemId); // 添加到怪物图鉴
             }
+
 
             remove(c, slot);
 
