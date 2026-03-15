@@ -147,7 +147,7 @@ function doSelect(selection) {
             openNpc("皇家整容");
             break;
 // GM功能
-        case 22:
+        case 23:
             openNpc("时尚点装");
             break;
         case 61:
