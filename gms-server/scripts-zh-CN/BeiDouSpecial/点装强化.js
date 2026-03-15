@@ -2,6 +2,48 @@
  * @description 点装强化
  * @author Geoffrey
  */
+const MEDAL_CODE_1 = 1142085;
+const MEDAL_CODE_2 = 1142086;
+const MEDAL_CODE_3 = 1142087;
+const MEDAL_CODE_4 = 1142088;
+const MEDAL_CODE_5 = 1142089;
+const MEDAL_CODE_6 = 1142090;
+const MEDAL_CODE_7 = 1142091;
+const MEDAL_CODE_8 = 1142092;
+const MEDAL_CODE_9 = 1142093;
+const MEDAL_CODE_10 = 1142094;
+const MOB_CARD_RING_1 = 1112880;
+const MOB_CARD_RING_2 = 1112881;
+const MOB_CARD_RING_3 = 1112882;
+const MOB_CARD_RING_4 = 1112883;
+const MOB_CARD_RING_5 = 1112884;
+const MOB_CARD_RING_6 = 1112885;
+const MOB_CARD_RING_7 = 1112886;
+const MOB_CARD_RING_8 = 1112887;
+const MOB_CARD_RING_9 = 1112888;
+const MOB_CARD_RING_10 = 1112889;
+const BAN_ITEM_ID_LIST = [
+    MEDAL_CODE_1,
+    MEDAL_CODE_2,
+    MEDAL_CODE_3,
+    MEDAL_CODE_4,
+    MEDAL_CODE_5,
+    MEDAL_CODE_6,
+    MEDAL_CODE_7,
+    MEDAL_CODE_8,
+    MEDAL_CODE_9,
+    MEDAL_CODE_10,
+    MOB_CARD_RING_1,
+    MOB_CARD_RING_2,
+    MOB_CARD_RING_3,
+    MOB_CARD_RING_4,
+    MOB_CARD_RING_5,
+    MOB_CARD_RING_6,
+    MOB_CARD_RING_7,
+    MOB_CARD_RING_8,
+    MOB_CARD_RING_9,
+    MOB_CARD_RING_10,
+]
 
 const GOLD_MAPLE_LEAF = 4000313;
 const INVENTORY_TYPE_EQUIP = 1;
@@ -165,9 +207,9 @@ function levelCashEquipOption1() {
     }
     let equipItemId = equip.getItemId();
     let toEquipItemId = toEquip.getItemId();
-    if (!ii.isCash(equipItemId)) {
+    if (!ii.isCash(equipItemId) || BAN_ITEM_ID_LIST.includes(equipItemId)) {
         cm.sendOkLevel("Dispose", "#b#t" + equipItemId + "##k #i" + equipItemId + "##k不能转移属性！");
-    } else if(!ii.isCash(toEquipItemId)) {
+    } else if(!ii.isCash(toEquipItemId) || BAN_ITEM_ID_LIST.includes(toEquipItemId)) {
         cm.sendOkLevel("Dispose", "#b#t" + toEquipItemId + "##k #i" + toEquipItemId + "##k不能接受属性转移！");
     } else {
         costMeso = 2000000;
