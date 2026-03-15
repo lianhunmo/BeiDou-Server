@@ -119,7 +119,7 @@ function levelStart() {
                 cm.sendYesNoLevel("Dispose", "GetReward", text);
             }
         } else {
-            text += "收集#r#t" + quest[2] + "##k#i" + quest[2] + "#k #b" + quest[3] + " #k个。\r\n"
+            text += "收集#r#t" + quest[2] + "##k#i" + quest[2] + "# #b" + quest[3] + " #k个。\r\n"
             let itemQuantity = cm.getItemQuantity(quest[2]);
             text += "当前已收集#b#t" + quest[2] + "##k#i" + quest[2] + "# #b" + itemQuantity + " #k个。\r\n\r\n"
             if (itemQuantity < quest[3]) {
@@ -178,13 +178,25 @@ function levelAcceptQuest() {
 }
 
 function levelGetReward() {
+    let questInfo = QUEST_MAP.get(questId);
+    let rewardList = REWARD_MAP.get(questInfo[0]);
+    let testText;
+    if (!cm.canHold(rewardList[0], rewardList[1])) {
+        testText = "您无法继续携带#b#t" + itemId + "##k #i" + itemId + "#。\r\n";
+    }
+    if (!cm.canHold(rewardList[2], rewardList[3])) {
+        testText = "您无法继续携带#b#t" + itemId + "##k #i" + itemId + "#。\r\n";
+    }
+    if (testText) {
+        cm.sendOkLevel('Dispose', testText);
+        return;
+    }
+
     cm.saveOrUpdateCharacterExtendValue("每日任务编号", "0", true);
     QuestActionHandler.handleDailyQuest(2, Number(questId), cm.getClient());
-    let questInfo = QUEST_MAP.get(questId);
     if(questInfo[1] === 2) {
         cm.gainItem(questInfo[2], -questInfo[3]);
     }
-    let rewardList = REWARD_MAP.get(questInfo[0]);
     cm.gainItem(rewardList[0], rewardList[1]);
     cm.gainItem(rewardList[2], rewardList[3]);
     cm.getChar().getCashShop().gainCash(rewardList[4], rewardList[5]);
@@ -200,6 +212,16 @@ function levelGetReward() {
 }
 
 function levelGetFinalReward() {
+    let testText;
+    FINAL_REWARD_MAP.forEach((num, itemId) => {
+        if (!cm.canHold(Number(itemId), num)) {
+            testText = "您无法继续携带#b#t" + itemId + "##k #i" + itemId + "#。\r\n";
+        }
+    })
+    if (testText) {
+        cm.sendOkLevel('Dispose', testText);
+        return;
+    }
     cm.saveOrUpdateCharacterExtendValue("每日任务最终奖励领取", "1", true);
     let text = "恭喜你完成了全部每日任务，获得了：\r\n";
     FINAL_REWARD_MAP.forEach((num, itemId) => {
