@@ -126,7 +126,7 @@ function action(mode, type, selection) {
                     count++;
                     cm.saveOrUpdateCharacterExtendValue("邮票获取次数" + 4001159, count.toString(), false);
                 }
-                cm.gainExp(25500000);
+                cm.gainExp(12750000);
                 if (eim.getIntProperty("normalClear") == 1) {
                     cm.warp(926100600, 0);
                 } else {
