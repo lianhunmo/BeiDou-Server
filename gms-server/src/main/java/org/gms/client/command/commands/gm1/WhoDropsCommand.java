@@ -60,7 +60,7 @@ public class WhoDropsCommand extends Command {
                     int count = 1;
                     while (listIterator.hasNext() && count <= 3) {
                         Pair<Integer, String> data = listIterator.next();
-                        output.append("#b").append(data.getRight()).append("#k ").append(I18nUtil.getMessage("WhoDropsCommand.message3")).append("\r\n");
+                        output.append("#b#z").append(data.getLeft()).append("##k ").append(I18nUtil.getMessage("WhoDropsCommand.message3")).append("\r\n");
                         try (Connection con = DatabaseConnection.getConnection();
                              PreparedStatement ps = con.prepareStatement("SELECT dropperid FROM drop_data WHERE itemid = ? LIMIT 50")) {
                             ps.setInt(1, data.getLeft());
