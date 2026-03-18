@@ -33,6 +33,12 @@
     <imgdir name="spec">
       <int name="inc" value="100"/>
       <int name="0" value="5000047"/>
+      <int name="0" value="5000048"/>
+      <int name="0" value="5000049"/>
+      <int name="0" value="5000050"/>
+      <int name="0" value="5000051"/>
+      <int name="0" value="5000052"/>
+      <int name="0" value="5000053"/>
     </imgdir>
   </imgdir>
   <imgdir name="05240002">
