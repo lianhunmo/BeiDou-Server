@@ -6,7 +6,7 @@
  */
 
 function hit() {
-    var players = rm.getMap().getAllPlayers().toArray();
+    var players = rm.getReactor().getMap().getAllPlayers().toArray();
 
     for (var i = 0; i < players.length; i++) {
         rm.giveCharacterExp(4700000, players[i]);
