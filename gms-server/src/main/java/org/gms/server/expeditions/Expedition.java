@@ -165,7 +165,8 @@ public class Expedition {
     }
 
     private void log() {
-        final String gmMessage = I18nUtil.getMessage("Expedition.log.message1", type, leader.getName(), getTimeString(getStartTime()));
+        final String gmMessage = I18nUtil.getMessage("Expedition.log.message1", type, leader.getName(), members.values().toString(), getTimeString(getStartTime()));
+        Server.getInstance().getWorld(leader.getWorld()).dropMessage(6,gmMessage);
         Server.getInstance().broadcastGMMessage(getLeader().getWorld(), PacketCreator.serverNotice(6, gmMessage));
 
         String log = I18nUtil.getMessage("Expedition.log.message2", type) + "\r\n";
