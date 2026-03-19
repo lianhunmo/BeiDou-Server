@@ -92,7 +92,14 @@ function action(mode, type, selection) {
                     cm.sendOk("你的组队搜索状态现在是：#b" + (psState ? "enabled" : "disabled") + "#k。想要改变状态时随时找我。");
                     cm.dispose();
                 } else if (selection == 2) {
-                    if (cm.haveItem(4001159, 25) && cm.haveItem(4001160, 25) && !cm.haveItemWithId(1122010, true)) {
+                    cm.sendSimple("您想要兑换什么？\r\n#L0#兑换#b#z1122010##k#i1122010#\r\n#L1#兑换#b#z2041212##k#i2041212#");
+                } else {
+                    cm.sendOk("不久前，一位名叫犹太的科学家因为他对阿尔卡德诺和泽诺米斯的合成炼金术的研究而被这个城镇放逐。由于这种组合所带来的巨大力量，根据法律是禁止研究的。然而，他无视了这项法律，同时进行了这两项研究。结果，他被流放了。\r\n他现在在报复，已经带走了我心爱的人，下一个目标是我，因为我们是玛加提亚的重要人物，是这两个社会的继承者。但我不害怕。我们必须不惜一切代价把他救回来！");
+                    cm.dispose();
+                }
+            } else if (status == 2) {
+                if (selection == 0) {
+                    if (cm.haveItem(4001159, 25) && cm.haveItem(4001160, 25)) {
                         if (cm.canHold(1122010)) {
                             cm.gainItem(4001159, -25);
                             cm.gainItem(4001160, -25);
@@ -101,34 +108,34 @@ function action(mode, type, selection) {
                             cm.sendOk("感谢你找回了这些弹珠。接受这个吊坠作为我的感激之情。");
                             cm.dispose();
                         } else {
-                            cm.sendNext("在领取奖励之前，请在你的装备栏中腾出一个空位。");
+                            cm.sendOk("您已经领取过#b#z1122010##k#i1122010#,或者您的背包没有空间了。");
                             cm.dispose();
                         }
-                    } else if (cm.haveItem(4001159, 10) && cm.haveItem(4001160, 10)) {
+                    } else {
+                        let text;
+                        text = "至少需要 #b25个#z4001159##i4001159##k 和 #b#z4001160##i4001160##k 才能帮你兑换#b#z1122010##i1122010##k。\r\n祝你一路顺风。";
+                        cm.sendOk(text);
+                        cm.dispose();
+                    }
+                } else if (selection == 1) {
+                    if (cm.haveItem(4001159, 10) && cm.haveItem(4001160, 10)) {
                         if (cm.canHold(2041212)) {
                             cm.gainItem(4001159, -10);
                             cm.gainItem(4001160, -10);
                             cm.gainItem(2041212, 1);
 
-                            cm.sendOk("感谢你找回了这些弹珠。这块石头，我给你的，可以用来提升 #b#t1122010##k 的属性。拿着它作为我的感激之情，并明智地使用它。");
+                            cm.sendOk("感谢你找回了这些弹珠。这块石头，我给你的，可以用来提升 #b#z1122010##k#i1122010# 的属性。拿着它作为我的感激之情，并明智地使用它。");
                             cm.dispose();
                         } else {
-                            cm.sendNext("在领取奖励之前，请在你的消耗栏中腾出一个空位。");
+                            cm.sendOk("在领取奖励之前，请在你的消耗栏中腾出一个空位。");
                             cm.dispose();
                         }
                     } else {
-                        let text = "";
-                        if (!cm.haveItemWithId(1122010, true)) {
-                            text += "至少需要 #b25个#t4001159##i4001159##k 和 #b#t4001160##i4001160##k 才能帮你兑换#b#t1122010##i1122010##k。\r\n祝你一路顺风。";
-                        } else {
-                            text += "至少需要 #b10个#t4001159##i4001159##k 和 #b#t4001160##i4001160##k 才能帮你兑换#b#t2041212##i2041212##k。\r\n祝你一路顺风。"
-                        }
-                        cm.sendNext(text);
+                        let text;
+                        text = "至少需要 #b10个#z4001159##i4001159##k 和 #b#z4001160##i4001160##k 才能帮你兑换#b#z2041212##i2041212##k。\r\n祝你一路顺风。"
+                        cm.sendOk(text);
                         cm.dispose();
                     }
-                } else {
-                    cm.sendOk("不久前，一位名叫犹太的科学家因为他对阿尔卡德诺和泽诺米斯的合成炼金术的研究而被这个城镇放逐。由于这种组合所带来的巨大力量，根据法律是禁止研究的。然而，他无视了这项法律，同时进行了这两项研究。结果，他被流放了。\r\n他现在在报复，已经带走了我心爱的人，下一个目标是我，因为我们是玛加提亚的重要人物，是这两个社会的继承者。但我不害怕。我们必须不惜一切代价把他救回来！");
-                    cm.dispose();
                 }
             }
         }
