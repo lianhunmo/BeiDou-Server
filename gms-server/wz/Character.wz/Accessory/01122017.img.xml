@@ -10,7 +10,7 @@
     <string name="islot" value="Pe"/>
     <string name="vslot" value="Pe"/>
     <int name="reqJob" value="0"/>
-    <int name="cash" value="0"/>
+    <int name="cash" value="1"/>
     <int name="slotMax" value="1"/>
     <int name="timeLimited" value="1"/>
     <int name="price" value="1"/>
