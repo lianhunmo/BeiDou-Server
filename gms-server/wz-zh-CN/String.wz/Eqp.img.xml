@@ -82778,9 +82778,7 @@
                 <string name="name" value="天马"/>
             </imgdir>
             <imgdir name="1902028">
-                <string name="desc" value="有#c骑兽技能#和基础骑宠才能使用的装饰骑宠——筋斗云。同时要装备匹配的鞍子。\n注：#c无法习得骑兽技能的职业均不能使用#
-
-"/>
+                <string name="desc" value="有#c骑兽技能#和基础骑宠才能使用的装饰骑宠——筋斗云。同时要装备匹配的鞍子。\n注：#c无法习得骑兽技能的职业均不能使用#"/>
                 <string name="name" value="筋斗云"/>
             </imgdir>
             <imgdir name="1902031">
