@@ -6,7 +6,7 @@
 
 const MAPLE_LEAF = 4001126;
 const GOLD_MAPLE_LEAF = 4000313;
-const MESO_EXCHANGE_GOLD_MAPLE_LEAF_COST = 50000000;
+const MESO_EXCHANGE_GOLD_MAPLE_LEAF_COST = 25000000;
 
 let mapleLeafCount = 0;
 let goldMapleLeafCount = 0;
@@ -23,7 +23,7 @@ function levelStart() {
     text += "#L1#用#r1片#k#t" + GOLD_MAPLE_LEAF + "# #i" + GOLD_MAPLE_LEAF + "#兑换#r1万#k抵用卷#i4031866##l\r\n";
     text += "#L2#用#r1片#k#t" + GOLD_MAPLE_LEAF + "# #i" + GOLD_MAPLE_LEAF + "#兑换#r88片#k#t" + MAPLE_LEAF + "# #i" + MAPLE_LEAF + "##l\r\n";
     text += "#L3#用#r100片#k#t" + MAPLE_LEAF + "# #i" + MAPLE_LEAF + "#兑换#r1片#k#t" + GOLD_MAPLE_LEAF + "# #i" + GOLD_MAPLE_LEAF + "##l\r\n";
-    text += "#L4#用#r5000万#k金币#i5200002#兑换#r1片#k#t" + GOLD_MAPLE_LEAF + "# #i" + GOLD_MAPLE_LEAF + "##l\r\n";
+    text += "#L4#用#r2500万#k金币#i5200002#兑换#r1片#k#t" + GOLD_MAPLE_LEAF + "# #i" + GOLD_MAPLE_LEAF + "##l\r\n";
     text += "#L5##r 1 ：1000 #k信用点 兑换 #r金币#i5200002##l\r\n";
     text += "#L6##r 1000 ：1 #k金币#i5200002# 兑换 #r信用点#l\r\n";
     cm.sendSelectLevel("Exchange", text);
