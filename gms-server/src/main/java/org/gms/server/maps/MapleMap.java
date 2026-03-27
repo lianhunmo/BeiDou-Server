@@ -1361,7 +1361,7 @@ public class MapleMap {
 
     // 巴洛古(Balrog)讨伐胜利广播
     public void broadcastBalrogVictory(String leaderName) {
-        getWorldServer().dropMessage(6,"[远征凯旋] " + leaderName + "的远征队成功讨伐了火焰魔神巴洛古！" + "让我们歌颂这支队伍，他们以" + countAlivePlayers() + "名幸存者的战绩完成了壮举！");
+        getWorldServer().dropMessage(6,"[远征凯旋] " + leaderName + "的远征队成功讨伐了魔神巴洛古！" + "让我们歌颂这支队伍，他们以" + countAlivePlayers() + "名幸存者的战绩完成了壮举！");
     }
 
     // 暗黑龙王(Horntail)讨伐胜利广播
