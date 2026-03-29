@@ -208,12 +208,12 @@ public class EventInstanceManager {
 
         if (mapId == -1) {
             for (Character mc : players) {
-                mc.gainExp(NumberTool.floatToInt(gain * mc.getExpRate()), true, true);
+                mc.gainExp(NumberTool.floatToInt(gain * mc.getPqExpRate()), true, true);
             }
         } else {
             for (Character mc : players) {
                 if (mc.getMapId() == mapId) {
-                    mc.gainExp(NumberTool.floatToInt(gain * mc.getExpRate()), true, true);
+                    mc.gainExp(NumberTool.floatToInt(gain * mc.getPqExpRate()), true, true);
                 }
             }
         }

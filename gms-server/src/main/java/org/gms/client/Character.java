@@ -2894,6 +2894,10 @@ public class Character extends AbstractCharacterObject {
         updateSingleStat(Stat.GACHAEXP, gachaExp.addAndGet(gain));
     }
 
+    public void gainPqExp(int gain) {
+        gainExp(NumberTool.floatToInt(gain * this.getPqExpRate()), true, true);
+    }
+
     public void gainExp(int gain) {
         gainExp(gain, true, true);
     }
@@ -4564,6 +4568,10 @@ public class Character extends AbstractCharacterObject {
 
     public float getRawExpRate() {
         return expRate / (expCoupon * getWorldServer().getExpRate());
+    }
+
+    public float getPqExpRate() {
+        return expRate * GameConfig.getServerFloat("pq_bonus_exp_rate");
     }
 
     public int getCouponDropRate() {

@@ -57,7 +57,7 @@ function action(mode, type, selection) {
             } else if (status == 1) {
                 if (cm.getEventInstance().giveEventReward(cm.getPlayer())) {
                     cm.gainMeso(150000);
-                    cm.gainExp(760000);
+                    cm.getChar().gainPqExp(760000);
                     let quitTotal = cm.getCharacterExtendValue("天空组队副本累计通关次数");
                     quitTotal++;
                     cm.saveOrUpdateCharacterExtendValue("天空组队副本累计通关次数", quitTotal.toString());
