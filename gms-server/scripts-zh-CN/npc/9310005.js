@@ -5,7 +5,7 @@
  *
  */
 
-const QuestMode = true; //true = 采用任务模式，false = 采用脚本模式
+const QuestMode = false; //true = 采用任务模式，false = 采用脚本模式
 const QuestID = 4109;	//任务ID，收集50个黑羊毛
 const itemID = 4000194;//黑羊毛
 const itemCount = 50;
@@ -16,6 +16,7 @@ var mapID_out;
 var QuestObj;
 var quest;
 var text = '';
+let challengeCount = 10;
 
 function start() {
 	if(mapID == null) {
@@ -26,7 +27,9 @@ function start() {
 		mapID_out = mapID - 1;
 		collected = cm.getItemQuantity(itemID);
 		collected = (QuestMode && cm.isQuestCompleted(QuestID)) ? (itemCount + collected) : collected;
+		challengeCount = Number(cm.getCharacterExtendValue("每日大王蜈蚣挑战次数", true));
 		text = `你需要收集 #e#b#v${itemID}##t${itemID}##k#n × #r#e${itemCount}#k#n  #B${collected / itemCount * 100}#  \r\n才能证明你有点本事，否则我不放心让你去白给！\r\n`;
+		text += `你今日已经挑战过${challengeCount}次大王蜈蚣\r\n`;
 		text += `#L1#进入 #b#e#m${mapID_enter}##k#n 继续调查#l\r\n`;
 		text += `#L2#离开 #b#e#m${mapID}##k#n 回到 #b#e#m${mapID_out}##k#n#l`;
 	}
@@ -48,6 +51,8 @@ function leveldispose() {
 function levelEnter() {
 	resetQuest();
 	cm.warp(mapID + 1,mapPortal);	//进入指定地图指定传送点
+	challengeCount++;
+	cm.saveOrUpdateCharacterExtendValue("每日大王蜈蚣挑战次数", challengeCount.toString(), true);
 	leveldispose();
 
 }
@@ -62,6 +67,10 @@ function resetQuest(){
 	}
 }
 function level1() {
+	if (challengeCount >= 10) {
+		cm.sendOkLevel('','你今天已经挑战过10次大王蜈蚣，请明天再来吧！');
+		return;
+	}
 	if ((QuestMode && cm.isQuestCompleted(QuestID)) || (QuestMode == false && cm.haveItem(itemID ,itemCount))) {
 		cm.sendYesNoLevel('','Enter',`我现在送你进入#b#e#m${mapID_enter}##k#n，准备好了吗？`);
 	} else {
