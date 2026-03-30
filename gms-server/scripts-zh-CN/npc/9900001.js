@@ -53,7 +53,7 @@ function action(mode, type, selection) {
         text += "#L8#副本戒指#l\t #L9#矿石戒指#l\t #L6#枫叶戒指#l\t #L7#点装强化#l\r\n";
         text += "#L11#每日任务#l\t #L14#肝王勋章#l\t #L16#便利商店#l\t #L20#血衣合成#l\r\n";
         text += "#L17#矿石仓库#l\t #L18#卷轴仓库#l\t #L24#怪卡仓库#l\t #L19#怪物卡戒#l\r\n";
-        text += "#L21#皇家发型#l\t #L22#皇家整容#l\r\n";
+        text += "#L21#皇家发型#l\t #L22#皇家整容#l\t #L26#月卡功能#l\r\n";
         text += "\r\n\r\n#L15#===================#r拍卖行#b===================#k#l\r\n";
         if (cm.getPlayer().isGM()) {
             text += "\r\n\r\n";
@@ -151,6 +151,9 @@ function doSelect(selection) {
             break;
         case 25:
             openNpc("战力排行");
+            break;
+        case 26:
+            openNpc("月卡功能");
             break;
 // GM功能
         case 23:

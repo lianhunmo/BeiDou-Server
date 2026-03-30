@@ -1876,8 +1876,12 @@
         <string name="desc" value="使用这个道具可以让你的60%卷\n轴成功机率提升到90%。"/>
     </imgdir>
     <imgdir name="5590000">
-        <string name="name" value="装备特许证"/>
-        <string name="desc" value="拥有装备特许证后可以装备比自\n己等级高#c5级#的装备。"/>
+        <string name="name" value="白银月卡证明"/>
+        <string name="desc" value="拥有白银月卡证明后可以每日领\n取白银月卡福利。"/>
+    </imgdir>
+    <imgdir name="5600000">
+        <string name="name" value="黄金月卡证明"/>
+        <string name="desc" value="拥有黄金月卡证明后可以每日领\n取黄金月卡福利。"/>
     </imgdir>
     <imgdir name="5021026">
         <string name="name" value="开心的圣诞老人"/>
