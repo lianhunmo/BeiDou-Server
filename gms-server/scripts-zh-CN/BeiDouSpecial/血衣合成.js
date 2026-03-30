@@ -49,10 +49,10 @@ new Array(4000313,4000152,4000151,4005004,4011007,4021009,1012190)
 
 var matQtySet = new Array
 (new Array(1,1,1,1),                                            //（材料个数）
-new Array(50,4,4,4,4,1),
+new Array(25,4,4,4,4,1),
+new Array(50,5,5,5,5,5,1),
 new Array(100,5,5,5,5,5,1),
-new Array(200,5,5,5,5,5,1),
-new Array(300,50,50,20,5,5,1)
+new Array(200,50,50,20,5,5,1)
 );
 
 var costSet = new Array
