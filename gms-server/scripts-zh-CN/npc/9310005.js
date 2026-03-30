@@ -49,6 +49,9 @@ function leveldispose() {
 	cm.dispose();
 }
 function levelEnter() {
+	if (QuestMode == false) {
+		cm.gainItem(itemID, -itemCount);
+	}
 	resetQuest();
 	cm.warp(mapID + 1,mapPortal);	//进入指定地图指定传送点
 	challengeCount++;
