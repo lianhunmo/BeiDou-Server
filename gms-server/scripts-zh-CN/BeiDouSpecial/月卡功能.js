@@ -340,6 +340,9 @@ function levelPQSweep0() {
         let quitTotal = cm.getCharacterExtendValue("月秒组队副本累计通关次数");
         quitTotal++;
         cm.saveOrUpdateCharacterExtendValue("月秒组队副本累计通关次数", quitTotal.toString());
+        let quitDaily = cm.getCharacterExtendValue("月秒组队副本每日通关次数", true);
+        quitDaily++;
+        cm.saveOrUpdateCharacterExtendValue("月秒组队副本每日通关次数", quitDaily.toString(), true);
         cm.sendOkLevel("Start", "成功扫荡 #b迎月花山丘#k（射手组队任务）\r\n获得 10 #b#t" + STAMP0 + "##k#i" + STAMP0 + "#");
     }
 }
@@ -360,6 +363,9 @@ function levelPQSweep1() {
         let quitTotal = cm.getCharacterExtendValue("废弃组队副本累计通关次数");
         quitTotal++;
         cm.saveOrUpdateCharacterExtendValue("废弃组队副本累计通关次数", quitTotal.toString());
+        let quitDaily = cm.getCharacterExtendValue("废弃组队副本每日通关次数", true);
+        quitDaily++;
+        cm.saveOrUpdateCharacterExtendValue("废弃组队副本每日通关次数", quitDaily.toString(), true);
         cm.sendOkLevel("Start", "成功扫荡 #b第一伴奏#k （废都组队任务）\r\n获得 10 #b#t" + STAMP1 + "##k#i" + STAMP1 + "#");
     }
 }
@@ -380,6 +386,9 @@ function levelPQSweep2() {
         let quitTotal = cm.getCharacterExtendValue("玩具组队副本累计通关次数");
         quitTotal++;
         cm.saveOrUpdateCharacterExtendValue("玩具组队副本累计通关次数", quitTotal.toString());
+        let quitDaily = cm.getCharacterExtendValue("玩具组队副本每日通关次数", true);
+        quitDaily++;
+        cm.saveOrUpdateCharacterExtendValue("玩具组队副本每日通关次数", quitDaily.toString(), true);
         cm.sendOkLevel("Start", "成功扫荡 #b时空裂缝#k （玩具组队任务）\r\n获得 10 #b#t" + STAMP2 + "##k#i" + STAMP2 + "#");
     }
 }
@@ -400,6 +409,9 @@ function levelPQSweep3() {
         let quitTotal = cm.getCharacterExtendValue("天空组队副本累计通关次数");
         quitTotal++;
         cm.saveOrUpdateCharacterExtendValue("天空组队副本累计通关次数", quitTotal.toString());
+        let quitDaily = cm.getCharacterExtendValue("天空组队副本每日通关次数", true);
+        quitDaily++;
+        cm.saveOrUpdateCharacterExtendValue("天空组队副本每日通关次数", quitDaily.toString(), true);
         cm.sendOkLevel("Start", "成功扫荡 #b女神之塔#k （天空之城组队任务）\r\n获得 10 #b#t" + STAMP3 + "##k#i" + STAMP3 + "#");
     }
 }
@@ -420,6 +432,9 @@ function levelPQSweep4() {
         let quitTotal = cm.getCharacterExtendValue("海盗组队副本累计通关次数");
         quitTotal++;
         cm.saveOrUpdateCharacterExtendValue("海盗组队副本累计通关次数", quitTotal.toString());
+        let quitDaily = cm.getCharacterExtendValue("海盗组队副本每日通关次数", true);
+        quitDaily++;
+        cm.saveOrUpdateCharacterExtendValue("海盗组队副本每日通关次数", quitDaily.toString(), true);
         cm.sendOkLevel("Start", "成功扫荡 #b海盗船#k （百草堂组队任务）\r\n获得 10 #b#t" + STAMP4 + "##k#i" + STAMP4 + "#");
     }
 }
@@ -440,6 +455,9 @@ function levelPQSweep5() {
         let quitTotal = cm.getCharacterExtendValue("毒雾组队副本累计通关次数");
         quitTotal++;
         cm.saveOrUpdateCharacterExtendValue("毒雾组队副本累计通关次数", quitTotal.toString());
+        let quitDaily = cm.getCharacterExtendValue("毒雾组队副本每日通关次数", true);
+        quitDaily++;
+        cm.saveOrUpdateCharacterExtendValue("毒雾组队副本每日通关次数", quitDaily.toString(), true);
         cm.sendOkLevel("Start", "成功扫荡 #b毒雾森林#k （艾琳的森林组队任务）\r\n获得 10 #b#t" + STAMP5 + "##k#i" + STAMP5 + "#");
     }
 }
@@ -460,6 +478,9 @@ function levelPQSweep6() {
         let quitTotal = cm.getCharacterExtendValue("罗密欧与朱丽叶组队副本累计通关次数");
         quitTotal++;
         cm.saveOrUpdateCharacterExtendValue("罗密欧与朱丽叶组队副本累计通关次数", quitTotal.toString());
+        let quitDaily = cm.getCharacterExtendValue("罗密欧与朱丽叶组队副本每日通关次数", true);
+        quitDaily++;
+        cm.saveOrUpdateCharacterExtendValue("罗密欧与朱丽叶组队副本每日通关次数", quitDaily.toString(), true);
         cm.sendOkLevel("Start", "成功扫荡 #b拯救罗密欧#k （玛加提亚组队任务）\r\n获得 10 #b#t" + STAMP6 + "##k#i" + STAMP6 + "#");
     }
 }
@@ -480,6 +501,9 @@ function levelPQSweep7() {
         let quitTotal = cm.getCharacterExtendValue("罗密欧与朱丽叶组队副本累计通关次数");
         quitTotal++;
         cm.saveOrUpdateCharacterExtendValue("罗密欧与朱丽叶组队副本累计通关次数", quitTotal.toString());
+        let quitDaily = cm.getCharacterExtendValue("罗密欧与朱丽叶组队副本每日通关次数", true);
+        quitDaily++;
+        cm.saveOrUpdateCharacterExtendValue("罗密欧与朱丽叶组队副本每日通关次数", quitDaily.toString(), true);
         cm.sendOkLevel("Start", "成功扫荡 #b拯救朱丽叶#k （玛加提亚组队任务）\r\n获得 10 #b#t" + STAMP7 + "##k#i" + STAMP7 + "#");
     }
 }

@@ -60,7 +60,9 @@ function action(mode, type, selection) {
                 let quitTotal = cm.getCharacterExtendValue("罗密欧与朱丽叶组队副本累计通关次数");
                 quitTotal ++;
                 cm.saveOrUpdateCharacterExtendValue("罗密欧与朱丽叶组队副本累计通关次数", quitTotal.toString());
-
+                let quitDaily = cm.getCharacterExtendValue("罗密欧与朱丽叶组队副本每日通关次数", true);
+                quitDaily++;
+                cm.saveOrUpdateCharacterExtendValue("罗密欧与朱丽叶组队副本每日通关次数", quitDaily.toString(), true);
                 cm.warp((eim.getIntProperty("isAlcadno") == 0) ? 910000000 : 910000000);
             } else {
                 cm.sendOk("请在领取奖励前为您的物品栏腾出一个空位。");

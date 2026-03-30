@@ -61,6 +61,9 @@ function action(mode, type, selection) {
                     let quitTotal = cm.getCharacterExtendValue("天空组队副本累计通关次数");
                     quitTotal++;
                     cm.saveOrUpdateCharacterExtendValue("天空组队副本累计通关次数", quitTotal.toString());
+                    let quitDaily = cm.getCharacterExtendValue("天空组队副本每日通关次数", true);
+                    quitDaily++;
+                    cm.saveOrUpdateCharacterExtendValue("天空组队副本每日通关次数", quitDaily.toString(), true);
                     cm.warp(910000000, 0);
                     cm.dispose();
                 } else {

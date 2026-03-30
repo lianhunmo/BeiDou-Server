@@ -80,6 +80,9 @@ function action(mode, type, selection) {
                     let quitTotal = cm.getCharacterExtendValue("海盗组队副本累计通关次数");
                     quitTotal ++;
                     cm.saveOrUpdateCharacterExtendValue("海盗组队副本累计通关次数", quitTotal.toString());
+                    let quitDaily = cm.getCharacterExtendValue("海盗组队副本每日通关次数", true);
+                    quitDaily++;
+                    cm.saveOrUpdateCharacterExtendValue("海盗组队副本每日通关次数", quitDaily.toString(), true);
                     cm.getChar().gainPqExp(1800000);
                     cm.warp(910000000, 0);
                 } else {
