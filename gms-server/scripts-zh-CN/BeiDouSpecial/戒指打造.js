@@ -245,11 +245,15 @@ function levelRingUpgrade() {
     } else {
         cm.gainItem(MAPLE_LEAF, -costMaple);
         cm.gainMeso(-costMeso);
-        let scrollResult = cm.getChar().scrollEquipWithEquipSlot(EQUIP_SLOT, upgradeProb);
+        let states = new Map ([
+            ["PAD", 2],
+            ["MAD", 8]
+        ])
+        let scrollResult = cm.getChar().scrollEquipWithEquipSlot(EQUIP_SLOT, upgradeProb, true, states);
         if (scrollResult) {
-            cm.sendLastLevel("RingOption1", "强化成功！#r攻击+1 魔攻+1#k");
+            cm.sendLastLevel("RingOption1", "强化成功！#r攻击+2 魔攻+8#k");
         } else {
-            cm.sendLastLevel("RingOption1", "强化失败。#r攻击-1 魔攻-1#k");
+            cm.sendLastLevel("RingOption1", "强化失败。#r攻击-2 魔攻-8#k");
         }
     }
 }

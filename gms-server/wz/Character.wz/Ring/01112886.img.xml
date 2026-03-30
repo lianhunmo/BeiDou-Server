@@ -7,12 +7,12 @@
         <canvas name="iconRaw" width="30" height="30">
             <vector name="origin" x="-1" y="33"/>
         </canvas>
-        <int name="incDEX" value="7"/>
-        <int name="incINT" value="7"/>
-        <int name="incLUK" value="7"/>
+        <int name="incDEX" value="14"/>
+        <int name="incINT" value="14"/>
+        <int name="incLUK" value="14"/>
         <int name="incMHP" value="1400"/>
         <int name="incMMP" value="350"/>
-        <int name="incSTR" value="7"/>
+        <int name="incSTR" value="14"/>
         <string name="islot" value="Ri"/>
         <int name="notSale" value="1"/>
         <int name="onlyEquip" value="1"/>

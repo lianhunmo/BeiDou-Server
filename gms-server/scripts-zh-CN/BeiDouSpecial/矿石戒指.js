@@ -320,10 +320,10 @@ function levelRingUpgrade() {
     cm.gainMeso(-costMeso);
     let equipCurrentLevel = equip.getLevel();
     let states = new Map ([
-        ["STR", 1],
-        ["DEX", 1],
-        ["INT", 1],
-        ["LUK", 1],
+        ["STR", 2],
+        ["DEX", 2],
+        ["INT", 2],
+        ["LUK", 2],
     ])
     if (equipCurrentLevel < 9) {
         let scrollResult = cm.getChar().scrollEquipWithEquipSlot(EQUIP_SLOT, upgradeProb, false, states);
@@ -334,10 +334,10 @@ function levelRingUpgrade() {
         }
     } else {
         states.set("PAD", 10);
-        states.set("MAD", 10);
+        states.set("MAD", 40);
         let scrollResult = cm.getChar().scrollEquipWithEquipSlot(EQUIP_SLOT, upgradeProb, false, states);
         if (scrollResult) {
-            cm.sendLastLevel("RingOption1", "强化成功！#r四维属性+1 物攻+10 魔攻+10#k");
+            cm.sendLastLevel("RingOption1", "强化成功！#r四维属性+1 物攻+10 魔攻+40#k");
         } else {
             cm.sendLastLevel("RingOption1", "强化失败。");
         }
