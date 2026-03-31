@@ -66,48 +66,48 @@ function levelStart() {
         if (chooseCount1 < 1) {
             text += `#L2##b${CheckBox_0}\t领取2小时双倍经验卡#k#l\r\n`;
         } else {
-            text += `\t${CheckBox_1}\t已领取2小时双倍经验卡\r\n`;
+            text += `#L99#${CheckBox_1}\t已领取2小时双倍经验卡#l\r\n`;
         }
         if (chooseCount2 < 1) {
             text += `#L3##b${CheckBox_0}\t领取2小时双倍爆率卡#k#l\r\n`;
         } else {
-            text += `\t${CheckBox_1}\t已领取2小时双倍爆率卡\r\n`;
+            text += `#L99#${CheckBox_1}\t已领取2小时双倍爆率卡#l\r\n`;
         }
         if (chooseCount3 < 1) {
             text += `#L4##b${CheckBox_0}\t领取 500 点券#k#l\r\n`;
         } else {
-            text += `\t${CheckBox_1}\t已领取 500 点券\r\n`;
+            text += `#L99#${CheckBox_1}\t已领取 500 点券#l\r\n`;
         }
         if (chooseCount4 < 1) {
             text += `#L5##b${CheckBox_0}\t领取 2 颗高级瞬移之石#k#l\r\n`;
         } else {
-            text += `\t${CheckBox_1}\t已领取 2 颗高级瞬移之石\r\n`;
+            text += `#L99#${CheckBox_1}\t已领取 2 颗高级瞬移之石#l\r\n`;
         }
     } else if(cm.haveItem(GOLDEN_MOON_CARD)) {
         if (chooseCount5 < 1) {
             text += `#L6##b${CheckBox_0}\t领取2小时三倍经验卡#k#l\r\n`;
         } else {
-            text += `\t${CheckBox_1}\t已领取2小时三倍经验卡\r\n`;
+            text += `#L99#${CheckBox_1}\t已领取2小时三倍经验卡#l\r\n`;
         }
         if (chooseCount6 < 2) {
             text += `#L7##b${CheckBox_0}\t领取2小时双倍爆率卡#k#l\r\n`;
         } else {
-            text += `\t${CheckBox_1}\t已领取2次2小时双倍爆率卡\r\n`;
+            text += `#L99#${CheckBox_1}\t已领取2次2小时双倍爆率卡#l\r\n`;
         }
         if (chooseCount7 < 1) {
             text += `#L8##b${CheckBox_0}\t领取 1000 点券#k#l\r\n`;
         } else {
-            text += `\t${CheckBox_1}\t已领取 1000 点券\r\n`;
+            text += `#L99#${CheckBox_1}\t已领取 1000 点券#l\r\n`;
         }
         if (chooseCount8 < 1) {
             text += `#L9##b${CheckBox_0}\t领取 4 颗高级瞬移之石#k#l\r\n`;
         } else {
-            text += `\t${CheckBox_1}\t已领取 4 颗高级瞬移之石\r\n`;
+            text += `#L99#${CheckBox_1}\t已领取 4 颗高级瞬移之石#l\r\n`;
         }
         if (chooseCount9 < 3) {
             text += `#L10##b${CheckBox_0}\t组队副本扫荡#k#l\r\n`;
         } else {
-            text += `\t${CheckBox_1}\t本日副本扫荡次数已用完\r\n`;
+            text += `#L99#${CheckBox_1}\t本日副本扫荡次数已用完#l\r\n`;
         }
     } else {
         text += "#L0##r98 个#t" + SHADOW_MESO + "##i" + SHADOW_MESO + "#兑换白银月卡会员#k#l\r\n\r\n";
