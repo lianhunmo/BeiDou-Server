@@ -24,13 +24,13 @@ function enter(pi) {
             api.saveOrUpdateCharacterExtendValue("邮票获取次数" + 4001198, count.toString(), false);
             pi.gainItem(4001198, 10);
         }
+        let quitTotal = api.getCharacterExtendValue("毒雾组队副本累计通关次数");
+        quitTotal ++;
+        api.saveOrUpdateCharacterExtendValue("毒雾组队副本累计通关次数", quitTotal.toString());
+        let quitDaily = api.getCharacterExtendValue("毒雾组队副本每日通关次数", true);
+        quitDaily++;
+        api.saveOrUpdateCharacterExtendValue("毒雾组队副本每日通关次数", quitDaily.toString(), true);
     }
-    let quitTotal = api.getCharacterExtendValue("毒雾组队副本累计通关次数");
-    quitTotal ++;
-    api.saveOrUpdateCharacterExtendValue("毒雾组队副本累计通关次数", quitTotal.toString());
-    let quitDaily = api.getCharacterExtendValue("毒雾组队副本每日通关次数", true);
-    quitDaily++;
-    api.saveOrUpdateCharacterExtendValue("毒雾组队副本每日通关次数", quitDaily.toString(), true);
     pi.playPortalSound();
     pi.warp(910000000, 0);
     return true;
