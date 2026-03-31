@@ -2,7 +2,7 @@
  * @description 月卡功能
  * @author Geoffrey
  */
-const FLAMING_FEATHER = 4001006;
+const SHADOW_MESO = 4000038;
 const EXP_COUPON_2X = 5211048;
 const EXP_COUPON_3X = 5211060;
 const DROP_COUPON_2X = 5360042;
@@ -45,7 +45,7 @@ function start() {
  * @description 如果是sendSelectLevel，那么会根据玩家的选项自动路由到对应的level+selection方法
  */
 function levelStart() {
-    flamingFeatherCount = cm.getItemQuantity(FLAMING_FEATHER);
+    flamingFeatherCount = cm.getItemQuantity(SHADOW_MESO);
     chooseCount1 = Number(cm.getCharacterExtendValue("月卡每日福利1号选择领取次数", true));
     chooseCount2 = Number(cm.getCharacterExtendValue("月卡每日福利2号选择领取次数", true));
     chooseCount3 = Number(cm.getCharacterExtendValue("月卡每日福利3号选择领取次数", true));
@@ -58,11 +58,11 @@ function levelStart() {
 
     let text = "这里可以兑换月卡会员以及领取月卡福利。\r\n";
     text += "#r注：月卡时效为30天，如果已经兑换了白银月卡，再兑换黄金月卡，将会删除白银月卡证明，白银月卡天数不退还。#k\r\n";
-    text += "你当前拥有 #b" + flamingFeatherCount + "#k #t" + FLAMING_FEATHER + "##i" + FLAMING_FEATHER + "#。\r\n";
+    text += "你当前拥有 #b" + flamingFeatherCount + "#k #t" + SHADOW_MESO + "##i" + SHADOW_MESO + "#。\r\n";
     text += "现在你希望做什么呢？\r\n\r\n";
 
     if (cm.haveItem(SILVER_MOON_CARD)) {
-        text += "#L1##r198 根火焰羽毛兑换黄金月卡会员#k#l\r\n\r\n";
+        text += "#L1##r198 个#t" + SHADOW_MESO + "##i" + SHADOW_MESO + "#兑换黄金月卡会员#k#l\r\n\r\n";
         if (chooseCount1 < 1) {
             text += `#L2##b${CheckBox_0}\t领取2小时双倍经验卡#k\r\n`;
         } else {
@@ -110,14 +110,14 @@ function levelStart() {
             text += `\t${CheckBox_1}\t本日副本扫荡次数已用完\r\n`;
         }
     } else {
-        text += "#L0##r98 根火焰羽毛兑换白银月卡会员#k#l\r\n\r\n";
+        text += "#L0##r98 个#t" + SHADOW_MESO + "##i" + SHADOW_MESO + "#兑换白银月卡会员#k#l\r\n\r\n";
         text += "\t白银月卡福利包含：\r\n";
         text += "\t领取2小时双倍经验卡\r\n";
         text += "\t领取2小时双倍爆率卡\r\n";
         text += "\t领取 500 点券\r\n";
         text += "\t领取 2 颗高级瞬移之石\r\n\r\n";
 
-        text += "#L1##r198 根火焰羽毛兑换黄金月卡会员#k#l\r\n\r\n";
+        text += "#L1##r198 个#t" + SHADOW_MESO + "##i" + SHADOW_MESO + "#兑换黄金月卡会员#k#l\r\n\r\n";
         text += "\t黄金月卡福利包含：\r\n";
         text += "\t领取2小时三倍经验卡\r\n";
         text += "\t领取2次2小时双倍爆率卡\r\n";
@@ -131,25 +131,25 @@ function levelStart() {
 }
 
 function levelChoose0() {
-    cm.sendYesNoLevel("Dispose", "BuySilverMoonCard", "要花费 #r" + SILVER_MOON_CARD_COST + "#k #t" + FLAMING_FEATHER + "##i" + FLAMING_FEATHER + "#购买 #b#t" + SILVER_MOON_CARD + "##k#i" + SILVER_MOON_CARD + "#吗？");
+    cm.sendYesNoLevel("Dispose", "BuySilverMoonCard", "要花费 #r" + SILVER_MOON_CARD_COST + "#k #t" + SHADOW_MESO + "##i" + SHADOW_MESO + "#购买 #b#t" + SILVER_MOON_CARD + "##k#i" + SILVER_MOON_CARD + "#吗？");
 }
 
 function levelBuySilverMoonCard() {
     if (cm.getItemQuantity(SILVER_MOON_CARD) > 0) {
         cm.sendOkLevel("Dispose", "你身上已经有 #r#t" + SILVER_MOON_CARD + "##k#i" + SILVER_MOON_CARD + "# 了，不能重复购买。");
     } else if (flamingFeatherCount < SILVER_MOON_CARD_COST) {
-        cm.sendOkLevel("Dispose", "你的火焰羽毛不够。");
+        cm.sendOkLevel("Dispose", "你的#t" + SHADOW_MESO + "##i" + SHADOW_MESO + "#不够。");
     } else if (!cm.canHold(SILVER_MOON_CARD, 1)) {
         cm.sendOkLevel("Dispose", "请保证现金栏有空位。");
     } else {
-        cm.gainItem(FLAMING_FEATHER, -SILVER_MOON_CARD_COST);
+        cm.gainItem(SHADOW_MESO, -SILVER_MOON_CARD_COST);
         cm.gainItem(SILVER_MOON_CARD, 1, false, true, 2592000000);
         cm.sendOkLevel("Dispose", "成功购买#b#t" + SILVER_MOON_CARD + "##k#i" + SILVER_MOON_CARD + "#");
     }
 }
 
 function levelChoose1() {
-    cm.sendYesNoLevel("Dispose", "BuyGoldenMoonCard", "要花费 #r" + GOLDEN_MOON_CARD_COST + "#k #t" + FLAMING_FEATHER + "##i" + FLAMING_FEATHER + "#购买 #b#t" + GOLDEN_MOON_CARD + "##k#i" + GOLDEN_MOON_CARD + "#吗？");
+    cm.sendYesNoLevel("Dispose", "BuyGoldenMoonCard", "要花费 #r" + GOLDEN_MOON_CARD_COST + "#k #t" + SHADOW_MESO + "##i" + SHADOW_MESO + "#购买 #b#t" + GOLDEN_MOON_CARD + "##k#i" + GOLDEN_MOON_CARD + "#吗？");
 }
 
 function levelBuyGoldenMoonCard() {
@@ -163,7 +163,7 @@ function levelBuyGoldenMoonCard() {
         if (cm.haveItem(SILVER_MOON_CARD)) {
             cm.gainItem(SILVER_MOON_CARD, -1);
         }
-        cm.gainItem(FLAMING_FEATHER, -GOLDEN_MOON_CARD_COST);
+        cm.gainItem(SHADOW_MESO, -GOLDEN_MOON_CARD_COST);
         cm.gainItem(GOLDEN_MOON_CARD, 1, false, true, 2592000000);
         cm.sendOkLevel("Dispose", "成功购买#b#t" + GOLDEN_MOON_CARD + "##k#i" + GOLDEN_MOON_CARD + "#");
     }
