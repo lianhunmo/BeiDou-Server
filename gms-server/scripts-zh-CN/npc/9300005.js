@@ -78,12 +78,12 @@ function levelChooseTeamMission(selection) {
         if (stageOneRecivedCount < 1) {
             text += `#L0##b${CheckBox_0}\t领取#t` + FLAMING_FEATHER + "##i" + FLAMING_FEATHER + "##k#l\r\n";
         } else {
-            text += `\t${CheckBox_1}\t领取#t` + FLAMING_FEATHER + "##i" + FLAMING_FEATHER + "#\r\n";
+            text += `#L99#${CheckBox_1}\t已领取#t` + FLAMING_FEATHER + "##i" + FLAMING_FEATHER + "##l\r\n";
         }
         if (stageAllRecivedCount < 1) {
             text += `#L1##b${CheckBox_0}\t领取#t` + GOLD_MAPLE_LEAF + `##i` + GOLD_MAPLE_LEAF + "##k#l\r\n";
         } else {
-            text += `\t${CheckBox_1}\t领取#t` + GOLD_MAPLE_LEAF + `##i` + GOLD_MAPLE_LEAF + "#\r\n";
+            text += `#L99#${CheckBox_1}\t已领取#t` + GOLD_MAPLE_LEAF + `##i` + GOLD_MAPLE_LEAF + "##l\r\n";
         }
         text += "\r\n#L99##b离开#k#l\r\n";
         cm.sendNextSelectLevel("GainDailyPQReward", text);
