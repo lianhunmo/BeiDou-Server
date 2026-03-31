@@ -7572,8 +7572,8 @@
         <string name="desc" value="这些小甜点，是马来族派队的最\n爱，适合饮茶配合\n30分钟内速度+10"/>
     </imgdir>
     <imgdir name="2044713">
-        <string name="name" value="指节攻击卷轴50%"/>
-        <string name="desc" value="为指节增加物理攻击属性\n#c成功率50%\n物理攻击力+5、力量+1、敏捷+1\n#"/>
+        <string name="name" value="拳套攻击卷轴50%"/>
+        <string name="desc" value="为拳套增加物理攻击属性\n#c成功率50%\n物理攻击力+5、运气+1、敏捷+1\n#"/>
     </imgdir>
     <imgdir name="2044613">
         <string name="name" value="弩攻击卷轴50%"/>
