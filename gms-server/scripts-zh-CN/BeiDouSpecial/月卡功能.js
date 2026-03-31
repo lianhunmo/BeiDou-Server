@@ -46,23 +46,24 @@ function start() {
  */
 function levelStart() {
     flamingFeatherCount = cm.getItemQuantity(SHADOW_MESO);
-    chooseCount1 = Number(cm.getCharacterExtendValue("月卡每日福利1号选择领取次数", true));
-    chooseCount2 = Number(cm.getCharacterExtendValue("月卡每日福利2号选择领取次数", true));
-    chooseCount3 = Number(cm.getCharacterExtendValue("月卡每日福利3号选择领取次数", true));
-    chooseCount4 = Number(cm.getCharacterExtendValue("月卡每日福利4号选择领取次数", true));
-    chooseCount5 = Number(cm.getCharacterExtendValue("月卡每日福利5号选择领取次数", true));
-    chooseCount6 = Number(cm.getCharacterExtendValue("月卡每日福利6号选择领取次数", true));
-    chooseCount7 = Number(cm.getCharacterExtendValue("月卡每日福利7号选择领取次数", true));
-    chooseCount8 = Number(cm.getCharacterExtendValue("月卡每日福利8号选择领取次数", true));
-    chooseCount9 = Number(cm.getCharacterExtendValue("月卡每日福利9号选择领取次数", true));
+    chooseCount1 = Number(cm.getAccountExtendValue("月卡每日福利1号选择领取次数", true));
+    chooseCount2 = Number(cm.getAccountExtendValue("月卡每日福利2号选择领取次数", true));
+    chooseCount3 = Number(cm.getAccountExtendValue("月卡每日福利3号选择领取次数", true));
+    chooseCount4 = Number(cm.getAccountExtendValue("月卡每日福利4号选择领取次数", true));
+    chooseCount5 = Number(cm.getAccountExtendValue("月卡每日福利5号选择领取次数", true));
+    chooseCount6 = Number(cm.getAccountExtendValue("月卡每日福利6号选择领取次数", true));
+    chooseCount7 = Number(cm.getAccountExtendValue("月卡每日福利7号选择领取次数", true));
+    chooseCount8 = Number(cm.getAccountExtendValue("月卡每日福利8号选择领取次数", true));
+    chooseCount9 = Number(cm.getAccountExtendValue("月卡每日福利9号选择领取次数", true));
 
     let text = "这里可以兑换月卡会员以及领取月卡福利。\r\n";
-    text += "#r注：月卡时效为30天，如果已经兑换了白银月卡，再兑换黄金月卡，将会删除白银月卡证明，白银月卡天数不退还。#k\r\n";
+    text += "#r注：月卡时效为30天，账号内所有角色共享福利领取次数，请谨慎领取。#k\r\n";
     text += "你当前拥有 #b" + flamingFeatherCount + "#k #t" + SHADOW_MESO + "##i" + SHADOW_MESO + "#。\r\n";
     text += "现在你希望做什么呢？\r\n\r\n";
 
     if (cm.haveItem(SILVER_MOON_CARD)) {
         text += "#L1##r198 个#t" + SHADOW_MESO + "##i" + SHADOW_MESO + "#兑换黄金月卡会员#k#l\r\n\r\n";
+        text += "#r注：兑换黄金月卡，将会删除白银月卡证明，白银月卡天数不退还。#k\r\n\r\n";
         if (chooseCount1 < 1) {
             text += `#L2##b${CheckBox_0}\t领取2小时双倍经验卡#k#l\r\n`;
         } else {
@@ -156,7 +157,7 @@ function levelBuyGoldenMoonCard() {
     if (cm.getItemQuantity(GOLDEN_MOON_CARD) > 0) {
         cm.sendOkLevel("Dispose", "你身上已经有 #r#t" + GOLDEN_MOON_CARD + "##k#i" + GOLDEN_MOON_CARD + "# 了，不能重复购买。");
     } else if (flamingFeatherCount < GOLDEN_MOON_CARD_COST) {
-        cm.sendOkLevel("Dispose", "你的火焰羽毛不够。");
+        cm.sendOkLevel("Dispose", "你的#t" + SHADOW_MESO + "##i" + SHADOW_MESO + "#不够。");
     } else if (!cm.canHold(GOLDEN_MOON_CARD, 1)) {
         cm.sendOkLevel("Dispose", "请保证现金栏有空位。");
     } else {
@@ -183,7 +184,7 @@ function levelGain1() {
     } else {
         cm.gainItem(EXP_COUPON_2X, 1, false, true, 7200000);
         chooseCount1++;
-        cm.saveOrUpdateCharacterExtendValue("月卡每日福利1号选择领取次数", chooseCount1.toString(), true);
+        cm.saveOrUpdateAccountExtendValue("月卡每日福利1号选择领取次数", chooseCount1.toString(), true);
         cm.sendOkLevel("Start", "成功领取2小时#b#t" + EXP_COUPON_2X + "##k#i" + EXP_COUPON_2X + "#");
     }
 }
@@ -202,7 +203,7 @@ function levelGain2() {
     } else {
         cm.gainItem(DROP_COUPON_2X, 1, false, true, 7200000);
         chooseCount2++;
-        cm.saveOrUpdateCharacterExtendValue("月卡每日福利2号选择领取次数", chooseCount2.toString(), true);
+        cm.saveOrUpdateAccountExtendValue("月卡每日福利2号选择领取次数", chooseCount2.toString(), true);
         cm.sendOkLevel("Start", "成功领取2小时#b#t" + DROP_COUPON_2X + "##k#i" + DROP_COUPON_2X + "#");
     }
 }
@@ -217,7 +218,7 @@ function levelGain3() {
     } else {
         cm.getPlayer().getCashShop().gainCash(1, GAIN_CASH_NUM_SILVER);
         chooseCount3++;
-        cm.saveOrUpdateCharacterExtendValue("月卡每日福利3号选择领取次数", chooseCount3.toString(), true);
+        cm.saveOrUpdateAccountExtendValue("月卡每日福利3号选择领取次数", chooseCount3.toString(), true);
         cm.sendOkLevel("Start", "领取成功！您已获得 #b" + GAIN_CASH_NUM_SILVER + "#k 点卷。");
     }
 }
@@ -234,7 +235,7 @@ function levelGain4() {
     } else {
         cm.gainItem(VIP_TELEPORT_ROCK, 2);
         chooseCount4++;
-        cm.saveOrUpdateCharacterExtendValue("月卡每日福利4号选择领取次数", chooseCount4.toString(), true);
+        cm.saveOrUpdateAccountExtendValue("月卡每日福利4号选择领取次数", chooseCount4.toString(), true);
         cm.sendOkLevel("Start", "成功领取 2颗 #b#t" + VIP_TELEPORT_ROCK + "##k#i" + VIP_TELEPORT_ROCK + "#");
     }
 }
@@ -253,7 +254,7 @@ function levelGain5() {
     } else {
         cm.gainItem(EXP_COUPON_3X, 1, false, true, 7200000);
         chooseCount5++;
-        cm.saveOrUpdateCharacterExtendValue("月卡每日福利5号选择领取次数", chooseCount5.toString(), true);
+        cm.saveOrUpdateAccountExtendValue("月卡每日福利5号选择领取次数", chooseCount5.toString(), true);
         cm.sendOkLevel("Start", "成功领取2小时#b#t" + EXP_COUPON_3X + "##k#i" + EXP_COUPON_3X + "#");
     }
 }
@@ -272,7 +273,7 @@ function levelGain6() {
     } else {
         cm.gainItem(DROP_COUPON_2X, 1, false, true, 7200000);
         chooseCount6++;
-        cm.saveOrUpdateCharacterExtendValue("月卡每日福利6号选择领取次数", chooseCount6.toString(), true);
+        cm.saveOrUpdateAccountExtendValue("月卡每日福利6号选择领取次数", chooseCount6.toString(), true);
         cm.sendOkLevel("Start", "成功领取2小时#b#t" + DROP_COUPON_2X + "##k#i" + DROP_COUPON_2X + "#");
     }
 }
@@ -287,7 +288,7 @@ function levelGain7() {
     } else {
         cm.getPlayer().getCashShop().gainCash(1, GAIN_CASH_NUM_GOLDEN);
         chooseCount7++;
-        cm.saveOrUpdateCharacterExtendValue("月卡每日福利7号选择领取次数", chooseCount7.toString(), true);
+        cm.saveOrUpdateAccountExtendValue("月卡每日福利7号选择领取次数", chooseCount7.toString(), true);
         cm.sendOkLevel("Start", "领取成功！您已获得 #b" + GAIN_CASH_NUM_GOLDEN + "#k 点卷。");
     }
 }
@@ -304,7 +305,7 @@ function levelGain8() {
     } else {
         cm.gainItem(VIP_TELEPORT_ROCK, 4);
         chooseCount8++;
-        cm.saveOrUpdateCharacterExtendValue("月卡每日福利8号选择领取次数", chooseCount8.toString(), true);
+        cm.saveOrUpdateAccountExtendValue("月卡每日福利8号选择领取次数", chooseCount8.toString(), true);
         cm.sendOkLevel("Start", "成功领取 4颗 #b#t" + VIP_TELEPORT_ROCK + "##k#i" + VIP_TELEPORT_ROCK + "#");
     }
 }
@@ -335,7 +336,7 @@ function levelPQSweep0() {
         cm.sendOkLevel("Dispose", "请保证其他栏有空位。");
     } else {
         chooseCount9++;
-        cm.saveOrUpdateCharacterExtendValue("月卡每日福利9号选择领取次数", chooseCount9.toString(), true);
+        cm.saveOrUpdateAccountExtendValue("月卡每日福利9号选择领取次数", chooseCount9.toString(), true);
         cm.gainItem(STAMP0, 10);
         let quitTotal = cm.getCharacterExtendValue("月秒组队副本累计通关次数");
         quitTotal++;
@@ -358,7 +359,7 @@ function levelPQSweep1() {
         cm.sendOkLevel("Dispose", "请保证其他栏有空位。");
     } else {
         chooseCount9++;
-        cm.saveOrUpdateCharacterExtendValue("月卡每日福利9号选择领取次数", chooseCount9.toString(), true);
+        cm.saveOrUpdateAccountExtendValue("月卡每日福利9号选择领取次数", chooseCount9.toString(), true);
         cm.gainItem(STAMP1, 10);
         let quitTotal = cm.getCharacterExtendValue("废弃组队副本累计通关次数");
         quitTotal++;
@@ -381,7 +382,7 @@ function levelPQSweep2() {
         cm.sendOkLevel("Dispose", "请保证其他栏有空位。");
     } else {
         chooseCount9++;
-        cm.saveOrUpdateCharacterExtendValue("月卡每日福利9号选择领取次数", chooseCount9.toString(), true);
+        cm.saveOrUpdateAccountExtendValue("月卡每日福利9号选择领取次数", chooseCount9.toString(), true);
         cm.gainItem(STAMP2, 10);
         let quitTotal = cm.getCharacterExtendValue("玩具组队副本累计通关次数");
         quitTotal++;
@@ -404,7 +405,7 @@ function levelPQSweep3() {
         cm.sendOkLevel("Dispose", "请保证其他栏有空位。");
     } else {
         chooseCount9++;
-        cm.saveOrUpdateCharacterExtendValue("月卡每日福利9号选择领取次数", chooseCount9.toString(), true);
+        cm.saveOrUpdateAccountExtendValue("月卡每日福利9号选择领取次数", chooseCount9.toString(), true);
         cm.gainItem(STAMP3, 10);
         let quitTotal = cm.getCharacterExtendValue("天空组队副本累计通关次数");
         quitTotal++;
@@ -427,7 +428,7 @@ function levelPQSweep4() {
         cm.sendOkLevel("Dispose", "请保证其他栏有空位。");
     } else {
         chooseCount9++;
-        cm.saveOrUpdateCharacterExtendValue("月卡每日福利9号选择领取次数", chooseCount9.toString(), true);
+        cm.saveOrUpdateAccountExtendValue("月卡每日福利9号选择领取次数", chooseCount9.toString(), true);
         cm.gainItem(STAMP4, 10);
         let quitTotal = cm.getCharacterExtendValue("海盗组队副本累计通关次数");
         quitTotal++;
@@ -450,7 +451,7 @@ function levelPQSweep5() {
         cm.sendOkLevel("Dispose", "请保证其他栏有空位。");
     } else {
         chooseCount9++;
-        cm.saveOrUpdateCharacterExtendValue("月卡每日福利9号选择领取次数", chooseCount9.toString(), true);
+        cm.saveOrUpdateAccountExtendValue("月卡每日福利9号选择领取次数", chooseCount9.toString(), true);
         cm.gainItem(STAMP5, 10);
         let quitTotal = cm.getCharacterExtendValue("毒雾组队副本累计通关次数");
         quitTotal++;
@@ -473,7 +474,7 @@ function levelPQSweep6() {
         cm.sendOkLevel("Dispose", "请保证其他栏有空位。");
     } else {
         chooseCount9++;
-        cm.saveOrUpdateCharacterExtendValue("月卡每日福利9号选择领取次数", chooseCount9.toString(), true);
+        cm.saveOrUpdateAccountExtendValue("月卡每日福利9号选择领取次数", chooseCount9.toString(), true);
         cm.gainItem(STAMP6, 10);
         let quitTotal = cm.getCharacterExtendValue("罗密欧与朱丽叶组队副本累计通关次数");
         quitTotal++;
@@ -496,7 +497,7 @@ function levelPQSweep7() {
         cm.sendOkLevel("Dispose", "请保证其他栏有空位。");
     } else {
         chooseCount9++;
-        cm.saveOrUpdateCharacterExtendValue("月卡每日福利9号选择领取次数", chooseCount9.toString(), true);
+        cm.saveOrUpdateAccountExtendValue("月卡每日福利9号选择领取次数", chooseCount9.toString(), true);
         cm.gainItem(STAMP7, 10);
         let quitTotal = cm.getCharacterExtendValue("罗密欧与朱丽叶组队副本累计通关次数");
         quitTotal++;
