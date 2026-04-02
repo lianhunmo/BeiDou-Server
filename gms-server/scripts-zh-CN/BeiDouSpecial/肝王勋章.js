@@ -35,11 +35,11 @@ function levelStart() {
     text += "每个阶段领取奖励都需要完成上个阶段任务。\r\n";
     text += "你当前已完成：\r\n";
     text += getCurrentProgressText();
-    rewardAlreadyGainStr = cm.getCharacterExtendValue("肝王勋章领取记录");
+    let rewardAlreadyGainStr = cm.getCharacterExtendValue("肝王勋章领取记录");
     if (rewardAlreadyGainStr) {
         rewardAlreadyGain = rewardAlreadyGainStr.split(",").map(Number);
     } else {
-        vrewardAlreadyGain = [0,0,0,0,0,0,0];
+        rewardAlreadyGain = [0,0,0,0,0,0,0];
     }
 
     text += getRewardListText();
