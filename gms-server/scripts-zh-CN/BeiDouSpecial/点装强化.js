@@ -230,7 +230,11 @@ function levelCashEquipUpgrade() {
     } else {
         cm.gainItem(GOLD_MAPLE_LEAF, -costMaple);
         cm.gainMeso(-costMeso);
-        let scrollResult = cm.getChar().scrollEquipWithEquipSlot(EQUIP_SLOT_1, upgradeProb);
+        let states = new Map ([
+            ["PAD", 2],
+            ["MAD", 8]
+        ])
+        let scrollResult = cm.getChar().scrollEquipWithEquipSlot(EQUIP_SLOT_1, upgradeProb, true, states);
         if (scrollResult) {
             cm.sendLastLevel("CashEquipOption0", "强化成功！#r攻击+1 魔攻+1#k");
         } else {
