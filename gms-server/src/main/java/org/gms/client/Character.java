@@ -4996,6 +4996,11 @@ public class Character extends AbstractCharacterObject {
         return list;
     }
 
+    public boolean isAllPartyMembersOnSameMap() {
+        List<Character> partyMembersOnSameMap = getPartyMembersOnSameMap();
+        return partyMembersOnSameMap.size() == party.getMembers().size();
+    }
+
     public List<Character> getPartyMembersOnSameMap() {
         List<Character> list = new LinkedList<>();
         int thisMapHash = this.getMap().hashCode();
@@ -9978,5 +9983,108 @@ public class Character extends AbstractCharacterObject {
     public Integer getCharacterStorageInteger(Integer key, Integer defaultValue) {
         String value = characterService.getStorage(this.id, key.toString());
         return value != null ? Integer.parseInt(value) : defaultValue;
+    }
+
+    public boolean isAlreadyStudent() {
+        try (Connection con = DatabaseConnection.getConnection();
+             PreparedStatement ps = con.prepareStatement("SELECT COUNT(1) studentCount FROM shitu_system WHERE studentid = ?")) {
+            ps.setInt(1, id);
+            try (ResultSet rs = ps.executeQuery()) {
+                if (!rs.next()) {
+                    return false;
+                }
+                int studentCount = rs.getInt("studentCount");
+                return studentCount > 0;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+    public boolean isAlreadyShiTu(Integer studentId) {
+        try (Connection con = DatabaseConnection.getConnection();
+             PreparedStatement ps = con.prepareStatement("SELECT COUNT(1) studentCount FROM shitu_system WHERE teacherid = ? AND studentid = ?")) {
+            ps.setInt(1, id);
+            ps.setInt(2, studentId);
+            try (ResultSet rs = ps.executeQuery()) {
+                if (!rs.next()) {
+                    return false;
+                }
+                int studentCount = rs.getInt("studentCount");
+                return studentCount > 0;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+    public List<Character> studentList() {
+        List<Character> students = new ArrayList<>();
+        try (Connection con = DatabaseConnection.getConnection();
+             PreparedStatement ps = con.prepareStatement("SELECT c.id studentId, c.name name FROM shitu_system ss inner join characters c ON ss.studentid = c.id WHERE ss.teacherid = ?")) {
+            ps.setInt(1, getId());
+
+            try (ResultSet rs = ps.executeQuery()) {
+                while (rs.next()) {
+                    Integer studentId = rs.getInt("studentId");
+                    String studentName = rs.getString("name");
+                    if (studentName == null) {
+                        continue;
+                    }
+                    Character student = new Character();
+                    student.setId(studentId);
+                    student.setName(studentName);
+                    students.add(student);
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return students;
+    }
+
+    public boolean isStudentMoreThanLimit() {
+        try (Connection con = DatabaseConnection.getConnection();
+             PreparedStatement ps = con.prepareStatement("SELECT COUNT(1) studentCount FROM shitu_system WHERE teacherid = ?")) {
+            ps.setInt(1, id);
+            try (ResultSet rs = ps.executeQuery()) {
+                if (!rs.next()) {
+                    return false;
+                }
+                int studentCount = rs.getInt("studentCount");
+                return studentCount >= 3;
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+    public boolean setShiTuRelation(Integer studentId) {
+        try (Connection con = DatabaseConnection.getConnection();
+             PreparedStatement ps = con.prepareStatement("INSERT INTO shitu_system (teacherid, studentid) VALUES (?, ?)")) {
+            ps.setInt(1, getId());
+            ps.setInt(2, studentId);
+            ps.executeUpdate();
+            return true;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+       return false;
+    }
+
+    public void deleteShiTuRelation(Integer studentId) {
+        try (Connection con = DatabaseConnection.getConnection()) {
+            try (PreparedStatement ps = con.prepareStatement("DELETE FROM shitu_system WHERE studentid = ?")) {
+                ps.setInt(1, studentId);
+                ps.executeUpdate();
+            }
+        } catch (SQLException sqle) {
+            sqle.printStackTrace();
+        }
     }
 }
