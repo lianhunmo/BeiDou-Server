@@ -198,7 +198,7 @@ function action(mode, type, selection) {
         } else if (selection == 6){
             let text = "师门系统介绍：\r\n";
             text += "徒弟等级：必须大于10级,小于30级\r\n";
-            text += "师父等级：必须大于140级\r\n\r\n";
+            text += "师父等级：必须大于140级，且要求完成肝王勋章全部试炼\r\n\r\n";
             text += "徒弟达到130级即可出师\r\n\r\n";
             text += "徒弟出师徒弟将获得： #r20000# 抵用卷、#v2049100#*2#k\r\n";
             text += "师父将获得：#r经验x2亿、2000点券、#v2340000#*2#k\r\n";
