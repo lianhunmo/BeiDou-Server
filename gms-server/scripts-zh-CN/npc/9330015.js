@@ -63,8 +63,8 @@ function action(mode, type, selection) {
             if (cm.getChar().getLevel() < 140){
                 cm.sendOk("#r你的等级不够140级,无法建立师门!");
                 cm.dispose();
-            } else if (rewardAlreadyGain[6] < 1){
-                cm.sendOk("#r你还未完成肝王勋章的全部试炼,无法建立师门!");
+            } else if (rewardAlreadyGain[3] < 1){
+                cm.sendOk("#r你还未完成肝王勋章的天空副本试炼,无法建立师门!");
                 cm.dispose();
             } else if (isShifu < 1){
                 cm.saveOrUpdateCharacterExtendValue("师傅", "1");
@@ -158,7 +158,7 @@ function action(mode, type, selection) {
                 cm.gainExp(200000000);
                 cm.getPlayer().getCashShop().gainCash(1, 2000);//给师傅点卷
                 student.getPlayer().getAbstractPlayerInteraction().gainItem(2049100,2);//给徒弟混沌
-                student.getPlayer().getCashShop().gainCash(2,20000);//给徒弟抵用券
+                student.getPlayer().gainMeso(20000000);//给徒弟金币
                 numberOfGraduatedStudents++;
                 cm.saveOrUpdateCharacterExtendValue("出师次数", numberOfGraduatedStudents.toString());
 
@@ -198,9 +198,10 @@ function action(mode, type, selection) {
         } else if (selection == 6){
             let text = "师门系统介绍：\r\n";
             text += "徒弟等级：必须大于10级,小于30级\r\n";
-            text += "师父等级：必须大于140级，且要求完成肝王勋章全部试炼\r\n\r\n";
+            text += "师父等级：必须大于140级，且要求完成肝王勋章天空组队副本以及之前全部试炼\r\n\r\n";
             text += "徒弟达到130级即可出师\r\n\r\n";
-            text += "徒弟出师徒弟将获得： #r20000# 抵用卷、#v2049100#*2#k\r\n";
+            text += "师门同时可收取三个徒弟\r\n\r\n";
+            text += "徒弟出师徒弟将获得： #r20000 抵用卷、2千万 金币、#v2049100#*2#k\r\n";
             text += "师父将获得：#r经验x2亿、2000点券、#v2340000#*2#k\r\n";
             cm.sendOk(text);
             cm.dispose();
