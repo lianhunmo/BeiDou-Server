@@ -1554,7 +1554,7 @@
                 <imgdir name="30">
                     <string name="hs" value="h30"/>
                     <int name="mpCon" value="50"/>
-                    <int name="prop" value="90"/>
+                    <int name="prop" value="100"/>
                     <int name="time" value="300"/>
                     <int name="x" value="1"/>
                 </imgdir>
