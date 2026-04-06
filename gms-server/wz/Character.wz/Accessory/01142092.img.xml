@@ -27,6 +27,8 @@
     <int name="incMDD" value="80"/>
     <int name="incEVA" value="160"/>
     <int name="incACC" value="160"/>
+    <int name="incSpeed" value="40"/>
+    <int name="incJump" value="20"/>
     <int name="speed" value="0"/>
     <int name="tuc" value="0"/>
     <int name="price" value="0"/>
