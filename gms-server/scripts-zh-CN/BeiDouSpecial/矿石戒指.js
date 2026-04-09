@@ -161,7 +161,7 @@ function levelRingOption1() {
     if (RINGS_ITEM_ID_LIST.includes(equipItemId)) {
         let equipCurrentLevel = equip.getLevel();
         STAMP_ID_COST_MAP.forEach((cost, itemId) => {
-            STAMP_ID_COST_MAP.set(itemId, (equipCurrentLevel + 1) * 5)
+            STAMP_ID_COST_MAP.set(itemId, 5)
         })
         switch(equipCurrentLevel) {
             case 0:
