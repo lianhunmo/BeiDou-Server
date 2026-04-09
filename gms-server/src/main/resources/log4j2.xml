@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="GBK"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <configuration status="ERROR" monitorInterval="300">
 
     <Properties>
@@ -39,12 +39,12 @@
     </appenders>
 
     <loggers>
-        <!-- 降低 Druid 的日志级别 -->
+        <!-- 闄嶄綆 Druid 鐨勬棩蹇楃骇鍒� -->
         <Logger name="com.alibaba.druid" level="ERROR">
             <AppenderRef ref="Console"/>
         </Logger>
 
-        <!-- 降低 flyway 的日志级别 -->
+        <!-- 闄嶄綆 flyway 鐨勬棩蹇楃骇鍒� -->
         <Logger name="org.flywaydb" level="ERROR">
             <AppenderRef ref="Console"/>
         </Logger>
