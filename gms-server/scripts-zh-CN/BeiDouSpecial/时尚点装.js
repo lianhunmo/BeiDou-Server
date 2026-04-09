@@ -7,105 +7,108 @@
 	1.0 - First Version by Xterminator
 ---------------------------------------------------------------------------------------------------
 **/
-var status = 0;
-var selectedType = -1;
-var selectedItem = -1;
-var stimulator = false;
-var itemSet;
-var item;
-var mats;
-var matQty;
-var cost;
-var add;
+let status = 0;
+let selectedType = -1;
+let selectedItem = -1;
+let stimulator = false;
+let itemSet;
+let item;
+let mats;
+let matQty;
+let cost;
+let add;
 
-var wq = Array(
-Array(1702701,6000),                     //武器（物品代码，价格）
-Array(1702702,6000),
-Array(1702703,6000),
-Array(1702704,6000),
-Array(1702705,6000),
-Array(1702706,6000),
-Array(1702709,6000),
-Array(1702710,6000),
-Array(1702711,6000),
-Array(1702712,6000),
-Array(1702713,6000),
-Array(1702715,6000),
-Array(1702716,6000),
-Array(1702717,6000),
-Array(1702718,6000),
-Array(1702719,6000),
-Array(1702720,6000),
-Array(1702721,6000),
-Array(1702722,6000),
-Array(1702724,6000),
-Array(1702725,6000),
-Array(1702726,6000),
-Array(1702727,6000),
-Array(1702728,6000),
-Array(1702729,6000),
-Array(1702732,6000),
-Array(1702733,6000),
-Array(1702734,6000),
-Array(1702735,6000),
-Array(1702736,6000),
-Array(1702740,6000),
-Array(1702742,6000),
-Array(1702744,6000),
-Array(1702745,6000),
-Array(1702746,6000),
-Array(1702747,6000),
-Array(1702748,6000),
-Array(1702749,6000),
-Array(1702752,6000),
-Array(1702753,6000),
-Array(1702755,6000),
-Array(1702756,6000),
-Array(1702757,6000),
-Array(1702758,6000),
-Array(1702759,6000),
-Array(1702760,6000),
-Array(1702761,6000),
-Array(1702765,6000),
-Array(1702766,6000),
-Array(1702767,6000),
-Array(1702768,6000),
-Array(1702770,6000),
-Array(1702771,6000),
-Array(1702772,6000),
-Array(1702773,6000),
-Array(1702774,6000),
-Array(1702775,6000),
-Array(1702776,6000),
-Array(1702777,6000),
-Array(1702778,6000),
-Array(1702779,6000),
-Array(1702780,6000),
-Array(1702783,6000),
-Array(1702784,6000),
-Array(1702785,6000),
-Array(1702787,6000),
-Array(1702788,6000),
-Array(1702789,6000),
-Array(1702790,6000),
-Array(1702791,6000),
-Array(1702792,6000),
-Array(1702793,6000),
-Array(1702794,6000),
-Array(1702795,6000),
-Array(1702796,6000),
-Array(1702797,6000),
-Array(1702798,6000),
-Array(1702799,6000),
-Array(1702800,6000),
-Array(1702801,6000),
-Array(1702802,6000),
-Array(1702803,6000),
-Array(1702874,6000),
-Array(1702804,6000)
+let wq = Array(//武器（物品代码，价格）
+// Array(1702701,6000),
+// Array(1702702,6000),
+// Array(1702703,6000),
+// Array(1702704,6000),
+// Array(1702705,6000),
+// Array(1702706,6000),
+// Array(1702709,6000),
+// Array(1702710,6000),
+// Array(1702711,6000),
+// Array(1702712,6000),
+// Array(1702713,6000),
+// Array(1702715,6000),
+// Array(1702716,6000),
+// Array(1702717,6000),
+// Array(1702718,6000),
+// Array(1702719,6000),
+// Array(1702720,6000),
+// Array(1702721,6000),
+// Array(1702722,6000),
+// Array(1702724,6000),
+// Array(1702725,6000),
+// Array(1702726,6000),
+// Array(1702727,6000),
+// Array(1702728,6000),
+// Array(1702729,6000),
+// Array(1702732,6000),
+// Array(1702733,6000),
+// Array(1702734,6000),
+// Array(1702735,6000),
+// Array(1702736,6000),
+// Array(1702740,6000),
+// Array(1702742,6000),
+// Array(1702744,6000),
+// Array(1702745,6000),
+// Array(1702746,6000),
+// Array(1702747,6000),
+// Array(1702748,6000),
+// Array(1702749,6000),
+// Array(1702752,6000),
+// Array(1702753,6000),
+// Array(1702755,6000),
+// Array(1702756,6000),
+// Array(1702757,6000),
+// Array(1702758,6000),
+// Array(1702759,6000),
+// Array(1702760,6000),
+// Array(1702761,6000),
+// Array(1702765,6000),
+// Array(1702766,6000),
+// Array(1702767,6000),
+// Array(1702768,6000),
+// Array(1702770,6000),
+// Array(1702771,6000),
+// Array(1702772,6000),
+// Array(1702773,6000),
+// Array(1702774,6000),
+// Array(1702775,6000),
+// Array(1702776,6000),
+// Array(1702777,6000),
+// Array(1702778,6000),
+// Array(1702779,6000),
+// Array(1702780,6000),
+// Array(1702783,6000),
+// Array(1702784,6000),
+// Array(1702785,6000),
+// Array(1702787,6000),
+// Array(1702788,6000),
+// Array(1702789,6000),
+// Array(1702790,6000),
+// Array(1702791,6000),
+// Array(1702792,6000),
+// Array(1702793,6000),
+// Array(1702794,6000),
+// Array(1702795,6000),
+// Array(1702796,6000),
+// Array(1702797,6000),
+// Array(1702798,6000),
+// Array(1702799,6000),
+// Array(1702800,6000),
+// Array(1702801,6000),
+// Array(1702802,6000),
+// Array(1702803,6000),
+// Array(1702874,6000),
+// Array(1702804,6000)
+Array(1702585,6000),
+Array(1702503,6000),
+Array(1702634,6000)
 );
 
-var yf = Array(
+let yf = Array(
 Array(1042000,6000),                     //上衣（物品代码，价格）
 Array(1042001,6000),
 Array(1042002,6000),
@@ -169,7 +172,7 @@ Array(1042059,6000),
 Array(1042060,6000)
 );
 
-var kz = Array(
+let kz = Array(
 Array(1062130,6000),                     //裤子（物品代码，价格）
 Array(1062131,6000),
 Array(1062133,6000),
@@ -221,7 +224,7 @@ Array(1062189,6000),
 Array(1062203,6000)
 );
 
-var tz = Array(
+let tz = Array(
 Array(1052660,6000),                     //套装（物品代码，价格）
 Array(1052661,6000),
 Array(1052666,6000),
@@ -285,7 +288,7 @@ Array(1052858,6000),
 Array(1052859,6000)
 );
 
-var st = Array(
+let st = Array(
 Array(1082500,6000),                     //手套（物品代码，价格）
 Array(1082501,6000),
 Array(1082502,6000),
@@ -304,7 +307,7 @@ Array(1082685,6000),
 Array(1082689,6000)
 );
 
-var xz = Array(
+let xz = Array(
 Array(1072999,6000),                     //鞋子（物品代码，价格）
 Array(1073008,6000),
 Array(1073009,6000),
@@ -367,7 +370,7 @@ Array(1073097,6000),
 Array(1073098,6000)
 );
 
-var sp = Array(
+let sp = Array(
 Array(1115003,6000),                     //饰品（物品代码，价格）
 Array(1115004,6000),
 Array(1115005,6000),
@@ -384,7 +387,7 @@ Array(1115023,6000),
 Array(1112724,6000)
 );
 
-var mz = Array(
+let mz = Array(
 Array(1004540,6000),                     //帽子（物品代码，价格）
 Array(1004635,6000), //毛线编织帽
 Array(1002960,6000), //暗夜娃娃皇冠
@@ -479,12 +482,12 @@ Array(1004543,6000) //复古头巾
 
 function start() {
     cm.getPlayer().setCS(true);
-    var text = "亲爱的老板~请问您想要什么样的点装呢?#b\r\n";
+    let text = "亲爱的老板~请问您想要什么样的点装呢?#b\r\n";
     text += "#d点卷余额：#b" + cm.getPlayer().getCashShop().getCash(1) + "#k\r\n";
     text += "#d抵用余额：#b" + cm.getPlayer().getCashShop().getCash(4) + "#k#n\r\n";
-    var options = new Array("武器","上衣","裤子","套服","手套","鞋子","饰品","帽子");
+    let options = new Array("武器","上衣","裤子","套服","手套","鞋子","饰品","帽子");
 
-    for (var i = 0; i < options.length; i++){
+    for (let i = 0; i < options.length; i++){
         text += "\r\n#L" + i + "# " + options[i] + "#l";
     }
     cm.sendSimple(text);
@@ -500,15 +503,15 @@ function action(mode, type, selection) {
     if (status == 1) {
         selectedType = selection;
         if (selectedType == 0) { //武器
-          //  add ="请选择你想要的点装\r\n#r注意：描述很多有误，并非所有武器可用！#k\r\n";
-          //  itemSet = wq;
-            //    for (i = 0; i < itemSet.length; i++) {	
-            //        add += "\r\n#L" + i + "##v " + itemSet[i][0] + "##z";
-           //         add += itemSet[i][0]+"#"+"    需要点卷:#r " + itemSet[i][1]+"#l#k";
-           //     };
-          //  cm.sendSimple(add,2); 
-        cm.sendOk("有bug，武器点装兑换暂时关闭！其他点装仍可兑换。");
-            cm.dispose();
+           add ="请选择你想要的点装\r\n";
+           itemSet = wq;
+           for (i = 0; i < itemSet.length; i++) {
+               add += "\r\n#L" + i + "##v " + itemSet[i][0] + "##z";
+               add += itemSet[i][0]+"#"+"    需要点卷:#r " + itemSet[i][1]+"#l#k";
+           }
+           cm.sendSimple(add,2);
+        // cm.sendOk("有bug，武器点装兑换暂时关闭！其他点装仍可兑换。");
+        //     cm.dispose();
         } else if (selectedType == 1){ //上衣
             add ="请选择你想要的点装\r\n";
             itemSet = yf;
@@ -570,7 +573,7 @@ function action(mode, type, selection) {
         selectedItem = selection;
             item = itemSet[selectedItem][0];
             cost = itemSet[selectedItem][1];
-            var bdd ="你确定要购买\r\n";
+            let bdd ="你确定要购买\r\n";
             bdd += "\r\n#i" +item+"# "+ " #t" + item + "#";
             bdd += "    需要点卷:#r " + cost + "\r\n";
             cm.sendYesNo(bdd);
