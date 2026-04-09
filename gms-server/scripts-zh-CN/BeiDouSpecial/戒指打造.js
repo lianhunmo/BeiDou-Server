@@ -86,7 +86,7 @@ function levelRingOption1() {
                 cm.sendYesNoLevel("Dispose", "RingUpgrade", text);
                 break;
             case 1:
-                costMaple = 1500;
+                costMaple = 1000;
                 costMeso = 2000000;
                 upgradeProb = 90;
                 text += "戒指当前等级为#b" + equipCurrentLevel + "#k级。\r\n";
@@ -96,7 +96,7 @@ function levelRingOption1() {
                 cm.sendYesNoLevel("Dispose", "RingUpgrade", text);
                 break;
             case 2:
-                costMaple = 2000;
+                costMaple = 1000;
                 costMeso = 3000000;
                 upgradeProb = 80;
                 text += "戒指当前等级为#b" + equipCurrentLevel + "#k级。\r\n";
@@ -106,7 +106,7 @@ function levelRingOption1() {
                 cm.sendYesNoLevel("Dispose", "RingUpgrade", text);
                 break;
             case 3:
-                costMaple = 2500;
+                costMaple = 1000;
                 costMeso = 4000000;
                 upgradeProb = 70;
                 text += "戒指当前等级为#b" + equipCurrentLevel + "#k级。\r\n";
@@ -116,7 +116,7 @@ function levelRingOption1() {
                 cm.sendYesNoLevel("Dispose", "RingUpgrade", text);
                 break;
             case 4:
-                costMaple = 3000;
+                costMaple = 1000;
                 costMeso = 5000000;
                 upgradeProb = 60;
                 text += "戒指当前等级为#b" + equipCurrentLevel + "#k级。\r\n";
@@ -126,7 +126,7 @@ function levelRingOption1() {
                 cm.sendYesNoLevel("Dispose", "RingUpgrade", text);
                 break;
             case 5:
-                costMaple = 3500;
+                costMaple = 1000;
                 costMeso = 6000000;
                 upgradeProb = 50;
                 text += "戒指当前等级为#b" + equipCurrentLevel + "#k级。\r\n";
@@ -136,7 +136,7 @@ function levelRingOption1() {
                 cm.sendYesNoLevel("Dispose", "RingUpgrade", text);
                 break;
             case 6:
-                costMaple = 4000;
+                costMaple = 1000;
                 costMeso = 7000000;
                 upgradeProb = 40;
                 text += "戒指当前等级为#b" + equipCurrentLevel + "#k级。\r\n";
@@ -146,7 +146,7 @@ function levelRingOption1() {
                 cm.sendYesNoLevel("Dispose", "RingUpgrade", text);
                 break;
             case 7:
-                costMaple = 4500;
+                costMaple = 1000;
                 costMeso = 8000000;
                 upgradeProb = 30;
                 text += "戒指当前等级为#b" + equipCurrentLevel + "#k级。\r\n";
@@ -156,7 +156,7 @@ function levelRingOption1() {
                 cm.sendYesNoLevel("Dispose", "RingUpgrade", text);
                 break;
             case 8:
-                costMaple = 5000;
+                costMaple = 1000;
                 costMeso = 9000000;
                 upgradeProb = 20;
                 text += "戒指当前等级为#b" + equipCurrentLevel + "#k级。\r\n";
@@ -166,7 +166,7 @@ function levelRingOption1() {
                 cm.sendYesNoLevel("Dispose", "RingUpgrade", text);
                 break;
             case 9:
-                costMaple = 5000;
+                costMaple = 1000;
                 costMeso = 10000000;
                 upgradeProb = 10;
                 text += "戒指当前等级为#b" + equipCurrentLevel + "#k级。\r\n";

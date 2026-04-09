@@ -94,7 +94,7 @@ function levelCashEquipOption0() {
                 cm.sendYesNoLevel("Dispose", "CashEquipUpgrade", text);
                 break;
             case 1:
-                costMaple = 15;
+                costMaple = 10;
                 costMeso = 2000000;
                 upgradeProb = 90;
                 text += "点装当前等级为#b" + equipCurrentLevel + "#k级。\r\n";
@@ -104,7 +104,7 @@ function levelCashEquipOption0() {
                 cm.sendYesNoLevel("Dispose", "CashEquipUpgrade", text);
                 break;
             case 2:
-                costMaple = 20;
+                costMaple = 10;
                 costMeso = 3000000;
                 upgradeProb = 80;
                 text += "点装当前等级为#b" + equipCurrentLevel + "#k级。\r\n";
@@ -114,7 +114,7 @@ function levelCashEquipOption0() {
                 cm.sendYesNoLevel("Dispose", "CashEquipUpgrade", text);
                 break;
             case 3:
-                costMaple = 25;
+                costMaple = 10;
                 costMeso = 4000000;
                 upgradeProb = 70;
                 text += "点装当前等级为#b" + equipCurrentLevel + "#k级。\r\n";
@@ -124,7 +124,7 @@ function levelCashEquipOption0() {
                 cm.sendYesNoLevel("Dispose", "CashEquipUpgrade", text);
                 break;
             case 4:
-                costMaple = 30;
+                costMaple = 10;
                 costMeso = 5000000;
                 upgradeProb = 60;
                 text += "点装当前等级为#b" + equipCurrentLevel + "#k级。\r\n";
@@ -134,7 +134,7 @@ function levelCashEquipOption0() {
                 cm.sendYesNoLevel("Dispose", "CashEquipUpgrade", text);
                 break;
             case 5:
-                costMaple = 35;
+                costMaple = 10;
                 costMeso = 6000000;
                 upgradeProb = 50;
                 text += "点装当前等级为#b" + equipCurrentLevel + "#k级。\r\n";
@@ -144,7 +144,7 @@ function levelCashEquipOption0() {
                 cm.sendYesNoLevel("Dispose", "CashEquipUpgrade", text);
                 break;
             case 6:
-                costMaple = 40;
+                costMaple = 10;
                 costMeso = 7000000;
                 upgradeProb = 40;
                 text += "点装当前等级为#b" + equipCurrentLevel + "#k级。\r\n";
@@ -154,7 +154,7 @@ function levelCashEquipOption0() {
                 cm.sendYesNoLevel("Dispose", "CashEquipUpgrade", text);
                 break;
             case 7:
-                costMaple = 45;
+                costMaple = 10;
                 costMeso = 8000000;
                 upgradeProb = 30;
                 text += "点装当前等级为#b" + equipCurrentLevel + "#k级。\r\n";
@@ -164,7 +164,7 @@ function levelCashEquipOption0() {
                 cm.sendYesNoLevel("Dispose", "CashEquipUpgrade", text);
                 break;
             case 8:
-                costMaple = 50;
+                costMaple = 10;
                 costMeso = 9000000;
                 upgradeProb = 20;
                 text += "点装当前等级为#b" + equipCurrentLevel + "#k级。\r\n";
@@ -174,7 +174,7 @@ function levelCashEquipOption0() {
                 cm.sendYesNoLevel("Dispose", "CashEquipUpgrade", text);
                 break;
             case 9:
-                costMaple = 50;
+                costMaple = 10;
                 costMeso = 10000000;
                 upgradeProb = 10;
                 text += "点装当前等级为#b" + equipCurrentLevel + "#k级。\r\n";
