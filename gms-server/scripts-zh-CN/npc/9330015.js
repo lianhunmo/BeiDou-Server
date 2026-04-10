@@ -163,7 +163,7 @@ function action(mode, type, selection) {
                 cm.saveOrUpdateCharacterExtendValue("出师次数", numberOfGraduatedStudents.toString());
 
                 cm.getChar().deleteShiTuRelation(student.getId());//删除师徒表
-                cm.worldMessage(6,"【"+cm.getChar().getName()+"】:吾徒 "+student.getName()+" 今日已成人出师,望众江湖侠士多多提携照顾,万分感谢.");
+                cm.getChar().getWorldServer().dropMessage(6,"【"+cm.getChar().getName()+"】:吾徒 "+student.getName()+" 今日已成人出师,望众江湖侠士多多提携照顾,万分感谢.");
                 cm.dispose();
             }
         } else if (selection == 8){ // 徒弟列表
