@@ -159,6 +159,7 @@ function action(mode, type, selection) {
                 cm.getPlayer().getCashShop().gainCash(1, 2000);//给师傅点卷
                 student.getPlayer().getAbstractPlayerInteraction().gainItem(2049100,2);//给徒弟混沌
                 student.getPlayer().gainMeso(20000000);//给徒弟金币
+                student.getPlayer().getCashShop().gainCash(2, 20000);//给徒弟抵用
                 numberOfGraduatedStudents++;
                 cm.saveOrUpdateCharacterExtendValue("出师次数", numberOfGraduatedStudents.toString());
 
