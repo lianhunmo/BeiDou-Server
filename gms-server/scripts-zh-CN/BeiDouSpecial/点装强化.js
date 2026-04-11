@@ -22,6 +22,7 @@ const MOB_CARD_RING_7 = 1112886;
 const MOB_CARD_RING_8 = 1112887;
 const MOB_CARD_RING_9 = 1112888;
 const MOB_CARD_RING_10 = 1112889;
+const Lupin_Pig_Belt = 1132011;
 const BAN_ITEM_ID_LIST = [
     MEDAL_CODE_1,
     MEDAL_CODE_2,
@@ -43,6 +44,7 @@ const BAN_ITEM_ID_LIST = [
     MOB_CARD_RING_8,
     MOB_CARD_RING_9,
     MOB_CARD_RING_10,
+    Lupin_Pig_Belt,
 ]
 
 const GOLD_MAPLE_LEAF = 4000313;
@@ -236,9 +238,9 @@ function levelCashEquipUpgrade() {
         ])
         let scrollResult = cm.getChar().scrollEquipWithEquipSlot(EQUIP_SLOT_1, upgradeProb, true, states);
         if (scrollResult) {
-            cm.sendLastLevel("CashEquipOption0", "强化成功！#r攻击+1 魔攻+1#k");
+            cm.sendLastLevel("CashEquipOption0", "强化成功！#r攻击+2 魔攻+8#k");
         } else {
-            cm.sendLastLevel("CashEquipOption0", "强化失败。#r攻击-1 魔攻-1#k");
+            cm.sendLastLevel("CashEquipOption0", "强化失败。#r攻击-2 魔攻-8#k");
         }
     }
 }

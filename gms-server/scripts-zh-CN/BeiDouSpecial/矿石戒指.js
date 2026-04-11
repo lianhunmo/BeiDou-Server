@@ -328,7 +328,7 @@ function levelRingUpgrade() {
     if (equipCurrentLevel < 9) {
         let scrollResult = cm.getChar().scrollEquipWithEquipSlot(EQUIP_SLOT, upgradeProb, false, states);
         if (scrollResult) {
-            cm.sendLastLevel("RingOption1", "强化成功！#r四维属性+1#k");
+            cm.sendLastLevel("RingOption1", "强化成功！#r四维属性+2#k");
         } else {
             cm.sendLastLevel("RingOption1", "强化失败。");
         }
