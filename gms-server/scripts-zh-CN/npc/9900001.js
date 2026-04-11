@@ -200,7 +200,7 @@ function doSelect(selection) {
 
 function openNpc(scriptName) {
     cm.dispose();
-    cm.openNpc(9900001, scriptName);
+    cm.openNpc(1002006, scriptName);
 }
 
 function level() {
