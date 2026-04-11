@@ -42,10 +42,10 @@ import static java.util.concurrent.TimeUnit.HOURS;
 public class ExpeditionBossLog {
 
     public enum BossLogEntry {
-        ZAKUM(3, 1, true),
-        HORNTAIL(1, 1, true),
-        PINKBEAN(1, 1, true),
-        SCARGA(2, 1, true),
+        ZAKUM(1, 1, false),
+        HORNTAIL(1, 1, false),
+        PINKBEAN(1, 1, false),
+        SCARGA(1, 1, false),
         PAPULATUS(2, 1, false),
         BALROG_NORMAL(2, 1, false);
 
