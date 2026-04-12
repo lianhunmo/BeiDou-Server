@@ -14503,7 +14503,8 @@
         <string name="1" value="#b蓝#k说梦幻主题公园出现了2只可怕的怪物, 他们正在骚扰他人. 如果没人站出来阻止的话, 梦幻主题公园将会成为它们的游乐场. 你必须马上去找在梦幻主题公园的#b艾尔多鲁#k寻找击败这些怪物的方法！"/>
         <string name="2" value="看看你能为梦幻主题公园做什么!"/>
         <int name="area" value="49"/>
-        <string name="rewardSummary" value="经验值6,000"/>
+        <string name="demandSummary" value="#r完成《蓝想看世界》系列任务#k\r\n#i4000471:# #t4000471:# #c4000471# / 10"/>
+        <string name="rewardSummary" value="#Wbasic# \r\n#i4032246:# #t4032246:# #c4032246# / 2 个"/>
     </imgdir>
     <imgdir name="4646">
         <string name="name" value="证明身为训练师的能力"/>
