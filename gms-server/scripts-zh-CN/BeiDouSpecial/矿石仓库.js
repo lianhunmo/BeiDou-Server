@@ -80,24 +80,32 @@ function action(mode, type, selection) {
                 nx = 0;
                 text = "请选择所要存放的矿石：\r\n";
                 for (var i = 0; i < itemlist.length; i++) {
+                    if (!cm.haveItem(itemlist[i])) {
+                        continue;
+                    }
                     text += `#L${i}##k存放：#b#v${itemlist[i]}##z${itemlist[i]}##l\r\n\r\n`;
                     text += ` #d- 当前背包内拥有：#r#c${itemlist[i]}##d 个。\r\n`;
                     if (i != 0 && (i + 1) % 99 == 0) {
                         text += "\r\n";
                     }
                 }
+                text += `#L999##b离开#k#l\r\n\r\n`;
                 cm.sendSimple(text);
             } else if (selection == 1) {
                 nx = 1;
                 text = "请选择所要取回的矿石：\r\n";
                 for (var i = 0; i < itemlist.length; i++) {
                     var num = cm.getPlayer().getCharacterStorageInteger(itemlist[i], 0);
+                    if (num < 1) {
+                        continue;
+                    }
                     text += `#L${i}##k取回：#b#v${itemlist[i]}##z${itemlist[i]}##l\r\n\r\n`;
                     text += ` #d- 当前仓库内拥有：#r${num}#d 个。\r\n`;
                     if (i != 0 && (i + 1) % 99 == 0) {
                         text += "\r\n";
                     }
                 }
+                text += `#L999##b离开#k#l\r\n\r\n`;
                 cm.sendSimple(text);
             } else if (selection == 2) {
                 nx = 2;
@@ -124,12 +132,16 @@ function action(mode, type, selection) {
                 nx = 3;
                 text = "请选择所要存放的母矿：\r\n";
                 for (var i = 0; i < itemlist1.length; i++) {
+                    if (!cm.haveItem(itemlist[i])) {
+                        continue;
+                    }
                     text += `#L${i}##k存放：#b#v${itemlist1[i]}##z${itemlist1[i]}##l\r\n\r\n`;
                     text += ` #d- 当前背包内拥有：#r#c${itemlist1[i]}##d 个。\r\n`;
                     if (i != 0 && (i + 1) % 99 == 0) {
                         text += "\r\n";
                     }
                 }
+                text += `#L999##b离开#k#l\r\n\r\n`;
                 cm.sendSimple(text);
                 if (selstatus == -1) {
                     selstatus = selection;
@@ -139,6 +151,9 @@ function action(mode, type, selection) {
                 text = "请选择所要取回的母矿：\r\n";
                 for (var i = 0; i < itemlist1.length; i++) {
                     var num = cm.getPlayer().getCharacterStorageInteger(itemlist1[i], 0);
+                    if (num < 1) {
+                        continue;
+                    }
                     text += `#L${i}##k取回：#b#v${itemlist1[i]}##z${itemlist1[i]}##l\r\n\r\n`;
                     text += ` #d- 当前仓库内拥有：#r${num}#d 个。\r\n`;
                     if (i != 0 && (i + 1) % 99 == 0) {
@@ -146,6 +161,7 @@ function action(mode, type, selection) {
                     }
                 }
 
+                text += `#L999##b离开#k#l\r\n\r\n`;
                 cm.sendSimple(text);
                 if (selstatus == -1) {
                     selstatus = selection;
@@ -177,6 +193,10 @@ function action(mode, type, selection) {
         } else if (a == 2) {
             if (nx == 0) {
                 selects = selection;
+                if (selects == 999) {
+                    cm.dispose();
+                    return;
+                }
                 nx = 0;
                 var txt = ` - 当前存放矿石：#r#i${itemlist[selects]}##l\r\n\r\n`;
                 txt += ` #d- 当前背包内拥有：#r#c${itemlist[selects]}##d 个。\r\n`;
@@ -186,6 +206,10 @@ function action(mode, type, selection) {
             } else if (nx == 1) {
                 nx = 1;
                 selects = selection;
+                if (selects == 999) {
+                    cm.dispose();
+                    return;
+                }
                 var num = cm
                     .getPlayer()
                     .getCharacterStorageInteger(itemlist[selects], 0);
@@ -197,6 +221,10 @@ function action(mode, type, selection) {
             } else if (nx == 3) {
                 nx = 3;
                 selects = selection;
+                if (selects == 999) {
+                    cm.dispose();
+                    return;
+                }
                 var txt = ` - 当前存放母矿：#r#i${itemlist1[selects]}##l\r\n\r\n`;
                 txt += ` #d- 当前背包内拥有：#r#c${itemlist1[selects]}##d 个。\r\n`;
                 txt += " #k- 请输入存放母矿的数值：\r\n\r\n";
@@ -208,6 +236,10 @@ function action(mode, type, selection) {
             } else if (nx == 4) {
                 nx = 4;
                 selects = selection;
+                if (selects == 999) {
+                    cm.dispose();
+                    return;
+                }
                 var num = cm
                     .getPlayer()
                     .getCharacterStorageInteger(itemlist1[selects], 0);

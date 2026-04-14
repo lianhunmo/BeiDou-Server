@@ -258,24 +258,32 @@ function action(mode, type, selection) {
                 nx = 0;
                 text = "请选择所要存放的卷轴：\r\n";
                 for (let i = 0; i < scrollList.length; i++) {
+                    if (!cm.haveItem(scrollList[i])) {
+                        continue;
+                    }
                     text += `#L${i}##k存放：#b#z${scrollList[i]}##l\r\n\r\n`;
                     text += ` #d- 当前背包内拥有：#r#c${scrollList[i]}##d 个。\r\n`;
                     if (i != 0 && (i + 1) % 99 == 0) {
                         text += "\r\n";
                     }
                 }
+                text += `#L999##b离开#k#l\r\n\r\n`;
                 cm.sendSimple(text);
             } else if (selection == 1) {
                 nx = 1;
                 text = "请选择所要取回的卷轴：\r\n";
                 for (let i = 0; i < scrollList.length; i++) {
                     let num = cm.getPlayer().getCharacterStorageInteger(scrollList[i], 0);
+                    if (num < 1) {
+                        continue;
+                    }
                     text += `#L${i}##k取回：#b#z${scrollList[i]}##l\r\n\r\n`;
                     text += ` #d- 当前仓库内拥有：#r${num}#d 个。\r\n`;
                     if (i != 0 && (i + 1) % 99 == 0) {
                         text += "\r\n";
                     }
                 }
+                text += `#L999##b离开#k#l\r\n\r\n`;
                 cm.sendSimple(text);
             } else if (selection == 2) {
                 nx = 2;
@@ -304,6 +312,10 @@ function action(mode, type, selection) {
         } else if (a == 2) {
             if (nx == 0) {
                 selects = selection;
+                if (selects == 999) {
+                    cm.dispose();
+                    return;
+                }
                 nx = 0;
                 let txt = ` - 当前存放卷轴：#r#i${scrollList[selects]}##l\r\n\r\n`;
                 txt += ` #d- 当前背包内拥有：#r#c${scrollList[selects]}##d 个。\r\n`;
@@ -313,6 +325,10 @@ function action(mode, type, selection) {
             } else if (nx == 1) {
                 nx = 1;
                 selects = selection;
+                if (selects == 999) {
+                    cm.dispose();
+                    return;
+                }
                 let num = cm
                     .getPlayer()
                     .getCharacterStorageInteger(scrollList[selects], 0);
