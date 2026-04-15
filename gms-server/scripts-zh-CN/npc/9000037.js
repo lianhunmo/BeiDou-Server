@@ -127,7 +127,7 @@ function action(mode, type, selection) {
                     return;
                 }
 
-                cm.sendSimple("#e#b<组队任务：首领突袭>\r\n#k#n" + em.getProperty("party") + "\r\n\r\n你想要和队友合作完成远征任务，还是勇敢到足以独自完成？让你的#b队伍领袖#k与我交谈或者自己创建一个队伍。#b\r\n#L0#我想参加组队任务。\r\n#L1#我想" + (cm.getPlayer().isRecvPartySearchInviteEnabled() ? "禁用" : "启用") + "组队搜索。\r\n#L2#我想了解更多详情。");
+                cm.sendSimple("#e#b<组队任务：首领突袭>\r\n#k#n" + em.getProperty("party") + "\r\n\r\n你想要和队友合作完成远征任务，还是勇敢到足以独自完成？每日可挑战2次。让你的#b队长#k与我交谈或者自己创建一个队伍。#b\r\n#L0#我想参加组队任务。\r\n#L1#我想" + (cm.getPlayer().isRecvPartySearchInviteEnabled() ? "禁用" : "启用") + "组队搜索。\r\n#L2#我想了解更多详情。");
             }
         } else if (status == 1) {
             if (state == 3) {
@@ -158,10 +158,29 @@ function action(mode, type, selection) {
                         cm.dispose();
                     } else {
                         var eli = em.getEligibleParty(cm.getParty());
+                        let count = cm.getCharacterExtendValue("每日挑战BOSS突袭组队任务次数", true)
+                        let api = cm.getChar().getAbstractPlayerInteraction();
+                        for (let i = 0; i < eli.length; i++) {
+                            count = Math.max(api.getCharacterExtendValue(eli[i].getPlayer().getId(), "每日挑战BOSS突袭组队任务次数", true), count);
+                        }
+                        if (count >= 2) {
+                            cm.sendOk("你的队伍中有人今日已经挑战过2次BOSS突袭组队任务，请他明天再来吧。");
+                            cm.dispose();
+                            return;
+                        }
                         if (eli.size() > 0) {
                             var lobby = detectTeamLobby(eli), i;
                             for (i = lobby; i < 8; i++) {
                                 if (em.startInstance(i, cm.getParty(), cm.getPlayer().getMap(), 1)) {
+                                    if (count) {
+                                        count++;
+                                    } else {
+                                        count = 1;
+                                    }
+                                    cm.saveOrUpdateCharacterExtendValue("每日挑战BOSS突袭组队任务次数", count.toString(), true);
+                                    for (let i = 0; i < eli.length; i++) {
+                                        cm.saveOrUpdateCharacterExtendValue(eli[i].getPlayer().getId(), "每日挑战BOSS突袭组队任务次数", count.toString(), true);
+                                    }
                                     break;
                                 }
                             }
