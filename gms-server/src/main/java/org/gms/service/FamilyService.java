@@ -78,6 +78,9 @@ public class FamilyService {
         }
         for (World world : Server.getInstance().getWorlds()) {
             for (Family family : world.getFamilies()) {
+                if (family.getLeader() == null) {
+                    continue;
+                }
                 family.getLeader().doFullCount();
             }
         }
