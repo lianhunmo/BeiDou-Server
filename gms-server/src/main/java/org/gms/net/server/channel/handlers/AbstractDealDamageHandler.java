@@ -531,6 +531,7 @@ public abstract class AbstractDealDamageHandler extends AbstractPacketHandler {
                     }
                 }
             }
+            player.addTotalDamage((long) totDamage);
         } catch (Exception e) {
             e.printStackTrace();
         }

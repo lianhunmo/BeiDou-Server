@@ -54,7 +54,7 @@ function action(mode, type, selection) {
         text += "#L11#每日任务#l\t #L14#肝王勋章#l\t #L16#便利商店#l\t #L20#血衣合成#l\r\n";
         text += "#L17#矿石仓库#l\t #L18#卷轴仓库#l\t #L24#怪卡仓库#l\t #L19#怪物卡戒#l\r\n";
         text += "#L21#皇家发型#l\t #L22#皇家整容#l\t #L23#时尚点装#l\t #L26#月卡功能#l\r\n";
-        text += "#L27#金猪腰带#l\r\n";
+        text += "#L27#金猪腰带#l\t #L28#秒伤测试#l\r\n";
         text += "\r\n\r\n#L15#===================#r拍卖行#b===================#k#l\r\n";
         if (cm.getPlayer().isGM()) {
             text += "\r\n\r\n";
@@ -158,6 +158,9 @@ function doSelect(selection) {
             break;
         case 27:
             openNpc("金猪腰带");
+            break;
+        case 28:
+            openNpc("秒伤测试");
             break;
 // GM功能
         case 23:

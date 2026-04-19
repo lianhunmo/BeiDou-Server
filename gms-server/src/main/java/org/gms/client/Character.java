@@ -247,6 +247,9 @@ public class Character extends AbstractCharacterObject {
     private long lastfametime;
     @Setter
     @Getter
+    private long totalDamage;
+    @Setter
+    @Getter
     private long lastUsedCashItem;
     private long lastExpression = 0;
     @Setter
@@ -10086,5 +10089,23 @@ public class Character extends AbstractCharacterObject {
         } catch (SQLException sqle) {
             sqle.printStackTrace();
         }
+    }
+
+    public void schedule(Runnable r, long delay) {
+        TimerManager tMan = TimerManager.getInstance();
+        tMan.schedule(r, delay);
+    }
+
+    public void addTotalDamage(Long damage) {
+        totalDamage += damage;
+    }
+
+    public void clearTotalDamage() {
+        totalDamage = 0L;
+    }
+
+    public Long getTotalDamage() {
+
+        return totalDamage;
     }
 }
