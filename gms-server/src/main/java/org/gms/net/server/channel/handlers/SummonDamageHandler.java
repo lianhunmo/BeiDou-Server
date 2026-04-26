@@ -135,7 +135,7 @@ public final class SummonDamageHandler extends AbstractDealDamageHandler {
 
         if (magic) {
             int matk = Math.max(player.getTotalMagic(), 14);
-            maxDamage = player.calculateMaxBaseMagicDamage(matk) * (0.05 * summonEffect.getMatk());
+            maxDamage = player.calculateMaxBaseMagicDamage(matk) * (0.05 * summonEffect.getMatk()) * 2;
         } else {
             int watk = Math.max(player.getTotalWatk(), 14);
             Item weapon_item = player.getInventory(InventoryType.EQUIPPED).getItem((short) -11);
@@ -148,7 +148,7 @@ public final class SummonDamageHandler extends AbstractDealDamageHandler {
             }
 
             float summonDmgMod = (maxBaseDmg >= 438) ? 0.054f : 0.077f;
-            maxDamage = maxBaseDmg * (summonDmgMod * summonEffect.getWatk());
+            maxDamage = maxBaseDmg * (summonDmgMod * summonEffect.getWatk()) * 2;
         }
 
         return (int) maxDamage;
