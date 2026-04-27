@@ -235,7 +235,7 @@ public abstract class AbstractDealDamageHandler extends AbstractPacketHandler {
                         distanceToDetect += 60000;
                     }
 
-                    if (distance > distanceToDetect) {
+                    if (distance > distanceToDetect * 2) {
 //                        AutobanFactory.DISTANCE_HACK.alert(player, "距离Sq到怪物: " + distance + " SID: " + attack.skill + " MID: " + monster.getId());
                         AutobanFactory.DISTANCE_HACK.addPoint(player.getAutoBanManager(), "玩家：" + player.getName() + "距离Sq到怪物: " + distance + " SID: " + attack.skill + " MID: " + monster.getId());
                         log.warn("玩家：{}距离Sq到怪物: {} SID: {} MID: {}", player.getName(), distance, attack.skill, monster.getId());
@@ -936,7 +936,7 @@ public abstract class AbstractDealDamageHandler extends AbstractPacketHandler {
             long serverTime = System.currentTimeMillis();
             if (serverTime - chr.getLastAttackTime() < 250) {
                 // 检测攻击间隔 小于350mm封号
-                AutobanFactory.ATTACK_INTERVAL.addPoint(chr.getAutoBanManager(), "玩家" + chr.getName() + "地图ID：" + chr.getMapId() + "攻击间隔: " + (serverTime - chr.getLastAttackTime()));
+//                AutobanFactory.ATTACK_INTERVAL.addPoint(chr.getAutoBanManager(), "玩家" + chr.getName() + "地图ID：" + chr.getMapId() + "攻击间隔: " + (serverTime - chr.getLastAttackTime()));
                 log.warn("玩家{}地图ID：{}攻击间隔: {}", chr.getName(), chr.getMapId(), serverTime - chr.getLastAttackTime());
             } else if (serverTime - chr.getLastAttackTime() < 350) {
                 // 检测攻击间隔 小于500mm警告
