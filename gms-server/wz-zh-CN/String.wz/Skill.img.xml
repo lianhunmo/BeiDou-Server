@@ -1228,7 +1228,7 @@
         <string name="h28" value="消费MP16，造成伤害96%，攻击范围 300%， 以98%几率出现昏迷攻击，持续10秒"/>
         <string name="h29" value="消费MP16，造成伤害98%，攻击范围 300%， 以99%几率出现昏迷攻击，持续10秒"/>
         <string name="h3" value="消耗MP8，造成伤害46%，攻击范围 300%， 以56%几率出现昏迷攻击，持续5秒"/>
-        <string name="h30" value="消费MP16，造成伤害100%，攻击范围 300%， 以100%几率出现昏迷攻击，持续10秒"/>
+        <string name="h30" value="消费MP16，造成伤害100%，攻击范围 400%， 以100%几率出现昏迷攻击，持续10秒"/>
         <string name="h4" value="消耗MP8，造成伤害48%，攻击范围 300%， 以58%几率出现昏迷攻击，持续5秒"/>
         <string name="h5" value="消费MP8，造成伤害50%，攻击范围 300%， 以60%几率出现昏迷攻击，持续5秒"/>
         <string name="h6" value="消费MP8，造成伤害52%，攻击范围 300%， 以62%几率出现昏迷攻击，持续6秒"/>
@@ -1334,7 +1334,7 @@
         <string name="h28" value="消耗MP30，造成伤害224%，攻击3个敌人"/>
         <string name="h29" value="消耗MP30，造成伤害227%，攻击3个敌人"/>
         <string name="h3" value="消耗MP16，造成伤害125%，攻击1个敌人"/>
-        <string name="h30" value="消耗MP30，造成伤害230%，攻击3个敌人"/>
+        <string name="h30" value="消耗MP30，造成伤害220%四段伤害，攻击2个敌人"/>
         <string name="h4" value="消耗MP16，造成伤害130%，攻击1个敌人"/>
         <string name="h5" value="消耗MP16，造成伤害135%，攻击1个敌人"/>
         <string name="h6" value="消耗MP16，造成伤害140%，攻击1个敌人"/>
@@ -1602,7 +1602,7 @@
         <string name="h28" value="消耗MP 51，280秒内有88%的几率不会出现退后现象"/>
         <string name="h29" value="消耗MP 50，290秒内有89%的几率不会出现退后现象"/>
         <string name="h3" value="消耗MP 30，30秒内有46%的几率不会出现退后现象"/>
-        <string name="h30" value="消耗MP 50，300秒内有90%的几率不会出现退后现象"/>
+        <string name="h30" value="消耗MP 50，600秒内有100%的几率不会出现退后现象"/>
         <string name="h4" value="消耗MP 30，40秒内有48%的几率不会出现退后现象"/>
         <string name="h5" value="消耗MP 30，50秒内有50%的几率不会出现退后现象"/>
         <string name="h6" value="消耗MP 36，60秒内有52%的几率不会出现退后现象"/>
@@ -1704,7 +1704,7 @@
         <string name="h28" value="消耗MP 38，持续时间 240秒 攻击力 25 上升"/>
         <string name="h29" value="消耗MP 39，持续时间 240秒 攻击力 25 上升"/>
         <string name="h3" value="消耗MP 13，持续时间 30秒 攻击力 12 上升"/>
-        <string name="h30" value="消耗MP 40，持续时间 240秒 攻击力 26 上升"/>
+        <string name="h30" value="消耗MP 40，持续时间 240秒，冷却时间360秒，攻击力增加 30 "/>
         <string name="h4" value="消耗MP 14，持续时间 40秒 攻击力 13 上升"/>
         <string name="h5" value="消耗MP 15，持续时间 50秒 攻击力 13 上升"/>
         <string name="h6" value="消耗MP 16，持续时间 60秒 攻击力 14 上升"/>
@@ -2303,7 +2303,7 @@
         <string name="h18" value="消耗MP增加190%，属性攻击魔法伤害增加154%"/>
         <string name="h19" value="消耗MP增加195%，属性攻击魔法伤害增加157%"/>
         <string name="h2" value="消耗MP增加110%，属性攻击魔法伤害增加106%"/>
-        <string name="h20" value="消耗MP增加200%，属性攻击魔法伤害增加160%"/>
+        <string name="h20" value="消耗MP增加为200%，属性攻击魔法伤害增加为150%"/>
         <string name="h3" value="消耗MP增加115%，属性攻击魔法伤害增加109%"/>
         <string name="h4" value="消耗MP增加120%，属性攻击魔法伤害增加112%"/>
         <string name="h5" value="消耗MP增加125%，属性攻击魔法伤害增加115%"/>
@@ -2601,27 +2601,27 @@
     </imgdir>
     <imgdir name="12111003">
         <string name="name" value="天降落星"/>
-        <string name="h1" value="消耗MP1500，基本攻击力165，攻击2次，熟练度60%              "/>
-        <string name="h10" value="消耗MP1900，基本攻击力210，攻击2次，熟练度60%              "/>
-        <string name="h11" value="消耗MP2000，基本攻击力215，攻击2次，熟练度60%              "/>
-        <string name="h12" value="消耗MP2000，基本攻击力220，攻击2次，熟练度60%              "/>
-        <string name="h13" value="消耗MP2100，基本攻击力225，攻击2次，熟练度60%              "/>
-        <string name="h14" value="消耗MP2100，基本攻击力230，攻击2次，熟练度60%              "/>
-        <string name="h15" value="消耗MP2200，基本攻击力235，攻击2次，熟练度60%              "/>
-        <string name="h16" value="消耗MP2200，基本攻击力240，攻击2次，熟练度60%"/>
-        <string name="h17" value="消耗MP2300，基本攻击力245，攻击2次，熟练度60%               "/>
-        <string name="h18" value="消耗MP2300，基本攻击力250，攻击2次，熟练度60%              "/>
-        <string name="h19" value="消耗MP2400，基本攻击力255，攻击2次，熟练度60%              "/>
-        <string name="h2" value="消耗MP1500，基本攻击力170，攻击2次，熟练度60%              "/>
-        <string name="h20" value="消耗MP2400，基本攻击力260，攻击2次，熟练度60%              "/>
-        <string name="h3" value="消耗MP1600，基本攻击力175，攻击2次，熟练度60%              "/>
-        <string name="h4" value="消耗MP1600，基本攻击力180，攻击2次，熟练度60%"/>
-        <string name="h5" value="消耗MP1700，基本攻击力185，攻击2次，熟练度60%              "/>
-        <string name="h6" value="消耗MP1700，基本攻击力190，攻击2次，熟练度60%              "/>
-        <string name="h7" value="消耗MP1800，基本攻击力195，攻击2次，熟练度60%                "/>
-        <string name="h8" value="消耗MP1800，基本攻击力200，攻击2次，熟练度60%                  "/>
-        <string name="h9" value="消耗MP1900，基本攻击力205，攻击2次，熟练度60%  "/>
-        <string name="desc" value="[最高等级：20]\n从天上召唤陨石，对15个以下的多个敌人\n造成强力火焰伤害。\n#c冷却时间: 10秒#"/>
+        <string name="h1" value="消耗MP6000，基本攻击力165，熟练度60%"/>
+        <string name="h10" value="消耗MP6000，基本攻击力210，熟练度60%"/>
+        <string name="h11" value="消耗MP6000，基本攻击力215，熟练度60%"/>
+        <string name="h12" value="消耗MP6000，基本攻击力220，熟练度60%"/>
+        <string name="h13" value="消耗MP6000，基本攻击力225，熟练度60%"/>
+        <string name="h14" value="消耗MP6000，基本攻击力230，熟练度60%"/>
+        <string name="h15" value="消耗MP6000，基本攻击力235，熟练度60%"/>
+        <string name="h16" value="消耗MP6000，基本攻击力240，熟练度60%"/>
+        <string name="h17" value="消耗MP6000，基本攻击力245，熟练度60% "/>
+        <string name="h18" value="消耗MP6000，基本攻击力250，熟练度60%"/>
+        <string name="h19" value="消耗MP6000，基本攻击力255，熟练度60%"/>
+        <string name="h2" value="消耗MP6000，基本攻击力170，熟练度60%"/>
+        <string name="h20" value="消耗MP6000，基本攻击力800，熟练度60%"/>
+        <string name="h3" value="消耗MP6000，基本攻击力175，熟练度60%"/>
+        <string name="h4" value="消耗MP6000，基本攻击力180，熟练度60%"/>
+        <string name="h5" value="消耗MP6000，基本攻击力185，熟练度60%"/>
+        <string name="h6" value="消耗MP6000，基本攻击力190，熟练度60%"/>
+        <string name="h7" value="消耗MP6000，基本攻击力195，熟练度60%"/>
+        <string name="h8" value="消耗MP6000，基本攻击力200，熟练度60%"/>
+        <string name="h9" value="消耗MP6000，基本攻击力205，熟练度60%"/>
+        <string name="desc" value="[最高等级：20]\n从天上召唤陨石，对6个以下的多个敌人\n造成强力火焰伤害。"/>
     </imgdir>
     <imgdir name="12111004">
         <string name="name" value="火魔兽"/>
@@ -2896,7 +2896,7 @@
         <string name="h28" value="消耗MP 51，280秒内有88%的几率不会出现退后现象"/>
         <string name="h29" value="消耗MP 50，290秒内有89%的几率不会出现退后现象"/>
         <string name="h3" value="消耗MP 30，30秒内有46%的几率不会出现退后现象"/>
-        <string name="h30" value="消耗MP 50，300秒内有90%的几率不会出现退后现象"/>
+        <string name="h30" value="消耗MP 50，600秒内有100%的几率不会出现退后现象"/>
         <string name="h4" value="消耗MP 30，40秒内有48%的几率不会出现退后现象"/>
         <string name="h5" value="消耗MP 30，50秒内有50%的几率不会出现退后现象"/>
         <string name="h6" value="消耗MP 36，60秒内有52%的几率不会出现退后现象"/>
@@ -2919,7 +2919,7 @@
         <string name="h18" value="消耗MP 30，伤害156%，持续时间280秒,属性纯度50%"/>
         <string name="h19" value="消耗MP 30，伤害158%，持续时间290秒,属性纯度50%"/>
         <string name="h2" value="消耗MP 20，伤害124%，持续时间120秒,属性纯度50%"/>
-        <string name="h20" value="消耗MP 35，伤害160%，持续时间300秒,属性纯度50%"/>
+        <string name="h20" value="消耗MP 35，伤害200%，持续时间600秒,属性纯度50%"/>
         <string name="h3" value="消耗MP 20，伤害126%，持续时间130秒,属性纯度50%"/>
         <string name="h4" value="消耗MP 20，伤害128%，持续时间140秒,属性纯度50%"/>
         <string name="h5" value="消耗MP 20，伤害130%，持续时间150秒,属性纯度50%"/>
@@ -3012,7 +3012,7 @@
         <string name="h28" value="消耗MP 26，伤害 290%"/>
         <string name="h29" value="消耗MP 25，伤害 295%"/>
         <string name="h3" value="消耗MP 17，伤害 165%"/>
-        <string name="h30" value="消耗MP 24，伤害 300%"/>
+        <string name="h30" value="消耗MP 24，伤害 366%，攻击三个目标三次。"/>
         <string name="h4" value="消耗MP 17，伤害 170%"/>
         <string name="h5" value="消耗MP 17，伤害 175%"/>
         <string name="h6" value="消耗MP 20，伤害 180%"/>
@@ -3046,7 +3046,7 @@
         <string name="h28" value="消耗MP 58，伤害 880%，冷却时间 40秒"/>
         <string name="h29" value="消耗MP 59，伤害 890%，冷却时间 30秒"/>
         <string name="h3" value="消耗MP 33，伤害 460%，冷却时间 290秒"/>
-        <string name="h30" value="消耗MP 60，伤害 900%，冷却时间 20秒"/>
+        <string name="h30" value="消耗MP 600，伤害 900%，冷却时间 5秒"/>
         <string name="h4" value="消耗MP 34，伤害 480%，冷却时间 280秒"/>
         <string name="h5" value="消耗MP 35，伤害 500%，冷却时间 270秒"/>
         <string name="h6" value="消耗MP 36，伤害 520%，冷却时间 260秒"/>
@@ -3108,7 +3108,7 @@
         <string name="h18" value="概率38%，造成伤害190%"/>
         <string name="h19" value="概率39%，造成伤害195%"/>
         <string name="h2" value="概率14%，造成伤害110%"/>
-        <string name="h20" value="概率40%，造成伤害200%"/>
+        <string name="h20" value="概率70%，造成伤害200%"/>
         <string name="h3" value="概率16%，造成伤害115%"/>
         <string name="h4" value="概率18%，造成伤害120%"/>
         <string name="h5" value="概率20%，造成伤害125%"/>
@@ -3640,7 +3640,7 @@
         <string name="h28" value="消费MP24，造成伤害164%，对三个人三次攻击"/>
         <string name="h29" value="消费MP24，造成伤害167%，对三个人三次攻击"/>
         <string name="h3" value="消费MP10，造成伤害65%，对一个人三次攻击"/>
-        <string name="h30" value="消费MP24，造成伤害170%，对三个人三次攻击"/>
+        <string name="h30" value="消费MP24，造成伤害170%，对三个人四次攻击"/>
         <string name="h4" value="消费MP10，造成伤害70%，对一个人三次攻击"/>
         <string name="h5" value="消费MP10，造成伤害75%，对一个人三次攻击"/>
         <string name="h6" value="消费MP13，造成伤害80%，对一个人三次攻击"/>
@@ -3939,7 +3939,7 @@
         <string name="h18" value="消耗MP8，造成伤害86%"/>
         <string name="h19" value="消耗MP8，造成伤害88%"/>
         <string name="h2" value="消耗MP6，造成伤害54%"/>
-        <string name="h20" value="消耗MP8，造成伤害90%"/>
+        <string name="h20" value="消耗MP8，造成伤害190%"/>
         <string name="h3" value="消耗MP6，造成伤害56%"/>
         <string name="h4" value="消耗MP6，造成伤害58%"/>
         <string name="h5" value="消耗MP6，造成伤害60%"/>
@@ -4100,7 +4100,7 @@
         <string name="h28" value="HP 80% 以下时，伤害 194%"/>
         <string name="h29" value="HP 80% 以下时，伤害 197%"/>
         <string name="h3" value="HP 80% 以下时，伤害 112%"/>
-        <string name="h30" value="HP 80% 以下时，伤害 200%"/>
+        <string name="h30" value="HP 100% 以下时，伤害 280%"/>
         <string name="h4" value="HP 80% 以下时，伤害 116%"/>
         <string name="h5" value="HP 80% 以下时，伤害 120%"/>
         <string name="h6" value="HP 80% 以下时，伤害 124%"/>
@@ -4260,7 +4260,7 @@
         <string name="h28" value="消耗MP 51，280秒内有88%的几率不会出现退后现象"/>
         <string name="h29" value="消耗MP 50，290秒内有89%的几率不会出现退后现象"/>
         <string name="h3" value="消耗MP 30，30秒内有46%的几率不会出现退后现象"/>
-        <string name="h30" value="消耗MP 50，300秒内有90%的几率不会出现退后现象"/>
+        <string name="h30" value="消耗MP 50，600秒内有100%的几率不会出现退后现象"/>
         <string name="h4" value="消耗MP 30，40秒内有48%的几率不会出现退后现象"/>
         <string name="h5" value="消耗MP 30，50秒内有50%的几率不会出现退后现象"/>
         <string name="h6" value="消耗MP 36，60秒内有52%的几率不会出现退后现象"/>
@@ -5996,7 +5996,7 @@
         <string name="h28" value="消耗MP增加200%，魔法攻击造成伤害156%"/>
         <string name="h29" value="消耗MP增加195%，魔法攻击造成伤害158%"/>
         <string name="h3" value="消耗MP增加115%，魔法攻击造成伤害106%"/>
-        <string name="h30" value="消耗MP增加200%，魔法攻击造成伤害160%"/>
+        <string name="h20" value="消耗MP增加为200%，属性攻击魔法伤害增加为150%"/>
         <string name="h4" value="消耗MP增加120%，魔法攻击造成伤害108%"/>
         <string name="h5" value="消耗MP增加125%，魔法攻击造成伤害110%"/>
         <string name="h6" value="消耗MP增加130%，魔法攻击造成伤害112%"/>
@@ -6652,7 +6652,7 @@
         <string name="h28" value="消耗MP51，280秒内有88%的几率不会出现退后现象"/>
         <string name="h29" value="消耗MP50，290秒内有89%的几率不会出现退后现象"/>
         <string name="h3" value="消耗MP30，30秒内有46%的几率不会出现退后现象"/>
-        <string name="h30" value="消耗MP50，300秒内有90%的几率不会出现退后现象"/>
+        <string name="h30" value="消耗MP50，600秒内有100%的几率不会出现退后现象"/>
         <string name="h4" value="消耗MP30，40秒内有48%的几率不会出现退后现象"/>
         <string name="h5" value="消耗MP30，50秒内有50%的几率不会出现退后现象"/>
         <string name="h6" value="消耗MP36，60秒内有52%的几率不会出现退后现象"/>
@@ -6834,7 +6834,7 @@
         <string name="h28" value="38秒 内不消耗MP"/>
         <string name="h29" value="39秒 内不消耗MP"/>
         <string name="h3" value="13秒 内不消耗MP"/>
-        <string name="h30" value="40秒 内不消耗MP"/>
+        <string name="h30" value="80秒 内不消耗MP，冷却时间120秒"/>
         <string name="h4" value="14秒 内不消耗MP"/>
         <string name="h5" value="15秒 内不消耗MP"/>
         <string name="h6" value="16秒 内不消耗MP"/>
@@ -6902,7 +6902,7 @@
         <string name="h28" value="消耗MP 27，基本 攻击力 272，熟练度 60%，持续时间 15秒"/>
         <string name="h29" value="消耗MP 26，基本 攻击力 276，熟练度 60%，持续时间 15秒"/>
         <string name="h3" value="消耗MP 16，基本 攻击力 172，熟练度 60%，持续时间 5秒"/>
-        <string name="h30" value="消耗MP 25，基本 攻击力 280，熟练度 60%，持续时间 15秒"/>
+        <string name="h30" value="消耗MP 25，基本 攻击力 360三段伤害，熟练度 60%，石化持续时间 15秒"/>
         <string name="h4" value="消耗MP 16，基本 攻击力 176，熟练度 60%，持续时间 5秒"/>
         <string name="h5" value="消耗MP 16，基本 攻击力 180，熟练度 60%，持续时间 5秒"/>
         <string name="h6" value="消耗MP 16，基本 攻击力 184，熟练度 60%，持续时间 5秒"/>
@@ -7173,7 +7173,7 @@
         <string name="h28" value="消耗MP增加200%，魔法攻击造成伤害156%"/>
         <string name="h29" value="消耗MP增加195%，魔法攻击造成伤害158%"/>
         <string name="h3" value="消耗MP增加115%，魔法攻击造成伤害106%"/>
-        <string name="h30" value="消耗MP增加200%，魔法攻击造成伤害160%"/>
+        <string name="h20" value="消耗MP增加为200%，属性攻击魔法伤害增加为150%"/>
         <string name="h4" value="消耗MP增加120%，魔法攻击造成伤害108%"/>
         <string name="h5" value="消耗MP增加125%，魔法攻击造成伤害110%"/>
         <string name="h6" value="消耗MP增加130%，魔法攻击造成伤害112%"/>
@@ -7207,7 +7207,7 @@
         <string name="h28" value="消费MP48，基本攻击力106，熟练度60%,攻击范围250%,"/>
         <string name="h29" value="消费MP49，基本攻击力108，熟练度60%,攻击范围250%,"/>
         <string name="h3" value="消费MP23，基本攻击力56，熟练度15%,攻击范围250%,"/>
-        <string name="h30" value="消费MP50，基本攻击力110，熟练度60%,攻击范围250%,"/>
+        <string name="h30" value="消费MP50，基本攻击力120，熟练度60%,攻击范围250%。"/>
         <string name="h4" value="消费MP24，基本攻击力58，熟练度20%,攻击范围250%,"/>
         <string name="h5" value="消费MP25，基本攻击力60，熟练度20%,攻击范围250%,"/>
         <string name="h6" value="消费MP26，基本攻击力62，熟练度20%,攻击范围250%,"/>
@@ -7496,7 +7496,7 @@
         <string name="h28" value="38秒 内不消耗MP"/>
         <string name="h29" value="39秒 内不消耗MP"/>
         <string name="h3" value="13秒 内不消耗MP"/>
-        <string name="h30" value="40秒 内不消耗MP"/>
+        <string name="h30" value="80秒 内不消耗MP，冷却时间120秒"/>
         <string name="h4" value="14秒 内不消耗MP"/>
         <string name="h5" value="15秒 内不消耗MP"/>
         <string name="h6" value="16秒 内不消耗MP"/>
@@ -7564,7 +7564,7 @@
         <string name="h28" value="消耗MP 27，基本 攻击力 252，熟练度 60%，最大给6名 伤害"/>
         <string name="h29" value="消耗MP 26，基本 攻击力 256，熟练度 60%，最大给6名 伤害"/>
         <string name="h3" value="消耗MP 16，基本 攻击力 152，熟练度 60%，最大给6名伤害"/>
-        <string name="h30" value="消耗MP 25，基本 攻击力 260，熟练度 60%，最大给6名 伤害"/>
+        <string name="h30" value="消耗MP 25，基本 攻击力 280三段，熟练度 60%，攻击6个目标，伤害逐个递减。"/>
         <string name="h4" value="消耗MP 16，基本 攻击力 156，熟练度 60%，最大给6名伤害"/>
         <string name="h5" value="消耗MP 16，基本 攻击力 160，熟练度 60%，最大给6名伤害"/>
         <string name="h6" value="消耗MP 16，基本 攻击力 164，熟练度 60%，最大给6名伤害"/>
@@ -8158,7 +8158,7 @@
         <string name="h28" value="38秒 内不消耗MP"/>
         <string name="h29" value="39秒 内不消耗MP"/>
         <string name="h3" value="13秒 内不消耗MP"/>
-        <string name="h30" value="40秒 内不消耗MP"/>
+        <string name="h30" value="80秒 内不消耗MP，冷却时间120秒"/>
         <string name="h4" value="14秒 内不消耗MP"/>
         <string name="h5" value="15秒 内不消耗MP"/>
         <string name="h6" value="16秒 内不消耗MP"/>
@@ -8204,7 +8204,7 @@
     <imgdir name="2321006">
         <string name="name" value="复活术"/>
         <string name="h1" value="消耗MP 85，冷却时间 : 33分"/>
-        <string name="h10" value="消耗MP 40，冷却时间 : 15分"/>
+        <string name="h10" value="消耗MP 40，冷却时间 : 5分"/>
         <string name="h2" value="消耗MP 80，冷却时间 : 31分"/>
         <string name="h3" value="消耗MP 75，冷却时间 : 29分"/>
         <string name="h4" value="消耗MP 70，冷却时间 : 27分"/>
@@ -8240,7 +8240,7 @@
         <string name="h28" value="消耗MP 27，基本 攻击力 230，熟练度 60%"/>
         <string name="h29" value="消耗MP 26，基本 攻击力 235，熟练度 60%"/>
         <string name="h3" value="消耗MP 16，基本 攻击力 129，熟练度 60%"/>
-        <string name="h30" value="消耗MP 25，基本攻击力 240，熟练度 60%"/>
+        <string name="h30" value="消耗MP 25，基本攻击力 210两段伤害，熟练度 60%"/>
         <string name="h4" value="消耗MP 16，基本 攻击力 132，熟练度 60%"/>
         <string name="h5" value="消耗MP 16，基本 攻击力 135，熟练度 60%"/>
         <string name="h6" value="消耗MP 16，基本 攻击力 138，熟练度 60%"/>
@@ -8329,7 +8329,7 @@
         <string name="h18" value="比率38%，伤害190%"/>
         <string name="h19" value="比率39%，伤害195%"/>
         <string name="h2" value="比率14%，伤害110%"/>
-        <string name="h20" value="比率40%，伤害200%"/>
+        <string name="h20" value="概率70%，造成伤害200%"/>
         <string name="h3" value="比率16%，伤害115%"/>
         <string name="h4" value="比率18%，伤害120%"/>
         <string name="h5" value="比率20%，伤害125%"/>
@@ -8897,7 +8897,7 @@
         <string name="h28" value="消耗MP 42，持续时间 280秒，14%的必杀几率，伤害 38% 上升"/>
         <string name="h29" value="消耗MP 41，持续时间 290秒，15%的必杀几率，伤害 39% 上升"/>
         <string name="h3" value="消耗MP 29，持续时间 30秒，2%的必杀几率，伤害 13% 上升"/>
-        <string name="h30" value="消耗MP 40，持续时间 300秒，15%的必杀几率，伤害 40% 上升"/>
+        <string name="h30" value="消耗MP 40，持续时间 600秒，15%的必杀几率，伤害 50% 上升"/>
         <string name="h4" value="消耗MP 29，持续时间 40秒，2%的必杀几率，伤害 14% 上升"/>
         <string name="h5" value="消耗MP 29，持续时间 50秒，3%的必杀几率，伤害 15% 上升"/>
         <string name="h6" value="消耗MP 29，持续时间 60秒，3%的必杀几率，伤害 16% 上升"/>
@@ -8965,7 +8965,7 @@
         <string name="h28" value="消耗MP 9，伤害 108%"/>
         <string name="h29" value="消耗MP 9，伤害 109%"/>
         <string name="h3" value="消耗MP 6，伤害 83%"/>
-        <string name="h30" value="消耗MP 9，伤害 110%"/>
+        <string name="h30" value="消耗MP 9，伤害 190%"/>
         <string name="h4" value="消耗MP 6，伤害 84%"/>
         <string name="h5" value="消耗MP 6，伤害 85%"/>
         <string name="h6" value="消耗MP 6，伤害 86%"/>
@@ -9074,7 +9074,7 @@
         <string name="h7" value="消耗MP 17，攻击力 14 上升，消耗MP -14%，持续时间 120秒"/>
         <string name="h8" value="消耗MP 18，攻击力 15 上升，消耗MP -16%，持续时间 120秒"/>
         <string name="h9" value="消耗MP 19，攻击力 15 上升，消耗MP -18%，持续时间 120秒"/>
-        <string name="desc" value="一定时间内攻击力上升,\n技能使用时的魔法值也下降.\n#c 冷却时间 : 4分#"/>
+        <string name="desc" value="一定时间内攻击力上升,\n技能使用时的魔法值也下降.\n#c 冷却时间 : 6分#"/>
     </imgdir>
     <imgdir name="3121009">
         <string name="name" value="勇士的意志"/>
@@ -9454,7 +9454,7 @@
         <string name="h28" value="消费MP32，造成伤害108%，5次攻击"/>
         <string name="h29" value="消费MP32，造成伤害109%，5次攻击"/>
         <string name="h3" value="消费MP26，造成伤害83%，5次攻击"/>
-        <string name="h30" value="消费MP32，造成伤害110%，5次攻击"/>
+        <string name="h30" value="消费MP32，造成伤害150%，6次攻击"/>
         <string name="h4" value="消费MP26，造成伤害84%，5次攻击"/>
         <string name="h5" value="消费MP26，造成伤害85%，5次攻击"/>
         <string name="h6" value="消费MP26，造成伤害86%，5次攻击"/>
@@ -9593,7 +9593,7 @@
         <string name="h28" value="消耗MP 42，持续时间 280秒，14%的必杀几率，伤害 38% 上升"/>
         <string name="h29" value="消耗MP 41，持续时间 290秒，15%的必杀几率，伤害 39% 上升"/>
         <string name="h3" value="消耗MP 29，持续时间 30秒，2%的必杀几率，伤害 13% 上升"/>
-        <string name="h30" value="消耗MP 40，持续时间 300秒，15%的必杀几率，伤害 40% 上升"/>
+        <string name="h30" value="消耗MP 40，持续时间 600秒，15%的必杀几率，伤害 50% 上升"/>
         <string name="h4" value="消耗MP 29，持续时间 40秒，2%的必杀几率，伤害 14% 上升"/>
         <string name="h5" value="消耗MP 29，持续时间 50秒，3%的必杀几率，伤害 15% 上升"/>
         <string name="h6" value="消耗MP 29，持续时间 60秒，3%的必杀几率，伤害 16% 上升"/>
@@ -9934,7 +9934,7 @@
         <string name="h28" value="出现比率48%，攻击力194%"/>
         <string name="h29" value="出现比率49%，攻击力197%"/>
         <string name="h3" value="出现比率23%，攻击力119%"/>
-        <string name="h30" value="出现比率50%，攻击力200%"/>
+        <string name="h30" value="出现比率80%，攻击力200%"/>
         <string name="h4" value="出现比率24%，攻击力122%"/>
         <string name="h5" value="出现比率25%，攻击力125%"/>
         <string name="h6" value="出现比率26%，攻击力128%"/>
@@ -9981,7 +9981,7 @@
         <string name="h18" value="消耗HP12和MP12，持续180秒"/>
         <string name="h19" value="消耗HP11和MP11，持续190秒"/>
         <string name="h2" value="消耗HP28和MP28，持续20秒"/>
-        <string name="h20" value="消耗HP10和MP10，持续200秒"/>
+        <string name="h20" value="消耗HP10和MP10，攻击速度提升3个等级，持续600秒"/>
         <string name="h3" value="消耗HP27和MP27，持续30秒"/>
         <string name="h4" value="消耗HP26和MP26，持续40秒"/>
         <string name="h5" value="消耗HP25和MP25，持续50秒"/>
@@ -10125,7 +10125,7 @@
         <string name="h28" value="消费MP65，召回石1个，持续180秒，分身普通攻击力为自身的78%，技术攻击力为自身的46%"/>
         <string name="h29" value="消费MP60，召回唤石1个，持续180秒，分身普通攻击力为自身的79%，技术攻击力为自身的48%"/>
         <string name="h3" value="消费MP190，召回石1个，持续60秒，分身普通攻击力为自身的28%，技术攻击力为自身的21%"/>
-        <string name="h30" value="消费MP55，召回石1个，持续180秒，分身普通攻击力为自身的80%，技术攻击力为自身的50%"/>
+        <string name="h30" value="消费MP55，召回石1个，持续600秒，分身普通攻击力为自身的100%，技术攻击力为自身的100%"/>
         <string name="h4" value="消费MP185，召回石1个，持续60秒，分身普通攻击力为自身的31%，技术攻击力为自身的21%"/>
         <string name="h5" value="消费MP180，召回石1个，持续60秒，分身普通攻击力为自身的34%，技术攻击力为自身的21%"/>
         <string name="h6" value="消费MP175，召回石1个，持续60秒，分身普通攻击力为自身的37%，技术攻击力为自身的21%"/>
@@ -10448,7 +10448,7 @@
         <string name="h28" value="消耗MP 25，持续时间 116秒"/>
         <string name="h29" value="消耗MP 25，持续时间 118秒"/>
         <string name="h3" value="消耗MP 15，持续时间 66秒"/>
-        <string name="h30" value="消耗MP 25，持续时间 120秒"/>
+        <string name="h30" value="消耗MP 25，持续时间 600秒"/>
         <string name="h4" value="消耗MP 15，持续时间 68秒"/>
         <string name="h5" value="消耗MP 15，持续时间 70秒"/>
         <string name="h6" value="消耗MP 15，持续时间 72秒"/>
@@ -10480,7 +10480,7 @@
         <string name="h26" value="消耗MP 19，伤害 136%"/>
         <string name="h27" value="消耗MP 19，伤害 137%"/>
         <string name="h28" value="消耗MP 20，伤害 138%"/>
-        <string name="h29" value="消耗MP 20，伤害 139%"/>
+        <string name="h29" value="消耗MP 20，伤害 280%"/>
         <string name="h3" value="消耗MP 11，伤害 106%"/>
         <string name="h30" value="消耗MP 20，伤害 140%"/>
         <string name="h4" value="消耗MP 12，伤害 108%"/>
@@ -10692,7 +10692,7 @@
         <string name="h28" value="消耗MP27，攻击力86%，攻击6次"/>
         <string name="h29" value="消耗MP27，攻击力88%，攻击6次"/>
         <string name="h3" value="消耗MP15，攻击力36%，攻击6次"/>
-        <string name="h30" value="消耗MP27，攻击力90%，攻击6次"/>
+        <string name="h30" value="消耗MP27，攻击力100%，攻击8次"/>
         <string name="h4" value="消耗MP15，攻击力38%，攻击6次"/>
         <string name="h5" value="消耗MP15，攻击力40%，攻击6次"/>
         <string name="h6" value="消耗MP15，攻击力42%，攻击6次"/>
@@ -11178,7 +11178,7 @@
         <string name="h28" value="消耗MP 26，给4个敌人伤害 590%，86%几率击晕敌人"/>
         <string name="h29" value="消耗MP 26，给4个敌人伤害 595%，88%几率击晕敌人"/>
         <string name="h3" value="消耗MP 16，给4个敌人伤害 380%，36%几率击晕敌人"/>
-        <string name="h30" value="消耗MP 26，给4个敌人伤害 600%，90%几率击晕敌人"/>
+        <string name="h30" value="消耗MP 26，给3个敌人伤害 420%四段攻击，100%几率击晕敌人"/>
         <string name="h4" value="消耗MP 16，给4个敌人伤害 390%，38%几率击晕敌人"/>
         <string name="h5" value="消耗MP 16，给4个敌人伤害 400%，40%几率击晕敌人"/>
         <string name="h6" value="消耗MP 19，给4个敌人伤害 410%，42%几率击晕敌人"/>
@@ -11536,7 +11536,7 @@
         <string name="h38" value="发动时 持续时间49秒，命中率和回避率+19，物理攻击力+19"/>
         <string name="h39" value="发动时 持续时间50秒，命中率和回避率+20，物理攻击力+19"/>
         <string name="h4" value="发动时 持续时间32秒，命中率和回避率+2，物理攻击力+11"/>
-        <string name="h40" value="发动时 持续时间50秒，命中率和回避率+20，物理攻击力+20"/>
+        <string name="h40" value="发动时 持续时间240秒，命中率和回避率+20，物理攻击力+20"/>
         <string name="h5" value="发动时 持续时间33秒，命中率和回避率+3，物理攻击力+11"/>
         <string name="h6" value="发动时 持续时间33秒，命中率和回避率+3，物理攻击力+11"/>
         <string name="h7" value="发动时 持续时间34秒，命中率和回避率+4，物理攻击力+11"/>
@@ -11616,7 +11616,7 @@
         <string name="h18" value="消耗MP 56 和 魔法石 1个，物理，魔力防御力 36 增加"/>
         <string name="h19" value="消耗MP 58 和 魔法石 1个，物理，魔力防御力 38 增加"/>
         <string name="h2" value="消耗MP 24 和 魔法石 1个，物理，魔力防御力 4 增加"/>
-        <string name="h20" value="消耗MP 60 和 魔法石 1个，物理，魔力防御力 40 增加"/>
+        <string name="h20" value="消耗MP 60 和 魔法石 1个，物理，魔力防御力 200 增加，持续600秒"/>
         <string name="h3" value="消耗MP 26 和 魔法石 1个，物理，魔力防御力 6 增加"/>
         <string name="h4" value="消耗MP 28 和 魔法石 1个，物理，魔力防御力 8 增加"/>
         <string name="h5" value="消耗MP 30 和 魔法石 1个，物理，魔力防御力 10 增加"/>
@@ -11779,7 +11779,7 @@
         <string name="h18" value="消耗MP 56 和 魔法石 1个，物理，魔力防御力 58 增加，持续时间 : 120秒"/>
         <string name="h19" value="消耗MP 58 和 魔法石 1个，物理，魔力防御力 59 增加，持续时间 : 120秒"/>
         <string name="h2" value="消耗MP 24 和 魔法石 1个，物理，魔力防御力 42 增加，持续时间 : 60秒"/>
-        <string name="h20" value="消耗MP 60 和 魔法石 1个，物理，魔力防御力 60 增加，持续时间 : 120秒"/>
+        <string name="h20" value="消耗MP 60 和 魔法石 1个，物理，魔力防御力 200 增加，持续时间 : 600秒"/>
         <string name="h3" value="消耗MP 26 和 魔法石 1个，物理，魔力防御力 43 增加，持续时间 : 60秒"/>
         <string name="h4" value="消耗MP 28 和 魔法石 1个，物理，魔力防御力 44 增加，持续时间 : 60秒"/>
         <string name="h5" value="消耗MP 30 和 魔法石 1个，物理，魔力防御力 45 增加，持续时间 : 60秒"/>
@@ -11814,7 +11814,7 @@
         <string name="h28" value="消耗MP 50，以伤害 480% 攻击敌人8次"/>
         <string name="h29" value="消耗MP 50，以伤害 490% 攻击敌人8次"/>
         <string name="h3" value="消耗MP 20，以伤害 210% 攻击敌人8次"/>
-        <string name="h30" value="消耗MP 50，以伤害 500% 攻击敌人8次"/>
+        <string name="h30" value="消耗MP 50，以伤害 640% 攻击两个敌人8次"/>
         <string name="h4" value="消耗MP 20，以伤害 220% 攻击敌人8次"/>
         <string name="h5" value="消耗MP 20，以伤害 230% 攻击敌人8次"/>
         <string name="h6" value="消耗MP 20，以伤害 240% 攻击敌人8次"/>
@@ -12489,7 +12489,7 @@
         <string name="h28" value="消耗MP 9，伤害 196%"/>
         <string name="h29" value="消耗MP 9，伤害 198%"/>
         <string name="h3" value="消耗MP 6，伤害 146%"/>
-        <string name="h30" value="消耗MP 9，伤害 200%"/>
+        <string name="h30" value="消耗MP 9，伤害 130%两段"/>
         <string name="h4" value="消耗MP 6，伤害 148%"/>
         <string name="h5" value="消耗MP 6，伤害 150%"/>
         <string name="h6" value="消耗MP 6，伤害 152%"/>
@@ -12501,7 +12501,7 @@
     <imgdir name="5221006">
         <string name="name" value="武装"/>
         <string name="h1" value="消耗MP 22，物理，魔力防御力 10 增加"/>
-        <string name="h10" value="消耗MP 40，物理，魔力防御力 100 增加"/>
+        <string name="h10" value="消耗MP 40，物理，魔力防御力 100 增加，无冷却时间"/>
         <string name="h2" value="消耗MP 24，物理，魔力防御力 20 增加"/>
         <string name="h3" value="消耗MP 26，物理，魔力防御力 30 增加"/>
         <string name="h4" value="消耗MP 28，物理，魔力防御力 40 增加"/>
@@ -12537,7 +12537,7 @@
         <string name="h28" value="消耗MP 40，370%的伤害攻击敌人 4次"/>
         <string name="h29" value="消耗MP 40，375%的伤害攻击敌人 4次"/>
         <string name="h3" value="消耗MP 22，215%的伤害攻击敌人 3次"/>
-        <string name="h30" value="消耗MP 40，380%的伤害攻击敌人 4次"/>
+        <string name="h30" value="消耗MP 40，330%的伤害攻击敌人 6次"/>
         <string name="h4" value="消耗MP 24，220%的伤害攻击敌人 3次"/>
         <string name="h5" value="消耗MP 24，225%的伤害攻击敌人 3次"/>
         <string name="h6" value="消耗MP 24，230%的伤害攻击敌人 3次"/>
