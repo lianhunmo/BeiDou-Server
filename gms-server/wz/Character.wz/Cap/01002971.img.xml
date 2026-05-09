@@ -19,10 +19,10 @@
     <int name="price" value="1"/>
     <int name="tuc" value="10"/>
     <int name="timeLimited" value="1"/>
-    <int name="incSTR" value="100"/>
-    <int name="incINT" value="100"/>
-    <int name="incDEX" value="100"/>
-    <int name="incLUK" value="100"/>
+    <int name="incSTR" value="30"/>
+    <int name="incINT" value="30"/>
+    <int name="incDEX" value="30"/>
+    <int name="incLUK" value="30"/>
     <int name="incPAD" value="5"/>
     <int name="incMAD" value="5"/>
     <int name="cash" value="0"/>
