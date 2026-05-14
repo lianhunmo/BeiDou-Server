@@ -1161,8 +1161,9 @@ public class ItemInformationProvider {
                         return equip;
                     }
                     // 卷轴使用失败的情况
-                    stats.replaceAll((_, value) -> -value);
-                    improveEquipStats(nEquip, stats); // 默认情况下降低装备属性
+                    Map<String, Integer> finalStats = stats;
+                    stats.forEach((key, value) -> finalStats.put(key, -value));
+                    improveEquipStats(nEquip, finalStats); // 默认情况下降低装备属性
                     // 处理等级
                     nEquip.setLevel((byte) (nEquip.getLevel() - 1)); // 降低装备等级
                 }
