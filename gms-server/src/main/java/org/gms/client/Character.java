@@ -1781,15 +1781,24 @@ public class Character extends AbstractCharacterObject {
     public void changePage(int page) {
         this.currentPage = page;
     }
-    public void setRebirthAp() {
-        int finalAP = this.getReborns() * 50 + 9;
+
+    public void setRebirthAp(int rebornApNum) {
+        int finalAP = this.getReborns() * rebornApNum + 9;
         this.updateStrDexIntLuk(4);
+        this.changeRemainingAp(finalAP, false);
+    }
+
+    public void rewardRebirthAp() {
+        int finalAP = this.getRemainingAp() + Integer.parseInt(this.getAbstractPlayerInteraction().getAccountExtendValue("重生属性点"));
         this.changeRemainingAp(finalAP, false);
     }
     public void resetSkillLevel() {
         for (Data skill_ : DataProviderFactory.getDataProvider(WZFiles.STRING).getData("Skill.img").getChildren()) {
             try {
                 Skill skill = SkillFactory.getSkill(Integer.parseInt(skill_.getName()));
+                if (skill.getId() / 10000 == 0) {
+                    continue;
+                }
                 this.changeSkillLevel(skill, (byte) 0, skill.getMaxLevel(), -1);
             } catch (NumberFormatException nfe) {
                 nfe.printStackTrace();
@@ -9508,7 +9517,8 @@ public class Character extends AbstractCharacterObject {
         setLevel(0);
         levelUp(true);
         resetSkillLevel();
-        setRebirthAp();
+        updateMaxHpMaxMp(50, 5);
+        setRebirthAp(0);
     }
 
     //EVENTS
