@@ -9211,4 +9211,12 @@
         <string name="desc" value="神奇的北斗卫星指导书。传说是\n由该书封面上的冒险岛勇士昨日\n小睡流传下来的，据说集齐7本\n以后会有意想不到的事情发生，\n是什么呢？蹦下咔啦咔"/>
         <string name="name" value="北斗卫星指导书"/>
     </imgdir>
+    <imgdir name="2024000">
+        <string name="name" value="HP上限突破药剂-30"/>
+        <string name="desc" value="能够增加HP上限的药剂，每次使用增加30点HP，最高不超过 30000 HP上限。"/>
+    </imgdir>
+    <imgdir name="2024001">
+        <string name="name" value="MP上限突破药剂-30"/>
+        <string name="desc" value="能够增加MP上限的药剂，每次使用增加30点MP，最高不超过 30000 MP上限。"/>
+    </imgdir>
 </imgdir>

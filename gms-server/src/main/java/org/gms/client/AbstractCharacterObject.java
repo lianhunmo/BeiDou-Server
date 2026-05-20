@@ -632,6 +632,40 @@ public abstract class AbstractCharacterObject extends AbstractAnimatedMapObject 
         }
     }
 
+    public boolean assignHP(int deltaHP) {
+        effLock.lock();
+        statWlock.lock();
+        try {
+            if (this.clientMaxHp == 30000) {
+                return false;
+            }
+            long hpMpPool = calcStatPoolLong(null, null, maxHp + deltaHP, maxMp);
+
+            changeStatPool(hpMpPool, null, null, 0, false);
+            return true;
+        } finally {
+            statWlock.unlock();
+            effLock.unlock();
+        }
+    }
+
+    public boolean assignMP(int deltaMP) {
+        effLock.lock();
+        statWlock.lock();
+        try {
+            if (this.clientMaxMp == 30000) {
+                return false;
+            }
+            long hpMpPool = calcStatPoolLong(null, null, maxHp, maxMp + deltaMP);
+
+            changeStatPool(hpMpPool, null, null, 0, false);
+            return true;
+        } finally {
+            statWlock.unlock();
+            effLock.unlock();
+        }
+    }
+
     private static int apAssigned(Integer x) {
         return x != null ? x : 0;
     }

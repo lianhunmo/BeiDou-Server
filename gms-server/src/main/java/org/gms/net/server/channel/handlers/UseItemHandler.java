@@ -73,6 +73,22 @@ public final class UseItemHandler extends AbstractPacketHandler {
                 chr.dispelDebuff(Disease.CURSE);
                 remove(c, slot);
                 return;
+            } else if (itemId == ItemId.HP_MAX_POTION_30) {
+                if (chr.assignHP(30)) {
+                    chr.dropMessage(6, "【HP突破药剂】 最大HP +30 ↑");
+                } else {
+                    chr.dropMessage(6, "【HP突破药剂】 最大HP已达 30000 ！");
+                }
+                remove(c, slot);
+                return;
+            } else if (itemId == ItemId.MP_MAX_POTION_30) {
+                if (chr.assignMP(30)) {
+                    chr.dropMessage(6, "【MP突破药剂】 最大MP +30 ↑");
+                } else {
+                    chr.dropMessage(6, "【MP突破药剂】 最大MP已达 30000 ！");
+                }
+                remove(c, slot);
+                return;
             } else if (ItemConstants.isTownScroll(itemId)) {
                 int banMap = chr.getMapId();
                 int banSp = chr.getMap().findClosestPlayerSpawnpoint(chr.getPosition()).getId();

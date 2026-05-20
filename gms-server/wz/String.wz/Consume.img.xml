@@ -9171,44 +9171,12 @@
         <string name="name" value="MISSING NAME"/>
         <string name="desc" value="MISSING INFO"/>
     </imgdir>
-    <imgdir name="2070019">
-        <string name="name" value="Magic Throwing Knife"/>
-        <string name="desc" value="A throwing knife made out of a mysterious form of energy from space. This unique knife has the energy of space flowing through the blade.\r\nAttack +30"/>
+    <imgdir name="2024000">
+        <string name="name" value="HP Max Increase Potion 30"/>
+        <string name="desc" value="A potion that increases max HP by 30 points each use, up to a maximum of 30000 HP."/>
     </imgdir>
-    <imgdir name="2070023">
-        <string name="name" value="Flame Throwing Stars"/>
-        <string name="desc" value="Throwing stars made of steel. Once they run out, they need to be recharged.\n\nAttack 29"/>
-    </imgdir>
-    <imgdir name="2070024">
-        <string name="name" value="Infinite Throwing-Knives"/>
-        <string name="desc" value="Special throwing knives made of steel. Learn their secret from the crafter to recharge them in greater amounts.\r\nAttack +27"/>
-    </imgdir>
-    <imgdir name="2070026">
-        <string name="name" value="White Gold Throwing Stars"/>
-        <string name="desc" value="Throwing stars made of White Gold. Once they run out, they need to be recharged.\n\nWeapon ATT: +28"/>
-    </imgdir>
-    <imgdir name="2049115">
-        <string name="name" value="Scroll for Ravana Helmet of Chaos 50%"/>
-        <string name="desc" value="Alters Ravana Helmet for better or worse. Some stats are not affected."/>
-    </imgdir>
-    <imgdir name="2050007">
-        <string name="name" value="Zakum All Cure Potion"/>
-        <string name="desc" value="Cures the Abnormal Statuses:\r\nPoison\r\nSeal\r\nMiss\r\nWeakness\r\nCurse\r\nOnly usable when fighting Crumbling Zakum (Easy Mode)."/>
-    </imgdir>
-    <imgdir name="2050008">
-        <string name="name" value="Tomato pasta"/>
-        <string name="desc" value="Allows you to recover from any abnormal state."/>
-    </imgdir>
-    <imgdir name="2049116">
-        <string name="name" value="Miraculous Chaos Scroll 60%"/>
-        <string name="desc" value="Alters equipment for better or worse stats than the Chaos Scroll. Some stats are not affected."/>
-    </imgdir>
-    <imgdir name="2049117">
-        <string name="name" value="Chaos Scroll 60%"/>
-        <string name="desc" value="Alters equipment for better or worse. Cannot be used on Cash items. Some stats are not affected."/>
-    </imgdir>
-    <imgdir name="2430033">
-        <string name="name" value="BeiDou Satellite Manual"/>
-        <string name="desc" value="The magical BeiDou Satellite Manual.\nThe legend is that it was passed down by the warriors Nap,\nWho depicted on the cover of the book.\nAfter collecting all 7 copies, something unexpected will happen. What could it be?"/>
+    <imgdir name="2024001">
+        <string name="name" value="MP Max Increase Potion 30"/>
+        <string name="desc" value="A potion that increases max MP by 30 points each use, up to a maximum of 30000 MP."/>
     </imgdir>
 </imgdir>
