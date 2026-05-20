@@ -93,7 +93,7 @@ function start() {
     status = -1;
     const GameConfig = Java.type('org.gms.config.GameConfig');
     if (!GameConfig.getServerBoolean("use_rebirth_system")) {
-        cm.sendOk("转生在这个服务器上是不允许的，你是怎么到这里来的？");
+        cm.sendOk("重生在这个服务器上是不允许的，你是怎么到这里来的？");
         cm.dispose();
         return;
     }
@@ -108,8 +108,13 @@ function action(mode, type, selection) {
         return;
     }
     if (status === 0) {
-        let text = "你的冒险之路出现瓶颈了吗？我可以帮你重生以突破力量的上限。";
-        text += "你目前已经历过 #r" + cm.getChar().getReborns() + " #k次重生。";
+        let text = "你的冒险之路出现瓶颈了吗？我可以帮你重生以突破力量的上限。\r\n";
+        text += "你目前已经历过 #r" + cm.getChar().getReborns() + " #k次重生。\r\n\r\n";
+        text += "重生说明：\r\n";
+        text += "1.角色达到200级可以进行重生\r\n";
+        text += "2.重生后成为等级1新手，属性点和血蓝初始化，职业技能等级清零\r\n";
+        text += "3.每次重生可在重生NPC领取 （重生次数*100）点属性点\r\n";
+        text += "4.已学习过的技能和技能书不需要重复学习\r\n";
         cm.sendNext(text);
     } else if (status === 1) {
         let text = "你想让我帮你做什么呢？\r\n\r\n#L0##b我想使用神秘力量进行重生#l\r\n#L3##b我想通过奋斗进行重生#l\r\n#L2##b找回遗失的的属性点#k#l\r\n#L1##b现在什么都不想做...#k#l";
@@ -119,7 +124,7 @@ function action(mode, type, selection) {
             choice = 0;
             let itemQuantity = cm.getItemQuantity(EVENT_TROPHY);
             if (itemQuantity < COST_EVENT_TROPHY) {
-                cm.sendOk("你的 #r#z" + EVENT_TROPHY + "##k 不够" + COST_EVENT_TROPHY + "个，无法转生。");
+                cm.sendOk("你的 #r#z" + EVENT_TROPHY + "##k 不够" + COST_EVENT_TROPHY + "个，无法重生。");
                 cm.dispose();
             } else if (cm.getChar().getLevel() === cm.getChar().getMaxClassLevel()) {
                 cm.sendSimple("我明白了... 你想选择哪条路？\r\n\r\n#L0##b冒险家（新手）#l\r\n");
@@ -130,7 +135,7 @@ function action(mode, type, selection) {
         } else if (selection === 3) {
             choice = 1;
             if (cm.getChar().getLevel() === cm.getChar().getMaxClassLevel()) {
-                let text = "我明白了... 想要转生需要：\r\n\r\n";
+                let text = "我明白了... 想要重生需要：\r\n\r\n";
                 text = buildExchangeInfoMessage(text);
                 text += "你想选择哪条路？\r\n\r\n#L0##b冒险家（新手）#l\r\n";
                 cm.sendSimple(text);
