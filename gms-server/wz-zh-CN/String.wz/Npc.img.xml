@@ -7929,6 +7929,16 @@
     <imgdir name="9270043">
         <string name="name" value="乐乐球13"/>
     </imgdir>
+    <imgdir name="9270044">
+        <string name="n0" value="我是乌鲁巡逻队的领袖。你不想加入我们，抗击乌鲁城的魔鬼吗？"/>
+        <string name="n1" value="干得好，击败了大花草。不过似乎还有其他情况…"/>
+        <string name="name" value="指挥官吉姆"/>
+    </imgdir>
+    <imgdir name="9270045">
+        <string name="n0" value="我是乌鲁巡逻队的领袖。你不想加入我们，抗击乌鲁城的魔鬼吗？"/>
+        <string name="n1" value="干得好，击败了大花草。不过似乎还有其他情况… "/>
+        <string name="name" value="指挥官吉姆"/>
+    </imgdir>
     <imgdir name="9270047">
         <string name="name" value="艾尔多鲁"/>
         <string name="n0" value="欢迎！欢迎 ! "/>
