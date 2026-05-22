@@ -28,6 +28,7 @@ let jobId = 0;
 const EVENT_TROPHY = 4000038;
 let COST_EVENT_TROPHY = 100;
 let choice = 0;
+let rebornAPPerCount = 200;
 const BOSS_ITEM_LIST = [
     2210006, // 彩虹色蜗牛壳儿
     4000124, // 战甲吹泡泡鱼的内存卡
@@ -113,7 +114,7 @@ function action(mode, type, selection) {
         text += "重生说明：\r\n";
         text += "1.角色达到200级可以进行重生\r\n";
         text += "2.重生后成为等级1新手，属性点和血蓝初始化，职业技能等级清零\r\n";
-        text += "3.每次重生可在重生NPC领取 （重生次数*100）点属性点\r\n";
+        text += `3.每次重生可在重生NPC领取 （重生次数*${rebornAPPerCount}）点属性点\r\n`;
         text += "4.已学习过的技能和技能书不需要重复学习\r\n";
         cm.sendNext(text);
     } else if (status === 1) {
@@ -194,7 +195,7 @@ function action(mode, type, selection) {
             });
         }
         cm.getChar().executeRebornAsId(jobId);
-        let rebornAPCount = cm.getChar().getReborns() * 100;
+        let rebornAPCount = cm.getChar().getReborns() * rebornAPPerCount;
         cm.saveOrUpdateAccountExtendValue("重生属性点", rebornAPCount.toString());
         cm.sendOk("你现在已经重生了。当前已经历 #r" + cm.getChar().getReborns() + "#k 次重生。当你想要再次重生时，来找我吧。");
         cm.dispose();
