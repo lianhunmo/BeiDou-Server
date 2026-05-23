@@ -68,10 +68,6 @@ function clearStage(stage, eim, curMap) {
 }
 
 function rectangleStages(eim, property, areaCombos, areaRects) {
-    const GameConfig = Java.type('org.gms.config.GameConfig');
-    if(GameConfig.getServerBoolean("use_enable_solo_expeditions") && eim.getPlayerCount() == 1){
-        return true;
-    }
     var c = eim.getProperty(property);
     if (c == null) {
         c = Math.floor(Math.random() * areaCombos.length);
