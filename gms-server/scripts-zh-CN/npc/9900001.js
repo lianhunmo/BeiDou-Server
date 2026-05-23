@@ -46,6 +46,7 @@ function action(mode, type, selection) {
         text += "当前点券：" + cm.getPlayer().getCashShop().getCash(1) + "\r\n";
         text += "当前抵用券：" + cm.getPlayer().getCashShop().getCash(2) + "\r\n";
         text += "当前信用券：" + cm.getPlayer().getCashShop().getCash(4) + "\r\n";
+		text += "当前金币：" + cm.getPlayer().getMeso() + "\r\n";
         text += "当前羽毛累充：" + flamingFeatherAlreadyCount + "\r\n";
         text += " \r\n\r\n";
         text += "#L0##b新人福利#l\t #L2#在线奖励#l\t #L4#爆率一览#l\t #L10#一键出售#l\r\n";

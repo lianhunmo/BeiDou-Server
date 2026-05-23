@@ -129,7 +129,11 @@ function levelmain() {
 	text += getOnlineRewardListText() + "\r\n\r\n";
 	text += "#L999##b离开#k#l\r\n";
 	text += "\r\n【领取说明】\r\n · 每份奖励需手动领取\r\n · #b每日0点#e#r重置#b#n累计时长#k\r\n · 背包空间不足将不会发放奖励\r\n · 坚持在线时间越长，获得奖励越丰厚！"
-	cm.sendNextSelectLevel("claimrewards",text);
+	if (g_ClaimStatus == ((1 << config.reward.length) - 1)) {
+		cm.sendOkLevel("",text);	
+	} else {
+		cm.sendNextSelectLevel("claimrewards",text);
+	}
 }
 
 function levelclaimrewards(Select) {

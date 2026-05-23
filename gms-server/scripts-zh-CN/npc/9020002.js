@@ -53,9 +53,9 @@ function action(mode, type, selection) {
         }
     } else {
         if (status == 0) {
-            var outText = "一旦离开当前地图，若想再次尝试则需重新开始整条任务线。是否确认离开？";
+            var outText = "一旦你离开这个地图，你还想再来试一次，就必须重新开始整个任务。你仍然想离开这个地图吗？";
             if (mapId == 103000805) {
-                outText = "是否准备离开当前地图？";
+                outText = "你准备好离开这张地图了吗？";
             }
             cm.sendYesNo(outText);
         } else if (mode == 1) {

@@ -28416,10 +28416,10 @@
     </imgdir>
     <imgdir name="4928">
         <imgdir name="0">
-            <string name="0" value="Oh hi! I&apos;m sorry. I didn&apos;t see you standing there. I was just catching up my reading on the Maple History books that you&apos;ve returned.\n\n#L0##bI thought you&apos;ve read them all.#k#l"/>
-            <string name="1" value="Yes I did. Since my dad is the Chief of Henesys, he was very strict on memorizing every single events that has occured in Maple History. I still remember all the names and numbers.\n\n#L0##bThen why are you reading it? And why do you look so troubled?#k#l"/>
-            <string name="2" value="Something in this book has been bothering me. The name #bBob Snale#k is written all over this book but there is no picture, not really much of a description of this person, just magically appears and then disappears without explanation. If I only knew...\n\n#L0##bSounds like something I can help you with.#l\n#L1##bGood luck! (nerd...)#k#l"/>
-            <string name="3" value="Really? You would really do that for me?"/>
+            <string name="0" value="哦，嗨！对不起。我没看见你站在那里。我刚刚在读你回来的枫树历史书。\n\n#L0##b我以为你都读过了。#k#l"/>
+            <string name="1" value="是的，我做到了。由于我父亲是亨利家族的首领，他非常严格地记住了枫树历史上发生的每一件事。我仍然记得所有的名字和数字。\n\n#L0##b那你为什么要读它呢？为什么你看起来如此烦恼？#k#l"/>
+            <string name="2" value="这本书中的一些东西一直困扰着我。#b鲍勃·斯奈尔#k这个名字写满了这本书，但没有任何图片，也没有对这个人进行太多描述，只是神奇地出现了，然后消失了，没有任何解释。如果我知道...\n\n#L0##b听起来我可以帮你#l\n#L1##b祝你好运！（书呆子…）#k#l"/>
+            <string name="3" value="真正地你真的会为我这么做吗？"/>
             <int name="ask" value="1"/>
             <imgdir name="no">
                 <string name="0" value="Thanks for visiting by~"/>
@@ -28617,9 +28617,11 @@
     </imgdir>
     <imgdir name="4932">
         <imgdir name="0">
-            <string name="0" value="You look like a perfect fit for a magician. Are you interested in becoming a magician?\r\n\r\n#L0##bOh, you must have confused me with someone. Today, I am here to ask you some questions.#k#l\r\n#L1##bNot really.#k#l"/>
-            <string name="1" value="Questions? What questions do you have?\r\n\r\n#L0##bI have a question about this one. (Shows Bob&apos;s Snail Shell)#k#l\r\n#L1##bWhy do you always fly?#k#l\r\n#L2##bDo you like heights?#k#l"/>
-            <string name="2" value="Sure, I&apos;d be glad to look at. *wrinkles on his forehead folds*"/>
+            <string name="0" value="这不是吗！上下快速移动上下快速移动你还好吗？\r\n\r\n#L0##b鲍勃做得很好。他就在他的壳里。#k#l"/>
+            <string name="1" value="你不要那样说！你伤害了他，不是吗？我可以看出他身上有新的抓痕。这并不致命，但...\r\n\r\n#L0##b我确实打了他几下，让他陷入困境。如果我知道鲍勃·斯奈尔确实是一只蜗牛，我可能会采取不同的做法。#k#l"/>
+            <string name="2" value="我原谅你。我们总是为了钱、为了衣服、为了力量而猎杀怪物，所有这些都是为了在这个世界上生存。如果你把鲍勃误认为是普通的蜗牛，我也不会感到惊讶。可怜的动物...\r\n\r\n#L0##b鲍勃怎么了？你对他了解多少？#k#l"/>
+            <string name="3" value="鲍勃是我最老最亲爱的朋友之一。我从小就见过他，所以他可能和我一样大。我们聊了很多。这些聊天的主题大多是关于这个宇宙和我们的生活目的。直到有一天，我们分享了很多想法；他决定独自过苦行僧的生活。从那以后已经有一段时间了。我不知道我会看到他这样。\r\n\r\n#L0##b啊。。。我明白了。我在想，如果有机会的话，你知道我怎么才能说服他走出困境吗？#k#l"/>
+            <string name="4" value="我不知道。我想鲍勃此刻对你很生气。如果你能以某种方式安慰他，也许你能让他安心。不过我真的不知道该怎么办。"/>
             <int name="ask" value="1"/>
             <imgdir name="no">
                 <string name="0" value="Oh ok. If you don&apos;t want me to, I won&apos;t."/>
@@ -28682,10 +28684,10 @@
     </imgdir>
     <imgdir name="4936">
         <imgdir name="0">
-            <string name="0" value="Oh, hi! Good to see you again. You have my thanks for helping me find my daughter. I still am just making up for the years we&apos;ve lost these days.\r\n\r\n#L0##bThat&apos;s good. Hey, I have a question to ask.#k#l"/>
-            <string name="1" value="Sure, anything you ask.\r\n\r\n#L0##bSince you study monsters of Maplestory, I&apos;d suppose you know a thing or two about snails, right?#k#l"/>
-            <string name="2" value="Yes, I would say so. What&apos;s the matter?\r\n\r\n#L0##bCan you tell me how old this snail is? (shows Bob&apos;s snail shell)#k#l"/>
-            <string name="3" value="Ok, let&apos;s see..."/>
+            <string name="0" value="哦，嗨！很高兴再次见到你。谢谢你帮我找到我的女儿。我仍然在弥补我们这些天失去的岁月。\r\n\r\n#L0##b这很好。嘿，我有个问题要问。#k#l"/>
+            <string name="1" value="当然，你问什么都行。\r\n\r\n#L0##b既然你研究的是冒险岛的怪物，我想你对蜗牛略知一二，对吧？#k#l"/>
+            <string name="2" value="是的，我愿意这么说。怎么了？\r\n\r\n#L0##b你能告诉我这只蜗牛多大了吗？（展示鲍勃的蜗牛壳）#k#l"/>
+            <string name="3" value="好的，让我们看看..."/>
             <int name="ask" value="1"/>
             <imgdir name="no">
                 <string name="0" value="I don&apos;t see anything. What is that you want me to see?"/>
@@ -28701,6 +28703,10 @@
                     <int name="answer" value="1"/>
                 </imgdir>
             </imgdir>
+        </imgdir>
+        <imgdir name="1">
+            <string name="0" value="这很有趣。对你来说，它可能只是另一个蜗牛壳，但如果你近距离观察，这个蜗牛壳上的生长环结构非常密集，人眼几乎无法计数。\r\n\r\n#L0##b好吧，我不会感到惊讶。他就是传说中的鲍勃·斯奈尔，与冒险岛的历史一起生活。#k#l"/>
+            <string name="1" value="我对这个世界的历史了解不多。但这是一个非常独特的发现。我打赌考古学家温斯顿可能比我对这个案子了解得更多。"/>
             <imgdir name="yes">
                 <string name="0" value="Hmm? How come this is possible? Let me recheck my books and notes one more time..."/>
             </imgdir>
@@ -63225,12 +63231,7 @@
     </imgdir>
     <imgdir name="28128">
         <imgdir name="0">
-            <string name="0" value="Hello, I&apos;m Kopee. Toh Relicseeker and I are looking for the Miwok Artifacts. I think someone found out the secret place where my ancestors hid the artifacts because they are now missing. "/>
-            <string name="1" value="We must find the person who stole our Miwok Artifacts... Would you like to help us out?"/>
-            <imgdir name="no">
-                <string name="0" value="You&apos;re busy? Oh well. If you find some time to spare in the future, come back and help me, okay? We can&apos;t stay here forever, you know."/>
-            </imgdir>
-            <imgdir name="stop"></imgdir>
+            <string name="0" value="你好，旅行者。我的名字是汉娜，目前我正在筹办一场“清明节”活动。如果你可以帮助我，我将非常感激！"/>
             <imgdir name="yes">
                 <string name="0" value="Oh, thank you a whole bunch! First, I want to find out whether the artifacts are nearby or not. We are suspicious of the monsters, so will you bring me the #bMiwok Artifact Piece#k if you happen to discover it while you hunt the monsters? I&apos;ll be counting on you."/>
             </imgdir>
@@ -63328,7 +63329,7 @@
             </imgdir>
         </imgdir>
         <imgdir name="1">
-            <string name="0" value="That was fast. You already got what I asked for? Please give me the items so I can finish packing for my trip."/>
+            <string name="0" value="干得好！我觉得这些蜡烛足够开启清明节了！感谢你的辛勤工作，请收下这份礼物作为我的感激之情。"/>
             <imgdir name="yes">
                 <string name="0" value="Thank you very much. To show you my appreciation, I just taught you the &quot;Legendary Spirit&quot; skill."/>
                 <string name="1" value=" Please press &quot;K&quot; to open up your skills window and you will find the &quot;Legendary Spirit&quot; in the Beginner section. When this skill is clicked, you will be able to use scrolls on unequipped items. I bet it will be a useful skill for you. Farewell now, I&apos;m off! I&apos;ve heard rumors of a mythical creature in the Leafre region...supposedly more powerful than Zakum. I have to see if the rumor is true..."/>
