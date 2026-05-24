@@ -176,6 +176,19 @@ public class MonsterInformationProvider {
             return ret;
         }
 
+        try (Connection con = DatabaseConnection.getConnection();
+             PreparedStatement ps = con.prepareStatement("SELECT itemid, chance, minimum_quantity, maximum_quantity, questid FROM drop_data_global")) {
+
+            try (ResultSet rs = ps.executeQuery()) {
+                while (rs.next()) {
+                    ret.add(new MonsterDropEntry(rs.getInt("itemid"), rs.getInt("chance"), rs.getInt("minimum_quantity"), rs.getInt("maximum_quantity"), rs.getShort("questid")));
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return ret;
+        }
+
         drops.put(monsterId, ret);
         return ret;
     }
