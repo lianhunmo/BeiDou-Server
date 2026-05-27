@@ -56,7 +56,7 @@ function action(mode, type, selection) {
         text += "#L17#矿石仓库#l\t #L18#卷轴仓库#l\t #L24#怪卡仓库#l\t #L19#怪物卡戒#l\r\n";
         text += "#L21#皇家发型#l\t #L22#皇家整容#l\t #L23#时尚点装#l\t #L26#月卡功能#l\r\n";
         text += "#L27#金猪腰带#l\t #L28#动漫点装#l\t #L29#卷轴兑换#l\r\n";
-        text += "\r\n\r\n#L15#===================#r拍卖行#b===================#k#l\r\n";
+        text += "\r\n\r\n#L15#=============#r拍卖行（信用点交易）#b============#k#l\r\n";
         if (cm.getPlayer().isGM()) {
             text += "\r\n\r\n";
             text += "\t\t\t\t#r=====以下内容仅GM可见=====\r\n";
