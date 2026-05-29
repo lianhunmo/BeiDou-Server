@@ -144,7 +144,7 @@ function levelRingOption1() {
                 costStamp2 = 15;
                 STAMP_ID_COST_MAP.set(STAMP2, costStamp2);
                 costMeso = 500000;
-                upgradeProb = 90;
+                upgradeProb = 100;
                 text = buildInfoMessage(text, equipCurrentLevel);
                 cm.sendYesNoLevel("Dispose", "RingUpgrade", text);
                 break;
@@ -156,7 +156,7 @@ function levelRingOption1() {
                 costStamp3 = 15;
                 STAMP_ID_COST_MAP.set(STAMP3, costStamp3);
                 costMeso = 1000000;
-                upgradeProb = 80;
+                upgradeProb = 90;
                 text = buildInfoMessage(text, equipCurrentLevel);
                 cm.sendYesNoLevel("Dispose", "RingUpgrade", text);
                 break;
@@ -170,7 +170,7 @@ function levelRingOption1() {
                 costStamp4 = 15;
                 STAMP_ID_COST_MAP.set(STAMP4, costStamp4);
                 costMeso = 2000000;
-                upgradeProb = 70;
+                upgradeProb = 90;
                 text = buildInfoMessage(text, equipCurrentLevel);
                 cm.sendYesNoLevel("Dispose", "RingUpgrade", text);
                 break;
@@ -204,7 +204,7 @@ function levelRingOption1() {
                 costStamp6 = 15;
                 STAMP_ID_COST_MAP.set(STAMP6, costStamp6);
                 costMeso = 8000000;
-                upgradeProb = 50;
+                upgradeProb = 80;
                 text = buildInfoMessage(text, equipCurrentLevel);
                 cm.sendYesNoLevel("Dispose", "RingUpgrade", text);
                 break;
@@ -224,7 +224,7 @@ function levelRingOption1() {
                 costStamp7 = 15;
                 STAMP_ID_COST_MAP.set(STAMP7, costStamp7);
                 costMeso = 10000000;
-                upgradeProb = 40;
+                upgradeProb = 80;
                 text = buildInfoMessage(text, equipCurrentLevel);
                 cm.sendYesNoLevel("Dispose", "RingUpgrade", text);
                 break;
@@ -244,7 +244,7 @@ function levelRingOption1() {
                 costStamp7 = 20;
                 STAMP_ID_COST_MAP.set(STAMP7, costStamp7);
                 costMeso = 15000000;
-                upgradeProb = 30;
+                upgradeProb = 70;
                 text = buildInfoMessage(text, equipCurrentLevel);
                 cm.sendYesNoLevel("Dispose", "RingUpgrade", text);
                 break;
@@ -264,7 +264,7 @@ function levelRingOption1() {
                 costStamp7 = 25;
                 STAMP_ID_COST_MAP.set(STAMP7, costStamp7);
                 costMeso = 20000000;
-                upgradeProb = 20;
+                upgradeProb = 70;
                 text = buildInfoMessage(text, equipCurrentLevel);
                 cm.sendYesNoLevel("Dispose", "RingUpgrade", text);
                 break;
@@ -284,7 +284,7 @@ function levelRingOption1() {
                 costStamp7 = 30;
                 STAMP_ID_COST_MAP.set(STAMP7, costStamp7);
                 costMeso = 25000000;
-                upgradeProb = 10;
+                upgradeProb = 60;
                 text = buildInfoMessage(text, equipCurrentLevel);
                 cm.sendYesNoLevel("Dispose", "RingUpgrade", text);
                 break;

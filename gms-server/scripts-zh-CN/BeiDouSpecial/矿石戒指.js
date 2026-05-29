@@ -22,6 +22,7 @@ const ADAMANTIUM_PLATE = 4011003;
 const SILVER_PLATE = 4011004;
 const ORIHALCON_PLATE = 4011005;
 const GOLD_PLATE = 4011006;
+const MOON_ROCK = 4011007;
 
 const GARNET = 4021000;
 const AMETHYST = 4021001;
@@ -32,6 +33,7 @@ const SAPPHIRE = 4021005;
 const TOPAZ = 4021006;
 const DIAMOND = 4021007;
 const BLACK_CRYSTAL = 4021008;
+const STAR_ROCK = 4021009;
 
 const POWER_CRYSTAL = 4005000;
 const WISDOM_CRYSTAL = 4005001;
@@ -62,6 +64,7 @@ let costAdamantiumPlate = 0;
 let costSilverPlate = 0;
 let costOrihalconPlate = 0;
 let costGoldPlate = 0;
+let costMoonRock = 0;
 
 let costGarnet = 0;
 let costAmethyst = 0;
@@ -72,6 +75,7 @@ let costSapphire = 0;
 let costTopaz = 0;
 let costDiamond = 0;
 let costBlackCrystal = 0;
+let costStarRock = 0;
 
 let costPowerCrystal = 0;
 let costWisdomCrystal = 0;
@@ -79,22 +83,12 @@ let costDexCrystal = 0;
 let costLukCrystal = 0;
 
 let STAMP_ID_COST_MAP = new Map([
-    [BRONZE_PLATE, costBronzePlate],
-    [STEEL_PLATE, costSteelPlate],
-    [MITHRIL_PLATE, cosMithrilPlate],
-    [ADAMANTIUM_PLATE, costAdamantiumPlate],
-    [SILVER_PLATE, costSilverPlate],
-    [GOLD_PLATE, costGoldPlate],
-    [AMETHYST, costAmethyst],
-    [AQUAMARINE, cosAquaMarine],
-    [EMERALD, costEmerald],
-    [SAPPHIRE, costSapphire],
-    [TOPAZ, costTopaz],
-    [BLACK_CRYSTAL, costBlackCrystal]
+    [MOON_ROCK, costMoonRock],
+    [STAR_ROCK, costStarRock]
 ]);
 
 let costMeso = 0;
-let upgradeProb;
+let upgradeProb = 100;
 let equip;
 
 function start() {
@@ -161,56 +155,46 @@ function levelRingOption1() {
     if (RINGS_ITEM_ID_LIST.includes(equipItemId)) {
         let equipCurrentLevel = equip.getLevel();
         STAMP_ID_COST_MAP.forEach((cost, itemId) => {
-            STAMP_ID_COST_MAP.set(itemId, 5)
+            STAMP_ID_COST_MAP.set(itemId, equipCurrentLevel+1)
         })
         switch(equipCurrentLevel) {
             case 0:
-                upgradeProb = 100;
                 text = buildInfoMessage(text, equipCurrentLevel);
                 cm.sendYesNoLevel("Dispose", "RingUpgrade", text);
                 break;
             case 1:
-                upgradeProb = 90;
                 text = buildInfoMessage(text, equipCurrentLevel);
                 cm.sendYesNoLevel("Dispose", "RingUpgrade", text);
                 break;
             case 2:
-                upgradeProb = 80;
                 text = buildInfoMessage(text, equipCurrentLevel);
                 cm.sendYesNoLevel("Dispose", "RingUpgrade", text);
                 break;
             case 3:
-                upgradeProb = 70;
                 text = buildInfoMessage(text, equipCurrentLevel);
                 cm.sendYesNoLevel("Dispose", "RingUpgrade", text);
                 break;
             case 4:
-                upgradeProb = 60;
                 text = buildInfoMessage(text, equipCurrentLevel);
                 cm.sendYesNoLevel("Dispose", "RingUpgrade", text);
                 break;
             case 5:
-                upgradeProb = 50;
                 text = buildInfoMessage(text, equipCurrentLevel);
                 cm.sendYesNoLevel("Dispose", "RingUpgrade", text);
                 break;
             case 6:
-                upgradeProb = 40;
                 text = buildInfoMessage(text, equipCurrentLevel);
                 cm.sendYesNoLevel("Dispose", "RingUpgrade", text);
                 break;
             case 7:
-                upgradeProb = 30;
                 text = buildInfoMessage(text, equipCurrentLevel);
                 cm.sendYesNoLevel("Dispose", "RingUpgrade", text);
                 break;
             case 8:
-                upgradeProb = 20;
                 text = buildInfoMessage(text, equipCurrentLevel);
                 cm.sendYesNoLevel("Dispose", "RingUpgrade", text);
                 break;
             case 9:
-                upgradeProb = 10;
                 text = buildInfoMessage(text, equipCurrentLevel);
                 cm.sendYesNoLevel("Dispose", "RingUpgrade", text);
                 break;
@@ -241,7 +225,7 @@ function levelRingOption2() {
     } else {
         if (equipCurrentLevel >= 10) {
             STAMP_ID_COST_MAP.forEach((cost, itemId) => {
-                STAMP_ID_COST_MAP.set(itemId, 100)
+                STAMP_ID_COST_MAP.set(itemId, 10)
             })
             upgradeProb = 50;
             let text = "你想将#b#t" + equipItemId + "##k #i" + equipItemId + "##k升阶吗？升阶后可继续强化。\r\n\r\n";
