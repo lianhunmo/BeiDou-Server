@@ -901,7 +901,7 @@ function levelSelectScrollToDecompose(selection) {
     var itemQty = cm.getItemQuantity(itemId);
     var text = `您想要分解多少个#i${itemId}:##b${itemName}#k？\r\n`;
     text += `拥有数量: #r${itemQty}#k\t分解比例: #r1卷轴=${pieceQty}碎片#k\r\n`;
-    cm.getInputNumberLevel("SelectScrollToDecomposeNumber", text, 1, 1, itemQty);
+    cm.getInputNumberLevel("SelectScrollToDecomposeNumber", text, itemQty, 1, itemQty);
 }
 
 function levelSelectScrollToDecomposeNumber(selection) {
