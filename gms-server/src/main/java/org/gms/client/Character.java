@@ -10139,30 +10139,31 @@ public class Character extends AbstractCharacterObject {
                 Equip.ScrollResult scrollSuccess = Equip.ScrollResult.FAIL; // 默认设置为失败
                 if (evolveResult) {
                     scrollSuccess = Equip.ScrollResult.SUCCESS; // 成功升阶装备
+
+                    InventoryManipulator.removeFromSlot(client, InventoryType.EQUIP, equipSlot, oldEquip.getQuantity(), false);
+                    // 新戒指继承旧戒指升级的属性
+                    gainEquip(afterEvolvingItemId,
+                            oldEquip.getStr(),
+                            oldEquip.getDex(),
+                            oldEquip.getInt(),
+                            oldEquip.getLuk(),
+                            oldEquip.getHp(),
+                            oldEquip.getMp(),
+                            oldEquip.getWatk(),
+                            oldEquip.getMatk(),
+                            oldEquip.getWdef(),
+                            oldEquip.getMdef(),
+                            oldEquip.getAcc(),
+                            oldEquip.getAvoid(),
+                            oldEquip.getHands(),
+                            oldEquip.getSpeed(),
+                            oldEquip.getJump(),
+                            (byte) 0,
+                            -1L); // 标记装备被添加回库存
+                    chr.getMap().broadcastMessage(PacketCreator.getScrollEffect(chr.getId(), scrollSuccess, false, false)); // 广播卷轴效果
+                    chr.equipChanged(); // 通知客户端装备发生变化
                 }
 
-                InventoryManipulator.removeFromSlot(client, InventoryType.EQUIP, equipSlot, oldEquip.getQuantity(), false);
-                // 新戒指继承旧戒指升级的属性
-                gainEquip(afterEvolvingItemId,
-                        oldEquip.getStr(),
-                        oldEquip.getDex(),
-                        oldEquip.getInt(),
-                        oldEquip.getLuk(),
-                        oldEquip.getHp(),
-                        oldEquip.getMp(),
-                        oldEquip.getWatk(),
-                        oldEquip.getMatk(),
-                        oldEquip.getWdef(),
-                        oldEquip.getMdef(),
-                        oldEquip.getAcc(),
-                        oldEquip.getAvoid(),
-                        oldEquip.getHands(),
-                        oldEquip.getSpeed(),
-                        oldEquip.getJump(),
-                        (byte) 0,
-                        -1L); // 标记装备被添加回库存
-                chr.getMap().broadcastMessage(PacketCreator.getScrollEffect(chr.getId(), scrollSuccess, false, false)); // 广播卷轴效果
-                chr.equipChanged(); // 通知客户端装备发生变化
                 return evolveResult;
             } finally {
                 client.releaseClient(); // 释放客户端资源
