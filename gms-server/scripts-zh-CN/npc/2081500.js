@@ -56,7 +56,7 @@ function action(mode, type, selection) {
             } else if (cm.getJobId() % 100 % 10 != 2) {
                 cm.sendYesNo("你通过了我的测试，做得非常出色。你准备好晋升到第四职业了吗？");
             } else {
-                cm.sendSimple("如果必要的话，我可以教你你的职业技能。\r\n#b#L0#教我我的职业技能。#l");
+                cm.sendSimple("你的冒险岛勇士技能册丢了？怎么这么不小心，需要我再给你一本吗？\r\n#b#L0#请再给我一本吧。#l");
                 //cm.dispose();
             }
         } else if (status == 1) {
@@ -76,40 +76,15 @@ function action(mode, type, selection) {
                     }
                     cm.gainItem(2280003, 1);
                 } else {
-                    cm.sendOk("请在#b使用#k的物品栏中留出一个空位，以便接收技能书。");
+                    cm.sendOk("请在#b消耗#k的物品栏中留出一个空位，以便接收技能书。");
                 }
             } else if (mode >= 1 && cm.getJobId() % 100 % 10 == 2) {
-                if (cm.getJobId() == 512) {
-                    if (cm.getPlayer().getSkillLevel(5121003) == 0) {
-                        cm.teachSkill(5121003, 0, 10, -1);
-                    }
-                    if (cm.getPlayer().getSkillLevel(5121004) == 0) {
-                        cm.teachSkill(5121004, 0, 10, -1);
-                    }
-                    if (cm.getPlayer().getSkillLevel(5121005) == 0) {
-                        cm.teachSkill(5121005, 0, 10, -1);
-                    }
-                    if (cm.getPlayer().getSkillLevel(5121010) == 0) {
-                        cm.teachSkill(5121010, 0, 10, -1);
-                    }
-                } else if (cm.getJobId() == 522) {
-                    if (cm.getPlayer().getSkillLevel(5221006) == 0) {
-                        cm.teachSkill(5221006, 0, 10, -1);
-                    }
-                    if (cm.getPlayer().getSkillLevel(5221007) == 0) {
-                        cm.teachSkill(5221007, 0, 10, -1);
-                    }
-                    if (cm.getPlayer().getSkillLevel(5221008) == 0) {
-                        cm.teachSkill(5221008, 0, 10, -1);
-                    }
-                    if (cm.getPlayer().getSkillLevel(5221009) == 0) {
-                        cm.teachSkill(5221009, 0, 10, -1);
-                    }
-                    if (cm.getPlayer().getSkillLevel(5221003) == 0) {
-                        cm.teachSkill(5221003, 0, 10, -1);
-                    }
+                if (cm.canHold(2280003, 1)) {
+                    cm.gainItem(2280003, 1);
+                    cm.sendOk("好好保管，别再丢了。");
+                } else {
+                    cm.sendOk("请在#b消耗#k的物品栏中留出一个空位，以便接收技能书。");
                 }
-                cm.sendOk("事情已经完成。现在离开我。");
             }
 
             cm.dispose();

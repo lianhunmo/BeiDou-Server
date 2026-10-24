@@ -49,7 +49,13 @@ function action(mode, type, selection) {
             if (!eim.giveEventReward(cm.getPlayer())) {
                 cm.sendNext("看起来你的#r装备#k、#r消耗#k或#r其他#k背包中都没有空位。请腾出一些空间，然后再试一次。");
             } else {
-                cm.warp(221024500);
+                let quitTotal = cm.getCharacterExtendValue("玩具组队副本累计通关次数");
+                quitTotal ++;
+                cm.saveOrUpdateCharacterExtendValue("玩具组队副本累计通关次数", quitTotal.toString());
+                let quitDaily = cm.getCharacterExtendValue("玩具组队副本每日通关次数", true);
+                quitDaily++;
+                cm.saveOrUpdateCharacterExtendValue("玩具组队副本每日通关次数", quitDaily.toString(), true);
+                cm.warp(910000000);
             }
 
             cm.dispose();

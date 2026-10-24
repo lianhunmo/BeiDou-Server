@@ -160,6 +160,10 @@ public class ItemId {
     public static final int DRAGON_STONE_SCROLL = 2041200;
     public static final int BELT_STR_100_SCROLL = 2041300;
 
+    // 血蓝上限瓶
+    public static final int HP_MAX_POTION_30 = 2024000;
+    public static final int MP_MAX_POTION_30 = 2024001;
+
     // Cure debuff
     public static final int ALL_CURE_POTION = 2050004;
     public static final int EYEDROP = 2050001;

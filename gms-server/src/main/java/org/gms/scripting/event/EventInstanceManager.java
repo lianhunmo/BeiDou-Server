@@ -116,6 +116,7 @@ public class EventInstanceManager {
     private final Map<Integer, List<Integer>> collectionSet = new HashMap<>(GameConfig.getServerInt("max_event_levels"));
     private final Map<Integer, List<Integer>> collectionQty = new HashMap<>(GameConfig.getServerInt("max_event_levels"));
     private final Map<Integer, Integer> collectionExp = new HashMap<>(GameConfig.getServerInt("max_event_levels"));
+    private int stampItemId = 0;
 
     // 清理阶段奖励
     private final List<Integer> onMapClearExp = new ArrayList<>();
@@ -214,12 +215,12 @@ public class EventInstanceManager {
 
         if (mapId == -1) {
             for (Character mc : players) {
-                mc.gainExp(NumberTool.floatToInt(gain * mc.getExpRate()), true, true);
+                mc.gainExp(NumberTool.floatToInt(gain * mc.getPqExpRate()), true, true);
             }
         } else {
             for (Character mc : players) {
                 if (mc.getMapId() == mapId) {
-                    mc.gainExp(NumberTool.floatToInt(gain * mc.getExpRate()), true, true);
+                    mc.gainExp(NumberTool.floatToInt(gain * mc.getPqExpRate()), true, true);
                 }
             }
         }
@@ -1006,7 +1007,15 @@ public class EventInstanceManager {
         setEventRewards(eventLevel, rwds, qtys, 0);
     }
 
+    public final void setEventRewardsWithStamp(int eventLevel, List<Object> rwds, List<Object> qtys, int stampItemId) {
+        setEventRewards(eventLevel, rwds, qtys, 0, stampItemId);
+    }
+
     public final void setEventRewards(int eventLevel, List<Object> rwds, List<Object> qtys, int expGiven) {
+        setEventRewards(eventLevel, rwds, qtys, 0, 0);
+    }
+
+    public final void setEventRewards(int eventLevel, List<Object> rwds, List<Object> qtys, int expGiven, int stampItemId) {
         // fixed EXP will be rewarded at the same time the random item is given
 
         if (eventLevel <= 0 || eventLevel > GameConfig.getServerInt("max_event_levels")) {
@@ -1023,6 +1032,7 @@ public class EventInstanceManager {
             collectionSet.put(eventLevel, rewardIds);
             collectionQty.put(eventLevel, rewardQtys);
             collectionExp.put(eventLevel, expGiven);
+            this.stampItemId = stampItemId;
         } finally {
             writeLock.unlock();
         }
@@ -1096,9 +1106,17 @@ public class EventInstanceManager {
         }
 
         AbstractPlayerInteraction api = player.getAbstractPlayerInteraction();
-        int rnd = (int) Math.floor(Math.random() * rewardsSet.size());
+        String characterExtendValue = api.getCharacterExtendValue("邮票获取次数" + stampItemId, false);
+        int stampCount = Objects.isNull(characterExtendValue) ? 0 : Integer.parseInt(characterExtendValue);
+        if (stampCount >= 3 || stampItemId == 0) {
+            int rnd = (int) Math.floor(Math.random() * rewardsSet.size());
 
-        api.gainItem(rewardsSet.get(rnd), rewardsQty.get(rnd).shortValue());
+            api.gainItem(rewardsSet.get(rnd), rewardsQty.get(rnd).shortValue());
+        } else {
+            api.gainItem(stampItemId, (short) 10);
+            stampCount++;
+            api.saveOrUpdateCharacterExtendValue("邮票获取次数" + stampItemId, String.valueOf(stampCount), false);
+        }
         if (rewardExp > 0) {
             player.gainExp(rewardExp);
         }

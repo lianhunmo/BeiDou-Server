@@ -1,6 +1,6 @@
 /*
     This file is part of the HeavenMS MapleStory Server
-    Copyleft (L) 2016 - 2019 RonanLana
+    Copyleft (L) 2016 - 2018 RonanLana
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU Affero General Public License as
@@ -21,27 +21,29 @@
 var status = -1;
 
 function end(mode, type, selection) {
-    if (mode == -1 || (mode == 0 && status == 0)) {
+    if (mode == -1) {
         qm.dispose();
-        return;
-    }
-
-    if (mode == 1) {
-        status++;
     } else {
-        status--;
-    }
-
-    if (status == 0) {
-        if (qm.getQuestProgress(21728, 21761) == "0") {
-            qm.sendNext("你真的找到了人偶师的根据地？可惜因为暗号没办法进去……看来还需要更多线索。");
-        } else {
-            qm.sendOk("你还没有找到人偶师的根据地。去火独眼兽洞穴附近仔细调查一下吧。");
+        if(mode == 0 && type > 0) {
+            qm.dispose();
+            return;
+        }
+        
+        if (mode == 1)
+            status++;
+        else
+            status--;
+        
+        if (status == 0) {
+            if(qm.getQuestProgress(21728, 0) == 0) {
+                qm.sendNext("你还没找到#r人偶师的洞穴#k是吗？");
+            } else {
+                qm.sendNext("嗯，所以入口被一股强大的力量堵住了？我明白了，现在给我一点时间思考...");
+                qm.gainExp(200);
+                qm.forceCompleteQuest();
+            }
+            
             qm.dispose();
         }
-    } else if (status == 1) {
-        qm.forceCompleteQuest();
-        qm.gainExp(200);
-        qm.dispose();
     }
 }

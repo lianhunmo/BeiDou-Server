@@ -74,7 +74,7 @@ function action(mode, type, selection) {
             item = itemSet[selectedItem];
             mats = matSet[selectedItem];
             matQty = matQtySet[selectedItem];
-            cost = costSet[selectedItem];
+            costStamp1 = costSet[selectedItem];
             levelLimit = levelLimitSet[selectedItem];
         } else if (selectedType == 1) { //Making a Gun
             var itemSet = [1492001, 1492002, 1492003, 1492004, 1492005, 1492006, 1492007];
@@ -85,7 +85,7 @@ function action(mode, type, selection) {
             item = itemSet[selectedItem];
             mats = matSet[selectedItem];
             matQty = matQtySet[selectedItem];
-            cost = costSet[selectedItem];
+            costStamp1 = costSet[selectedItem];
             levelLimit = levelLimitSet[selectedItem];
         } else if (selectedType == 2) { //Making a pair of pirate gloves
             var itemSet = [1082180, 1082183, 1082186, 1082189, 1082192, 1082195, 1082198, 1082201];
@@ -96,7 +96,7 @@ function action(mode, type, selection) {
             item = itemSet[selectedItem];
             mats = matSet[selectedItem];
             matQty = matQtySet[selectedItem];
-            cost = costSet[selectedItem];
+            costStamp1 = costSet[selectedItem];
             levelLimit = levelLimitSet[selectedItem];
         }
 
@@ -110,8 +110,8 @@ function action(mode, type, selection) {
             prompt += "\r\n#i" + mats + "# " + matQty * qty + " #t" + mats + "#";
         }
 
-        if (cost > 0) {
-            prompt += "\r\n#i4031138# " + cost * qty + " 金币";
+        if (costStamp1 > 0) {
+            prompt += "\r\n#i4031138# " + costStamp1 * qty + " 金币";
         }
 
         cm.sendYesNo(prompt);
@@ -122,7 +122,7 @@ function action(mode, type, selection) {
             cm.sendOk("首先检查你的物品栏是否有空位。");
             cm.dispose();
             return;
-        } else if (cm.getMeso() < cost * qty) {
+        } else if (cm.getMeso() < costStamp1 * qty) {
             cm.sendNext("请确保你拥有制作这个物品所需的所有必要物品。另外，确保你的装备栏有足够的空间。如果你的背包已经满了，我就无法给你这个物品了，你知道的。");
             cm.dispose();
             return;
@@ -179,8 +179,8 @@ function action(mode, type, selection) {
                 cm.gainItem(mats, -matQty * qty);
             }
 
-            if (cost > 0) {
-                cm.gainMeso(-cost * qty);
+            if (costStamp1 > 0) {
+                cm.gainMeso(-costStamp1 * qty);
             }
 
             if (item == 4003000)//screws

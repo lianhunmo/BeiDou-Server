@@ -511,7 +511,7 @@
     </imgdir>
     <imgdir name="26">
       <string name="type" value="n"/>
-      <string name="id" value="2112003"/>
+      <string name="id" value="2112005"/>
       <int name="x" value="114"/>
       <int name="y" value="300"/>
       <int name="mobTime" value="0"/>

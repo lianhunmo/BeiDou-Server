@@ -49,7 +49,7 @@ function action(mode, type, selection) {
         if (status == 0) {
             cm.sendNext("返回招募地图的方法是沿着这条路走。");
         } else {
-            cm.warp(221024500);
+            cm.warp(910000000);
             cm.dispose();
         }
     } else {

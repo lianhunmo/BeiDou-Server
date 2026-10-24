@@ -58,16 +58,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.LinkedHashMap;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.Map.Entry;
-import java.util.Set;
 
 /**
  * @author Matze
@@ -1142,6 +1134,39 @@ public class ItemInformationProvider {
                     }
                 }
             }
+        }
+        return equip; // 返回处理后的装备
+    }
+
+    public Item scrollEquipCustom(Item equip, double prop, boolean isGM, boolean isExclusionAttribute) {
+        return scrollEquipCustom(equip, prop, isGM, isExclusionAttribute, null);
+    }
+    public Item scrollEquipCustom(Item equip, double prop, boolean isGM, boolean isExclusionAttribute, Map<String, Integer> stats) {
+        // 检查是否是游戏管理员且配置中启用了完美GM卷轴功能
+        boolean assertGM = (isGM && GameConfig.getServerBoolean("use_perfect_gm_scroll"));
+        if (Objects.isNull(stats)) {
+            stats = new HashMap<>(2);
+            stats.put("PAD", 1);
+            stats.put("MAD", 1);
+        }
+        if (equip instanceof Equip nEquip) { // 检查装备是否为 Equip 类
+                // 判断是否成功应用卷轴效果（根据成功率和GM状态）
+                if (assertGM || rollSuccessChance(prop)) {
+                    improveEquipStats(nEquip, stats); // 默认情况下提高装备属性
+                    nEquip.setExpiration(-1); // 去除有效期
+                    // 处理等级
+                    nEquip.setLevel((byte) (nEquip.getLevel() + 1)); // 提升装备等级
+                } else {
+                    if (!isExclusionAttribute) {
+                        return equip;
+                    }
+                    // 卷轴使用失败的情况
+                    Map<String, Integer> finalStats = stats;
+                    stats.forEach((key, value) -> finalStats.put(key, -value));
+                    improveEquipStats(nEquip, finalStats); // 默认情况下降低装备属性
+                    // 处理等级
+                    nEquip.setLevel((byte) (nEquip.getLevel() - 1)); // 降低装备等级
+                }
         }
         return equip; // 返回处理后的装备
     }

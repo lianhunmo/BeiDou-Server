@@ -47,7 +47,7 @@ function action(mode, type, selection) {
             status--;
         }
 
-        if (cm.getMapId() == 200080101) {
+        if (cm.getMapId() == 200080101 || cm.getMapId() == 910000000) {
             if (status == 0) {
                 em = cm.getEventManager("OrbisPQ");
                 if (em == null) {
@@ -63,7 +63,7 @@ function action(mode, type, selection) {
             } else if (status == 1) {
                 if (selection == 0) {
                     if (cm.getParty() == null) {
-                        cm.sendOk("只有当你加入一个队伍时，才能参加派对任务。");
+                        cm.sendOk("只有当你加入一个队伍时，才能参加组队任务。");
                         cm.dispose();
                     } else if (!cm.isLeader()) {
                         cm.sendOk("你的队长必须与我交谈才能开始这个组队任务。");
@@ -88,16 +88,19 @@ function action(mode, type, selection) {
                     cm.sendOk("#e#b<女神之塔组队任务>#k#n\r\n我们的女神已经失踪了一段时间，有传言说她最后一次被看到是在女神之塔内。此外，我们的圣地已经被精灵们的压倒性力量夺取，这些生物最近一直在奥比斯的边缘徘徊。他们的领袖，皮克西爸爸，目前掌握着王位，可能知道她的下落，因此我们迫切需要找到一支由勇敢的英雄组成的队伍，冲进去夺回我们的圣地并拯救她。如果你的团队能够包含每个职业（战士，魔法师，弓箭手，飞侠和海盗），你们将得到我的祝福来帮助你们战斗。你们会帮助我们吗？");
                     cm.dispose();
                 } else {
-                    cm.sendSimple("那么，你想要获得什么奖品？\r\n#b#L0#给我女神手镯。\r\n");
+                    cm.sendSimple("你要用10个#b#t4001158##k#i4001158##k换#b#t1082232##k#i1082232##k吗？\r\n#b#L0#给我女神的手镯。\r\n");
                 }
             } else if (status == 2) {
                 if (selection == 0) {
-                    if (!cm.haveItem(1082232) && cm.haveItem(4001158, 10)) {
-                        cm.gainItem(1082232, 1);
-                        cm.gainItem(4001158, -10);
+                    if (cm.haveItem(1082232)) {
+                        cm.sendOk("你已经拥有了女神的手镯。");
+                        cm.dispose();
+                    } else if (!cm.haveItem(4001158, 10)){
+                        cm.sendOk("你没有10个#r#t4001158##k#i4001158##k。");
                         cm.dispose();
                     } else {
-                        cm.sendOk("你要么已经拥有女神手镯，要么没有10个#t4001158#。");
+                        cm.gainItem(1082232, 1);
+                        cm.gainItem(4001158, -10);
                         cm.dispose();
                     }
                 }

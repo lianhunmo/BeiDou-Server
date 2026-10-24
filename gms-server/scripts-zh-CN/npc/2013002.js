@@ -56,7 +56,15 @@ function action(mode, type, selection) {
                 cm.sendNext("谢谢你不仅修复了雕像，还救出了我，让我脱离困境。愿女神的祝福与你同在，直到最后……作为感激之情，请接受这份纪念品，以表彰你的勇敢。");
             } else if (status == 1) {
                 if (cm.getEventInstance().giveEventReward(cm.getPlayer())) {
-                    cm.warp(200080101, 0);
+                    cm.gainMeso(150000);
+                    cm.getChar().gainPqExp(760000);
+                    let quitTotal = cm.getCharacterExtendValue("天空组队副本累计通关次数");
+                    quitTotal++;
+                    cm.saveOrUpdateCharacterExtendValue("天空组队副本累计通关次数", quitTotal.toString());
+                    let quitDaily = cm.getCharacterExtendValue("天空组队副本每日通关次数", true);
+                    quitDaily++;
+                    cm.saveOrUpdateCharacterExtendValue("天空组队副本每日通关次数", quitDaily.toString(), true);
+                    cm.warp(910000000, 0);
                     cm.dispose();
                 } else {
                     cm.sendOk("请先在您的背包中腾出空间。");

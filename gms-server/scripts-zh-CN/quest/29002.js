@@ -1,82 +1,55 @@
-﻿var medalId = 1142003;
-var requiredFameGain = 1000;
-var challengeDurationMs = 30 * 24 * 60 * 60 * 1000;
+﻿/*
+	This file is part of the OdinMS Maple Story Server
+    Copyright (C) 2008 Patrick Huy <patrick.huy@frz.cc>
+		       Matthias Butz <matze@odinms.de>
+		       Jan Christian Meyer <vimes@odinms.de>
 
-function finishIfAlreadyAwarded() {
-    if (qm.isQuestCompleted(qm.getQuest())) {
-        qm.sendOk("你已经获得过#b#t" + medalId + "##k，这项挑战已经记录在你的冒险履历里了。");
-        qm.dispose();
-        return true;
-    }
-    if (qm.haveItemWithId(medalId, true)) {
-        qm.forceCompleteQuest();
-        qm.earnTitle(qm.getMedalName());
-        qm.sendOk("你已经获得过#b#t" + medalId + "##k，这项挑战已经记录在你的冒险履历里了。");
-        qm.dispose();
-        return true;
-    }
-    return false;
-}
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU Affero General Public License as
+    published by the Free Software Foundation version 3 as published by
+    the Free Software Foundation. You may not use, modify or distribute
+    this program under any other version of the GNU Affero General Public
+    License.
 
-function getRecordedStartFame() {
-    var progress = qm.getQuestProgress(qm.getQuest());
-    if (progress == null || progress.length === 0) {
-        return -1;
-    }
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU Affero General Public License for more details.
 
-    var startFame = parseInt(progress, 10);
-    return isNaN(startFame) ? -1 : startFame;
-}
+    You should have received a copy of the GNU Affero General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+*/
+/*      
+        Author : Generic (http://cronusemu.net)
+        NPC Name:               Dalair
+        Map(s):                 Every town
+        Description:            Quest - Title Challenge - Celebrity!
+        Quest ID :              29002
+*/
+var status = -1;
 
 function start(mode, type, selection) {
-    if (finishIfAlreadyAwarded()) {
-        return;
-    }
-
-    qm.forceStartQuest();
-    qm.setQuestProgress(qm.getQuest(), "" + qm.getPlayer().getFame());
-    qm.sendOk("请在 30 天内把人气提高 #b" + requiredFameGain + "#k 点，再来领取#b#t" + medalId + "##k。");
-    qm.dispose();
-}
-
-function end(mode, type, selection) {
-    if (finishIfAlreadyAwarded()) {
-        return;
-    }
-
-    var questRecord = qm.getQuestRecord(qm.getQuest());
-    if (questRecord == null || System.currentTimeMillis() > questRecord.getCompletionTime() + challengeDurationMs) {
-        qm.sendOk("30 天挑战期限已经结束了。如果你还想挑战#b#t" + medalId + "##k，请先重新接取任务。");
+    if (mode == -1) {
+        qm.sendNext("准备好了就回来找我吧.");
         qm.dispose();
-        return;
-    }
-
-    var startFame = getRecordedStartFame();
-    if (startFame < 0) {
-        qm.sendOk("无法确认你接取挑战时的人气记录，请先放弃任务后重新接取。");
-        qm.dispose();
-        return;
-    }
-
-    var currentFame = qm.getPlayer().getFame();
-    var gainedFame = currentFame - startFame;
-    if (gainedFame < requiredFameGain) {
-        qm.sendOk("领取这枚勋章需要你在 30 天内提高 #b" + requiredFameGain + "#k 点人气。\r\n当前已提升：#r" + gainedFame + "#k");
-        qm.dispose();
-        return;
-    }
-
-    if (!qm.haveItem(medalId)) {
-        if (!qm.canHold(medalId)) {
-            qm.sendOk("请在装备栏空出 1 个位置。");
-            qm.dispose();
-            return;
+    } else {
+        if (mode > 0)
+            status++;
+        else
+            status--;
+        if (status == 0) {// Picture of Celebrity Medal(+blue text "Celebrity Medal"
+            qm.sendAcceptDecline("#v1142003# #e#b#z1142003##k \r\n- 限时 30 天 \r\n- 需要: 人气提升1000 \r\n#n想要挑战这个头衔吗?");
+        } else if (status == 1) {
+            qm.sendNext("我会给你30天时间来完成目标.当你完成了回来找我.");
+            qm.forceStartQuest();
         }
-        qm.gainItem(medalId, 1);
-    }
 
-    qm.forceCompleteQuest();
-    qm.earnTitle(qm.getMedalName());
-    qm.sendOk("你在 30 天内成功提高了 #b" + gainedFame + "#k 点人气，已经证明自己是真正的超人气冒险家。\r\n\r\n请收下#b#t" + medalId + "##k。");
-    qm.dispose();
+    }
+        
+}
+function end(){
+	qm.gainItem(1142003);
+	qm.sendNext("不可思议!你居然完成了!收好勋章,这是你实力的证明!");
+	qm.forceCompleteQuest();
+	qm.dispose();
 }

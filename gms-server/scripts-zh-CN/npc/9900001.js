@@ -23,7 +23,7 @@
 /**
  * @description 拍卖行中心脚本
  */
-var OldTitle ="\t\t\t\t\t#e欢迎来到#rBeiDou#k脚本中心#n\t\t\t\t\r\n";
+var OldTitle ="\t\t\t\t\t#e欢迎来到#r小时候#k帮助中心#n\t\t\t\t\r\n";
 var status = -1;
 var i = 0;
 function start() {
@@ -31,6 +31,7 @@ function start() {
 }
 
 function action(mode, type, selection) {
+    let flamingFeatherAlreadyCount = Number(cm.getAccountExtendValue("角色累充数额"));
     if (mode === 1) {
         status++;
     } else if (mode === -1) {
@@ -41,23 +42,27 @@ function action(mode, type, selection) {
     }
 
     if (status === 0) {
-		let text = OldTitle;
+        let text = OldTitle;
         text += "当前点券：" + cm.getPlayer().getCashShop().getCash(1) + "\r\n";
         text += "当前抵用券：" + cm.getPlayer().getCashShop().getCash(2) + "\r\n";
         text += "当前信用券：" + cm.getPlayer().getCashShop().getCash(4) + "\r\n";
 		text += "当前金币：" + cm.getPlayer().getMeso() + "\r\n";
+        text += "当前羽毛累充：" + flamingFeatherAlreadyCount + "\r\n";
         text += " \r\n\r\n";
-		text += "#L3#传送自由#l \t #L69#快速转职#l \t #L70#学习技能#l\r\n";
-		text += "#L71#超级传送#l \t #L4#爆率一览#l \t #L2#在线奖励#l\r\n";
-        text += "#L0#新人福利#l \t #L1#每日签到#l  \t #L72#转世重生#l\r\n";
-		text += "#L5#野外BOSS刷新#l\r\n";
-		// text += "#L999#测试脚本>>>未上线#l \t \r\n";
+        text += "#L0##b新人福利#l\t #L2#在线奖励#l\t #L4#爆率一览#l\t #L10#一键出售#l\r\n";
+        text += "#L3#传送自由#l\t #L65#删除道具#l\t #L12#羽毛累充#l\t #L13#点券商品#l\r\n";
+        text += "#L8#副本戒指#l\t #L9#矿石戒指#l\t #L6#枫叶戒指#l\t #L7#点装强化#l\r\n";
+        text += "#L11#每日任务#l\t #L14#肝王勋章#l\t #L16#便利商店#l\t #L20#血衣合成#l\r\n";
+        text += "#L17#矿石仓库#l\t #L18#卷轴仓库#l\t #L24#怪卡仓库#l\t #L19#怪物卡戒#l\r\n";
+        text += "#L21#皇家发型#l\t #L22#皇家整容#l\t #L23#时尚点装#l\t #L26#月卡功能#l\r\n";
+        text += "#L27#金猪腰带#l\t #L28#动漫点装#l\t #L30#装备合成#l\r\n";
+        text += "\r\n\r\n#L15#=============#r拍卖行（信用点交易）#b============#k#l\r\n";
         if (cm.getPlayer().isGM()) {
             text += "\r\n\r\n";
             text += "\t\t\t\t#r=====以下内容仅GM可见=====\r\n";
-            text += "#L61#超级传送#l \t #L62#超级商店#l \t #L63#整容集合#l\r\n\r\n";
-			text += "#L64#UI查询#l \t #L65#一键删除道具#l \t #L66#一键刷道具#l\r\n\r\n";
-			text += "#L67#有状态脚本示例#l \t #L68#NextLevel脚本示例#l";
+            text += "#L10#一键出售#l\t #L61#超级传送#l\t #L62#超级商店#l\t #L63#整容集合#l \t #L29#卷轴兑换#l\t";
+            text += "#L64#UI查询#l\t #L65#删除道具#l\t #L66#生成道具#l\t #L70#秒伤测试#l\r\n\r\n";
+            text += "#L67#有状态脚本示例#l\t #L68#NextLevel脚本示例#l\t #L69#遗忘技能#l\t #L25#战力排行#l";
         }
         cm.sendSimple(text);
     } else if (status === 1) {
@@ -70,23 +75,8 @@ function action(mode, type, selection) {
 function doSelect(selection) {
     switch (selection) {
         // 非GM功能
-		case 999:
-            openNpc("测试脚本");
-            break;
-        case 69:
-            openNpc("快速转职");
-            break;
-        case 70:
-            openNpc("技能学习");
-            break;
-        case 71:
-            openNpc("万能传送");
-            break;
-        case 72:
-            openNpc("转世重生");
-            break;
         case 0:
-            openNpc("新人福利");
+            openNpc("新人福利_nextLevel");
             break;
         case 1:
             openNpc("每日签到");
@@ -102,9 +92,87 @@ function doSelect(selection) {
             openNpc("当前地图掉落");
             break;
         case 5:
-            openNpc("AreaBossRefresh");
+            openNpc("一键转职");
             break;
-        // GM功能
+        case 6:
+            openNpc("戒指打造");
+            break;
+        case 7:
+            openNpc("点装强化");
+            break;
+        case 8:
+            openNpc("副本戒指");
+            break;
+        case 9:
+            openNpc("矿石戒指");
+            break;
+        case 10:
+            openNpc("一键出售");
+            break;
+        case 11:
+            openNpc("每日任务");
+            break;
+        case 12:
+            openNpc("赞助中心");
+            break;
+        case 13:
+            openNpc("点卷商品");
+            break;
+        case 14:
+            openNpc("肝王勋章");
+            break;
+        case 15:
+            const EnterMTSHandler = Java.type("org.gms.net.server.channel.handlers.EnterMTSHandler");
+            const client = cm.getPlayer().getClient();
+            EnterMTSHandler.enterMTS(client);
+            break;
+        case 16:
+            cm.openShopNPC(2030009); // 便利商店
+            cm.dispose();
+            break;
+        case 17:
+            openNpc("矿石仓库");
+            break;
+        case 18:
+            openNpc("卷轴仓库");
+            break;
+        case 19:
+            openNpc("2006");  //明珠港怪物卡戒指NPC
+            break;
+        case 20:
+            openNpc("血衣合成");
+            break;
+        case 21:
+            openNpc("皇家发型");
+            break;
+        case 22:
+            openNpc("皇家整容");
+            break;
+        case 24:
+            openNpc("怪卡仓库");
+            break;
+        case 25:
+            openNpc("战力排行");
+            break;
+        case 26:
+            openNpc("月卡功能");
+            break;
+        case 27:
+            openNpc("金猪腰带");
+            break;
+        case 28:
+            openNpc("动漫点装");
+            break;
+        case 29:
+            openNpc("卷轴兑换");
+            break;
+        case 30:
+            openNpc("装备合成");
+            break;
+// GM功能
+        case 23:
+            openNpc("时尚点装");
+            break;
         case 61:
             openNpc("万能传送");
             break;
@@ -118,7 +186,7 @@ function doSelect(selection) {
             break;
         case 64:
             openNpc("UI查询");
-            break;	
+            break;
         case 65:
             openNpc("一键删除道具");
             break;
@@ -131,8 +199,12 @@ function doSelect(selection) {
         case 68:
             openNpc("Example2")
             break;
-
-
+        case 69:
+            openNpc("遗忘技能")
+            break;
+        case 70:
+            openNpc("秒伤测试");
+            break;
         default:
             cm.sendOk("该功能暂不支持，敬请期待！");
             cm.dispose();
@@ -141,5 +213,15 @@ function doSelect(selection) {
 
 function openNpc(scriptName) {
     cm.dispose();
-    cm.openNpc(9900001, scriptName);
+    cm.openNpc(1002006, scriptName);
+}
+
+function level() {
+    leveldispose();
+}
+function levelnull() {
+    leveldispose();
+}
+function leveldispose() {
+    cm.dispose();
 }

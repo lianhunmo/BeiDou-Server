@@ -24,53 +24,43 @@ var config = {
 			online:10,	//时长限制，单位：分钟
 			itemlist:[
 				// id解释：0：金币;  1：点券;  2：抵用券;  4、信用点; 5、经验值;  id ≥ 1_000_000 的为有效物品ID，自动区分，你只需要操心客户端有没有填入的物品即可。
-				{id:0,qty:10000},	//金币，数量1万
-				{id:2430033,qty:5}	//北斗指南书碎片，数量5
+				{id:2430033,qty:1}	//北斗指南书碎片，数量5
 			]
 		},{
 			online:30,
 			itemlist:[
-				{id:0,qty:50000},	//金币
-				{id:1,qty:1000},	//点券，数量1千
-				{id:2430033,qty:10}	//北斗指南书碎片
+				{id:2430033,qty:2}	//北斗指南书碎片
 			]
 		},{
 			online:60,
 			itemlist:[
-				{id:0,qty:100000},	//金币
-				{id:1,qty:1000},	//点券，数量1千
-				{id:2430033,qty:15},	//北斗指南书碎片
+				{id:2430033,qty:3},	//北斗指南书碎片
 			]
 		},{
 			online:120,
 			itemlist:[
-				{id:0,qty:150000},	//金币
-				{id:1,qty:3000},	//点券，数量1千
-				{id:2430033,qty:20},	//北斗指南书碎片
+				{id:2430033,qty:5},	//北斗指南书碎片
 			]
 		},{
 			online:240,
 			itemlist:[
-				{id:0,qty:200000},	//金币
-				{id:1,qty:4000},	//点券，数量1千
-				{id:2430033,qty:25},	//北斗指南书碎片
+				{id:2430033,qty:6},	//北斗指南书碎片
 				{id:4310000,qty:1}	//绝对音感
 			]
 		},{
 			online:360,
 			itemlist:[
-				{id:0,qty:400000},	//金币
-				{id:1,qty:5000},	//点券，数量1千
-				{id:2430033,qty:30},	//北斗指南书碎片
-				{id:4310000,qty:2}	//绝对音感
+				{id:2430033,qty:8},	//北斗指南书碎片
+				{id:4310000,qty:2},	//绝对音感
+				{id:5041000,qty:1}	//高级瞬移之石
 			]
 		},{
 			online:480,
 			itemlist:[
-				{id:0,qty:500000},	//金币
-				{id:1,qty:6000},	//点券，数量1千
-				{id:2430033,qty:35},	//北斗指南书碎片
-				{id:4310000,qty:3}	//绝对音感
+				{id:2430033,qty:10},	//北斗指南书碎片
+				{id:4310000,qty:3},	//绝对音感
+				{id:4001006,qty:1},	//火焰羽毛
+				{id:5041000,qty:1}	//高级瞬移之石
 			]
 		},
 	]
@@ -137,6 +127,7 @@ function levelmain() {
 	text += `#e今日已累积在线：#n${formatMinutes(g_OnlineMinutes)}\r\n`;
 	text += "我们为您准备了丰厚的在线时长奖励，点击领取下方的奖励：\r\n";
 	text += getOnlineRewardListText() + "\r\n\r\n";
+	text += "#L999##b离开#k#l\r\n";
 	text += "\r\n【领取说明】\r\n · 每份奖励需手动领取\r\n · #b每日0点#e#r重置#b#n累计时长#k\r\n · 背包空间不足将不会发放奖励\r\n · 坚持在线时间越长，获得奖励越丰厚！"
 	if (g_ClaimStatus == ((1 << config.reward.length) - 1)) {
 		cm.sendOkLevel("",text);	
@@ -146,6 +137,9 @@ function levelmain() {
 }
 
 function levelclaimrewards(Select) {
+	if(Select == 999) {
+		cm.dispose();
+	}
 	const reward = config.reward[Select];
 	g_ClaimStatus |= (1 << Select);
 	let text = "\r\n";
@@ -163,7 +157,7 @@ function levelclaimrewards(Select) {
 	cm.sendOkLevel("",text);
 }
 function levelgiveRewardItems() {
-	cm.sendOkLevel("",giveRewardItems(g_Select,g_itemCount));
+	cm.sendOkLevel("main",giveRewardItems(g_Select,g_itemCount));
 }
 /**
  * 生成奖励物品的显示列表

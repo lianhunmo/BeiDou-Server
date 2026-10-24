@@ -64,6 +64,9 @@ import org.gms.net.server.guild.GuildPackets;
 import org.gms.net.server.services.task.world.CharacterSaveService;
 import org.gms.net.server.services.type.WorldServices;
 import org.gms.net.server.world.*;
+import org.gms.provider.Data;
+import org.gms.provider.DataProviderFactory;
+import org.gms.provider.wz.WZFiles;
 import org.gms.scripting.AbstractPlayerInteraction;
 import org.gms.scripting.event.EventInstanceManager;
 import org.gms.scripting.item.ItemScriptManager;
@@ -245,6 +248,9 @@ public class Character extends AbstractCharacterObject {
     @Setter
     @Getter
     private long lastfametime;
+    @Setter
+    @Getter
+    private long totalDamage;
     @Setter
     @Getter
     private long lastUsedCashItem;
@@ -1188,7 +1194,7 @@ public class Character extends AbstractCharacterObject {
             addhp += Randomizer.rand(300, 350);
             addmp += Randomizer.rand(150, 200);
         }
-        
+
         /*
         //aran perks?
         int newJobId = newJob.getId();
@@ -1272,7 +1278,7 @@ public class Character extends AbstractCharacterObject {
         if (guild != null) {
             guild.broadcast(packet, id);
         }
-        
+
         /*
         if(partnerid > 0) {
             partner.sendPacket(packet); not yet implemented
@@ -1822,6 +1828,43 @@ public class Character extends AbstractCharacterObject {
         this.currentPage = page;
     }
 
+    public void setRebirthAp(int rebornApNum) {
+        int finalAP = this.getReborns() * rebornApNum + 9;
+        this.updateStrDexIntLuk(4);
+        this.changeRemainingAp(finalAP, false);
+    }
+
+    public void rewardRebirthAp() {
+        int finalAP = this.getRemainingAp() + Integer.parseInt(this.getAbstractPlayerInteraction().getAccountExtendValue("重生属性点"));
+        this.changeRemainingAp(finalAP, false);
+    }
+    public void resetSkillLevel() {
+        for (Data skill_ : DataProviderFactory.getDataProvider(WZFiles.STRING).getData("Skill.img").getChildren()) {
+            try {
+                Skill skill = SkillFactory.getSkill(Integer.parseInt(skill_.getName()));
+                if (skill.getId() / 10000 == 0) {
+                    continue;
+                }
+                this.changeSkillLevel(skill, (byte) 0, skill.getMaxLevel(), -1);
+            } catch (NumberFormatException nfe) {
+                nfe.printStackTrace();
+                break;
+            } catch (NullPointerException npe) {
+            }
+        }
+
+        if (this.getJob().isA(Job.ARAN1) || this.getJob().isA(Job.LEGEND)) {
+            Skill skill = SkillFactory.getSkill(5001005);
+            this.changeSkillLevel(skill, (byte) -1, -1, -1);
+        } else {
+            Skill skill = SkillFactory.getSkill(21001001);
+            this.changeSkillLevel(skill, (byte) -1, -1, -1);
+        }
+
+        // 清空技能点
+        this.updateRemainingSp(0);
+        this.yellowMessage(I18nUtil.getMessage("ResetSkillCommand.message2"));
+    }
     public void changeSkillLevel(Skill skill, byte newLevel, int newMasterlevel, long expiration) {
         if (newLevel > -1) {
             skills.put(skill, new SkillEntry(newLevel, newMasterlevel, expiration));
@@ -2924,6 +2967,10 @@ public class Character extends AbstractCharacterObject {
         updateSingleStat(Stat.GACHAEXP, gachaExp.addAndGet(gain));
     }
 
+    public void gainPqExp(int gain) {
+        gainExp(NumberTool.floatToInt(gain * this.getPqExpRate()), true, true);
+    }
+
     public void gainExp(int gain) {
         gainExp(gain, true, true);
     }
@@ -3164,6 +3211,20 @@ public class Character extends AbstractCharacterObject {
                     id, cost, e);
         }
         return true;
+    }
+
+    public void gainCash(int gain) {
+        int cash = getCashShop().getCash(CashShop.NX_CREDIT);
+        long sum = (long) cash + (long) gain;
+        // 禁止点券小于0导致商城错误
+        if (sum < 0) {
+            gain = -cash;
+        }
+        // 禁止点券大于最大值
+        if (sum > Integer.MAX_VALUE) {
+            gain = Integer.MAX_VALUE - cash;
+        }
+        getCashShop().gainCash(CashShop.NX_CREDIT, gain);
     }
 
     public void genericGuildMessage(int code) {
@@ -4722,6 +4783,10 @@ public class Character extends AbstractCharacterObject {
         return expRate / (expCoupon * getWorldServer().getExpRate());
     }
 
+    public float getPqExpRate() {
+        return expRate * GameConfig.getServerFloat("pq_bonus_exp_rate");
+    }
+
     public int getCouponDropRate() {
         return dropCoupon;
     }
@@ -4883,6 +4948,10 @@ public class Character extends AbstractCharacterObject {
 
     public Inventory getInventory(InventoryType type) {
         return inventory[type.ordinal()];
+    }
+
+    public Inventory getInventory(byte type) {
+        return inventory[type];
     }
 
     public boolean haveItemWithId(int itemid, boolean checkEquipped) {
@@ -5140,6 +5209,11 @@ public class Character extends AbstractCharacterObject {
         }
 
         return list;
+    }
+
+    public boolean isAllPartyMembersOnSameMap() {
+        List<Character> partyMembersOnSameMap = getPartyMembersOnSameMap();
+        return partyMembersOnSameMap.size() == party.getMembers().size();
     }
 
     public List<Character> getPartyMembersOnSameMap() {
@@ -5633,7 +5707,7 @@ public class Character extends AbstractCharacterObject {
         ceffect = energycharge.getEffect(getSkillLevel(energycharge));
         TimerManager tMan = TimerManager.getInstance();
         if (energyBar < 10000) {
-            energyBar += 102;
+            energyBar += 5000;
             if (energyBar > 10000) {
                 energyBar = 10000;
             }
@@ -7354,7 +7428,7 @@ public class Character extends AbstractCharacterObject {
 
     public void resetBattleshipHp() {
         int bshipLevel = Math.max(getLevel() - 120, 0);  // thanks alex12 for noticing battleship HP issues for low-level players
-        this.battleshipHp = 400 * getSkillLevel(SkillFactory.getSkill(Corsair.BATTLE_SHIP)) + (bshipLevel * 200);
+        this.battleshipHp = 1000 * getSkillLevel(SkillFactory.getSkill(Corsair.BATTLE_SHIP)) + (bshipLevel * 300);
     }
 
     public void resetEnteredScript() {
@@ -9885,6 +9959,9 @@ public class Character extends AbstractCharacterObject {
         changeJob(job);
         setLevel(0);
         levelUp(true);
+        resetSkillLevel();
+        updateMaxHpMaxMp(50, 5);
+        setRebirthAp(0);
     }
 
     //EVENTS
@@ -10008,6 +10085,37 @@ public class Character extends AbstractCharacterObject {
     public void gainEquip(int itemId, Short attStr, Short attDex, Short attInt, Short attLuk, Short attHp, Short attMp,
                           Short pAtk, Short mAtk, Short pDef, Short mDef, Short acc, Short avoid, Short hands, Short speed,
                           Short jump, Byte upgradeSlot, Long expireTime) {
+        gainEquip(itemId, attStr, attDex, attInt, attLuk, attHp, attMp,
+                pAtk, mAtk, pDef, mDef, acc, avoid, hands, speed,
+                jump, upgradeSlot, (byte) 0, expireTime);
+    }
+
+        /**
+         * 发装备，除id外都可以传null，传null取装备默认属性
+         *
+         * @param itemId      装备id
+         * @param attStr      力量
+         * @param attDex      敏捷
+         * @param attInt      智力
+         * @param attLuk      运气
+         * @param attHp       血量
+         * @param attMp       蓝量
+         * @param pAtk        物理攻击
+         * @param mAtk        魔法攻击
+         * @param pDef        物理防御
+         * @param mDef        魔法防御
+         * @param acc         命中
+         * @param avoid       回避
+         * @param hands       攻击速度
+         * @param speed       移动速度
+         * @param jump        跳跃
+         * @param upgradeSlot 可升级次数
+         * @param level 已升级次数
+         * @param expireTime  失效时间，-1为不失效 来自 @leevccc 的建议，传值则为分钟
+         */
+    public void gainEquip(int itemId, Short attStr, Short attDex, Short attInt, Short attLuk, Short attHp, Short attMp,
+                          Short pAtk, Short mAtk, Short pDef, Short mDef, Short acc, Short avoid, Short hands, Short speed,
+                          Short jump, Byte upgradeSlot, Byte level, Long expireTime) {
         if (!ItemConstants.getInventoryType(itemId).equals(InventoryType.EQUIP)) {
             message(I18nUtil.getMessage("AbstractPlayerInteraction.gainEquip.message1"));
             return;
@@ -10033,6 +10141,7 @@ public class Character extends AbstractCharacterObject {
         RequireUtil.requireNotEmptyAndThen(baseEquip, speed, Equip::setSpeed);
         RequireUtil.requireNotEmptyAndThen(baseEquip, jump, Equip::setJump);
         RequireUtil.requireNotEmptyAndThen(baseEquip, upgradeSlot, Equip::setUpgradeSlots);
+        RequireUtil.requireNotEmptyAndThen(baseEquip, level, Equip::setLevel);
         RequireUtil.requireNotEmptyAndThen(baseEquip, expireTime, (eq, ep) -> {
             if (ep > 0) {
                 eq.setExpiration(TimeUnit.MINUTES.toMillis(ep) + System.currentTimeMillis());
@@ -10221,5 +10330,342 @@ public class Character extends AbstractCharacterObject {
     /** 更新全局攻击时间戳，只被正常主动技能调用 */
     public void updateGlobalTime(long now) {
         globalAttackTime = now;
+    }
+
+    /**
+     * 强化指定装备栏的装备
+     * @param equipSlot 装备栏id
+     * @param prop   强化成功率
+     */
+    public final boolean scrollEquipWithEquipSlot(short equipSlot, float prop) {
+        return scrollEquipWithEquipSlot(equipSlot, prop, true);
+    }
+
+    /**
+     * 强化指定装备栏的装备
+     * @param equipSlot 装备栏id
+     * @param prop   强化成功率
+     * @param isExclusionAttribute   强化失败是否扣除属性和等级
+     */
+    public final boolean scrollEquipWithEquipSlot(short equipSlot, float prop, boolean isExclusionAttribute) {
+        return scrollEquipWithEquipSlot(equipSlot, prop, isExclusionAttribute, null);
+    }
+
+    /**
+     * 强化指定装备栏的装备
+     * @param equipSlot 装备栏id
+     * @param prop   强化成功率
+     * @param isExclusionAttribute   强化失败是否扣除属性和等级
+     * @param stats   自定义强化属性
+     */
+    public final boolean scrollEquipWithEquipSlot(short equipSlot, float prop, boolean isExclusionAttribute, Map<String, Integer> stats) {
+        if (client.tryacquireClient()) {
+            try {
+
+                ItemInformationProvider ii = ItemInformationProvider.getInstance(); // 获取物品信息提供者实例
+                Character chr = client.getPlayer(); // 获取当前玩家
+                Equip toScroll = (Equip) chr.getInventory(InventoryType.EQUIP).getItem(equipSlot);
+
+                byte oldLevel = toScroll.getLevel(); // 记录装备的原始等级
+
+                Equip scrolled = (Equip) ii.scrollEquipCustom(toScroll, prop, chr.isGM(), isExclusionAttribute, stats); // 使用卷轴升级装备
+                Equip.ScrollResult scrollSuccess = Equip.ScrollResult.FAIL; // 默认设置为失败
+                boolean scrollResult = false; // 默认设置为失败
+                if (scrolled.getLevel() > oldLevel) {
+                    scrollSuccess = Equip.ScrollResult.SUCCESS; // 卷轴成功升级装备
+                    scrollResult = true;
+                }
+
+                final List<ModifyInventory> mods = new ArrayList<>(); // 创建修改库存的操作列表
+                mods.add(new ModifyInventory(3, scrolled)); // 标记装备被移除
+                mods.add(new ModifyInventory(0, scrolled)); // 标记装备被添加回库存
+                client.sendPacket(PacketCreator.modifyInventory(true, mods)); // 发送修改库存的封包
+                chr.getMap().broadcastMessage(PacketCreator.getScrollEffect(chr.getId(), scrollSuccess, false, false)); // 广播卷轴效果
+                chr.equipChanged(); // 通知客户端装备发生变化
+                return scrollResult;
+            } finally {
+                client.releaseClient(); // 释放客户端资源
+            }
+        }
+        log.error("scroll ring error, try acquire Client failed.");
+        return false;
+    }
+
+    /**
+     * 进化指定装备栏的装备(就是把equipSlot指定的装备替换成另一个自定义装备)
+     * @param equipSlot 装备栏格子Id
+     * @param prop   进化成功率
+     * @param afterEvolvingItemId   进化成功后的装备ID
+     */
+    public final boolean evolveEquipWithEquipSlot(short equipSlot, float prop, int afterEvolvingItemId) {
+        if (client.tryacquireClient()) {
+            try {
+                Character chr = client.getPlayer(); // 获取当前玩家
+                Equip oldEquip = (Equip) chr.getInventory(InventoryType.EQUIP).getItem(equipSlot);
+
+                boolean assertGM = (isGM() && GameConfig.getServerBoolean("use_perfect_gm_scroll"));
+                boolean evolveResult = ItemInformationProvider.rollSuccessChance(assertGM ? 100 : prop); // 获取装备进化结果
+                Equip.ScrollResult scrollSuccess = Equip.ScrollResult.FAIL; // 默认设置为失败
+                if (evolveResult) {
+                    scrollSuccess = Equip.ScrollResult.SUCCESS; // 成功升阶装备
+
+                    InventoryManipulator.removeFromSlot(client, InventoryType.EQUIP, equipSlot, oldEquip.getQuantity(), false);
+                    // 新戒指继承旧戒指升级的属性
+                    gainEquip(afterEvolvingItemId,
+                            oldEquip.getStr(),
+                            oldEquip.getDex(),
+                            oldEquip.getInt(),
+                            oldEquip.getLuk(),
+                            oldEquip.getHp(),
+                            oldEquip.getMp(),
+                            oldEquip.getWatk(),
+                            oldEquip.getMatk(),
+                            oldEquip.getWdef(),
+                            oldEquip.getMdef(),
+                            oldEquip.getAcc(),
+                            oldEquip.getAvoid(),
+                            oldEquip.getHands(),
+                            oldEquip.getSpeed(),
+                            oldEquip.getJump(),
+                            (byte) 0,
+                            -1L); // 标记装备被添加回库存
+                    chr.getMap().broadcastMessage(PacketCreator.getScrollEffect(chr.getId(), scrollSuccess, false, false)); // 广播卷轴效果
+                    chr.equipChanged(); // 通知客户端装备发生变化
+                }
+
+                return evolveResult;
+            } finally {
+                client.releaseClient(); // 释放客户端资源
+            }
+        }
+        log.error("scroll ring error, try acquire Client failed.");
+        return false;
+    }
+
+    /**
+     * 转移指定装备栏ID装备的属性到指定装备
+     * @param equipSlot 转出属性的装备格子ID
+     * @param toEquipSlot  继承属性的装备格子ID
+     * @param prop   转移成功率
+     */
+    public final boolean extendAttributeWithEquipSlot(short equipSlot, short toEquipSlot, float prop) {
+        if (client.tryacquireClient()) {
+            try {
+                Character chr = client.getPlayer(); // 获取当前玩家
+                Equip oldEquip = (Equip) chr.getInventory(InventoryType.EQUIP).getItem(equipSlot);
+                Equip newEquip = (Equip) chr.getInventory(InventoryType.EQUIP).getItem(toEquipSlot);
+
+                boolean assertGM = (isGM() && GameConfig.getServerBoolean("use_perfect_gm_scroll"));
+                boolean evolveResult = ItemInformationProvider.rollSuccessChance(assertGM ? 100 : prop); // 获取装备进化结果
+                Equip.ScrollResult scrollSuccess = Equip.ScrollResult.FAIL; // 默认设置为失败
+                if (evolveResult) {
+                    scrollSuccess = Equip.ScrollResult.SUCCESS; // 成功升阶装备
+                }
+
+                InventoryManipulator.removeFromSlot(client, InventoryType.EQUIP, equipSlot, oldEquip.getQuantity(), false);
+                InventoryManipulator.removeFromSlot(client, InventoryType.EQUIP, toEquipSlot, newEquip.getQuantity(), false);
+
+                // 清洗过的旧装备被添加回库存
+                gainEquip(oldEquip.getItemId(),
+                        (short) 0,
+                        (short) 0,
+                        (short) 0,
+                        (short) 0,
+                        (short) 0,
+                        (short) 0,
+                        (short) 0,
+                        (short) 0,
+                        (short) 0,
+                        (short) 0,
+                        (short) 0,
+                        (short) 0,
+                        (short) 0,
+                        (short) 0,
+                        (short) 0,
+                        (byte) 0,
+                        -1L);
+                // 继承旧装备的属性
+                gainEquip(newEquip.getItemId(),
+                        oldEquip.getStr(),
+                        oldEquip.getDex(),
+                        oldEquip.getInt(),
+                        oldEquip.getLuk(),
+                        oldEquip.getHp(),
+                        oldEquip.getMp(),
+                        oldEquip.getWatk(),
+                        oldEquip.getMatk(),
+                        oldEquip.getWdef(),
+                        oldEquip.getMdef(),
+                        oldEquip.getAcc(),
+                        oldEquip.getAvoid(),
+                        oldEquip.getHands(),
+                        oldEquip.getSpeed(),
+                        oldEquip.getJump(),
+                        oldEquip.getUpgradeSlots(),
+                        oldEquip.getLevel(),
+                        -1L);
+                chr.getMap().broadcastMessage(PacketCreator.getScrollEffect(chr.getId(), scrollSuccess, false, false)); // 广播卷轴效果
+                chr.equipChanged(); // 通知客户端装备发生变化
+                return evolveResult;
+            } finally {
+                client.releaseClient(); // 释放客户端资源
+            }
+        }
+        log.error("scroll ring error, try acquire Client failed.");
+        return false;
+    }
+    public void setAccountStorage(String key, String value) {
+        characterService.setStorage(this.accountId, key, value);
+    }
+
+    public String getAccountStorage(String key) {
+        return characterService.getStorage(this.accountId, key);
+    }
+
+    public void setCharacterStorage(String key, String value) {
+        characterService.setStorage(this.id, key, value);
+    }
+
+    public String getCharacterStorage(String key) {
+        return characterService.getStorage(this.id, key);
+    }
+
+    public void setCharacterStorageInteger(String key, Integer value) {
+        characterService.setStorage(this.id, key, value.toString());
+    }
+
+    public Integer getCharacterStorageInteger(String key, Integer defaultValue) {
+        String value = characterService.getStorage(this.id, key);
+        return value != null ? Integer.parseInt(value) : defaultValue;
+    }
+
+    public void setCharacterStorageInteger(Integer key, Integer value) {
+        characterService.setStorage(this.id, key.toString(), value.toString());
+    }
+
+    public Integer getCharacterStorageInteger(Integer key, Integer defaultValue) {
+        String value = characterService.getStorage(this.id, key.toString());
+        return value != null ? Integer.parseInt(value) : defaultValue;
+    }
+
+    public boolean isAlreadyStudent() {
+        try (Connection con = DatabaseConnection.getConnection();
+             PreparedStatement ps = con.prepareStatement("SELECT COUNT(1) studentCount FROM shitu_system WHERE studentid = ?")) {
+            ps.setInt(1, id);
+            try (ResultSet rs = ps.executeQuery()) {
+                if (!rs.next()) {
+                    return false;
+                }
+                int studentCount = rs.getInt("studentCount");
+                return studentCount > 0;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+    public boolean isAlreadyShiTu(Integer studentId) {
+        try (Connection con = DatabaseConnection.getConnection();
+             PreparedStatement ps = con.prepareStatement("SELECT COUNT(1) studentCount FROM shitu_system WHERE teacherid = ? AND studentid = ?")) {
+            ps.setInt(1, id);
+            ps.setInt(2, studentId);
+            try (ResultSet rs = ps.executeQuery()) {
+                if (!rs.next()) {
+                    return false;
+                }
+                int studentCount = rs.getInt("studentCount");
+                return studentCount > 0;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+    public List<Character> studentList() {
+        List<Character> students = new ArrayList<>();
+        try (Connection con = DatabaseConnection.getConnection();
+             PreparedStatement ps = con.prepareStatement("SELECT c.id studentId, c.name name FROM shitu_system ss inner join characters c ON ss.studentid = c.id WHERE ss.teacherid = ?")) {
+            ps.setInt(1, getId());
+
+            try (ResultSet rs = ps.executeQuery()) {
+                while (rs.next()) {
+                    Integer studentId = rs.getInt("studentId");
+                    String studentName = rs.getString("name");
+                    if (studentName == null) {
+                        continue;
+                    }
+                    Character student = new Character();
+                    student.setId(studentId);
+                    student.setName(studentName);
+                    students.add(student);
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return students;
+    }
+
+    public boolean isStudentMoreThanLimit() {
+        try (Connection con = DatabaseConnection.getConnection();
+             PreparedStatement ps = con.prepareStatement("SELECT COUNT(1) studentCount FROM shitu_system WHERE teacherid = ?")) {
+            ps.setInt(1, id);
+            try (ResultSet rs = ps.executeQuery()) {
+                if (!rs.next()) {
+                    return false;
+                }
+                int studentCount = rs.getInt("studentCount");
+                return studentCount >= 3;
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+    public boolean setShiTuRelation(Integer studentId) {
+        try (Connection con = DatabaseConnection.getConnection();
+             PreparedStatement ps = con.prepareStatement("INSERT INTO shitu_system (teacherid, studentid) VALUES (?, ?)")) {
+            ps.setInt(1, getId());
+            ps.setInt(2, studentId);
+            ps.executeUpdate();
+            return true;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+       return false;
+    }
+
+    public void deleteShiTuRelation(Integer studentId) {
+        try (Connection con = DatabaseConnection.getConnection()) {
+            try (PreparedStatement ps = con.prepareStatement("DELETE FROM shitu_system WHERE studentid = ?")) {
+                ps.setInt(1, studentId);
+                ps.executeUpdate();
+            }
+        } catch (SQLException sqle) {
+            sqle.printStackTrace();
+        }
+    }
+
+    public void schedule(Runnable r, long delay) {
+        TimerManager tMan = TimerManager.getInstance();
+        tMan.schedule(r, delay);
+    }
+
+    public void addTotalDamage(Long damage) {
+        totalDamage += damage;
+    }
+
+    public void clearTotalDamage() {
+        totalDamage = 0L;
+    }
+
+    public Long getTotalDamage() {
+
+        return totalDamage;
     }
 }

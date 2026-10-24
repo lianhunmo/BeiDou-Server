@@ -28,7 +28,7 @@ var minPlayers = 4, maxPlayers = 6;
 var minLevel = 44, maxLevel = 55;
 var entryMap = 930000000;
 var exitMap = 930000800;
-var recruitMap = 300030100;
+var recruitMap = [300030100, 910000000];
 var clearMap = 930000800;
 
 var minMapId = 930000000;
@@ -41,7 +41,7 @@ const maxLobbies = 1;
 const GameConfig = Java.type('org.gms.config.GameConfig');
 minPlayers = GameConfig.getServerBoolean("use_enable_solo_expeditions") ? 1 : minPlayers;  //如果解除远征队人数限制，则最低人数改为1人
 if(GameConfig.getServerBoolean("use_enable_party_level_limit_lift")) {  //如果解除远征队等级限制，则最低1级，最高999级。
-    minLevel = 1 , maxLevel = 999;
+    minLevel = 90 , maxLevel = 999;
 }
 
 function init() {
@@ -69,7 +69,7 @@ function setEventRequirements() {
         reqStr += minLevel;
     }
 
-    reqStr += "\r\n    For #radventurers only#k.";
+    reqStr += "\r\n    限定 #r冒险家#k.";
 
     reqStr += "\r\n   时间限制: ";
     reqStr += eventTime + " 分钟";
@@ -94,7 +94,7 @@ function getEligibleParty(party) {      //selects, from the given party, the tea
         for (var i = 0; i < party.size(); i++) {
             var ch = partyList[i];
 
-            if (ch.getMapId() == recruitMap && ch.getLevel() >= minLevel && ch.getLevel() <= maxLevel && Math.floor(ch.getJob().getId() / 1000) == 0) {  //only adventurers
+            if (recruitMap.includes(ch.getMapId()) && ch.getLevel() >= minLevel && ch.getLevel() <= maxLevel && Math.floor(ch.getJob().getId() / 1000) == 0) {  //only adventurers
                 if (ch.isLeader()) {
                     hasLeader = true;
                 }
@@ -122,7 +122,6 @@ function setup(level, lobbyid) {
     eim.getInstanceMap(930000400).resetPQ(level);
     var map = eim.getInstanceMap(930000500);
     map.resetPQ(level);
-    map.shuffleReactors();
     eim.getInstanceMap(930000600).resetPQ(level);
     eim.getInstanceMap(930000700).resetPQ(level);
 

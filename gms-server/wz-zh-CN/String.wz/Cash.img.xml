@@ -1302,8 +1302,8 @@
         <string name="desc" value="使用时间：\n从购买时开始计算\n二十四小时以后会消失"/>
     </imgdir>
     <imgdir name="5211048">
-        <string name="name" value="双倍经验值卡四小时权"/>
-        <string name="desc" value="使用时间：\n从购买时开始计算\n四小时以后会消失"/>
+        <string name="name" value="双倍经验值卡"/>
+        <string name="desc" value="使用时间：\n从购买时开始计算\n"/>
     </imgdir>
     <imgdir name="5220000">
         <string name="name" value="快乐百宝券"/>
@@ -1512,8 +1512,8 @@
         <string name="desc" value="购买后立刻激活，生效时间：06\n：00 - 10：00"/>
     </imgdir>
     <imgdir name="5360042">
-        <string name="name" value="双倍爆率卡四小时权"/>
-        <string name="desc" value="使用时间：\n从购买时开始计算\n四小时以后会消失"/>
+        <string name="name" value="双倍爆率卡"/>
+        <string name="desc" value="使用时间：\n从购买时开始计算\n"/>
     </imgdir>
     <imgdir name="5370000">
         <string name="name" value="黑板（7天权）"/>
@@ -1876,8 +1876,12 @@
         <string name="desc" value="使用这个道具可以让你的60%卷\n轴成功机率提升到90%。"/>
     </imgdir>
     <imgdir name="5590000">
-        <string name="name" value="装备特许证"/>
-        <string name="desc" value="拥有装备特许证后可以装备比自\n己等级高#c5级#的装备。"/>
+        <string name="name" value="白银月卡证明"/>
+        <string name="desc" value="拥有白银月卡证明后可以每日领\n取白银月卡福利。"/>
+    </imgdir>
+    <imgdir name="5600000">
+        <string name="name" value="黄金月卡证明"/>
+        <string name="desc" value="拥有黄金月卡证明后可以每日领\n取黄金月卡福利。"/>
     </imgdir>
     <imgdir name="5021026">
         <string name="name" value="开心的圣诞老人"/>

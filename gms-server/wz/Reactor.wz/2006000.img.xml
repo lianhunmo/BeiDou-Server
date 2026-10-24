@@ -57,7 +57,7 @@
         <int name="type" value="100"/>
         <int name="state" value="1"/>
         <string name="0" value="4001063"/>
-        <int name="1" value="20"/>
+        <int name="1" value="1"/>
         <vector name="lt" x="-100" y="-100"/>
         <vector name="rb" x="100" y="100"/>
       </imgdir>
@@ -338,7 +338,7 @@
         <int name="type" value="100"/>
         <int name="state" value="21"/>
         <int name="0" value="4001063"/>
-        <int name="1" value="20"/>
+        <int name="1" value="1"/>
         <vector name="lt" x="-33" y="-36"/>
         <vector name="rb" x="34" y="81"/>
       </imgdir>

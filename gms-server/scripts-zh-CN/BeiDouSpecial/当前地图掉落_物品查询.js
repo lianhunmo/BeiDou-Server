@@ -147,7 +147,7 @@ function showCategoryItems() {
     
     for (var i = start; i < end; i++) {
         var item = categoryItems[i];
-        text += "#L" + item.id + "##v" + item.id + "# #b" + item.name + "#k (ID: " + item.id + ")#l\r\n";
+        text += "#L" + item.id + "##v" + item.id + "# #b#z" + item.id + "##k (ID: " + item.id + ")#l\r\n";
     }
     
     text += "\r\n";

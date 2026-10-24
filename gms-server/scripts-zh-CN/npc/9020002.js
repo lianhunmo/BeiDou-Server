@@ -48,7 +48,7 @@ function action(mode, type, selection) {
         if (status == 0) {
             cm.sendNext("返回城市的路上，请沿着这条路走。");
         } else {
-            cm.warp(103000000);
+            cm.warp(910000000);
             cm.dispose();
         }
     } else {
@@ -59,7 +59,7 @@ function action(mode, type, selection) {
             }
             cm.sendYesNo(outText);
         } else if (mode == 1) {
-            cm.warp(103000890, "st00"); // Warp player
+            cm.warp(910000000, "st00"); // Warp player
             cm.dispose();
         }
     }

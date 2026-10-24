@@ -1,54 +1,47 @@
-var Medal = Java.type('org.gms.server.quest.medal.SpecialChallengeMedal');
+/* 
+ *  Dallier - King Medal
+ *  Lith Habor = 104000000
+ *  Sleepywood = 105040300
+ */
 
-function finishIfAlreadyAwarded(medalId) {
-    if (qm.isQuestCompleted(qm.getQuest())) {
-        qm.sendOk("你已经获得过#b#t" + medalId + "##k，这项挑战已经记录在你的冒险履历里了。");
-        qm.dispose();
-        return true;
-    }
-    if (qm.haveItemWithId(medalId, true)) {
-        qm.forceCompleteQuest();
-        qm.earnTitle(qm.getMedalName());
-        qm.sendOk("你已经获得过#b#t" + medalId + "##k，这项挑战已经记录在你的冒险履历里了。");
-        qm.dispose();
-        return true;
-    }
-    return false;
-}
+var status = -1;
 
 function start(mode, type, selection) {
-    if (finishIfAlreadyAwarded(Medal.DONATION_KING_MEDAL_ID)) {
-        return;
+    if (mode == 0) {
+	if (status == 0) {
+	    qm.sendNext("准备好了回来找我.");
+	    qm.dispose();
+	    return;
+	} else if (status == 2) {
+	    status--;
+	} else {
+	    qm.dispose();
+	    return;
+	}
+    } else {
+	status++;
     }
-    qm.forceStartQuest();
-    qm.sendOk("贡献 #b" + Medal.DONATION_REQUIRED_MESO + "#k 金币用于公共设施建设后，再来领取#b#t" + Medal.DONATION_KING_MEDAL_ID + "##k。");
-    qm.dispose();
+
+    if (status == 0) {
+	qm.sendAcceptDecline("#v1142030# #e#b#z1142030##k\n\r\n\r - 限时: 1 小时\n\r - 为这个村子捐赠最多....#n想要试试能不能获得这枚勋章吗?");
+    } else if (status == 1) {
+	qm.sendNext("当前排名 \n\r\n\r1. #bMintLovePep#k : ???,???,??? 金币\n\r2. #bKelviinXD#k : 68,000,000 金币\n\r3. #bxBabyRence#k : 49,999,999 金币\n\r4. #bXxTrIStaArxx#k : 29,999,999 金币n\n\r5. #bxBabyRence#k : 14,000,000 金币\n\r\n\rUnderstand that we cannot divulge the exact number donated by the current King of Donation. \n\rAlso remember that all records will be reset every first of the month...");
+    } else if (status == 2) {
+	qm.sendNextPrev("Best of luck to you. There's no real set date for this, so if you feel like you qualify for this, then feel free to come see me so I can determine whether you qualify for it. And remember that you will not be able to challenge other Titles unless you either forfeit this challenge or complete it...");
+	qm.dispose();
+    }
 }
 
 function end(mode, type, selection) {
-    if (finishIfAlreadyAwarded(Medal.DONATION_KING_MEDAL_ID)) {
-        return;
-    }
-    if (qm.getPlayer().getMeso() < Medal.DONATION_REQUIRED_MESO) {
-        qm.sendOk("完成这次公益贡献需要 #b" + Medal.DONATION_REQUIRED_MESO + "#k 金币。");
-        qm.dispose();
-        return;
-    }
-    if (!qm.haveItem(Medal.DONATION_KING_MEDAL_ID) && !qm.canHold(Medal.DONATION_KING_MEDAL_ID)) {
-        qm.sendOk("请在装备栏空出 1 个位置。");
-        qm.dispose();
-        return;
-    }
-    qm.gainMeso(-Medal.DONATION_REQUIRED_MESO);
-    awardMedal(Medal.DONATION_KING_MEDAL_ID);
 }
 
-function awardMedal(medalId) {
-    if (!qm.haveItem(medalId)) {
-        qm.gainItem(medalId, 1);
+/*function getMedalType(ids) {
+    var thestring = "#b";
+    var extra;
+    for (x = 0; x < ids.length; x++) {
+	extra = "#L" + x + "##t" + ids[x] + "##l\r\n";
+	thestring += extra;
     }
-    qm.forceCompleteQuest();
-    qm.earnTitle(qm.getMedalName());
-    qm.sendOk("真正温暖人心的力量，不只来自武器，也来自愿意帮助他人的善意。你的贡献会让后来者走得更安心。\r\n\r\n请收下#b#t" + medalId + "##k。这份称号，献给你藏在强大背后的爱心。");
-    qm.dispose();
-}
+    thestring += "#k";
+    return thestring;
+}*/

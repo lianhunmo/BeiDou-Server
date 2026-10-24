@@ -19,10 +19,10 @@ function start(){
         level();
         return;
     }
-    if(QuestID != null && QuestID > 0 && !cm.isQuestCompleted(QuestID)) {
-        cm.sendOkLevel('','...');
-        return;
-    }
+    // if(QuestID != null && QuestID > 0 && !cm.isQuestCompleted(QuestID)) {
+    //     cm.sendOkLevel('','...');
+    //     return;
+    // }
     if(em == null) {
         em = cm.getEventManager(EventName);
         PartyInfo = em.getProperty("party");
@@ -43,7 +43,7 @@ function levelnull() {
 }
 function levelStart() {
     let msg = `#e#b<组队任务> ${PartyName}#n\r\n${PartyInfo}#k\r\n\r\n`;
-        msg += `你和你的队伍成员一起完成任务怎么样？\r\n在这里，你会遇到障碍和问题，如果没有出色的团队合作，你是无法完成的。\r\n如果你想尝试，请告诉你的#b队长#k来找我谈谈。#b\r\n`;
+        msg += `你和你的队伍成员一起完成任务怎么样？每日可挑战3次。\r\n在这里，你会遇到障碍和问题，如果没有出色的团队合作，你是无法完成的。\r\n如果你想尝试，请告诉你的#b队长#k来找我谈谈。#b\r\n`;
         msg += `#L0#我想参加组队任务。#l\r\n`;
         msg += `#L1#我想 ${(cm.getPlayer().isRecvPartySearchInviteEnabled() ? "关闭" : "开启")} 组队搜索。#l\r\n`;
         msg += `#L2#我想了解更多细节。#l`;
@@ -57,6 +57,16 @@ function level0() {
         msg = "必须由你的队长与我交谈才能开始这个组队任务。";
     } else {
         let eli = em.getEligibleParty(cm.getParty());
+        let count = cm.getCharacterExtendValue("每日挑战少林密室组队任务次数", true)
+        let api = cm.getChar().getAbstractPlayerInteraction();
+        for (let i = 0; i < eli.length; i++) {
+            count = Math.max(api.getCharacterExtendValue(eli[i].getPlayer().getId(), "每日挑战少林密室组队任务次数", true), count);
+        }
+        if (count >= 3) {
+            cm.sendOk("你的队伍中有人今日已经挑战过3次少林密室组队任务，请他明天再来吧。");
+            cm.dispose();
+            return;
+        }
         if (eli.size() > 0) {
             if (!em.startInstance(cm.getParty(), cm.getPlayer().getMap(), EventLevel)) {//开始事件
                 msg = "另一个队伍已经进入了该频道的#r组队任务#k。请尝试其他频道，或者等待当前队伍完成。";

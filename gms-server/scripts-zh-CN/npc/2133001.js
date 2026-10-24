@@ -48,7 +48,7 @@ function action(mode, type, selection) {
                     if (cm.isEventLeader()) {
                         cm.sendNext("哦，你带来了它们！我们现在可以继续了，我们要继续吗？");
                     } else {
-                        cm.sendOk("你已经带来了他们，但你不是队长！请让队长把弹珠给我……");
+                        cm.sendOk("你已经带来了他们，但你不是队长！请让队长把魔核给我……");
                         cm.dispose();
 
                     }
@@ -74,20 +74,20 @@ function action(mode, type, selection) {
 
                                 }
                             } else {
-                                cm.sendYesNo(ellinStr + "\r\n\r\nIt may be you are #rwilling to quit#k? Please double-think it, maybe your partners are still trying this instance.");
+                                cm.sendYesNo(ellinStr + "\r\n\r\n你或许#r已萌生退意#k？但请再三斟酌，可能你的队友仍在为此番挑战全力以赴。");
                             }
                         } else {
-                            cm.sendYesNo("你们已经捕捉到了所有的 #o9300174#。让队长把所有的 #b20 #t4001169##k 给我，然后我们继续。" + "\r\n\r\n也许你是 #rwilling to quit#k？请三思，也许你的队友还在努力尝试这个副本。");
+                            cm.sendYesNo("你们已经捕捉到了所有的 #o9300174#。让队长把所有的 #b20 #t4001169##k 给我，然后我们继续。" + "\r\n\r\n你或许#r已萌生退意#k？但请再三斟酌，可能你的队友仍在为此番挑战全力以赴。");
                         }
                     }
                 }
             } else {
-                cm.sendYesNo(ellinStr + "\r\n\r\nIt may be you are #rwilling to quit#k? Please double-think it, maybe your partners are still trying this instance.");
+                cm.sendYesNo(ellinStr + "\r\n\r\n你或许#r已萌生退意#k？但请再三斟酌，可能你的队友仍在为此番挑战全力以赴。");
             }
         } else if (status == 1) {
             if (mapid == 930000000) {
             } else if (mapid == 930000300) {
-                cm.getEventInstance().warpEventTeam(930000400);
+                cm.getEventInstance().warpEventTeam(930000500);
             } else if (mapid == 930000400) {
                 if (cm.haveItem(4001169, 20) && cm.isEventLeader()) {
                     cm.gainItem(4001169, -20);
@@ -107,25 +107,25 @@ function action(mode, type, selection) {
 function ellinMapMessage(mapid) {
     switch (mapid) {
         case 930000000:
-            return "Welcome to the Forest of Poison Haze. Proceed by entering the portal.";
+            return "欢迎来到毒雾森林。请踏入传送门继续前行。";
 
         case 930000100:
-            return "The #b#o9300172##k have taken the area. We have to eliminate all these contaminated monsters to proceed further.";
+            return "#b#o9300172##k已占据此区域。我们必须清除所有受侵蚀的魔物才能继续前进。";
 
         case 930000200:
-            return "A great spine has blocked the way ahead. To remove this barrier we must retrieve the poison the #b#o9300173##k carries to deter the overgrown spine. However, the poison in natural state can't be handled, as it is way too concentrated. Use the #bfountain#k over there to dilute it.";
+            return "一根巨大的脊刺挡住了前路。要破除这障碍，我们必须取得#b#o9300173##k所携带的毒液来侵蚀这过度生长的脊刺。但天然毒液浓度过高，无法直接处理。请使用那边的#b泉水#k进行稀释。";
 
         case 930000300:
-            return "Oh great, you have reached me. We can now proceed further inside the forest.";
+            return "哦太好了，你终于找到我了。现在我们可以继续深入森林腹地。";
 
         case 930000400:
-            return "The #b#o9300175##k took over this area. However they are not ordinary monsters, then regrow pretty fast, #rnormal weapon and magic does no harm to it#k at all. We have to purify all these contaminated monsters, using #b#t2270004##k! Let your group leader get me 20 Monster Marbles from them.";
+            return "#b#o9300175##k已经控制了这片区域。但它们并非普通魔物——再生速度极快，且#r常规武器与魔法对其完全无效#k。我们必须使用#b#t2270004##k来净化这些受侵蚀的怪物！请让你们队伍的队长向我提交20个从它们身上取得的怪物宝珠。";
 
         case 930000600:
-            return "The root of all problems of the forest! Place the obtained Magic Stone on the Altar and prepare yourselves!";
+            return "森林灾祸的根源！请将获得的魔法石置于祭坛上，然后准备迎接战斗吧！";
 
         case 930000700:
-            return "This is it, you guys did it! Thank you so much for purifying the forest!!";
+            return "成功了，你们真的做到了！非常感谢你们净化了整片森林！！";
 
     }
 }

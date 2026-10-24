@@ -6,10 +6,10 @@
  */
 
 function hit() {
-    var players = rm.getMap().getAllPlayers().toArray();
+    var players = rm.getReactor().getMap().getAllPlayers().toArray();
 
     for (var i = 0; i < players.length; i++) {
-        rm.giveCharacterExp(52000, players[i]);
+        rm.giveCharacterExp(2000000, players[i]);
     }
 }
 

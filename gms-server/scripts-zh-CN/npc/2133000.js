@@ -109,6 +109,16 @@ function action(mode, type, selection) {
                     cm.sendOk("你要么还没有 #t1032060#，要么没有 10 个 #t4001198#。");
                     cm.dispose();
                 }
+            } else if (selection == 2) {
+                if (cm.haveItem(1032061) && !cm.haveItem(1032072) && cm.haveItem(4001198, 10)) {
+                    cm.gainItem(1032061, -1);
+                    cm.gainItem(1032072, 1);    // thanks yuxaij for noticing unexpected itemid here
+                    cm.gainItem(4001198, -10);
+                    cm.dispose();
+                } else {
+                    cm.sendOk("你要么还没有闪耀的阿尔泰尔耳环，要么没有10个阿尔泰尔碎片。");
+                    cm.dispose();
+                }
             }
         }
     }

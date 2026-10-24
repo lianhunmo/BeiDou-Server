@@ -488,6 +488,11 @@ public class DueyProcessor {
         }
     }
 
+    public static void dueyCreatePackage(int mesos, String message, Client c, int recipientCid) {
+        int packageId = createPackage(mesos, message, c.getPlayer().getName(), recipientCid, false);
+
+    }
+
     public static void runDueyExpireSchedule() {
         Calendar c = Calendar.getInstance();
         c.add(Calendar.DATE, -30);

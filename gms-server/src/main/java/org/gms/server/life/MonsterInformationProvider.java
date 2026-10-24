@@ -41,6 +41,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
@@ -57,6 +58,14 @@ public class MonsterInformationProvider {
     public static MonsterInformationProvider getInstance() {
         return instance;
     }
+
+    private final Map<Integer, List<MonsterDropEntry>> drops = new HashMap<>();
+    private final List<MonsterGlobalDropEntry> globaldrops = new ArrayList<>();
+    private final Map<Integer, List<MonsterGlobalDropEntry>> continentdrops = new HashMap<>();
+
+    private final Map<Integer, List<Integer>> dropsChancePool = new HashMap<>();    // thanks to ronan
+    private final Set<Integer> hasNoMultiEquipDrops = new HashSet<>();
+    private final Map<Integer, List<MonsterDropEntry>> extraMultiEquipDrops = new HashMap<>();
 
     private volatile DropCache dropCache = new DropCache();
     private final GlobalDropStore globalDropStore = new GlobalDropStore();
@@ -176,7 +185,21 @@ public class MonsterInformationProvider {
             return null;
         }
 
-        return List.copyOf(loadedDrops);
+        try (Connection con = DatabaseConnection.getConnection();
+             PreparedStatement ps = con.prepareStatement("SELECT itemid, chance, minimum_quantity, maximum_quantity, questid FROM drop_data_global")) {
+
+            try (ResultSet rs = ps.executeQuery()) {
+                while (rs.next()) {
+                    loadedDrops.add(new MonsterDropEntry(rs.getInt("itemid"), rs.getInt("chance"), rs.getInt("minimum_quantity"), rs.getInt("maximum_quantity"), rs.getShort("questid")));
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return loadedDrops;
+        }
+
+        drops.put(monsterId, loadedDrops);
+        return loadedDrops;
     }
 
     public final MonsterDropEntry retrieveRandomStealDrop(int monsterId) {
@@ -195,6 +218,11 @@ public class MonsterInformationProvider {
         List<MonsterDropEntry> drops = retrieveDrop(cache, monsterId);
         return drops == null || index >= drops.size() ? null : drops.get(index);
     }
+
+    public final List<Integer> retrieveDropPool(final int monsterId) {  // ignores Quest and Party Quest items
+        if (dropsChancePool.containsKey(monsterId)) {
+            return dropsChancePool.get(monsterId);
+        }
 
     private List<Integer> retrieveDropPool(DropCache cache, int monsterId) {
         return cache.dropsChancePool.computeIfAbsent(monsterId, id -> buildDropPool(cache, id));
@@ -223,6 +251,7 @@ public class MonsterInformationProvider {
         if (accProp == 0) {
             ret.clear();    // don't accept mobs dropping no relevant items
         }
+        dropsChancePool.put(monsterId, ret);
         return List.copyOf(ret);
     }
 

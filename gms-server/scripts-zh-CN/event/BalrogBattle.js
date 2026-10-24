@@ -202,12 +202,8 @@ function changedLeader(eim, leader) {}
 function playerDead(eim, player) {}
 
 function playerRevive(eim, player) { // player presses ok on the death pop up.
-    if (eim.isExpeditionTeamLackingNow(true, minPlayers, player)) {
-        eim.unregisterPlayer(player);
-        end(eim);
-    } else {
-        eim.unregisterPlayer(player);
-    }
+    eim.unregisterPlayer(player);
+    if (eim.isEventTeamLackingNow(true, minPlayers, player)) end(eim);
 }
 
 function playerDisconnected(eim, player) {

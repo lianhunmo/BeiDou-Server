@@ -206,6 +206,10 @@ function respawnStages(eim) {
 function playerEntry(eim, player) {
     var map = eim.getMapInstance(entryMap);
     player.changeMap(map, map.getPortal(0));
+    let api = player.getAbstractPlayerInteraction();
+    let count = api.getCharacterExtendValue("每日挑战少林密室组队任务次数", true)
+    count++;
+    api.saveOrUpdateCharacterExtendValue("每日挑战少林密室组队任务次数", count.toString(), true);
 }
 
 /**

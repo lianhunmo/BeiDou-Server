@@ -6,16 +6,32 @@ function enter(pi) {
     pi.removeAll(2270004);
 
     var spring = pi.getMap().getReactorById(3008000);  // thanks Chloek3, seth1 for noticing fragments not being awarded properly
+    let api = pi.getPlayer().getAbstractPlayerInteraction();
     if (spring != null && spring.getState() > 0) {
-        if (!pi.canHold(4001198, 1)) {
-            pi.playerMessage(5, "进入传送门前请给背包的 其它栏 空出至少1个空格子。");
-            return false;
+        let count = api.getCharacterExtendValue("邮票获取次数" + 4001198, false)
+        if (count >= 3) {
+            if (!pi.canHold(2000005, 20)) {
+                pi.playerMessage(5, "进入传送门前请给背包的 消耗栏 空出至少1个空格子。");
+                return false;
+            }
+            pi.gainItem(2000005, 20);
+        } else {
+            if (!pi.canHold(4001198, 10)) {
+                pi.playerMessage(5, "进入传送门前请给背包的 其他栏 空出至少1个空格子。");
+                return false;
+            }
+            count++;
+            api.saveOrUpdateCharacterExtendValue("邮票获取次数" + 4001198, count.toString(), false);
+            pi.gainItem(4001198, 10);
         }
-
-        pi.gainItem(4001198, 1);
+        let quitTotal = api.getCharacterExtendValue("毒雾组队副本累计通关次数");
+        quitTotal ++;
+        api.saveOrUpdateCharacterExtendValue("毒雾组队副本累计通关次数", quitTotal.toString());
+        let quitDaily = api.getCharacterExtendValue("毒雾组队副本每日通关次数", true);
+        quitDaily++;
+        api.saveOrUpdateCharacterExtendValue("毒雾组队副本每日通关次数", quitDaily.toString(), true);
     }
-
     pi.playPortalSound();
-    pi.warp(300030100, 0);
+    pi.warp(910000000, 0);
     return true;
 }

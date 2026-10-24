@@ -136,7 +136,7 @@ function action(mode, type, selection) {
                     cm.sendNext("请赶紧前往下一个阶段，传送门已经打开了！");
                     cm.dispose();
                 } else {
-                    cm.sendNext("太棒了！你通过了所有的关卡来到了这一点。这是为了你出色的表现而给予的小奖品。在接受之前，请确保你的使用和其他物品栏有空位可用。");
+                    cm.sendNext("太棒了！你通过了所有的关卡来到了这里。这是为了你出色的表现而给予的小奖品。在接受之前，请确保你的使用和其他物品栏有空位可用。");
                 }
             } else if (curMap == 103000800) {   // stage 1
                 const GameConfig = Java.type('org.gms.config.GameConfig');
@@ -160,7 +160,7 @@ function action(mode, type, selection) {
                     var data = eim.gridCheck(cm.getPlayer());
 
                     if (data == 0) {
-                        cm.sendNext("谢谢你带来了优惠券。请把通行证交给你的队伍队长继续。");
+                        cm.sendNext("谢谢你带来了通行证。请把通行证交给你的队伍队长继续。");
                     } else if (data == -1) {
                         data = Math.floor(Math.random() * stage1Questions.length) + 1;   //data will be counted from 1
                         eim.gridInsert(cm.getPlayer(), data);
@@ -193,7 +193,7 @@ function action(mode, type, selection) {
                     cm.sendOk("跟随你的队长给出的指示来完成这个阶段。");
                 } else if (eim.getProperty(stgProperty) == null) {
                     cm.sendNext("嗨。欢迎来到第二阶段。在我旁边，你会看到一些绳子，在这些绳子中，有#b3个与传送你到下一阶段的传送门相连#k。你只需要让#b3名队伍成员找到正确的绳子然后挂在上面#k\r\n但是，如果你挂得太低，这不算作答案；请确保靠近绳子中间位置才算作正确答案。此外，你的队伍只允许有3名成员挂在绳子上，队伍的队长必须#b双击我来检查答案是否正确#k。现在，寻找正确的绳子挂上去吧！");
-                    var c = Math.floor(Math.random() * stgCombos.length);
+                    var c = 0;
                     eim.setProperty(stgProperty, c.toString());
                 } else {
                     var accept = rectangleStages(eim, stgProperty, stgCombos, stgAreas);
@@ -219,7 +219,7 @@ function action(mode, type, selection) {
                     cm.sendOk("跟随你的队长给出的指示来完成这个阶段。");
                 } else if (eim.getProperty(stgProperty) == null) {
                     cm.sendNext("嗨。欢迎来到第三阶段。在我旁边，你会看到一些平台。在这些平台中，#b3个与传送你到下一阶段的传送门相连#k。你只需要让#b3个队员找到正确的平台站上去#k\r\n但是，如果你站得太靠边，是不行的；请确保靠近平台的中间位置才算作正确答案。此外，你的队伍只允许有3名成员站在平台上。一旦他们在上面，队伍的队长必须#b双击我来检查答案是否正确#k。现在，寻找正确的平台吧！");
-                    var c = Math.floor(Math.random() * stgCombos.length);
+                    var c = 9;
                     eim.setProperty(stgProperty, c.toString());
                 } else {
                     var accept = rectangleStages(eim, stgProperty, stgCombos, stgAreas);
@@ -245,7 +245,7 @@ function action(mode, type, selection) {
                     cm.sendOk("跟随你的队长给出的指示来完成这个阶段。");
                 } else if (eim.getProperty(stgProperty) == null) {
                     cm.sendNext("嗨。欢迎来到第四阶段。在我旁边，你会看到一些木桶。在这些木桶中，#b3个与传送你到下一阶段的传送门相连#k。你只需要让#b3个队员找到正确的木桶站上去#k\r\n但是，如果你站得太靠边，这不算作答案；请站在木桶的中间才算作正确答案。此外，你的队伍只允许有3名成员站在木桶上。队伍的队长必须#b双击我来检查答案是否正确#k。现在，寻找正确的木桶站上去吧！");
-                    var c = Math.floor(Math.random() * stgCombos.length);
+                    var c = 0;
                     eim.setProperty(stgProperty, c.toString());
                 } else {
                     var accept = rectangleStages(eim, stgProperty, stgCombos, stgAreas);
@@ -269,7 +269,7 @@ function action(mode, type, selection) {
                         clearStage(stage, eim, curMap);
                         eim.clearPQ();
                     } else {
-                        cm.sendNext("你好。欢迎来到第五个也是最后一个阶段。在地图上四处走动，你会找到一些Boss怪物。打败它们，收集#b通行证#k，然后把它们交给我。一旦你获得了通行证，你的队伍队长会收集它们，然后在收集齐#b通行证#k后再把它们交给我。这些怪物可能对你来说很熟悉，但它们可能比你想象的要强大，所以请小心。祝你好运！");
+                        cm.sendOk("你好。欢迎来到第五个也是最后一个阶段。在地图上四处走动，你会找到一些Boss怪物。打败它们，收集#b通行证#k，然后把它们交给我。一旦你获得了通行证，你的队伍队长会收集它们，然后在收集齐#b通行证#k后再把它们交给我。这些怪物可能对你来说很熟悉，但它们可能比你想象的要强大，所以请小心。祝你好运！");
                     }
                 } else {
                     cm.sendNext("欢迎来到第五个也是最后一个阶段。在地图上四处走动，你将能够找到一些Boss怪物。打败它们，收集#b通行证#k，并将它们#b交给你的队长#k。完成后，回到我这里领取你的奖励。");
@@ -281,6 +281,12 @@ function action(mode, type, selection) {
             if (!eim.giveEventReward(cm.getPlayer())) {
                 cm.sendNext("请先在你的背包里腾出空间！");
             } else {
+                let quitTotal = cm.getCharacterExtendValue("废弃组队副本累计通关次数");
+                quitTotal ++;
+                cm.saveOrUpdateCharacterExtendValue("废弃组队副本累计通关次数", quitTotal.toString());
+                let quitDaily = cm.getCharacterExtendValue("废弃组队副本每日通关次数", true);
+                quitDaily++;
+                cm.saveOrUpdateCharacterExtendValue("废弃组队副本每日通关次数", quitDaily.toString(), true);
                 cm.warp(103000805, "st00");
             }
 

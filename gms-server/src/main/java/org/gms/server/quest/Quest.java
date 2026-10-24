@@ -26,6 +26,7 @@ import org.gms.client.QuestStatus;
 import org.gms.client.QuestStatus.Status;
 import org.gms.config.GameConfig;
 import org.gms.constants.game.DelayedQuestUpdate;
+import org.gms.scripting.AbstractPlayerInteraction;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.gms.provider.Data;
@@ -94,12 +95,54 @@ public class Quest {
     private static final Map<Short, Integer> medals = new HashMap<>();
 
     private static final Set<Short> exploitableQuests = new HashSet<>();
+    private static final Set<Short> dailyQuestIdSet = new HashSet<>();
 
     static {
         exploitableQuests.add((short) 2338);    // there are a lot more exploitable quests, they need to be nit-picked
         exploitableQuests.add((short) 3637);
         exploitableQuests.add((short) 3714);
         exploitableQuests.add((short) 21752);
+
+        dailyQuestIdSet.add((short) 30005);
+        dailyQuestIdSet.add((short) 30006);
+        dailyQuestIdSet.add((short) 30007);
+        dailyQuestIdSet.add((short) 30008);
+        dailyQuestIdSet.add((short) 30009);
+        dailyQuestIdSet.add((short) 30010);
+        dailyQuestIdSet.add((short) 30011);
+        dailyQuestIdSet.add((short) 30012);
+        dailyQuestIdSet.add((short) 30013);
+        dailyQuestIdSet.add((short) 30014);
+        dailyQuestIdSet.add((short) 30015);
+        dailyQuestIdSet.add((short) 30016);
+        dailyQuestIdSet.add((short) 30017);
+        dailyQuestIdSet.add((short) 30018);
+        dailyQuestIdSet.add((short) 30019);
+        dailyQuestIdSet.add((short) 30020);
+        dailyQuestIdSet.add((short) 30021);
+        dailyQuestIdSet.add((short) 30022);
+        dailyQuestIdSet.add((short) 30023);
+        dailyQuestIdSet.add((short) 30024);
+        dailyQuestIdSet.add((short) 30025);
+        dailyQuestIdSet.add((short) 30026);
+        dailyQuestIdSet.add((short) 30027);
+        dailyQuestIdSet.add((short) 30028);
+        dailyQuestIdSet.add((short) 30029);
+        dailyQuestIdSet.add((short) 30030);
+        dailyQuestIdSet.add((short) 30031);
+        dailyQuestIdSet.add((short) 30032);
+        dailyQuestIdSet.add((short) 30033);
+        dailyQuestIdSet.add((short) 30034);
+        dailyQuestIdSet.add((short) 30035);
+        dailyQuestIdSet.add((short) 30036);
+        dailyQuestIdSet.add((short) 30037);
+        dailyQuestIdSet.add((short) 30038);
+        dailyQuestIdSet.add((short) 30039);
+        dailyQuestIdSet.add((short) 30040);
+        dailyQuestIdSet.add((short) 30041);
+        dailyQuestIdSet.add((short) 30042);
+        dailyQuestIdSet.add((short) 30043);
+        dailyQuestIdSet.add((short) 30045);
     }
 
     protected short id;
@@ -354,6 +397,10 @@ public class Quest {
     public void reset(Character chr) {
         QuestStatus newStatus = new QuestStatus(this, QuestStatus.Status.NOT_STARTED);
         chr.updateQuestStatus(newStatus);
+        if (dailyQuestIdSet.contains(this.getId())) {
+            AbstractPlayerInteraction api = chr.getAbstractPlayerInteraction();
+            api.saveOrUpdateCharacterExtendValue("每日任务编号", "0", true);
+        }
     }
 
     public boolean forfeit(Character chr) {
@@ -366,6 +413,10 @@ public class Quest {
         QuestStatus newStatus = new QuestStatus(this, QuestStatus.Status.NOT_STARTED);
         newStatus.setForfeited(chr.getQuest(this).getForfeited() + 1);
         chr.updateQuestStatus(newStatus);
+        if (dailyQuestIdSet.contains(this.getId())) {
+            AbstractPlayerInteraction api = chr.getAbstractPlayerInteraction();
+            api.saveOrUpdateCharacterExtendValue("每日任务编号", "0", true);
+        }
         return true;
     }
 

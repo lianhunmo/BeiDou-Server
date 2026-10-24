@@ -158,7 +158,7 @@ function playerDead(eim, player) {
 
     eim.setIntProperty("fallenPlayers", count);
 
-    if (count == 5) {
+    if (count == 50) {
         eim.dropMessage(5, "[远征队] 太多队员阵亡，品克缤现在被视为不可战胜，远征结束。");
         end(eim);
     } else if (count == 4) {

@@ -9,3 +9,12 @@ CREATE TABLE IF NOT EXISTS `storages`
 ) ENGINE = InnoDB
   DEFAULT CHARSET = utf8mb4
   AUTO_INCREMENT = 1;
+
+CREATE TABLE IF NOT EXISTS `character_storage`
+(
+     `id` int NOT NULL COMMENT '账号或者角色id',
+     `key` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '物品id',
+     `value` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '物品个数',
+     PRIMARY KEY (`id`, `key`)
+) ENGINE = InnoDB
+  DEFAULT CHARSET = utf8mb4;
