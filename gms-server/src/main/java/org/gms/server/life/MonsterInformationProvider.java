@@ -219,11 +219,6 @@ public class MonsterInformationProvider {
         return drops == null || index >= drops.size() ? null : drops.get(index);
     }
 
-    public final List<Integer> retrieveDropPool(final int monsterId) {  // ignores Quest and Party Quest items
-        if (dropsChancePool.containsKey(monsterId)) {
-            return dropsChancePool.get(monsterId);
-        }
-
     private List<Integer> retrieveDropPool(DropCache cache, int monsterId) {
         return cache.dropsChancePool.computeIfAbsent(monsterId, id -> buildDropPool(cache, id));
     }
