@@ -18,6 +18,8 @@ const VICIOUS_HAMMER = 5570000;
 const VICIOUS_HAMMER_COST = 1000;
 const WHEEL_OF_DESTINY = 5510000;
 const WHEEL_OF_DESTINY_COST = 500;
+const PERMA_PINK_BEAN = 5000060;
+const PERMA_PINK_BEAN_COST = 20000;
 
 let flamingFeatherCount = 0;
 let currentCashPoint = 0;
@@ -46,6 +48,7 @@ function levelStart() {
     text += "#L4##b购买宿命剪刀#k\r\n";
     text += "#L5##b购买金锤子#k\r\n";
     text += "#L6##b购买原地复活术#k\r\n";
+    text += "#L9##b购买P宠#k\r\n";
 
     cm.sendSelectLevel("ExchangeItem", text);
 }
@@ -211,6 +214,22 @@ function levelBuyCashItem6(inputNum) {
         cm.getPlayer().getCashShop().gainCash(1, -totalCost);
         cm.gainItem(WHEEL_OF_DESTINY, inputNum);
         cm.sendOkLevel("Dispose", "成功购买 " + inputNum + " 个 #b#t" + WHEEL_OF_DESTINY + "##k#i" + WHEEL_OF_DESTINY + "#")
+    }
+}
+
+function levelExchangeItem9() {
+    cm.sendYesNoLevel("Dispose", "BuyCashItem9", "要花费" + PERMA_PINK_BEAN_COST + "点卷购买 #b#t" + PERMA_PINK_BEAN + "##k#i" + PERMA_PINK_BEAN + "#吗？");
+}
+
+function levelBuyCashItem9() {
+    if (currentCashPoint < PERMA_PINK_BEAN_COST) {
+        cm.sendOkLevel("Dispose", "你的点卷不够。")
+    } else if (!cm.canHold(PERMA_PINK_BEAN, 1)) {
+        cm.sendOkLevel("Dispose", "请保证现金栏有空位。")
+    } else {
+        cm.getPlayer().getCashShop().gainCash(1, -PERMA_PINK_BEAN_COST);
+        cm.gainItem(PERMA_PINK_BEAN, 1, false, true);
+        cm.sendOkLevel("Dispose", "成功购买#b#t" + PERMA_PINK_BEAN + "##k#i" + PERMA_PINK_BEAN + "#")
     }
 }
 

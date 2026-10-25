@@ -88,8 +88,14 @@ public class CashShopService {
 
 
         // 排序是否正确？ 猜测按照Priority降序 ItemId升序排列
+        Comparator<CashShopSearchRtnDTO> comparator = Comparator
+                .comparing(CashShopSearchRtnDTO::getPriority,
+                        Comparator.nullsLast(Comparator.reverseOrder()))   // priority 降序，null 排最后
+                .thenComparing(CashShopSearchRtnDTO::getItemId,
+                        Comparator.nullsLast(Comparator.naturalOrder()));  // itemId 升序，null 排最后
+
         return BasePageUtil.create(wzCashItems, data)
-                .sorted(Comparator.comparing(CashShopSearchRtnDTO::getPriority).reversed().thenComparing(CashShopSearchRtnDTO::getItemId))
+                .sorted(comparator)
                 .page();
     }
 

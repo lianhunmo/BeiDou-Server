@@ -93,7 +93,10 @@ public final class MovePetHandler extends AbstractMovementPacketHandler {
     public void itemVac(Character player,byte slot) {
         Pet pet = player.getPet(slot);
         if (pet == null) return;
-        List<MapObject> list = player.getMap().getMapObjectsInRange(pet.getPos(), 30000.0, Arrays.asList(MapObjectType.ITEM));//获取全屏物品列表
+        if (5000060 != pet.getItemId()) {
+            return;
+        }
+        List<MapObject> list = player.getMap().getMapObjectsInRange(pet.getPos(), 60000.0, Arrays.asList(MapObjectType.ITEM));//获取全屏物品列表
         for (MapObject item : list) {  // 遍历宠物身边一定范围内的物品列表
             MapItem mapItem = (MapItem) item;
             //不拾取不可见的任务道具
@@ -102,8 +105,8 @@ public final class MovePetHandler extends AbstractMovementPacketHandler {
             }
             if (shouldPickupItem(player, mapItem, slot) && (mapItem.getOwnerId() == player.getId()
                     || mapItem.getOwnerId() == player.getPartyId())) {
-            player.pickupItem(item, (int) slot);  // 执行拾取操作
-                }
+                player.pickupItem(item, (int) slot);  // 执行拾取操作
+            }
         }
     }
 }
