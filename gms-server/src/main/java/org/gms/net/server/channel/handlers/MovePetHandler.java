@@ -100,7 +100,7 @@ public final class MovePetHandler extends AbstractMovementPacketHandler {
         for (MapObject item : list) {  // 遍历宠物身边一定范围内的物品列表
             MapItem mapItem = (MapItem) item;
             //不拾取不可见的任务道具
-            if (mapItem.isPlayerDrop()||!player.needQuestItem(mapItem.getQuest(), mapItem.getItemId())) {
+            if (mapItem.isPlayerDrop()||!player.needQuestItem(mapItem.getQuest(), mapItem.getItemId()) || 4001074 == mapItem.getItemId()) {
                 continue;
             }
             if (shouldPickupItem(player, mapItem, slot) && (mapItem.getOwnerId() == player.getId()
