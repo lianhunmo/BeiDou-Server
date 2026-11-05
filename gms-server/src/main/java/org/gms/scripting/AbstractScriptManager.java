@@ -94,7 +94,7 @@ public abstract class AbstractScriptManager {
         if (engine == null) {
             // 客户端当前没有缓存时，再按文件级 i18n 规则加载脚本。
             engine = getInvocableScriptEngine(path);
-            c.setScriptEngine(scriptKey, engine);
+            c.setScriptEngine(path, engine);
         }
 
         return engine;
