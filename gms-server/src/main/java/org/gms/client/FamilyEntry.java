@@ -303,9 +303,9 @@ public class FamilyEntry {
             this.totalReputation += gain;
         }
         Character chr = getChr();
-        if (chr != null) {
-            chr.sendPacket(PacketCreator.sendGainRep(gain, from != null ? from.getName() : ""));
-        }
+//        if (chr != null) {
+//            chr.sendPacket(PacketCreator.sendGainRep(gain, from != null ? from.getName() : ""));
+//        }
     }
 
     public void giveReputationToSenior(int gain, boolean includeSuperSenior) {
