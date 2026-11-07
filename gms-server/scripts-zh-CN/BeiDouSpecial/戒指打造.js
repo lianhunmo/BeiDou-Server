@@ -88,7 +88,7 @@ function levelRingOption1() {
             case 1:
                 costMaple = 1000;
                 costMeso = 2000000;
-                upgradeProb = 90;
+                upgradeProb = 100;
                 text += "戒指当前等级为#b" + equipCurrentLevel + "#k级。\r\n";
                 text += "强化需要#r" + costMaple + "#k个枫叶和#r" + costMeso + "#k金币。\r\n";
                 text += "你当前拥有#b" + cm.getItemQuantity(MAPLE_LEAF) + "#k个枫叶和#b" + cm.getMeso() + "#k金币。\r\n";
@@ -98,7 +98,7 @@ function levelRingOption1() {
             case 2:
                 costMaple = 1000;
                 costMeso = 3000000;
-                upgradeProb = 80;
+                upgradeProb = 90;
                 text += "戒指当前等级为#b" + equipCurrentLevel + "#k级。\r\n";
                 text += "强化需要#r" + costMaple + "#k个枫叶和#r" + costMeso + "#k金币。\r\n";
                 text += "你当前拥有#b" + cm.getItemQuantity(MAPLE_LEAF) + "#k个枫叶和#b" + cm.getMeso() + "#k金币。\r\n";
@@ -108,7 +108,7 @@ function levelRingOption1() {
             case 3:
                 costMaple = 1000;
                 costMeso = 4000000;
-                upgradeProb = 70;
+                upgradeProb = 90;
                 text += "戒指当前等级为#b" + equipCurrentLevel + "#k级。\r\n";
                 text += "强化需要#r" + costMaple + "#k个枫叶和#r" + costMeso + "#k金币。\r\n";
                 text += "你当前拥有#b" + cm.getItemQuantity(MAPLE_LEAF) + "#k个枫叶和#b" + cm.getMeso() + "#k金币。\r\n";
@@ -118,7 +118,7 @@ function levelRingOption1() {
             case 4:
                 costMaple = 1000;
                 costMeso = 5000000;
-                upgradeProb = 60;
+                upgradeProb = 80;
                 text += "戒指当前等级为#b" + equipCurrentLevel + "#k级。\r\n";
                 text += "强化需要#r" + costMaple + "#k个枫叶和#r" + costMeso + "#k金币。\r\n";
                 text += "你当前拥有#b" + cm.getItemQuantity(MAPLE_LEAF) + "#k个枫叶和#b" + cm.getMeso() + "#k金币。\r\n";
@@ -128,7 +128,7 @@ function levelRingOption1() {
             case 5:
                 costMaple = 1000;
                 costMeso = 6000000;
-                upgradeProb = 50;
+                upgradeProb = 80;
                 text += "戒指当前等级为#b" + equipCurrentLevel + "#k级。\r\n";
                 text += "强化需要#r" + costMaple + "#k个枫叶和#r" + costMeso + "#k金币。\r\n";
                 text += "你当前拥有#b" + cm.getItemQuantity(MAPLE_LEAF) + "#k个枫叶和#b" + cm.getMeso() + "#k金币。\r\n";
@@ -138,7 +138,7 @@ function levelRingOption1() {
             case 6:
                 costMaple = 1000;
                 costMeso = 7000000;
-                upgradeProb = 40;
+                upgradeProb = 70;
                 text += "戒指当前等级为#b" + equipCurrentLevel + "#k级。\r\n";
                 text += "强化需要#r" + costMaple + "#k个枫叶和#r" + costMeso + "#k金币。\r\n";
                 text += "你当前拥有#b" + cm.getItemQuantity(MAPLE_LEAF) + "#k个枫叶和#b" + cm.getMeso() + "#k金币。\r\n";
@@ -148,7 +148,7 @@ function levelRingOption1() {
             case 7:
                 costMaple = 1000;
                 costMeso = 8000000;
-                upgradeProb = 30;
+                upgradeProb = 70;
                 text += "戒指当前等级为#b" + equipCurrentLevel + "#k级。\r\n";
                 text += "强化需要#r" + costMaple + "#k个枫叶和#r" + costMeso + "#k金币。\r\n";
                 text += "你当前拥有#b" + cm.getItemQuantity(MAPLE_LEAF) + "#k个枫叶和#b" + cm.getMeso() + "#k金币。\r\n";
@@ -158,7 +158,7 @@ function levelRingOption1() {
             case 8:
                 costMaple = 1000;
                 costMeso = 9000000;
-                upgradeProb = 20;
+                upgradeProb = 60;
                 text += "戒指当前等级为#b" + equipCurrentLevel + "#k级。\r\n";
                 text += "强化需要#r" + costMaple + "#k个枫叶和#r" + costMeso + "#k金币。\r\n";
                 text += "你当前拥有#b" + cm.getItemQuantity(MAPLE_LEAF) + "#k个枫叶和#b" + cm.getMeso() + "#k金币。\r\n";
@@ -168,7 +168,7 @@ function levelRingOption1() {
             case 9:
                 costMaple = 1000;
                 costMeso = 10000000;
-                upgradeProb = 10;
+                upgradeProb = 60;
                 text += "戒指当前等级为#b" + equipCurrentLevel + "#k级。\r\n";
                 text += "强化需要#r" + costMaple + "#k个枫叶和#r" + costMeso + "#k金币。\r\n";
                 text += "你当前拥有#b" + cm.getItemQuantity(MAPLE_LEAF) + "#k个枫叶和#b" + cm.getMeso() + "#k金币。\r\n";

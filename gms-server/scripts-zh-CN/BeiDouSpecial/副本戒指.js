@@ -186,7 +186,7 @@ function levelRingOption1() {
                 costStamp5 = 15;
                 STAMP_ID_COST_MAP.set(STAMP5, costStamp5);
                 costMeso = 5000000;
-                upgradeProb = 60;
+                upgradeProb = 80;
                 text = buildInfoMessage(text, equipCurrentLevel);
                 cm.sendYesNoLevel("Dispose", "RingUpgrade", text);
                 break;
