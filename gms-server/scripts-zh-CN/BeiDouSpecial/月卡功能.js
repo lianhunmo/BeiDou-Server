@@ -11,6 +11,8 @@ const SILVER_MOON_CARD_COST = 98;
 const GOLDEN_MOON_CARD = 5600000;
 const GOLDEN_MOON_CARD_COST = 198;
 const VIP_TELEPORT_ROCK = 5041000;
+const REMOTE_GACHAPON_TICKET = 5451000;
+
 const CheckBox_0 = "#fUI/Basic.img/CheckBox/0#";
 const CheckBox_1 = "#fUI/Basic.img/CheckBox/1#";
 const CheckBox_2 = "#fUI/Basic.img/CheckBox/2#";
@@ -36,6 +38,7 @@ let chooseCount6 = 10;
 let chooseCount7 = 10;
 let chooseCount8 = 10;
 let chooseCount9 = 10;
+let chooseCount10 = 10;
 
 function start() {
     levelStart();
@@ -55,6 +58,7 @@ function levelStart() {
     chooseCount7 = Number(cm.getAccountExtendValue("月卡每日福利7号选择领取次数", true));
     chooseCount8 = Number(cm.getAccountExtendValue("月卡每日福利8号选择领取次数", true));
     chooseCount9 = Number(cm.getAccountExtendValue("月卡每日福利9号选择领取次数", true));
+    chooseCount10 = Number(cm.getAccountExtendValue("月卡每日福利10号选择领取次数", true));
 
     let text = "这里可以兑换月卡会员以及领取月卡福利。\r\n";
     text += "#r注：月卡时效为30天，账号内所有角色共享福利领取次数，请谨慎领取。#k\r\n";
@@ -110,6 +114,11 @@ function levelStart() {
         } else {
             text += `#L99#${CheckBox_1}\t本日副本扫荡次数已用完#l\r\n`;
         }
+        if (chooseCount10 < 1) {
+            text += `#L11##b${CheckBox_0}\t领取 10 张高级快乐百宝券#k#l\r\n`;
+        } else {
+            text += `#L99#${CheckBox_1}\t已领取 10 张高级快乐百宝券#l\r\n`;
+        }
     } else {
         text += "#L0##r98 个#t" + SHADOW_MESO + "##i" + SHADOW_MESO + "#兑换白银月卡会员#k#l\r\n\r\n";
         text += "\t白银月卡福利包含：\r\n";
@@ -124,6 +133,7 @@ function levelStart() {
         text += "\t领取2次2小时双倍爆率卡\r\n";
         text += "\t领取 1000 点券\r\n";
         text += "\t领取 4 颗高级瞬移之石\r\n";
+        text += "\t领取 10 张高级快乐百宝券\r\n";
         text += "\t组队副本扫荡\r\n";
     }
     text += "#L99##b离开#k#l\r\n\r\n";
@@ -506,6 +516,23 @@ function levelPQSweep7() {
         quitDaily++;
         cm.saveOrUpdateCharacterExtendValue("罗密欧与朱丽叶组队副本每日通关次数", quitDaily.toString(), true);
         cm.sendOkLevel("Start", "成功扫荡 #b拯救朱丽叶#k （玛加提亚组队任务）\r\n获得 10 #b#t" + STAMP7 + "##k#i" + STAMP7 + "#");
+    }
+}
+
+function levelChoose11() {
+    cm.sendYesNoLevel("Dispose", "Gain10", "要领取 10 张 #b#t" + REMOTE_GACHAPON_TICKET + "##k#i" + REMOTE_GACHAPON_TICKET + "#吗？");
+}
+
+function levelGain10() {
+    if (chooseCount10 >= 1) {
+        cm.sendOkLevel("Dispose", "你今日已领取过该福利！");
+    } else if (!cm.canHold(REMOTE_GACHAPON_TICKET, 10)) {
+        cm.sendOkLevel("Dispose", "请保证现金栏有空位。");
+    } else {
+        cm.gainItem(REMOTE_GACHAPON_TICKET, 10);
+        chooseCount10++;
+        cm.saveOrUpdateAccountExtendValue("月卡每日福利10号选择领取次数", chooseCount10.toString(), true);
+        cm.sendOkLevel("Start", "成功领取 10 张 #b#t" + REMOTE_GACHAPON_TICKET + "##k#i" + REMOTE_GACHAPON_TICKET + "#");
     }
 }
 
