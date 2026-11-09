@@ -82,7 +82,7 @@ function levelRingOption1() {
                 text += "戒指当前等级为#b" + equipCurrentLevel + "#k级。\r\n";
                 text += "强化需要#r" + costMaple + "#k个枫叶和#r" + costMeso + "#k金币。\r\n";
                 text += "你当前拥有#b" + cm.getItemQuantity(MAPLE_LEAF) + "#k个枫叶和#b" + cm.getMeso() + "#k金币。\r\n";
-                text += "强化成功率为#r" + upgradeProb + "%#k，失败将#r退回一级#k，确认要强化吗？";
+                text += "强化成功率为#r" + upgradeProb + "%#k，确认要强化吗？";
                 cm.sendYesNoLevel("Dispose", "RingUpgrade", text);
                 break;
             case 1:
@@ -92,7 +92,7 @@ function levelRingOption1() {
                 text += "戒指当前等级为#b" + equipCurrentLevel + "#k级。\r\n";
                 text += "强化需要#r" + costMaple + "#k个枫叶和#r" + costMeso + "#k金币。\r\n";
                 text += "你当前拥有#b" + cm.getItemQuantity(MAPLE_LEAF) + "#k个枫叶和#b" + cm.getMeso() + "#k金币。\r\n";
-                text += "强化成功率为#r" + upgradeProb + "%#k，失败将#r退回一级#k，确认要强化吗？";
+                text += "强化成功率为#r" + upgradeProb + "%#k，确认要强化吗？";
                 cm.sendYesNoLevel("Dispose", "RingUpgrade", text);
                 break;
             case 2:
@@ -102,7 +102,7 @@ function levelRingOption1() {
                 text += "戒指当前等级为#b" + equipCurrentLevel + "#k级。\r\n";
                 text += "强化需要#r" + costMaple + "#k个枫叶和#r" + costMeso + "#k金币。\r\n";
                 text += "你当前拥有#b" + cm.getItemQuantity(MAPLE_LEAF) + "#k个枫叶和#b" + cm.getMeso() + "#k金币。\r\n";
-                text += "强化成功率为#r" + upgradeProb + "%#k，失败将#r退回一级#k，确认要强化吗？";
+                text += "强化成功率为#r" + upgradeProb + "%#k，确认要强化吗？";
                 cm.sendYesNoLevel("Dispose", "RingUpgrade", text);
                 break;
             case 3:
@@ -112,7 +112,7 @@ function levelRingOption1() {
                 text += "戒指当前等级为#b" + equipCurrentLevel + "#k级。\r\n";
                 text += "强化需要#r" + costMaple + "#k个枫叶和#r" + costMeso + "#k金币。\r\n";
                 text += "你当前拥有#b" + cm.getItemQuantity(MAPLE_LEAF) + "#k个枫叶和#b" + cm.getMeso() + "#k金币。\r\n";
-                text += "强化成功率为#r" + upgradeProb + "%#k，失败将#r退回一级#k，确认要强化吗？";
+                text += "强化成功率为#r" + upgradeProb + "%#k，确认要强化吗？";
                 cm.sendYesNoLevel("Dispose", "RingUpgrade", text);
                 break;
             case 4:
@@ -122,7 +122,7 @@ function levelRingOption1() {
                 text += "戒指当前等级为#b" + equipCurrentLevel + "#k级。\r\n";
                 text += "强化需要#r" + costMaple + "#k个枫叶和#r" + costMeso + "#k金币。\r\n";
                 text += "你当前拥有#b" + cm.getItemQuantity(MAPLE_LEAF) + "#k个枫叶和#b" + cm.getMeso() + "#k金币。\r\n";
-                text += "强化成功率为#r" + upgradeProb + "%#k，失败将#r退回一级#k，确认要强化吗？";
+                text += "强化成功率为#r" + upgradeProb + "%#k，确认要强化吗？";
                 cm.sendYesNoLevel("Dispose", "RingUpgrade", text);
                 break;
             case 5:
@@ -132,7 +132,7 @@ function levelRingOption1() {
                 text += "戒指当前等级为#b" + equipCurrentLevel + "#k级。\r\n";
                 text += "强化需要#r" + costMaple + "#k个枫叶和#r" + costMeso + "#k金币。\r\n";
                 text += "你当前拥有#b" + cm.getItemQuantity(MAPLE_LEAF) + "#k个枫叶和#b" + cm.getMeso() + "#k金币。\r\n";
-                text += "强化成功率为#r" + upgradeProb + "%#k，失败将#r退回一级#k，确认要强化吗？";
+                text += "强化成功率为#r" + upgradeProb + "%#k，确认要强化吗？";
                 cm.sendYesNoLevel("Dispose", "RingUpgrade", text);
                 break;
             case 6:
@@ -142,7 +142,7 @@ function levelRingOption1() {
                 text += "戒指当前等级为#b" + equipCurrentLevel + "#k级。\r\n";
                 text += "强化需要#r" + costMaple + "#k个枫叶和#r" + costMeso + "#k金币。\r\n";
                 text += "你当前拥有#b" + cm.getItemQuantity(MAPLE_LEAF) + "#k个枫叶和#b" + cm.getMeso() + "#k金币。\r\n";
-                text += "强化成功率为#r" + upgradeProb + "%#k，失败将#r退回一级#k，确认要强化吗？";
+                text += "强化成功率为#r" + upgradeProb + "%#k，确认要强化吗？";
                 cm.sendYesNoLevel("Dispose", "RingUpgrade", text);
                 break;
             case 7:
@@ -152,7 +152,7 @@ function levelRingOption1() {
                 text += "戒指当前等级为#b" + equipCurrentLevel + "#k级。\r\n";
                 text += "强化需要#r" + costMaple + "#k个枫叶和#r" + costMeso + "#k金币。\r\n";
                 text += "你当前拥有#b" + cm.getItemQuantity(MAPLE_LEAF) + "#k个枫叶和#b" + cm.getMeso() + "#k金币。\r\n";
-                text += "强化成功率为#r" + upgradeProb + "%#k，失败将#r退回一级#k，确认要强化吗？";
+                text += "强化成功率为#r" + upgradeProb + "%#k，确认要强化吗？";
                 cm.sendYesNoLevel("Dispose", "RingUpgrade", text);
                 break;
             case 8:
@@ -162,7 +162,7 @@ function levelRingOption1() {
                 text += "戒指当前等级为#b" + equipCurrentLevel + "#k级。\r\n";
                 text += "强化需要#r" + costMaple + "#k个枫叶和#r" + costMeso + "#k金币。\r\n";
                 text += "你当前拥有#b" + cm.getItemQuantity(MAPLE_LEAF) + "#k个枫叶和#b" + cm.getMeso() + "#k金币。\r\n";
-                text += "强化成功率为#r" + upgradeProb + "%#k，失败将#r退回一级#k，确认要强化吗？";
+                text += "强化成功率为#r" + upgradeProb + "%#k，确认要强化吗？";
                 cm.sendYesNoLevel("Dispose", "RingUpgrade", text);
                 break;
             case 9:
@@ -172,7 +172,7 @@ function levelRingOption1() {
                 text += "戒指当前等级为#b" + equipCurrentLevel + "#k级。\r\n";
                 text += "强化需要#r" + costMaple + "#k个枫叶和#r" + costMeso + "#k金币。\r\n";
                 text += "你当前拥有#b" + cm.getItemQuantity(MAPLE_LEAF) + "#k个枫叶和#b" + cm.getMeso() + "#k金币。\r\n";
-                text += "强化成功率为#r" + upgradeProb + "%#k，失败将#r退回一级#k，确认要强化吗？";
+                text += "强化成功率为#r" + upgradeProb + "%#k，确认要强化吗？";
                 cm.sendYesNoLevel("Dispose", "RingUpgrade", text);
                 break;
             default:
@@ -249,11 +249,11 @@ function levelRingUpgrade() {
             ["PAD", 2],
             ["MAD", 8]
         ])
-        let scrollResult = cm.getChar().scrollEquipWithEquipSlot(EQUIP_SLOT, upgradeProb, true, states);
+        let scrollResult = cm.getChar().scrollEquipWithEquipSlot(EQUIP_SLOT, upgradeProb, false, states);
         if (scrollResult) {
             cm.sendLastLevel("RingOption1", "强化成功！#r攻击+2 魔攻+8#k");
         } else {
-            cm.sendLastLevel("RingOption1", "强化失败。#r攻击-2 魔攻-8#k");
+            cm.sendLastLevel("RingOption1", "强化失败。");
         }
     }
 }
