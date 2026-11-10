@@ -27,7 +27,7 @@ var mogu = "#fUI/UIWindow.img/Minigame/Omok/stone/0/black/0#";
 var ui = "#fUI/Basic.img/BtCoin/normal/0#";
 
 
-var OldTitle ="\t\t\t\t\t"+mogu+"#e欢迎来到#rMaple Story#k脚本中心"+mogu+"#n\t\t\t\t\r\n\r\n";
+var OldTitle ="\t\t\t\t\t"+mogu+"#e欢迎来到#r小时候#k帮助中心"+mogu+"#n\t\t\t\t\r\n\r\n";
 var status = -1;
 var i = 0;
 

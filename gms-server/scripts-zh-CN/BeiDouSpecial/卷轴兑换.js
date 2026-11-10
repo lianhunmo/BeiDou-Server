@@ -853,8 +853,7 @@ function start() {
 }
 
 function levelStart() {
-    var text = "\r\n                       #i03994060# #i03994063# #i03994067# #i03994062# #i03994073# #i03994079#\r\n\r\n";
-    text += "欢迎使用卷轴碎片商店，请选择您要执行的操作: \r\n";
+    var text = "欢迎使用卷轴碎片商店，请选择您要执行的操作: \r\n";
     text += "#L0##b分解卷轴#k#l     ";
     text += "#L1##b合成卷轴#k#l\r\n";
     cm.sendNextSelectLevel("SelectOperation", text);
