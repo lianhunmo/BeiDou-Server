@@ -1,10 +1,6 @@
-let a = 0;
-let text;
-let selects;
-let nx;
 let scrolls = Array();
-let selstatus = -1;
 const MAX_STORAGE = 30000;
+
 let scrollList = Array(
     2040009,//头盔防御诅咒卷轴
     2040011,//头盔体力诅咒卷轴
@@ -122,7 +118,6 @@ let scrollList = Array(
     2044202,//双手钝器攻击10
     2044214,//双手钝器命中10
     2043402,//刀攻击卷轴10
-
     2044302,//枪攻击10
     2044314,//枪命中10
     2044402,//矛攻击10
@@ -234,178 +229,211 @@ let scrollList = Array(
     2040759,
     2040760
 );
-let slot = Array();
+
+// 用于记录 sendGetNumber 之后待处理的操作
+let pendingAction = null;
 
 function start() {
-    a = -1;
-    action(1, 0, 0);
+    levelStart();
 }
 
+/**
+ * 主菜单
+ * #L0# 存放卷轴
+ * #L1# 取回卷轴
+ * #L2# 一键存放卷轴
+ */
+function levelStart() {
+    let text = "       #L0##b存放卷轴#k#l\t    #L1##b取回卷轴#k#l\r\n\r\n";
+    text += "     #L2##r一键存放卷轴#k#l\r\n\r\n";
+    cm.sendSelectLevel("MainMenu", text);
+}
+
+function levelMainMenu0() {
+    let text = "请选择所要存放的卷轴：\r\n";
+    for (let i = 0; i < scrollList.length; i++) {
+        if (!cm.haveItem(scrollList[i])) {
+            continue;
+        }
+        text += `#L${i}##k存放：#b#z${scrollList[i]}##l\r\n\r\n`;
+        text += ` #d- 当前背包内拥有：#r#c${scrollList[i]}##d 个。\r\n`;
+        if (i != 0 && (i + 1) % 99 == 0) {
+            text += "\r\n";
+        }
+    }
+    text += `#L999##b离开#k#l\r\n\r\n`;
+    cm.sendNextSelectLevel("StoreSelect", text);
+}
+
+function levelMainMenu1() {
+    let text = "请选择所要取回的卷轴：\r\n";
+    for (let i = 0; i < scrollList.length; i++) {
+        let num = cm.getPlayer().getCharacterStorageInteger(scrollList[i], 0);
+        if (num < 1) {
+            continue;
+        }
+        text += `#L${i}##k取回：#b#z${scrollList[i]}##l\r\n\r\n`;
+        text += ` #d- 当前仓库内拥有：#r${num}#d 个。\r\n`;
+        if (i != 0 && (i + 1) % 99 == 0) {
+            text += "\r\n";
+        }
+    }
+    text += `#L999##b离开#k#l\r\n\r\n`;
+    cm.sendNextSelectLevel("WithdrawSelect", text);
+}
+
+function levelMainMenu2() {
+    let text = "请确定所要存放的卷轴：\r\n";
+    let havestone = 0;
+    for (let i = 0; i < scrollList.length; i++) {
+        scrolls[i] = cm.getPlayer().getItemQuantity(scrollList[i], false);
+        if (scrolls[i] != 0) {
+            text += ` #b#z${scrollList[i]}##k X ${scrolls[i]}  `;
+            havestone++;
+        }
+    }
+    if (havestone == 0) {
+        cm.sendOkLevel("Dispose", "你的背包里没有任何卷轴.");
+    } else {
+        cm.sendYesNoLevel("Dispose", "AutoStore", text);
+    }
+}
+
+/**
+ * 存放选择回调
+ * @param {number} selection scrollList 索引或 999 离开
+ */
+function levelStoreSelect(selection) {
+    if (selection == 999) {
+        cm.dispose();
+        return;
+    }
+    let itemId = scrollList[selection];
+    let txt = ` - 当前存放卷轴：#r#i${itemId}##l\r\n\r\n`;
+    txt += ` #d- 当前背包内拥有：#r#c${itemId}##d 个。\r\n`;
+    txt += " #k- 请输入存放道具的数值：\r\n\r\n";
+    let numbera = Math.min(cm.itemQuantity(itemId), MAX_STORAGE);
+    pendingAction = { type: "store", index: selection };
+    cm.sendGetNumber(txt, numbera, 1, numbera);
+}
+
+/**
+ * 取回选择回调
+ * @param {number} selection scrollList 索引或 999 离开
+ */
+function levelWithdrawSelect(selection) {
+    if (selection == 999) {
+        cm.dispose();
+        return;
+    }
+    let itemId = scrollList[selection];
+    let num = cm.getPlayer().getCharacterStorageInteger(itemId, 0);
+    let txt = ` - 当前取出卷轴：#r#i${itemId}##l\r\n\r\n`;
+    txt += ` #d- 当前仓库内拥有：#r${num}#d 个。\r\n`;
+    txt += " #k- 请输入取出道具的数值：\r\n\r\n";
+    let numbera = Math.min(num, MAX_STORAGE);
+    pendingAction = { type: "withdraw", index: selection };
+    cm.sendGetNumber(txt, numbera, 1, numbera);
+}
+
+/**
+ * 执行单件存入
+ * @param {number} quantity 输入数量
+ * @param {number} index scrollList 索引
+ */
+function levelStoreQuantity(quantity, index) {
+    let itemId = scrollList[index];
+    let num = cm.getPlayer().getCharacterStorageInteger(itemId, 0);
+
+    if (quantity > cm.itemQuantity(itemId)) {
+        cm.sendOkLevel("Dispose", "背包内没有足够的卷轴.");
+    } else if (num + quantity > MAX_STORAGE) {
+        cm.sendOkLevel("Dispose", "存储数量不能大于3W！");
+    } else {
+        cm.gainItem(itemId, -quantity);
+        cm.getPlayer().setCharacterStorageInteger(itemId, num + quantity);
+        cm.sendOkLevel("MainMenu0", `存入 #z${itemId}# x ${quantity} 成功。`);
+    }
+}
+
+/**
+ * 执行单件取出
+ * @param {number} quantity 输入数量
+ * @param {number} index scrollList 索引
+ */
+function levelWithdrawQuantity(quantity, index) {
+    let itemId = scrollList[index];
+    let num = cm.getPlayer().getCharacterStorageInteger(itemId, 0);
+
+    if (num < quantity) {
+        cm.sendOkLevel("Dispose", "仓库内没有足够的卷轴.");
+    } else if (cm.canHold(itemId, quantity)) {
+        cm.gainItem(itemId, quantity);
+        cm.getPlayer().setCharacterStorageInteger(itemId, num - quantity);
+        cm.sendOkLevel("MainMenu1", `取出 #z${itemId}# x ${quantity} 成功。`);
+    } else {
+        cm.sendOkLevel("Dispose", "背包空间不足，无法取出卷轴.");
+    }
+}
+
+/**
+ * 一键存放执行
+ */
+function levelAutoStore() {
+    let havestone = 0;
+    let text1 = "成功存入\r\n";
+
+    for (let i = 0; i < scrollList.length; i++) {
+        scrolls[i] = cm.getPlayer().getItemQuantity(scrollList[i], false);
+        if (scrolls[i] != 0) {
+            let num = cm.getPlayer().getCharacterStorageInteger(scrollList[i], 0);
+            if (num + scrolls[i] > MAX_STORAGE) {
+                continue; // 存储数量要超出的，直接不存。
+            }
+            cm.gainItem(scrollList[i], -scrolls[i]);
+            cm.getPlayer().setCharacterStorageInteger(
+                scrollList[i],
+                num + scrolls[i],
+            );
+            text1 += `#v${scrollList[i]}# X ${scrolls[i]}  `;
+            havestone++;
+        }
+    }
+
+    if (havestone != 0) {
+        cm.sendOkLevel("Dispose", text1);
+    } else {
+        cm.sendOkLevel("Dispose", "你的背包里没有任何卷轴.");
+    }
+}
+
+/**
+ * 处理 sendGetNumber 的数字输入回调
+ */
 function action(mode, type, selection) {
     if (mode == -1) {
         cm.dispose();
-    } else {
-        if (mode == 1) a++;
-        else a--;
-        if (a == -1) {
-            cm.dispose();
-        } else if (a == 0) {
-            text = "       #L0##b存放卷轴#k#l	    #L1##b取回卷轴#k#l\r\n\r\n";
-            text += "     #L2##r一键存放卷轴#k#l\r\n\r\n";
-            cm.sendSimple(text);
-        } else if (a == 1) {
-            if (selection == 0) {
-                nx = 0;
-                text = "请选择所要存放的卷轴：\r\n";
-                for (let i = 0; i < scrollList.length; i++) {
-                    if (!cm.haveItem(scrollList[i])) {
-                        continue;
-                    }
-                    text += `#L${i}##k存放：#b#z${scrollList[i]}##l\r\n\r\n`;
-                    text += ` #d- 当前背包内拥有：#r#c${scrollList[i]}##d 个。\r\n`;
-                    if (i != 0 && (i + 1) % 99 == 0) {
-                        text += "\r\n";
-                    }
-                }
-                text += `#L999##b离开#k#l\r\n\r\n`;
-                cm.sendSimple(text);
-            } else if (selection == 1) {
-                nx = 1;
-                text = "请选择所要取回的卷轴：\r\n";
-                for (let i = 0; i < scrollList.length; i++) {
-                    let num = cm.getPlayer().getCharacterStorageInteger(scrollList[i], 0);
-                    if (num < 1) {
-                        continue;
-                    }
-                    text += `#L${i}##k取回：#b#z${scrollList[i]}##l\r\n\r\n`;
-                    text += ` #d- 当前仓库内拥有：#r${num}#d 个。\r\n`;
-                    if (i != 0 && (i + 1) % 99 == 0) {
-                        text += "\r\n";
-                    }
-                }
-                text += `#L999##b离开#k#l\r\n\r\n`;
-                cm.sendSimple(text);
-            } else if (selection == 2) {
-                nx = 2;
-                text = `请确定所要存放的卷轴：${cm
-                    .getPlayer()
-                    .getItemQuantity(scrollList[1], false)}\r\n`;
-                let havestone = 0;
-                for (let i = 0; i < scrollList.length; i++) {
-                    scrolls[i] = cm.getPlayer().getItemQuantity(scrollList[i], false);
-                    if (scrolls[i] != 0) {
-                        text += ` #b#z${scrollList[i]}##k X ${scrolls[i]}  `;
-                        havestone++;
-                    }
-                }
-                if (havestone == 0) {
-                    cm.sendOk("你的背包里没有任何卷轴.");
-                    cm.dispose();
-                } else {
-                    cm.sendYesNo(text);
-                }
-                a++;
-                if (selstatus == -1) {
-                    selstatus = selection;
-                }
-            }
-        } else if (a == 2) {
-            if (nx == 0) {
-                selects = selection;
-                if (selects == 999) {
-                    cm.dispose();
-                    return;
-                }
-                nx = 0;
-                let txt = ` - 当前存放卷轴：#r#i${scrollList[selects]}##l\r\n\r\n`;
-                txt += ` #d- 当前背包内拥有：#r#c${scrollList[selects]}##d 个。\r\n`;
-                txt += " #k- 请输入存放道具的数值：\r\n\r\n";
-                let numbera = Math.min(cm.itemQuantity(scrollList[selects]), MAX_STORAGE);
-                cm.sendGetNumber(txt, numbera, 1, numbera);
-            } else if (nx == 1) {
-                nx = 1;
-                selects = selection;
-                if (selects == 999) {
-                    cm.dispose();
-                    return;
-                }
-                let num = cm
-                    .getPlayer()
-                    .getCharacterStorageInteger(scrollList[selects], 0);
-                let txt = ` - 当前取出卷轴：#r#i${scrollList[selects]}##l\r\n\r\n`;
-                txt += ` #d- 当前仓库内拥有：#r${num}#d 个。\r\n`;
-                txt += " #k- 请输入取出道具的数值：\r\n\r\n";
-                let numbera = Math.min(num, MAX_STORAGE);
-                cm.sendGetNumber(txt, numbera, 1, numbera);
-            }
-        } else if (a == 3) {
-            if (nx == 0) {
-                let itemId = scrollList[selects];
-                let num = cm.getPlayer().getCharacterStorageInteger(itemId, 0);
-                console.log(itemId, cm.itemQuantity(itemId), num, selection);
-                if (selection > cm.itemQuantity(itemId)) {
-                    cm.sendOk("背包内没有足够的卷轴.");
-                } else if (num + selection > MAX_STORAGE) {
-                    cm.sendOk("存储数量不能大于3W！");
-                } else {
-                    cm.gainItem(itemId, -selection);
-                    cm.getPlayer().setCharacterStorageInteger(itemId, num + selection);
-                    cm.sendOk(`存入 #z${itemId}# x ${selection} 成功。`);
-                }
-                cm.dispose();
-            } else if (nx == 1) {
-                let num = cm
-                    .getPlayer()
-                    .getCharacterStorageInteger(scrollList[selects], 0);
-                if (num < selection) {
-                    cm.sendOk("仓库内没有足够的卷轴.");
-                } else {
-                    if (cm.canHold(scrollList[selects], selection)) {
-                        cm.gainItem(scrollList[selects], selection);
-                        cm.getPlayer().setCharacterStorageInteger(
-                            scrollList[selects],
-                            num - selection,
-                        );
-                        cm.sendOk(`取出 #z${scrollList[selects]}# x ${selection} 成功。`);
-                    } else {
-                        cm.sendOk("背包空间不足，无法取出卷轴.");
-                    }
-                }
-                cm.dispose();
-            } else if (nx == 2) {
-                let havestone = 0;
-                let text1 = "成功存入\r\n";
-                for (let i = 0; i < scrollList.length; i++) {
-                    scrolls[i] = cm.getPlayer().getItemQuantity(scrollList[i], false);
-                    if (scrolls[i] != 0) {
-                        let num = cm.getPlayer().getCharacterStorageInteger(scrollList[i], 0);
-                        if (num + scrolls[i] > MAX_STORAGE) {
-                            continue; //存储数量要超出的，直接不存。
-                        }
-                        cm.gainItem(scrollList[i], -scrolls[i]);
-                        cm.getPlayer().setCharacterStorageInteger(
-                            scrollList[i],
-                            num + scrolls[i],
-                        );
-                        text1 += `#v${scrollList[i]}# X ${scrolls[i]}  `;
-                        havestone++;
-                    }
-                }
-
-                if (havestone != 0) {
-                    cm.sendOk(text1);
-                } else {
-                    cm.sendOk("你的背包里没有任何卷轴.");
-                }
-
-                cm.dispose();
-            }
-        } else if (a == 4) {
-            cm.sendOk("祝你游戏愉快~");
-            a = 0;
-            cm.dispose();
-        } else {
-            cm.dispose();
-        }
+        return;
     }
+
+    if (!pendingAction) {
+        cm.dispose();
+        return;
+    }
+
+    const data = pendingAction;
+    pendingAction = null;
+
+    if (data.type === "store") {
+        levelStoreQuantity(selection, data.index);
+    } else if (data.type === "withdraw") {
+        levelWithdrawQuantity(selection, data.index);
+    }
+}
+
+/**
+ * 统一关闭对话
+ */
+function levelDispose() {
+    cm.dispose();
 }
