@@ -99,7 +99,7 @@ function start() {
  * @description 如果是sendSelectLevel，那么会根据玩家的选项自动路由到对应的level+selection方法
  */
 function levelStart() {
-    let text = "这里可以打造副本戒指，现在你希望做什么呢？\r\n #r(注：要强化和升阶的戒指需放在背包第一格)#l\r\n\r\n";
+    let text = "这里可以打造矿石戒指，现在你希望做什么呢？\r\n #r(注：要强化和升阶的戒指需放在背包第一格)#l\r\n\r\n";
     text += "#L0##b领取戒指#k\r\n";
     text += "#L1##b强化戒指#k\r\n";
     text += "#L2##b戒指升阶#k\r\n";

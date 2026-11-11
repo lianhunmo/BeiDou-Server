@@ -71,11 +71,13 @@ const FINAL_REWARD_MAP = new Map([
 let questCount = 0;
 let questFinishCount = 0;
 let questId = 0;
+let ExpTable;
 let QuestActionHandler;
 let Quest;
 let questStage;
 
 function start() {
+    ExpTable = Java.type('org.gms.constants.game.ExpTable');//导入 角色升级需求经验表
     QuestActionHandler = Java.type('org.gms.net.server.channel.handlers.QuestActionHandler');//导入 任务动作处理类
     Quest = Java.type('org.gms.server.quest.Quest');//导入 任务类
     levelStart();
@@ -173,8 +175,8 @@ function levelAcceptQuest() {
         return;
     }
     questCount++;
-    cm.saveOrUpdateCharacterExtendValue("每日任务完成次数", questFinishCount+""+questCount, true);
-    cm.sendNextLevel('Start','任务接取成功。');
+    cm.saveOrUpdateCharacterExtendValue("每日任务完成次数", questFinishCount + "" + questCount, true);
+    cm.sendNextLevel('Start', '任务接取成功。');
 }
 
 function levelGetReward() {
@@ -194,20 +196,21 @@ function levelGetReward() {
 
     cm.saveOrUpdateCharacterExtendValue("每日任务编号", "0", true);
     QuestActionHandler.handleDailyQuest(2, Number(questId), cm.getClient());
-    if(questInfo[1] === 2) {
+    if (questInfo[1] === 2) {
         cm.gainItem(questInfo[2], -questInfo[3]);
     }
     cm.gainItem(rewardList[0], rewardList[1]);
     cm.gainItem(rewardList[2], rewardList[3]);
     cm.getChar().getCashShop().gainCash(rewardList[4], rewardList[5]);
-    cm.gainExp(rewardList[7]);
+    let expGain = Math.trunc(ExpTable.getExpNeededForLevel(cm.getChar().getLevel()) * 0.1);
+    cm.gainExp(expGain);
     questFinishCount++;
-    cm.saveOrUpdateCharacterExtendValue("每日任务完成次数", questFinishCount+""+questCount, true);
+    cm.saveOrUpdateCharacterExtendValue("每日任务完成次数", questFinishCount + "" + questCount, true);
     let text = "恭喜你完成了每日任务，获得了：\r\n";
     text += "#b#t" + rewardList[0] + "##k #i" + rewardList[0] + "# " + rewardList[1] + "个。\r\n";
     text += "#b#t" + rewardList[2] + "##k #i" + rewardList[2] + "# " + rewardList[3] + "个。\r\n";
-    text += "抵用券 " + rewardList[5] +"。\r\n";
-    text += "经验 " + rewardList[7] +"。\r\n";
+    text += "抵用券 " + rewardList[5] + "。\r\n";
+    text += "经验 " + expGain + "。\r\n";
     cm.sendNextLevel('Start', text);
 }
 
