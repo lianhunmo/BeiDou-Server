@@ -90,6 +90,7 @@ function buildMenuText() {
     text += "  #L21##b皇家发型#l  #L22#皇家整容#l  #L23#时尚点装#l  #L28#动漫点装#l\r\n\r\n";
 
     // ---------- 拍卖行 ----------
+    text += "  #L71##b#e=============  #k冒 险 炒 股  #b=============#l\r\n\r\n";
     text += "  #L15##e========  #k拍 卖 行（#r信用点交易#k）  #b========#l\r\n";
 
     // ---------- GM 专用 ----------
@@ -251,6 +252,9 @@ function doSelect(selection) {
             break;
         case 25:
             openNpc("战力排行");
+            break;
+        case 71:
+            openNpc("冒险炒股");
             break;
 
         default:
