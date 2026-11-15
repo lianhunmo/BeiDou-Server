@@ -16144,44 +16144,6 @@
             <int name="price" value="1"/>
             <int name="tradeBlock" value="0"/>
         </imgdir>
-        <imgdir name="reward">
-            <imgdir name="0">
-                <int name="count" value="500"/>
-                <string name="Effect" value="Effect/BasicEff/Event1/Good"/>
-                <int name="item" value="4001126"/>
-                <int name="prob" value="3500"/>
-            </imgdir>
-            <imgdir name="1">
-                <int name="count" value="600"/>
-                <string name="Effect" value="Effect/BasicEff/Event1/Good"/>
-                <int name="item" value="4001126"/>
-                <int name="prob" value="2500"/>
-            </imgdir>
-            <imgdir name="2">
-                <int name="count" value="700"/>
-                <string name="Effect" value="Effect/BasicEff/Event1/Good"/>
-                <int name="item" value="4001126"/>
-                <int name="prob" value="2000"/>
-            </imgdir>
-            <imgdir name="3">
-                <int name="count" value="800"/>
-                <string name="Effect" value="Effect/BasicEff/Event1/Good"/>
-                <int name="item" value="4001126"/>
-                <int name="prob" value="1000"/>
-            </imgdir>
-            <imgdir name="4">
-                <int name="count" value="900"/>
-                <string name="Effect" value="Effect/BasicEff/Event1/Good"/>
-                <int name="item" value="4001126"/>
-                <int name="prob" value="500"/>
-            </imgdir>
-            <imgdir name="5">
-                <int name="count" value="1000"/>
-                <string name="Effect" value="Effect/BasicEff/Event1/Good"/>
-                <int name="item" value="4001126"/>
-                <int name="prob" value="500"/>
-            </imgdir>
-        </imgdir>
         <imgdir name="spec"></imgdir>
     </imgdir>
     <imgdir name="02022553">

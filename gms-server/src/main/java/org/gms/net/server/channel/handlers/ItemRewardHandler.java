@@ -21,16 +21,22 @@
 */
 package org.gms.net.server.channel.handlers;
 
+import org.gms.client.Character;
 import org.gms.client.Client;
 import org.gms.client.inventory.InventoryType;
 import org.gms.client.inventory.Item;
 import org.gms.client.inventory.manipulator.InventoryManipulator;
+import org.gms.constants.id.NpcId;
 import org.gms.constants.inventory.ItemConstants;
 import org.gms.net.AbstractPacketHandler;
 import org.gms.net.packet.InPacket;
+import org.gms.net.packet.Packet;
 import org.gms.net.server.Server;
+import org.gms.scripting.npc.NPCScriptManager;
 import org.gms.server.ItemInformationProvider;
 import org.gms.server.ItemInformationProvider.RewardItem;
+import org.gms.server.maps.FieldLimit;
+import org.gms.server.maps.MiniDungeonInfo;
 import org.gms.util.PacketCreator;
 import org.gms.util.Pair;
 import org.gms.util.Randomizer;
@@ -53,6 +59,21 @@ public final class ItemRewardHandler extends AbstractPacketHandler {
         }
 
         ItemInformationProvider ii = ItemInformationProvider.getInstance();
+        if (2022552 == itemId) {
+            Character player = c.getPlayer();
+            if (!player.isAlive() || FieldLimit.CANNOTMIGRATE.check(player.getMap().getFieldLimit())) {
+                c.sendPacket(PacketCreator.serverNotice(5, "你不能在这张地图这么做。"));
+                c.sendPacket(PacketCreator.enableActions());
+                return;
+            } else if (MiniDungeonInfo.isDungeonMap(player.getMapId())) {
+                c.sendPacket(PacketCreator.serverNotice(5, "你不能在这张地图这么做。"));
+                c.sendPacket(PacketCreator.enableActions());
+                return;
+            }
+
+            NPCScriptManager.getInstance().start(c, 1002006, -1, NpcId.BEI_DOU_NPC_BASE+"", null);
+            return;
+        }
         Pair<Integer, List<RewardItem>> rewards = ii.getItemReward(itemId);
         RewardItem selectedReward = null;
         int totalProb = rewards.getLeft();
