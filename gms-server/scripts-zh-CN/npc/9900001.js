@@ -29,6 +29,11 @@ var ui = "#fUI/Basic.img/BtCoin/normal/0#";
 var OldTitle ="\t\t\t\t\t"+mogu+"#e欢迎来到#r小时候#k帮助中心"+mogu+"#n\t\t\t\t\r\n\r\n";
 var status = -1;
 
+// 维护补偿入口显示时间：开始时间起 3 天内（月份从 0 开始，10 表示 11 月）
+var COMPENSATION_START_TIME = new Date(2026, 10, 17, 0, 0, 0).getTime();
+var COMPENSATION_DURATION_DAYS = 3;
+var COMPENSATION_END_TIME = COMPENSATION_START_TIME + COMPENSATION_DURATION_DAYS * 24 * 60 * 60 * 1000 - 1;
+
 function start() {
     action(1, 0, 0);
 }
@@ -71,6 +76,11 @@ function buildMenuText() {
     text += "\r\n";
 
     // ---------- 成长福利 ----------
+    if (isCompensationVisible()) {
+        text += "  #L73#"+mogu+"#e#r维护补偿#k#l\r\n\r\n";
+    } else {
+        text += "\r\n";
+    }
     text += "  #L72#"+mogu+"#e#b领取帮助快捷按钮#k#l\r\n\r\n";
 
     text += "  #L12##r羽毛累充#l  #L13#点券商品#l  #L26#月卡功能#l  #L7#点装强化#l\r\n\r\n";
@@ -96,12 +106,12 @@ function buildMenuText() {
     text += "  #L15##e========  #k拍 卖 行（#r信用点交易#k）  #b========#l\r\n";
 
     // ---------- GM 专用 ----------
-    if (player.isGM()) {
-        text += "\r\n#e#r【GM 专用功能】#n\r\n";
-        text += "  #L61##b超级传送#l    #L62#超级商店#l    #L63#整容集合#l    #L64#UI查询#l\r\n";
-        text += "  #L66#生成道具#l    #L70#秒伤测试#l    #L25#战力排行#l    #L69#遗忘技能#l\r\n";
-        text += "  #L67#有状态脚本示例#l    #L68#NextLevel脚本示例#l\r\n";
-    }
+    // if (player.isGM()) {
+    //     text += "\r\n#e#r【GM 专用功能】#n\r\n";
+    //     text += "  #L61##b超级传送#l    #L62#超级商店#l    #L63#整容集合#l    #L64#UI查询#l\r\n";
+    //     text += "  #L66#生成道具#l    #L70#秒伤测试#l    #L25#战力排行#l    #L69#遗忘技能#l\r\n";
+    //     text += "  #L67#有状态脚本示例#l    #L68#NextLevel脚本示例#l\r\n";
+    // }
 
     return text;
 }
@@ -261,6 +271,14 @@ function doSelect(selection) {
         case 72:
             openNpc("快捷功能");
             break;
+        case 73:
+            if (isCompensationVisible()) {
+                openNpc("维护补偿");
+            } else {
+                cm.sendOk("维护补偿活动尚未开始或已结束，敬请期待！");
+                cm.dispose();
+            }
+            break;
 
         default:
             cm.sendOk("该功能暂不支持，敬请期待！");
@@ -271,6 +289,14 @@ function doSelect(selection) {
 function openNpc(scriptName) {
     cm.dispose();
     cm.openNpc(1002006, scriptName);
+}
+
+/**
+ * 维护补偿入口是否在显示时间内（开始时间起 3 天内）
+ */
+function isCompensationVisible() {
+    var now = java.lang.System.currentTimeMillis();
+    return now >= COMPENSATION_START_TIME && now <= COMPENSATION_END_TIME;
 }
 
 function level() {
