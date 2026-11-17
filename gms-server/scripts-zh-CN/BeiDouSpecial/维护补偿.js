@@ -126,7 +126,7 @@ function levelGainMaintenanceReward() {
         return;
     }
 
-    cm.gainItem(EXP_COUPON_2X_1H30M, EXP_COUPON_COUNT);
+    cm.gainItem(EXP_COUPON_2X_1H30M, 1, false, true, 7200000);
     cm.gainItem(AP_RESET_SCROLL, AP_RESET_SCROLL_COUNT);
     cm.gainItem(VIP_TELEPORT_ROCK, VIP_TELEPORT_ROCK_COUNT);
     cm.gainMeso(COMPENSATION_MESOS);
