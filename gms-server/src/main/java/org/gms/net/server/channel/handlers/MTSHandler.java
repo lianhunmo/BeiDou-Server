@@ -50,10 +50,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public final class MTSHandler extends AbstractPacketHandler {
     private static final Logger log = LoggerFactory.getLogger(MTSHandler.class);
@@ -124,7 +121,7 @@ public final class MTSHandler extends AbstractPacketHandler {
                     e.printStackTrace();
                     return;
                 }
-                if (currentListings > 12) {// They have more than 12 items up for sale already!
+                if (currentListings >= 12) {// They have more than 12 items up for sale already!
                     c.getPlayer().dropMessage(1, "当前正在售卖中的物品已有12个。");
                     c.sendPacket(getMTS(1, 0, 0));
                     c.sendPacket(PacketCreator.transferInventory(getTransfer(c.getPlayer().getId())));
@@ -458,11 +455,11 @@ public final class MTSHandler extends AbstractPacketHandler {
                         }
                         if (c.getPlayer().getCashShop().getCash(CashShop.NX_PREPAID) >= price) { // FIX
                             boolean acountNotOnline = true;
-                            for (Channel cserv : Server.getInstance().getAllChannels()) {
+                            Collection<Character> chrList = Server.getInstance().getWorld(c.getWorld()).getPlayerStorage().getAllCharacters();
+                            for (Character character : chrList) {
                                 for (Integer charId : sellerAccountCharIdSet) {
-                                    Character victim = cserv.getPlayerStorage().getCharacterById(charId);
-                                    if (victim != null) {
-                                        victim.getCashShop().gainCash(4, rs.getInt("price"));
+                                    if (charId == character.getId()) {
+                                        character.getCashShop().gainCash(4, rs.getInt("price"));
                                         acountNotOnline = false;
                                     }
                                 }
