@@ -9745,6 +9745,8 @@ public class Character extends AbstractCharacterObject {
             mapleMount = null;
         }
         if (remove) {
+            // 角色真正下线，回收该角色的HP/MP警戒线缓存（先落库再移除）
+            hpMpAlertService.removeCache(getId());
             partyQuest = null;
             events = null;
             mpc = null;

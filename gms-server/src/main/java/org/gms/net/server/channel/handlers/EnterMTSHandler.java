@@ -49,11 +49,11 @@ public final class EnterMTSHandler extends AbstractPacketHandler {
 
     @Override
     public void handlePacket(InPacket p, Client c) {
-        if (!GameConfig.getServerBoolean("use_mts")) {
-            openCenterScript(c);
-            return;
-        }
-        enterMTS(c);
+//        if (!GameConfig.getServerBoolean("use_mts")) {
+        openCenterScript(c);
+//            return;
+//        }
+//        enterMTS(c);
     }
 
     public static void enterMTS(Client c) {

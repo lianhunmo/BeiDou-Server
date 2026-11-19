@@ -120,10 +120,22 @@ public class HpMpAlertService {
      * 保存缓存数据到数据库，目前仅在saveall命令和关闭服务器时调用
      */
     public void saveAll() {
-        for (int id : cacheMap.keySet()) {
-            hpMpAlertMapper.insertOrUpdate(cacheMap.get(id));
+        // 角色下线会并发移除缓存，按 entry 快照遍历，避免 keySet/get 之间被移除导致空指针
+        for (Map.Entry<Integer, HpMpAlertDO> entry : cacheMap.entrySet()) {
+            hpMpAlertMapper.insertOrUpdate(entry.getValue());
         }
         log.info("已保存 Hp Mp 警戒线到数据库");
+    }
+
+    /**
+     * 移除单个角色的缓存，角色下线时调用，避免缓存随登录过的角色数无界增长。
+     * 移除前先把该角色数据落库，保证下次登录能读回同样的警戒线设置。
+     */
+    public void removeCache(int characterId) {
+        HpMpAlertDO removed = cacheMap.remove(characterId);
+        if (removed != null) {
+            hpMpAlertMapper.insertOrUpdate(removed);
+        }
     }
 
     /**

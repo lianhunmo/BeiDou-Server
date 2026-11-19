@@ -24,10 +24,10 @@ package org.gms.constants.inventory;
 import org.gms.client.inventory.InventoryType;
 import org.gms.config.GameConfig;
 import org.gms.constants.id.ItemId;
+import org.gms.util.LRUCache;
 
 import java.util.Arrays;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
@@ -38,7 +38,7 @@ import java.util.Set;
  * @author Ronan
  */
 public final class ItemConstants {
-    protected static Map<Integer, InventoryType> inventoryTypeCache = new HashMap<>();
+    protected static Map<Integer, InventoryType> inventoryTypeCache = Collections.synchronizedMap(new LRUCache<>(8192));
 
     public final static short LOCK = 0x01;
     public final static short SPIKES = 0x02;
@@ -184,8 +184,9 @@ public final class ItemConstants {
     }
 
     public static InventoryType getInventoryType(final int itemId) {
-        if (inventoryTypeCache.containsKey(itemId)) {
-            return inventoryTypeCache.get(itemId);
+        InventoryType cached = inventoryTypeCache.get(itemId);
+        if (cached != null) {
+            return cached;
         }
 
         InventoryType ret = InventoryType.UNDEFINED;

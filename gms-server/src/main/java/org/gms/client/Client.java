@@ -1007,6 +1007,9 @@ public class Client extends ChannelInboundHandlerAdapter {
     }
 
     private void disconnectInternal(boolean shutdown, boolean cashshop) {//once per Client instance
+        // 提前记录账号ID与切服标志：updateLoginState 会把 accID 置 0、并把 serverTransition 复位
+        final int accountId = getAccID();
+        final boolean wasServerTransition = this.serverTransition;
         if (player != null && player.isLoggedIn() && player.getClient() != null) {
             final int messengerid = player.getMessenger() == null ? 0 : player.getMessenger().getId();
             //final int fid = player.getFamilyId();
@@ -1096,6 +1099,11 @@ public class Client extends ChannelInboundHandlerAdapter {
             }
 
             engines = null; // thanks Tochi for pointing out a NPE here
+        }
+
+        // 账号真正下线（非换频道/切服）时回收账号级缓存，防止 accountStorages / accountChars 等无界增长
+        if (!wasServerTransition && accountId > 0) {
+            Server.getInstance().unregisterAccountCaches(accountId);
         }
     }
 

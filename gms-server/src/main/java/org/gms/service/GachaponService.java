@@ -25,8 +25,9 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.sql.Timestamp;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReadWriteLock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
@@ -40,7 +41,7 @@ public class GachaponService {
     private GachaponRewardMapper gachaponRewardMapper;
 
 
-    private static final HashMap<Integer, List<GachaponRewardDO>> poolRewardsCache = new HashMap<>();
+    private static final Map<Integer, List<GachaponRewardDO>> poolRewardsCache = new ConcurrentHashMap<>();
     private static final ReadWriteLock lock = new ReentrantReadWriteLock(true);
     private static final Lock rLock = lock.readLock();
     private static final Lock wLock = lock.writeLock();
@@ -274,12 +275,8 @@ public class GachaponService {
     }
 
     private List<GachaponRewardDO> getPoolRewards(Integer poolId) {
-        if (poolRewardsCache.containsKey(poolId)) {
-            return poolRewardsCache.get(poolId);
-        } else {
-            List<GachaponRewardDO> poolRewards = gachaponRewardMapper.selectListByQuery(QueryWrapper.create().where("pool_id=?", poolId));
-            poolRewardsCache.put(poolId, poolRewards);
-            return poolRewards;
-        }
+        // 抽奖路径在读锁下执行，这里必须用线程安全容器 + 原子填充，避免并发写坏 HashMap
+        return poolRewardsCache.computeIfAbsent(poolId, id ->
+                gachaponRewardMapper.selectListByQuery(QueryWrapper.create().where("pool_id=?", id)));
     }
 }

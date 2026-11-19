@@ -35,9 +35,9 @@ import org.gms.util.PacketCreator;
 import javax.script.Invocable;
 import javax.script.ScriptEngine;
 import javax.script.ScriptException;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * @author Matze
@@ -46,8 +46,8 @@ public class NPCScriptManager extends AbstractScriptManager {
     private static final Logger log = LoggerFactory.getLogger(NPCScriptManager.class);
     private static final NPCScriptManager instance = new NPCScriptManager();
 
-    private final Map<Client, NPCConversationManager> cms = new HashMap<>();
-    private final Map<Client, Invocable> scripts = new HashMap<>();
+    private final Map<Client, NPCConversationManager> cms = new ConcurrentHashMap<>();
+    private final Map<Client, Invocable> scripts = new ConcurrentHashMap<>();
 
     public static NPCScriptManager getInstance() {
         return instance;
@@ -246,10 +246,18 @@ public class NPCScriptManager extends AbstractScriptManager {
 
     public void dispose(NPCConversationManager cm) {
         Client c = cm.getClient();
-        c.getPlayer().setCS(false);
-        c.getPlayer().setNpcCooldown(System.currentTimeMillis());
+        if (c == null) {
+            return;
+        }
+        // 先摘除上下文，再做副作用处理：避免副作用抛异常时上下文残留在静态Map中
         cms.remove(c);
         scripts.remove(c);
+
+        Character player = c.getPlayer();
+        if (player != null) {
+            player.setCS(false);
+            player.setNpcCooldown(System.currentTimeMillis());
+        }
 
         String scriptFolder = (cm.isItemScript() ? "item" : "npc");
         if (cm.getScriptName() != null) {
@@ -258,7 +266,9 @@ public class NPCScriptManager extends AbstractScriptManager {
             resetContext(scriptFolder + "/" + cm.getNpc() + ".js", c);
         }
 
-        c.getPlayer().flushDelayedUpdateQuests();
+        if (player != null) {
+            player.flushDelayedUpdateQuests();
+        }
     }
 
     public void dispose(Client c) {

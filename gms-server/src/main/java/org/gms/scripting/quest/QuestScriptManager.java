@@ -21,6 +21,7 @@
  */
 package org.gms.scripting.quest;
 
+import org.gms.client.Character;
 import org.gms.client.Client;
 import org.gms.client.QuestStatus;
 import org.gms.constants.game.GameConstants;
@@ -32,8 +33,8 @@ import org.gms.server.quest.Quest;
 import javax.script.Invocable;
 import javax.script.ScriptEngine;
 import javax.script.ScriptException;
-import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * @author RMZero213
@@ -42,8 +43,8 @@ public class QuestScriptManager extends AbstractScriptManager {
     private static final Logger log = LoggerFactory.getLogger(QuestScriptManager.class);
     private static final QuestScriptManager instance = new QuestScriptManager();
 
-    private final Map<Client, QuestActionManager> qms = new HashMap<>();
-    private final Map<Client, Invocable> scripts = new HashMap<>();
+    private final Map<Client, QuestActionManager> qms = new ConcurrentHashMap<>();
+    private final Map<Client, Invocable> scripts = new ConcurrentHashMap<>();
 
     public static QuestScriptManager getInstance() {
         return instance;
@@ -188,11 +189,17 @@ public class QuestScriptManager extends AbstractScriptManager {
     }
 
     public void dispose(QuestActionManager qm, Client c) {
+        // 先摘除上下文再处理副作用，且角色可能已下线为null
         qms.remove(c);
         scripts.remove(c);
-        c.getPlayer().setNpcCooldown(System.currentTimeMillis());
+        Character player = c.getPlayer();
+        if (player != null) {
+            player.setNpcCooldown(System.currentTimeMillis());
+        }
         resetContext("quest/" + qm.getQuest() + ".js", c);
-        c.getPlayer().flushDelayedUpdateQuests();
+        if (player != null) {
+            player.flushDelayedUpdateQuests();
+        }
     }
 
     public void dispose(Client c) {

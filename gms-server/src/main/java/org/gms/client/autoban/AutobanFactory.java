@@ -33,10 +33,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.Collection;
-import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
 
 import static java.util.concurrent.TimeUnit.MINUTES;
 import static java.util.concurrent.TimeUnit.SECONDS;
@@ -69,12 +68,12 @@ public enum AutobanFactory {
     ATTACK_INTERVAL(I18nUtil.getMessage("autoban.name.ATTACK_INTERVAL"), 60, SECONDS.toMillis(60));
 
     private static final Logger log = LoggerFactory.getLogger(AutobanFactory.class);
-    private static final Set<Integer> ignoredChrIds = new HashSet<>();
+    private static final Set<Integer> ignoredChrIds = ConcurrentHashMap.newKeySet();
 
     /**
      * 配置缓存：type -> AutobanConfigDO
      */
-    private static final Map<String, AutobanConfigDO> CONFIG_CACHE = new HashMap<>();
+    private static final Map<String, AutobanConfigDO> CONFIG_CACHE = new ConcurrentHashMap<>();
 
     @Getter
     private final String name;
@@ -193,13 +192,11 @@ public enum AutobanFactory {
      * @return new status. true if the chrId is now ignored, otherwise false.
      */
     public static boolean toggleIgnored(int chrId) {
-        if (ignoredChrIds.contains(chrId)) {
-            ignoredChrIds.remove(chrId);
+        if (ignoredChrIds.remove(chrId)) {
             return false;
-        } else {
-            ignoredChrIds.add(chrId);
-            return true;
         }
+        ignoredChrIds.add(chrId);
+        return true;
     }
 
     private static boolean isIgnored(int chrId) {

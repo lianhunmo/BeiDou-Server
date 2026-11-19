@@ -1211,7 +1211,9 @@ public class Server {
     private Set<Integer> getAccountCharacterEntries(Integer accountid) {
         lgnRLock.lock();
         try {
-            return new HashSet<>(accountChars.get(accountid));
+            Set<Integer> entries = accountChars.get(accountid);
+            // 账号缓存已在离线时回收，这里按空集合处理，等待下次登录重建
+            return entries == null ? new HashSet<>() : new HashSet<>(entries);
         } finally {
             lgnRLock.unlock();
         }
@@ -1241,9 +1243,10 @@ public class Server {
 
         lgnWLock.lock();
         try {
-            accountCharacterCount.put(accountid, (short) (accountCharacterCount.get(accountid) + 1));
+            Short count = accountCharacterCount.get(accountid);
+            accountCharacterCount.put(accountid, (short) ((count == null ? 0 : count) + 1));
 
-            Set<Integer> accChars = accountChars.get(accountid);
+            Set<Integer> accChars = accountChars.computeIfAbsent(accountid, k -> new HashSet<>(5));
             accChars.add(chrid);
 
             worldChars.put(chrid, world);
@@ -1262,10 +1265,15 @@ public class Server {
     public void deleteCharacterEntry(Integer accountid, Integer chrid) {
         lgnWLock.lock();
         try {
-            accountCharacterCount.put(accountid, (short) (accountCharacterCount.get(accountid) - 1));
+            Short count = accountCharacterCount.get(accountid);
+            if (count != null) {
+                accountCharacterCount.put(accountid, (short) (count - 1));
+            }
 
             Set<Integer> accChars = accountChars.get(accountid);
-            accChars.remove(chrid);
+            if (accChars != null) {
+                accChars.remove(chrid);
+            }
 
             Integer world = worldChars.remove(chrid);
             if (world != null) {
@@ -1303,22 +1311,28 @@ public class Server {
         }
     }
     
-    /*
-    public void deleteAccountEntry(Integer accountid) { is this even a thing?
+    /**
+     * 账号级缓存统一回收出口：清理登录态角色视图、角色数量统计、各世界的角色视图与仓库对象。
+     * 由客户端会话彻底结束时调用，避免账号维度缓存随登录过的账号数量线性增长。
+     */
+    public void unregisterAccountCaches(int accountId) {
+        if (accountId <= 0) {
+            return;
+        }
+
         lgnWLock.lock();
         try {
-            accountCharacterCount.remove(accountid);
-            accountChars.remove(accountid);
+            accountCharacterCount.remove(accountId);
+            accountChars.remove(accountId);
         } finally {
             lgnWLock.unlock();
         }
-    
+
         for (World wserv : this.getWorlds()) {
-            wserv.clearAccountCharacterView(accountid);
-            wserv.unregisterAccountStorage(accountid);
+            wserv.clearAccountCharacterView(accountId);
+            wserv.unregisterAccountStorage(accountId);
         }
     }
-    */
 
     public SortedMap<Integer, List<Character>> loadAccountCharlist(int accountId, int visibleWorlds) {
         List<World> worlds = this.getWorlds();

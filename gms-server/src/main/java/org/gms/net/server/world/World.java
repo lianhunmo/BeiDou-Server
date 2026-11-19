@@ -452,7 +452,7 @@ public class World {
     public void registerAccountCharacterView(Integer accountId, Character chr) {
         accountCharsLock.lock();
         try {
-            accountChars.get(accountId).put(chr.getId(), chr);
+            accountChars.computeIfAbsent(accountId, k -> new TreeMap<>()).put(chr.getId(), chr);
         } finally {
             accountCharsLock.unlock();
         }
@@ -461,7 +461,14 @@ public class World {
     public void unregisterAccountCharacterView(Integer accountId, Integer chrId) {
         accountCharsLock.lock();
         try {
-            accountChars.get(accountId).remove(chrId);
+            SortedMap<Integer, Character> accChars = accountChars.get(accountId);
+            if (accChars != null) {
+                accChars.remove(chrId);
+                // 账号下已无角色视图时回收空壳，避免账号维度 Map 无界增长
+                if (accChars.isEmpty()) {
+                    accountChars.remove(accountId);
+                }
+            }
         } finally {
             accountCharsLock.unlock();
         }
@@ -498,7 +505,11 @@ public class World {
     public void unregisterAccountStorage(Integer accountId) {
         accountCharsLock.lock();
         try {
-            accountStorages.remove(accountId);
+            Storage storage = accountStorages.remove(accountId);
+            if (storage != null) {
+                // 释放仓库内部的物品分类缓存，配合移除动作让整个 Storage 可被回收
+                storage.close();
+            }
         } finally {
             accountCharsLock.unlock();
         }
