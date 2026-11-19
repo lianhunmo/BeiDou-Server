@@ -314,10 +314,10 @@ function showMainMenu() {
 
     cm.sendSimple(
         "\r\n                       #i03994060# #i03994063# #i03994067# #i03994062# #i03994073# #i03994079#\r\n\r\n#n" +
-        "欢迎#d" + cm.getName() + "#k来到#r#e【冒险炒股】#k#n\r\n\r\n" +
+        "欢迎#d" + cm.getName() + "#k来到#r#e【冒险股神】#k#n\r\n\r\n" +
         "#r#e炒股有风险！投资需谨慎！#k#n\r\n" +
         "#d印花税：买入/卖出各扣" + formatTaxRate(STAMP_TAX_RATE) + "#k\r\n" +
-        "#d结算：每天 00:00（凌晨12点），离线最多补算 " + MAX_SETTLE_DAYS + " 天#k\r\n\r\n" +
+        "#d结算：每天 08:00，离线最多补算 " + MAX_SETTLE_DAYS + " 天#k\r\n\r\n" +
         "#e【点券账户】#k\r\n" +
         "  余额：" + cash + "\r\n" +
         "  持仓：" + cashHold + " 只 | 市值：" + cashTotal + "\r\n" +
@@ -374,7 +374,7 @@ function openPlate(prefix, plateId) {
     var msg = "\r\n                       #i03994060# #i03994063# #i03994067# #i03994062# #i03994073# #i03994079#\r\n\r\n#n";
     msg += "===============【" + plateNameArr[plateId] + "】=================\r\n\r\n";
     msg += "#r    (浮动率：" + plateRateDesc[plateId] + ")#k\r\n";
-    msg += "#d（每日 00:00 随机涨跌）" + currencyName(currentCurrency) + "交易#k\r\n\r\n";
+    msg += "#d（每日 08:00 随机涨跌）" + currencyName(currentCurrency) + "交易#k\r\n\r\n";
 
     for (var i = 0; i < names.length; i++) {
         var sid = i + 1;
@@ -545,7 +545,7 @@ function showIntro() {
         "#b【金银岛屿板块】  浮动率：±10%（整数档）\r\n" +
         "#b【冰封雪域板块】  浮动率：±20%（整数档）\r\n" +
         "#b【水下世界板块】  浮动率：±30%（整数档）\r\n\r\n" +
-        "#r结算时间：每天 00:00（凌晨12点）#k\r\n" +
+        "#r结算时间：每天 08:00#k\r\n" +
         "所有持仓按所在板块浮动率随机涨跌一次\r\n" +
         "离线期间最多补算 " + MAX_SETTLE_DAYS + " 天\r\n\r\n" +
         "#k点券与金币【两套独立系统】互不干扰\r\n" +
