@@ -102,8 +102,8 @@ function action(mode, type, selection) {
             } else if (student.getLevel() < 10){
                 cm.sendOk("徒弟 <"+student.getName()+"> 等级未达到10级，当前等级 "+student.getLevel()+" 级。");
                 cm.dispose();
-            } else if (student.getLevel() > 30){
-                cm.sendOk("徒弟 <"+student.getName()+"> 等级已经超过30级了!徒弟当前等级为: "+student.getLevel()+" 级。");
+            } else if (student.getLevel() > 70){
+                cm.sendOk("徒弟 <"+student.getName()+"> 等级已经超过70级了!徒弟当前等级为: "+student.getLevel()+" 级。");
                 cm.dispose();
             } else if (cm.getChar().isAlreadyShiTu(student.getId())){
                 cm.sendOk("你已经收过这个徒弟了。");
@@ -198,7 +198,7 @@ function action(mode, type, selection) {
             }
         } else if (selection == 6){
             let text = "师门系统介绍：\r\n";
-            text += "徒弟等级：必须大于10级,小于30级\r\n";
+            text += "徒弟等级：必须大于10级,小于70级\r\n";
             text += "师父等级：必须大于140级，且要求完成肝王勋章天空组队副本以及之前全部试炼\r\n\r\n";
             text += "徒弟达到130级即可出师\r\n\r\n";
             text += "师门同时可收取三个徒弟\r\n\r\n";
