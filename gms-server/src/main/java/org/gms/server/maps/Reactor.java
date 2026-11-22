@@ -63,6 +63,8 @@ public class Reactor extends AbstractMapObject {
     private byte facingDirection = 0;  // 面向方向
     private final Lock reactorLock = new ReentrantLock(true);  // 反应器锁
     private final Lock hitLock = new ReentrantLock(true);  // 击中锁
+    private static final int ITEM_REACTOR_MIN_TRIGGER_RADIUS_X = 40;  // 物品触发型反应器判定区的最小横向半径
+    private static final int ITEM_REACTOR_MIN_TRIGGER_RADIUS_Y = 20;  // 物品触发型反应器判定区的最小纵向半径
 
     /**
      * 构造函数
@@ -549,7 +551,22 @@ public class Reactor extends AbstractMapObject {
      * @return 矩形区域
      */
     public Rectangle getArea() {
-        return new Rectangle(getPosition().x + stats.getTL().x, getPosition().y + stats.getTL().y, stats.getBR().x - stats.getTL().x, stats.getBR().y - stats.getTL().y);  // 计算并返回区域
+        Point pos = getPosition();
+        int x1 = pos.x + stats.getTL().x;  // 判定区左上角X
+        int y1 = pos.y + stats.getTL().y;  // 判定区左上角Y
+        int x2 = pos.x + stats.getBR().x;  // 判定区右下角X
+        int y2 = pos.y + stats.getBR().y;  // 判定区右下角Y
+
+        if (stats.getType(state) == 100) {
+            // 物品触发型反应器的WZ判定框常常偏向贴图一侧(如时空裂缝的判定框仅8像素宽且右偏约55像素)，
+            // 这里保证判定区至少覆盖反应器锚点附近，避免玩家在视觉上对准反应器丢弃物品却无声失败
+            x1 = Math.min(x1, pos.x - ITEM_REACTOR_MIN_TRIGGER_RADIUS_X);
+            x2 = Math.max(x2, pos.x + ITEM_REACTOR_MIN_TRIGGER_RADIUS_X);
+            y1 = Math.min(y1, pos.y - ITEM_REACTOR_MIN_TRIGGER_RADIUS_Y);
+            y2 = Math.max(y2, pos.y + ITEM_REACTOR_MIN_TRIGGER_RADIUS_Y);
+        }
+
+        return new Rectangle(x1, y1, x2 - x1, y2 - y1);  // 计算并返回区域
     }
 
     /**

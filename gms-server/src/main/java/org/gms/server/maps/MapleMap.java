@@ -2260,17 +2260,30 @@ public class MapleMap {
 
     private void activateItemReactors(final MapItem drop, final Client c) {
         final Item item = drop.getItem();
+        final Character chr = (drop.isPlayerDrop() && c != null) ? c.getPlayer() : null;  // 仅玩家手动丢弃时才提示
+        boolean notified = false;  // 是否已经给玩家提示过, 避免同一件物品触发多条提示
 
         for (final MapObject o : getReactors()) {
             final Reactor react = (Reactor) o;
 
             if (react.getReactorType() == 100) {
-                if (react.getReactItem(react.getEventState()).getLeft() == item.getItemId() && react.getReactItem(react.getEventState()).getRight() == item.getQuantity()) {
+                final Pair<Integer, Integer> reactItem = react.getReactItem(react.getEventState());
+                if (reactItem == null) {
+                    continue;
+                }
 
-                    if (react.getArea().contains(drop.getPosition())) {
-                        registerMapSchedule(new ActivateItemReactor(drop, react, c), 5000);
-                        break;
-                    }
+                if (reactItem.getLeft() != item.getItemId() || reactItem.getRight() != item.getQuantity()) {
+                    continue;
+                }
+
+                if (react.getArea().contains(drop.getPosition())) {
+                    registerMapSchedule(new ActivateItemReactor(drop, react, c), 2000);
+                    break;
+                }
+
+                if (chr != null && !notified) {  // 物品与需求匹配但落点在判定区外: 给出提示, 避免玩家无声失败
+                    chr.dropMessage(6, "物品距离反应器过远，未能触发反应器，请靠近后再丢弃。");
+                    notified = true;
                 }
             }
         }
