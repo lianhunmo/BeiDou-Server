@@ -231,40 +231,6 @@ function doSelect(selection) {
             var client = cm.getPlayer().getClient();
             EnterMTSHandler.enterMTS(client);
             break;
-
-        // ---------- GM 专用 ----------
-        case 61:
-            openNpc("万能传送");
-            break;
-        case 62:
-            cm.dispose();
-            cm.openShopNPC(9900001);
-            cm.dispose();
-            break;
-        case 63:
-            openNpc("Salon");
-            break;
-        case 64:
-            openNpc("UI查询");
-            break;
-        case 66:
-            openNpc("一键刷道具");
-            break;
-        case 67:
-            openNpc("Example1");
-            break;
-        case 68:
-            openNpc("Example2");
-            break;
-        case 69:
-            openNpc("遗忘技能");
-            break;
-        case 70:
-            openNpc("秒伤测试");
-            break;
-        case 25:
-            openNpc("战力排行");
-            break;
         case 71:
             openNpc("冒险炒股");
             break;
@@ -279,7 +245,39 @@ function doSelect(selection) {
                 cm.dispose();
             }
             break;
-
+        // ---------- GM 专用 ----------
+        // case 61:
+        //     openNpc("万能传送");
+        //     break;
+        // case 62:
+        //     cm.dispose();
+        //     cm.openShopNPC(9900001);
+        //     cm.dispose();
+        //     break;
+        // case 63:
+        //     openNpc("Salon");
+        //     break;
+        // case 64:
+        //     openNpc("UI查询");
+        //     break;
+        // case 66:
+        //     openNpc("一键刷道具");
+        //     break;
+        // case 67:
+        //     openNpc("Example1");
+        //     break;
+        // case 68:
+        //     openNpc("Example2");
+        //     break;
+        // case 69:
+        //     openNpc("遗忘技能");
+        //     break;
+        // case 70:
+        //     openNpc("秒伤测试");
+        //     break;
+        // case 25:
+        //     openNpc("战力排行");
+        //     break;
         default:
             cm.sendOk("该功能暂不支持，敬请期待！");
             cm.dispose();
