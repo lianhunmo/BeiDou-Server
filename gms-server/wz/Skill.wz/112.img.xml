@@ -2598,8 +2598,8 @@
                 <imgdir name="30">
                     <string name="hs" value="h30"/>
                     <int name="mpCon" value="40"/>
-                    <int name="pad" value="30"/>
-                    <int name="time" value="240"/>
+                    <int name="pad" value="50"/>
+                    <int name="time" value="600"/>
                     <int name="cooltime" value="360"/>
                 </imgdir>
             </imgdir>
