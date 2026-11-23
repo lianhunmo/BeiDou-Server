@@ -17,7 +17,6 @@
         <int name="incSTR" value="15"/>
         <string name="islot" value="Ri"/>
         <int name="notSale" value="1"/>
-        <int name="onlyEquip" value="1"/>
         <int name="cash" value="1"/>
         <int name="tradeBlock" value="1"/>
         <string name="vslot" value="Ri"/>
